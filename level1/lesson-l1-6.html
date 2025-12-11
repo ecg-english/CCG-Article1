@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: 経験「过」</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">14. 経験「过」</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「した」と「したことがある」<br class="md:hidden">は別物です
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                昨日の晩ご飯を食べたのは「完了」ですが、北京ダックを食べたことがあるのは「経験」です。<br>
+                このレッスンでは、あなたの人生の履歴（アーカイブ）を語るための表現<span class="highlight-text">「过 (guò)」</span>を学びます。
+            </p>
+        </section>
+
+        <!-- 1. Basic Structure -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本形：動詞＋过 (guo)</h3>
+                    <p class="text-slate-500 text-sm">動詞の後ろにつけるだけで、「〜したことがある」になります。</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-blue-50 border-2 border-blue-200 rounded-xl px-6 py-4 shadow-sm">
+                        <span class="text-slate-400 font-bold text-sm block mb-1">基本公式</span>
+                        <span class="text-xl font-bold text-slate-800 chinese-serif">
+                            動詞 + <span class="text-blue-600 font-bold">过</span> <span class="text-xs text-slate-400 font-normal">(軽声)</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                        <p class="text-xs text-slate-400 mb-2 font-bold">Example 1</p>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <ruby>去<rt>qù</rt></ruby> <span class="text-blue-600 font-bold">过</span> <ruby>中国<rt>Zhōngguó</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600">私は中国へ行ったことがあります。</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                        <p class="text-xs text-slate-400 mb-2 font-bold">Example 2</p>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800 mb-2">
+                            <ruby>我看<rt>wǒ kàn</rt></ruby> <span class="text-blue-600 font-bold">过</span> <ruby>那个<rt>nàge</rt></ruby> <ruby>电影<rt>diànyǐng</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600">私はその映画を見たことがあります。</p>
+                    </div>
+                </div>
+
+                <!-- Pronunciation Tip -->
+                <div class="mt-6 flex items-start gap-3 text-sm text-slate-500">
+                    <i class="fas fa-volume-up mt-1 text-blue-400"></i>
+                    <p>
+                        <strong>発音のポイント：</strong><br>
+                        この用法の「过」は<strong>軽声</strong>です。「グオ(guò)」と強く4声で読まず、「guo」と軽く添えるように発音します。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Negation: The Critical Difference -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定形：「过」は消えない！</h3>
+                    <p class="text-slate-500 text-sm">ここが「了」との最大の違いです。否定でも「経験」のマーカーは残ります。</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-8 rounded-r-2xl shadow-sm">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Rule -->
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i> 否定の鉄則
+                        </h4>
+                        <ul class="space-y-4 text-red-900 text-sm">
+                            <li class="flex items-start">
+                                <span class="font-bold mr-2">1.</span>
+                                <span>否定には<strong>「没 (méi)」</strong>を使う。（「不」ではない）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold mr-2">2.</span>
+                                <span><strong>「过」は消さずに残す。</strong><br>
+                                <span class="text-xs opacity-80">※「了」は否定で消えますが、「过」は「経験がない」という状態を示すために必要です。</span></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visual Comparison -->
+                    <div class="flex-1 bg-white p-6 rounded-xl shadow-inner">
+                        <div class="mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                <span>完了 (Simple Past)</span>
+                                <span class="text-red-400">了は消える</span>
+                            </div>
+                            <div class="chinese-serif text-lg text-slate-700">
+                                <span class="text-red-500 font-bold">没</span> <ruby>去<rt>qù</rt></ruby> <span class="text-slate-300 line-through">了</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">行かなかった。</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                <span>経験 (Experience)</span>
+                                <span class="text-blue-500 font-bold">过は残る！</span>
+                            </div>
+                            <div class="chinese-serif text-lg text-slate-700">
+                                <span class="text-red-500 font-bold">没</span> <ruby>去<rt>qù</rt></ruby> <span class="text-blue-600 font-bold">过</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">行ったことがない。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Question Form -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">疑問文：2つの聞き方</h3>
+                    <p class="text-slate-500 text-sm">「〜したことがありますか？」と聞く定番フレーズ。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <span class="bg-slate-100 text-slate-500 text-xs px-2 py-1 rounded font-bold mb-2 inline-block">パターン A</span>
+                    <h4 class="font-bold text-slate-800 mb-2">〜吗？</h4>
+                    <p class="chinese-serif text-xl mb-2 text-slate-800">
+                        <ruby>你<rt>nǐ</rt></ruby> <ruby>去<rt>qù</rt></ruby> <span class="text-blue-600 font-bold">过</span> <ruby>美国<rt>Měiguó</rt></ruby> <span class="text-purple-600 font-bold">吗</span>？
+                    </p>
+                    <p class="text-sm text-slate-600">アメリカに行ったことがありますか？</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <span class="bg-slate-100 text-slate-500 text-xs px-2 py-1 rounded font-bold mb-2 inline-block">パターン B</span>
+                    <h4 class="font-bold text-slate-800 mb-2">〜没有？</h4>
+                    <p class="chinese-serif text-xl mb-2 text-slate-800">
+                        <ruby>你<rt>nǐ</rt></ruby> <ruby>去<rt>qù</rt></ruby> <span class="text-blue-600 font-bold">过</span> <ruby>美国<rt>Měiguó</rt></ruby> <span class="text-purple-600 font-bold">没有</span>？
+                    </p>
+                    <p class="text-sm text-slate-600">アメリカに行ったことがありますか？</p>
+                    <p class="text-xs text-slate-400 mt-2">※文末に「没有」をつける形もよく使われます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Le vs Guo Comparison -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「了」と「过」の決定的な違い</h3>
+                    <p class="text-slate-500 text-sm">過去の事象をどう捉えるか、視点の違いです。</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <table class="w-full text-left bg-white">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="p-4 w-1/4"></th>
+                            <th class="p-4 text-amber-600 font-bold w-1/3">了 (le)</th>
+                            <th class="p-4 text-blue-600 font-bold w-1/3">过 (guo)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr>
+                            <td class="p-4 font-bold text-slate-700 bg-slate-50/50">意味</td>
+                            <td class="p-4"><span class="font-bold">完了・実現</span><br>動作が終わったこと</td>
+                            <td class="p-4"><span class="font-bold">経験</span><br>過去にそういうことがあった</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-slate-700 bg-slate-50/50">視点</td>
+                            <td class="p-4">「昨日」「さっき」など<br>特定の時点にフォーカス</td>
+                            <td class="p-4">現在までの期間全体。<br>「履歴」として残っているか</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-slate-700 bg-slate-50/50">例文</td>
+                            <td class="p-4 chinese-serif">我吃了北京烤鸭。<br><span class="text-xs text-slate-500">(北京ダックを食べました/食べ終わりました)</span></td>
+                            <td class="p-4 chinese-serif">我吃过北京烤鸭。<br><span class="text-xs text-slate-500">(北京ダックを食べたことがあります)</span></td>
+                        </tr>
+                        <tr class="bg-red-50/30">
+                            <td class="p-4 font-bold text-slate-700 bg-slate-50/50">否定</td>
+                            <td class="p-4">没吃 <span class="text-slate-300">(了)</span></td>
+                            <td class="p-4">没吃 <span class="text-blue-600 font-bold">过</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Check Your Understanding</h3>
+                <p class="text-slate-500">文脈に合わせて正しい形を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 14 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">経験を人に語れるようになりました！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「过」を使えば、あなたのこれまでの冒険や体験を相手に伝えることができます。<br>
+                次回からは、自分の意志や能力を伝える「能願動詞（助動詞）」シリーズに入ります。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-5.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-7.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 15: 能願動詞 PART 1 へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "没", pinyin: "méi", mean: "〜ない(否定)" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "___", type: "blank" },
+                    { text: "日本", pinyin: "Rìběn", mean: "日本" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "了 (le)", correct: false },
+                    { text: "过 (guo)", correct: true }
+                ],
+                trans: "私は日本へ行ったことがありません。",
+                hint: "「行ったことがない（未経験）」を表す場合、否定文でも「过」は消えません。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "吃", pinyin: "chī", mean: "食べる" },
+                    { text: "___", type: "blank" },
+                    { text: "臭豆腐", pinyin: "chòudòufu", mean: "臭豆腐" },
+                    { text: "吗", pinyin: "ma", mean: "〜ですか" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "过 (guo)", correct: true },
+                    { text: "了 (le)", correct: false }
+                ],
+                trans: "あなたは臭豆腐を食べたことがありますか？",
+                hint: "「食べたことがあるか」という経験を尋ねる質問には「过」を使います。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "本", pinyin: "běn", mean: "〜冊" },
+                    { text: "书", pinyin: "shū", mean: "本" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "看", pinyin: "kàn", mean: "読む" },
+                    { text: "___", type: "blank" },
+                    { text: "两", pinyin: "liǎng", mean: "2" },
+                    { text: "次", pinyin: "cì", mean: "回" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "了 (le)", correct: false },
+                    { text: "过 (guo)", correct: true }
+                ],
+                trans: "この本は2回読んだことがあります。",
+                hint: "回数（〜次）と一緒に使って「〜回したことがある」と言う場合、「过」が自然です。"
+            },
+            {
+                question: [
+                    { text: "昨天", pinyin: "Zuótiān", mean: "昨日" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "没", pinyin: "méi", mean: "〜ない" },
+                    { text: "看", pinyin: "kàn", mean: "見る" },
+                    { text: "___", type: "blank" },
+                    { text: "电视", pinyin: "diànshì", mean: "テレビ" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "过 (guo)", correct: false },
+                    { text: "(不要)", correct: true }
+                ],
+                trans: "昨日はテレビを見ませんでした。",
+                hint: "特定の過去（昨日）に「しなかった」という事実を述べるだけなので、「过（経験）」は使いません。「了」も否定文なので消えます。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(choice !== "(不要)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                } else if (choice === "(不要)" && btn.innerText === "(不要)") {
+                     btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                if (choice === "(不要)") {
+                    slot.textContent = "×";
+                    slot.classList.add('text-slate-400');
+                } else {
+                    slot.textContent = choice;
+                    if (isCorrect) {
+                        slot.classList.add('border-blue-500', 'text-blue-600');
+                    } else {
+                        slot.classList.add('border-red-500', 'text-red-600');
+                    }
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

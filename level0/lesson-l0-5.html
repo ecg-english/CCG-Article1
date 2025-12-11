@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 05: 指示代名詞 (这 / 那 / 哪)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e; /* teal-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fde68a 60%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-teal-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 0</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">05. 指示代名詞 (这 / 那 / 哪)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                世界を指差す<br class="md:hidden">「魔法の杖」
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                単語がわからなくても、「これ」「あれ」と言えれば意思疎通はできます。<br>
+                中国語の指示代名詞は非常にシンプル。<br>
+                <span class="highlight-text">「近いか、遠いか」の2つだけ</span>で世界を切り分けます。
+            </p>
+        </section>
+
+        <!-- 1. The Big 3: Zhe / Na / Na -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本の3大ツール</h3>
+                    <p class="text-slate-500 text-sm">「こ・そ・あ・ど」ではなく、「近・遠・問」の3つ。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- This -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-teal-500 card-hover text-center">
+                    <div class="mb-4">
+                        <span class="bg-teal-100 text-teal-800 text-xs font-bold px-2 py-1 rounded-full">近称 (Near)</span>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-800 chinese-serif mb-2">
+                        <ruby>这<rt>zhè</rt></ruby>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-700 mb-2">これ</h4>
+                    <p class="text-sm text-slate-500">
+                        自分の手の届く範囲。<br>
+                        "This" と同じ感覚。
+                    </p>
+                </div>
+
+                <!-- That -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-amber-500 card-hover text-center">
+                    <div class="mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 rounded-full">遠称 (Far)</span>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-800 chinese-serif mb-2">
+                        <ruby>那<rt>nà</rt></ruby>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-700 mb-2">あれ / それ</h4>
+                    <p class="text-sm text-slate-500">
+                        自分から離れているもの。<br>
+                        <strong>相手の手元にあるものも「那」です。</strong>
+                    </p>
+                </div>
+
+                <!-- Which -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-purple-500 card-hover text-center">
+                    <div class="mb-4">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded-full">疑問 (Ask)</span>
+                    </div>
+                    <div class="text-4xl font-bold text-slate-800 chinese-serif mb-2">
+                        <ruby>哪<rt>nǎ</rt></ruby>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-700 mb-2">どれ</h4>
+                    <p class="text-sm text-slate-500">
+                        「那(nà)」と漢字が似ていますが、<br>
+                        <strong>口偏（口）</strong>があるのが疑問詞です。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Caution: No "Sore" -->
+            <div class="mt-8 bg-slate-100 p-6 rounded-xl border border-slate-200 flex flex-col md:flex-row gap-6 items-center">
+                <div class="bg-white p-4 rounded-full shadow-sm text-2xl text-slate-400">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-2">日本語との決定的な違い：「それ」がない！</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        日本語は「これ（自分）・それ（相手）・あれ（遠く）」の3段階ですが、中国語は英語と同じく2段階です。<br>
+                        相手が持っているスマホを指す時も、自分から離れていれば<strong>「那 (あれ)」</strong>を使います。
+                    </p>
+                    <div class="flex gap-4 text-xs font-mono bg-white p-3 rounded border border-slate-200 inline-flex">
+                        <span class="text-slate-400">🇯🇵 これ / それ / あれ</span>
+                        <i class="fas fa-arrow-right text-slate-300 mt-1"></i>
+                        <span class="text-teal-600 font-bold">🇨🇳 这 / 那 / 那</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Location & Plural -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">場所・複数への変身</h3>
+                    <p class="text-slate-500 text-sm">後ろにパーツをつけるだけで、「場所」や「複数」に変わります。</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="p-4 text-slate-500 font-medium text-sm">基本</th>
+                            <th class="p-4 text-slate-500 font-medium text-sm">
+                                <span class="block text-slate-800 font-bold mb-1">場所化 (ここ・そこ)</span>
+                                <span class="text-xs font-normal">+ <ruby>儿<rt>r</rt></ruby> (北) / <ruby>里<rt>lǐ</rt></ruby> (南)</span>
+                            </th>
+                            <th class="p-4 text-slate-500 font-medium text-sm">
+                                <span class="block text-slate-800 font-bold mb-1">複数化 (これら・それら)</span>
+                                <span class="text-xs font-normal">+ <ruby>些<rt>xiē</rt></ruby></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700">
+                        <!-- Zhe Row -->
+                        <tr class="group hover:bg-teal-50/30 transition">
+                            <td class="p-4">
+                                <div class="font-bold text-xl chinese-serif text-teal-700">这 <span class="text-sm font-sans font-normal text-slate-400">zhè</span></div>
+                                <div class="text-xs text-slate-500">これ</div>
+                            </td>
+                            <td class="p-4">
+                                <div class="mb-1">
+                                    <span class="font-bold chinese-serif">这儿</span> <span class="text-xs text-slate-400">zhèr</span>
+                                </div>
+                                <div class="text-xs text-slate-500">ここ (口語・北方)</div>
+                                <div class="mt-2 opacity-60">
+                                    <span class="font-bold chinese-serif">这里</span> <span class="text-xs text-slate-400">zhèlǐ</span>
+                                    <div class="text-[10px]">ここ (文章・南方)</div>
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <div class="font-bold chinese-serif">这些 <span class="text-sm font-sans font-normal text-slate-400">zhèxiē</span></div>
+                                <div class="text-xs text-slate-500">これら</div>
+                            </td>
+                        </tr>
+                        <!-- Na Row -->
+                        <tr class="group hover:bg-amber-50/30 transition">
+                            <td class="p-4">
+                                <div class="font-bold text-xl chinese-serif text-amber-700">那 <span class="text-sm font-sans font-normal text-slate-400">nà</span></div>
+                                <div class="text-xs text-slate-500">あれ</div>
+                            </td>
+                            <td class="p-4">
+                                <div class="mb-1">
+                                    <span class="font-bold chinese-serif">那儿</span> <span class="text-xs text-slate-400">nàr</span>
+                                </div>
+                                <div class="text-xs text-slate-500">あそこ/そこ</div>
+                                <div class="mt-2 opacity-60">
+                                    <span class="font-bold chinese-serif">那里</span> <span class="text-xs text-slate-400">nàlǐ</span>
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <div class="font-bold chinese-serif">那些 <span class="text-sm font-sans font-normal text-slate-400">nàxiē</span></div>
+                                <div class="text-xs text-slate-500">あれら</div>
+                            </td>
+                        </tr>
+                        <!-- Na (Ask) Row -->
+                        <tr class="group hover:bg-purple-50/30 transition">
+                            <td class="p-4">
+                                <div class="font-bold text-xl chinese-serif text-purple-700">哪 <span class="text-sm font-sans font-normal text-slate-400">nǎ</span></div>
+                                <div class="text-xs text-slate-500">どれ</div>
+                            </td>
+                            <td class="p-4">
+                                <div class="mb-1">
+                                    <span class="font-bold chinese-serif">哪儿</span> <span class="text-xs text-slate-400">nǎr</span>
+                                </div>
+                                <div class="text-xs text-slate-500">どこ</div>
+                                <div class="mt-2 opacity-60">
+                                    <span class="font-bold chinese-serif">哪里</span> <span class="text-xs text-slate-400">nǎlǐ</span>
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <div class="font-bold chinese-serif">哪些 <span class="text-sm font-sans font-normal text-slate-400">nǎxiē</span></div>
+                                <div class="text-xs text-slate-500">どれら (どのグループ)</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-3 text-right text-xs text-slate-400">
+                <i class="fas fa-info-circle mr-1"></i> 「儿 (r)」は巻き舌、「里 (li)」は普通の音です。どちらを使っても通じます。
+            </div>
+        </section>
+
+        <!-- 3. Native Pronunciation Hack -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">ネイティブの発音ハック</h3>
+                    <p class="text-slate-500 text-sm">教科書通り「zhè ge」と言っていると、ネイティブの会話が聞き取れません。</p>
+                </div>
+            </div>
+
+            <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-indigo-900 mb-4 flex items-center">
+                            <i class="fas fa-magic mr-2"></i> 音の融合現象
+                        </h4>
+                        <p class="text-sm text-slate-700 mb-4">
+                            量詞の「個 (ge)」などが後ろにつく時、発音が変化して聞こえることが非常に多いです。<br>
+                            これを「口語的変音」と言います。
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-xl shadow-sm">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs text-slate-400">これ (This one)</span>
+                                    <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-1 rounded">変化</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-slate-400 line-through">zhè ge</div>
+                                    <i class="fas fa-arrow-right text-slate-300"></i>
+                                    <div class="font-bold text-2xl text-slate-800">zhèi ge</div>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">「ジェイガ」のように聞こえます。</p>
+                            </div>
+
+                            <div class="bg-white p-4 rounded-xl shadow-sm">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs text-slate-400">あれ (That one)</span>
+                                    <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-1 rounded">変化</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-slate-400 line-through">nà ge</div>
+                                    <i class="fas fa-arrow-right text-slate-300"></i>
+                                    <div class="font-bold text-2xl text-slate-800">nèi ge</div>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1">「ネイガ」のように聞こえます。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-indigo-900 mb-4 flex items-center">
+                            <i class="fas fa-comment-dots mr-2"></i> 魔法のフィラー
+                        </h4>
+                        <p class="text-sm text-slate-700 mb-4">
+                            言葉に詰まった時、日本語の「えーっと...」「あのー...」にあたる言葉として、中国人は<span class="font-bold text-indigo-700">「那个... (nèige...)」</span>を連発します。
+                        </p>
+                        <div class="bg-white p-6 rounded-xl border-l-4 border-indigo-400 italic text-slate-600">
+                            "我要那个... 那个... 啤酒！"<br>
+                            <span class="text-xs not-italic text-slate-400">
+                                (私はえーっと... あのー... ビールが欲しい！)
+                            </span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-4">
+                            ※ 知らないと「ネイガネイガ」と聞こえて驚くかもしれませんが、ただの「えーっと」です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Quick Quiz</h3>
+                <p class="text-slate-500">状況に合わせて正しい指示詞を選びましょう。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center">
+            <div class="inline-block bg-teal-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-teal-700 font-bold">Lesson 05 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">世界が見えてきましたね！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                「これ」と「あれ」で世界を指差せるようになりました。<br>
+                次はいよいよ、質問するための「疑問文」の作り方をマスターします。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l0-4.html" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-8 rounded-xl transition-all">
+                    前のレッスン
+                </a>
+                <a href="lesson-l0-6.html" class="bg-teal-700 hover:bg-teal-800 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-teal-700/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 06: 単純疑問文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Quiz
+        const quizData = [
+            {
+                question: "（手元のメニューを指して）私は___が欲しいです。",
+                context: "近くにあるもの",
+                options: [
+                    { text: "这 (zhè)", correct: true },
+                    { text: "那 (nà)", correct: false },
+                    { text: "哪 (nǎ)", correct: false }
+                ],
+                trans: "我要这个。",
+                hint: "自分のテリトリー内にあるものは「近称」です。"
+            },
+            {
+                question: "（相手が持っているペンを指して）___はあなたのペンですか？",
+                context: "相手の手元にあるもの",
+                options: [
+                    { text: "这 (zhè)", correct: false },
+                    { text: "那 (nà)", correct: true },
+                    { text: "哪 (nǎ)", correct: false }
+                ],
+                trans: "那是你的笔吗？",
+                hint: "重要：相手の手元にあっても、自分から遠ければ「那（あれ）」を使います。"
+            },
+            {
+                question: "トイレは___ですか？",
+                context: "場所を尋ねる",
+                options: [
+                    { text: "这儿 (zhèr)", correct: false },
+                    { text: "那儿 (nàr)", correct: false },
+                    { text: "哪儿 (nǎr)", correct: true }
+                ],
+                trans: "洗手间在哪儿？",
+                hint: "場所を問う疑問詞（どこ）には「口偏」がつきます。"
+            },
+            {
+                question: "（遠くの建物を指して）___は私の会社です。",
+                context: "遠くにあるもの",
+                options: [
+                    { text: "这儿 (zhèr)", correct: false },
+                    { text: "那 (nà)", correct: false },
+                    { text: "那里 (nàlǐ)", correct: true }
+                ],
+                trans: "那里是我的公司。",
+                hint: "「建物（場所）」を指しているので、「那」ではなく場所化の「里/儿」が必要です。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text}', ${opt.correct})" 
+                        class="choice-btn w-full sm:w-auto px-6 py-3 rounded-lg border-2 border-slate-200 hover:border-teal-400 hover:text-teal-600 font-bold text-slate-600 transition chinese-serif mb-2 sm:mb-0 sm:mr-2">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-1">${item.question}</h4>
+                    <p class="text-xs text-slate-400"><i class="fas fa-tag mr-1"></i>${item.context}</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center sm:justify-start flex-wrap mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-slate-50 rounded p-4 text-sm border border-slate-200">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if(!btn.innerText.includes(choice) && !isCorrect) {
+                     // dim logic
+                }
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText === choice) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-teal-500', 'text-teal-600', 'bg-teal-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-teal-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2 chinese-serif text-lg">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="mb-2 text-slate-600">状況をもう一度確認しましょう。</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

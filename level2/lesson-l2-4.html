@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 21: 方向補語 (単純・複合)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">21. 方向補語 (単純・複合)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「入って・くる」<br class="md:hidden">「持って・帰って・いく」
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                日本語でも「持ってくる」「飛んでいく」のように、動作の方向を詳しく言いますよね。<br>
+                中国語も同じです。動詞の後ろに方向を表す言葉をくっつけるだけ。<br>
+                ただし、<span class="highlight-text">「場所」を言う時の語順</span>には要注意です。
+            </p>
+        </section>
+
+        <!-- 1. Simple Directional Complements -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">単純方向補語 (来 / 去)</h3>
+                    <p class="text-slate-500 text-sm">自分の方へ向かうか、自分から離れるか。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <div class="grid md:grid-cols-2 gap-8 items-center text-center">
+                    <!-- Lai (Come) -->
+                    <div class="relative p-6 bg-green-50 rounded-xl border border-green-100">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-3 py-1 rounded-full font-bold">近づく</div>
+                        <div class="text-4xl text-green-500 mb-2"><i class="fas fa-arrow-circle-down"></i></div>
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif mb-1">来 <span class="text-sm font-sans font-normal text-slate-400">lái</span></h4>
+                        <p class="text-sm text-slate-600 font-bold mb-4">〜てくる (Come)</p>
+                        
+                        <div class="bg-white p-3 rounded shadow-sm text-left">
+                            <div class="mb-2">
+                                <span class="chinese-serif font-bold text-lg">带<span class="text-green-600">来</span></span>
+                                <span class="text-xs text-slate-500 ml-2">(持って来る)</span>
+                            </div>
+                            <div>
+                                <span class="chinese-serif font-bold text-lg">买<span class="text-green-600">来</span></span>
+                                <span class="text-xs text-slate-500 ml-2">(買って来る)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Qu (Go) -->
+                    <div class="relative p-6 bg-blue-50 rounded-xl border border-blue-100">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-bold">遠ざかる</div>
+                        <div class="text-4xl text-blue-500 mb-2"><i class="fas fa-arrow-circle-up"></i></div>
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif mb-1">去 <span class="text-sm font-sans font-normal text-slate-400">qù</span></h4>
+                        <p class="text-sm text-slate-600 font-bold mb-4">〜ていく (Go)</p>
+                        
+                        <div class="bg-white p-3 rounded shadow-sm text-left">
+                            <div class="mb-2">
+                                <span class="chinese-serif font-bold text-lg">带<span class="text-blue-600">去</span></span>
+                                <span class="text-xs text-slate-500 ml-2">(持って行く)</span>
+                            </div>
+                            <div>
+                                <span class="chinese-serif font-bold text-lg">寄<span class="text-blue-600">去</span></span>
+                                <span class="text-xs text-slate-500 ml-2">(郵送して送る)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Compound Directional Complements -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">複合方向補語 (上/下/进/出/回/过/起 + 来/去)</h3>
+                    <p class="text-slate-500 text-sm">「具体的な動き」＋「方向」の組み合わせ。日本語とそっくりです。</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left min-w-[600px]">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr>
+                                <th class="p-4 w-1/4 text-xs font-bold text-slate-500 uppercase">第1成分 (動き)</th>
+                                <th class="p-4 w-1/4 text-xs font-bold text-slate-500 uppercase">第2成分 (方向)</th>
+                                <th class="p-4 w-1/4 text-xs font-bold text-slate-500 uppercase">合体 (例)</th>
+                                <th class="p-4 w-1/4 text-xs font-bold text-slate-500 uppercase">意味</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-sm">
+                            <!-- Shang -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">上 (shàng) <span class="text-xs font-normal text-slate-400">上がる</span></td>
+                                <td class="p-4 text-green-600 font-bold">来 (lái)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">上来</td>
+                                <td class="p-4 text-slate-600">上がってくる</td>
+                            </tr>
+                            <!-- Xia -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">下 (xià) <span class="text-xs font-normal text-slate-400">下がる</span></td>
+                                <td class="p-4 text-blue-600 font-bold">去 (qù)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">下去</td>
+                                <td class="p-4 text-slate-600">下りていく</td>
+                            </tr>
+                            <!-- Jin -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">进 (jìn) <span class="text-xs font-normal text-slate-400">入る</span></td>
+                                <td class="p-4 text-green-600 font-bold">来 (lái)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">进来</td>
+                                <td class="p-4 text-slate-600">入ってくる</td>
+                            </tr>
+                            <!-- Chu -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">出 (chū) <span class="text-xs font-normal text-slate-400">出る</span></td>
+                                <td class="p-4 text-blue-600 font-bold">去 (qù)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">出去</td>
+                                <td class="p-4 text-slate-600">出ていく</td>
+                            </tr>
+                            <!-- Hui -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">回 (huí) <span class="text-xs font-normal text-slate-400">戻る</span></td>
+                                <td class="p-4 text-green-600 font-bold">来 (lái)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">回来</td>
+                                <td class="p-4 text-slate-600">帰ってくる/戻ってくる</td>
+                            </tr>
+                            <!-- Guo -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">过 (guò) <span class="text-xs font-normal text-slate-400">通る</span></td>
+                                <td class="p-4 text-blue-600 font-bold">去 (qù)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">过去</td>
+                                <td class="p-4 text-slate-600">向こうへ行く/通り過ぎる</td>
+                            </tr>
+                            <!-- Qi -->
+                            <tr class="hover:bg-amber-50/30">
+                                <td class="p-4 font-bold text-slate-700">起 (qǐ) <span class="text-xs font-normal text-slate-400">起きる</span></td>
+                                <td class="p-4 text-green-600 font-bold">来 (lái)</td>
+                                <td class="p-4 chinese-serif font-bold text-lg">起来</td>
+                                <td class="p-4 text-slate-600">起き上がる/（〜し始める）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <h5 class="font-bold text-slate-700 text-sm mb-2"><i class="fas fa-layer-group mr-2 text-amber-500"></i> さらに動詞と合体！</h5>
+                <p class="text-sm text-slate-600">
+                    これらはさらに動詞の後ろにくっつきます。<br>
+                    <span class="chinese-serif font-bold">跑</span>(走る) + <span class="chinese-serif font-bold text-amber-600">进</span>(入る) + <span class="chinese-serif font-bold text-green-600">来</span>(くる) = <span class="chinese-serif font-bold text-lg">跑进来</span> (走って入ってくる)
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. The "Sandwich Rule" (Critical!) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">場所の目的語サンドイッチ・ルール</h3>
+                    <p class="text-slate-500 text-sm">ここが最重要ポイント。「場所」は必ず間に挟みます。</p>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-8 rounded-r-2xl shadow-sm">
+                <h4 class="font-bold text-amber-800 text-xl mb-4 flex items-center">
+                    <i class="fas fa-exclamation-circle mr-2"></i> 鉄則：場所は「来/去」の前！
+                </h4>
+                
+                <div class="bg-white p-6 rounded-xl shadow-inner mb-6 text-center">
+                    <div class="inline-flex items-center gap-2 text-lg font-bold text-slate-700 mb-2">
+                        <div class="p-2 border border-slate-300 rounded">動詞</div>
+                        <i class="fas fa-plus text-slate-300"></i>
+                        <div class="p-2 border border-slate-300 rounded bg-indigo-50 text-indigo-700">場所</div>
+                        <i class="fas fa-plus text-slate-300"></i>
+                        <div class="p-2 border border-slate-300 rounded bg-green-50 text-green-700">来 / 去</div>
+                    </div>
+                    <p class="text-xs text-slate-500">※「場所」は「来/去」を飛び越えられません。</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Example 1 -->
+                    <div>
+                        <p class="text-sm text-amber-900 font-bold mb-2">例：家に帰ってくる</p>
+                        <div class="bg-white p-3 rounded-lg border border-red-200 opacity-60 mb-2">
+                            <span class="text-xs text-red-500 font-bold block">× 間違い (日本語語順)</span>
+                            <span class="chinese-serif text-slate-500 line-through">回来家</span> (huí lái jiā)
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-2 border-green-400">
+                            <span class="text-xs text-green-600 font-bold block">○ 正解 (サンドイッチ)</span>
+                            <span class="chinese-serif font-bold text-slate-800 text-lg">
+                                <ruby>回<rt>huí</rt></ruby> <span class="text-indigo-600 border-b-2 border-indigo-200">家</span> <ruby>来<rt>lái</rt></ruby>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Example 2 -->
+                    <div>
+                        <p class="text-sm text-amber-900 font-bold mb-2">例：教室に入っていく</p>
+                        <div class="bg-white p-3 rounded-lg border border-red-200 opacity-60 mb-2">
+                            <span class="text-xs text-red-500 font-bold block">× 間違い</span>
+                            <span class="chinese-serif text-slate-500 line-through">进击教室</span> (jìn qù jiàoshì)
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-2 border-green-400">
+                            <span class="text-xs text-green-600 font-bold block">○ 正解</span>
+                            <span class="chinese-serif font-bold text-slate-800 text-lg">
+                                <ruby>进<rt>jìn</rt></ruby> <span class="text-indigo-600 border-b-2 border-indigo-200">教室</span> <ruby>去<rt>qù</rt></ruby>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tip for Regular Objects -->
+            <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-start gap-4">
+                <div class="text-blue-500 text-xl"><i class="fas fa-info-circle"></i></div>
+                <div>
+                    <h5 class="font-bold text-slate-700 text-sm mb-1">場所じゃない目的語（本、お金など）は？</h5>
+                    <p class="text-sm text-slate-600">
+                        「場所」以外の目的語は、挟んでもいいし、最後に置いても構いません。<br>
+                        例：带一本书去 (○) / 带去一本书 (○)<br>
+                        <span class="text-xs text-slate-400">※迷ったら挟んでおけば間違いありません。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Structure Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい語順を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 21 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">素晴らしい！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「場所は挟む」。これさえ守れば、方向補語は怖くありません。<br>
+                次は、「食べきれない」「聞き取れる」といった能力を表す「可能補語」に進みます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-3.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l2-5.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 22: 可能補語へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "他", pinyin: "Tā", mean: "彼" },
+                    { text: "回", pinyin: "huí", mean: "戻る" },
+                    { text: "___", type: "blank" },
+                    { text: "___", type: "blank" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "来家 (lái jiā)", correct: false },
+                    { text: "家来 (jiā lái)", correct: true }
+                ],
+                trans: "彼は家に帰ってきました。",
+                hint: "「家」は場所なので、方向補語「来」の前に置く（挟む）必要があります。"
+            },
+            {
+                question: [
+                    { text: "请", pinyin: "Qǐng", mean: "〜してください" },
+                    { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+                    { text: "站", pinyin: "zhàn", mean: "立つ" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "起来 (qǐlái)", correct: true },
+                    { text: "出来 (chūlái)", correct: false }
+                ],
+                trans: "みなさん、立ち上がってください。",
+                hint: "「立ち上がる（低いところから高いところへ）」という動作なので「起来」を使います。"
+            },
+            {
+                question: [
+                    { text: "老师", pinyin: "Lǎoshī", mean: "先生" },
+                    { text: "进", pinyin: "jìn", mean: "入る" },
+                    { text: "___", type: "blank" },
+                    { text: "___", type: "blank" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "教室来 (jiàoshì lái)", correct: true },
+                    { text: "来教室 (lái jiàoshì)", correct: false }
+                ],
+                trans: "先生が教室に入ってきました。",
+                hint: "「教室」は場所なので、「進＋教室＋来」の順序になります。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "想", pinyin: "xiǎng", mean: "〜したい" },
+                    { text: "带", pinyin: "dài", mean: "持つ" },
+                    { text: "点儿", pinyin: "diǎnr", mean: "少し" },
+                    { text: "礼物", pinyin: "lǐwù", mean: "お土産" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "回 (huí)", correct: false },
+                    { text: "回去 (huíqù)", correct: true }
+                ],
+                trans: "少しお土産を持って帰りたい。",
+                hint: "「持って（带）＋帰って（回）＋いく（去）」という複合方向補語です。「礼物」は場所ではないので、間に入れても後ろでもOKですが、ここでは文末に補語が来る形を選びます。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            let blankCount = 0;
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    blankCount++;
+                    // Only render one visual slot area per contiguous blanks, or just simple slots
+                    if(blankCount === 1) { // simple logic for now
+                         questionHtml += `<span class="inline-block w-24 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                    }
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice.split(' ')[0])) { // Simple matching
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice; // Remove pinyin for slot if needed, or keep
+                if (isCorrect) {
+                    slot.classList.add('border-amber-500', 'text-amber-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

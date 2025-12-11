@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 29: 離合詞 (Separable Verbs)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">29. 離合詞 (Separable Verbs)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「会う」は動詞だけど<br class="md:hidden">動詞じゃない？
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「见面（会う）」や「睡觉（寝る）」は、実は一つの単語ではありません。<br>
+                <strong>「動詞＋目的語」がセットになったフレーズ</strong>なのです。<br>
+                だからこそ、間に「1時間」を入れたり、「彼と」と言いたい時に特殊なルールが必要になります。
+            </p>
+        </section>
+
+        <!-- 1. What is Liheci? -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">離合詞の正体</h3>
+                    <p class="text-slate-500 text-sm">くっついたり（合）、離れたり（離）できるから「離合詞」です。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                    <!-- Combined -->
+                    <div class="text-center p-4 bg-slate-50 rounded-xl border border-slate-200 w-48">
+                        <p class="text-xs font-bold text-slate-400 mb-2">普段の姿</p>
+                        <p class="chinese-serif text-3xl font-bold text-slate-800 mb-1">
+                            <ruby>见面<rt>jiànmiàn</rt></ruby>
+                        </p>
+                        <p class="text-sm text-slate-600">会う</p>
+                    </div>
+
+                    <div class="text-3xl text-rose-300"><i class="fas fa-random"></i></div>
+
+                    <!-- Separated -->
+                    <div class="text-center p-4 bg-rose-50 rounded-xl border-2 border-rose-200 w-64 shadow-md relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rose-600 text-white text-[10px] px-2 py-0.5 rounded-full">分解！</div>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="bg-white px-2 py-1 rounded border border-rose-200">
+                                <span class="chinese-serif text-xl font-bold text-rose-700">见</span>
+                                <span class="block text-[10px] text-slate-400">動詞(V)</span>
+                            </div>
+                            <span class="text-slate-400">+</span>
+                            <div class="bg-white px-2 py-1 rounded border border-rose-200">
+                                <span class="chinese-serif text-xl font-bold text-rose-700">面</span>
+                                <span class="block text-[10px] text-slate-400">名詞(O)</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-rose-800 mt-2 font-bold">「顔(面) を 見る(见)」</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h4 class="font-bold text-rose-800 mb-2">なぜこれが重要？</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        「见面」自体がすでに「V + O」の構造を持っています。<br>
+                        そのため、さらに後ろに目的語（〜に会う）をつけることができません。<br>
+                        <span class="text-red-500 font-bold text-xs block mt-2">× 见面他 (彼に会う) </span>
+                        <span class="text-xs text-slate-500">→ 「见面」という動詞の後ろに「他」を置くと、目的語が2つになってしまいます！</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Golden Rules -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">離合詞の3大ルール</h3>
+                    <p class="text-slate-500 text-sm">これさえ守れば、離合詞は怖くありません。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Rule 1: No Object -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded font-bold">ルール 1</span>
+                        <i class="fas fa-ban text-red-300 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">後ろに目的語NG</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「誰々と」「どこどこを」と言いたい時は、前置詞を使って前に出します。
+                    </p>
+                    <div class="space-y-2 text-sm">
+                        <div class="bg-red-50 p-2 rounded text-center opacity-60">
+                            <span class="line-through text-red-800">见面他</span>
+                        </div>
+                        <div class="bg-green-50 p-2 rounded text-center border border-green-200">
+                            <span class="text-green-700 font-bold">跟 他 见面</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rule 2: Insert Duration -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded font-bold">ルール 2</span>
+                        <i class="fas fa-hourglass-half text-amber-300 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">時間は間に挟む</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「1時間〜する」「3回〜する」などの数量は、VとOの間に挟みます。
+                    </p>
+                    <div class="bg-amber-50 p-3 rounded text-center">
+                        <p class="text-xs text-slate-500 mb-1">1時間寝る</p>
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>睡<rt>shuì</rt></ruby> <span class="text-amber-600">一个小时</span> <ruby>觉<rt>jiào</rt></ruby>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Rule 3: Insert Particles -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">ルール 3</span>
+                        <i class="fas fa-puzzle-piece text-blue-300 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">助詞も間に挟む</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        完了の「了」、経験の「过」、持続の「着」は動詞の直後（真ん中）に入ります。
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded text-center">
+                        <p class="text-xs text-slate-500 mb-1">結婚した</p>
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>结<rt>jié</rt></ruby> <span class="text-blue-600">了</span> <ruby>婚<rt>hūn</rt></ruby>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Common Liheci List -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">頻出！離合詞リスト</h3>
+                    <p class="text-slate-500 text-sm">これらは全部「V+O」構造です。単語として覚える時も意識しましょう。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Group 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <div>
+                            <span class="chinese-serif font-bold text-lg text-slate-800">见面</span>
+                            <span class="text-xs text-slate-400 block">jiànmiàn</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-slate-500">会う</span>
+                            <span class="text-[10px] text-rose-400 block">顔を見る</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <div>
+                            <span class="chinese-serif font-bold text-lg text-slate-800">睡觉</span>
+                            <span class="text-xs text-slate-400 block">shuìjiào</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-slate-500">寝る</span>
+                            <span class="text-[10px] text-rose-400 block">眠りを寝る</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <div>
+                            <span class="chinese-serif font-bold text-lg text-slate-800">吃饭</span>
+                            <span class="text-xs text-slate-400 block">chīfàn</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-slate-500">食事する</span>
+                            <span class="text-[10px] text-rose-400 block">飯を食う</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <div>
+                            <span class="chinese-serif font-bold text-lg text-slate-800">结婚</span>
+                            <span class="text-xs text-slate-400 block">jiéhūn</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-slate-500">結婚する</span>
+                            <span class="text-[10px] text-rose-400 block">婚を結ぶ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <div>
+                            <span class="chinese-serif font-bold text-lg text-slate-800">生气</span>
+                            <span class="text-xs text-slate-400 block">shēngqì</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-slate-500">怒る</span>
+                            <span class="text-[10px] text-rose-400 block">気を生む</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                        <div>
+                            <span class="chinese-serif font-bold text-lg text-slate-800">帮忙</span>
+                            <span class="text-xs text-slate-400 block">bāngmáng</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-bold text-slate-500">手伝う</span>
+                            <span class="text-[10px] text-rose-400 block">忙しさを助ける</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caution: Bangmang -->
+            <div class="mt-6 bg-slate-50 p-4 rounded-xl border-l-4 border-amber-400 text-sm text-slate-700">
+                <i class="fas fa-exclamation-circle mr-1 text-amber-500"></i>
+                <strong>注意：帮忙 (手伝う)</strong><br>
+                「私を手伝って」と言う時、<span class="line-through text-slate-400">帮忙我</span> は間違いです。<br>
+                正しくは <span class="chinese-serif font-bold text-rose-700">帮我的忙</span> (私の忙しさを助ける) または単に <span class="chinese-serif font-bold text-rose-700">帮我</span> と言います。
+            </div>
+        </section>
+
+        <!-- 4. Advanced: 重ね型 (AAB) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">離合詞の重ね型 (AAB)</h3>
+                    <p class="text-slate-500 text-sm">Lesson 10の復習。「ちょっと〜する」の形。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200 flex flex-col md:flex-row items-center gap-8">
+                <div class="text-center w-full md:w-1/2">
+                    <p class="text-xs font-bold text-slate-400 mb-2">普通の2文字動詞</p>
+                    <div class="bg-slate-100 p-4 rounded-xl">
+                        <span class="chinese-serif text-xl font-bold text-slate-600">休息 (AB)</span>
+                        <div class="mt-2 text-2xl text-slate-800 font-bold">
+                            ABAB <span class="text-sm font-normal text-slate-500 ml-2">(休息休息)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-3xl text-slate-300 hidden md:block"><i class="fas fa-not-equal"></i></div>
+                <div class="text-3xl text-slate-300 md:hidden"><i class="fas fa-arrow-down"></i></div>
+
+                <div class="text-center w-full md:w-1/2">
+                    <p class="text-xs font-bold text-rose-500 mb-2">離合詞</p>
+                    <div class="bg-rose-50 p-4 rounded-xl border-2 border-rose-200 relative">
+                        <div class="absolute -top-3 right-4 bg-rose-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">動詞だけ重ねる</div>
+                        <span class="chinese-serif text-xl font-bold text-rose-700">散步 (VO)</span>
+                        <div class="mt-2 text-2xl text-rose-800 font-bold">
+                            AAB <span class="text-sm font-normal text-slate-500 ml-2">(散散步)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Structure Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい語順を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 29 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                離合詞のサンドイッチ構造に慣れれば、中国語のリズムが自然と身につきます。<br>
+                次回は、「〜さえあれば」「〜して初めて」などの条件を表す「複文と接続詞」に進みます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-2.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l3-4.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 30: 複文と接続詞へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "想", pinyin: "xiǎng", mean: "〜したい" },
+                    { text: "跟", pinyin: "gēn", mean: "〜と" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "见面 (jiànmiàn)", correct: true },
+                    { text: "见面你 (jiànmiàn nǐ)", correct: false }
+                ],
+                trans: "私はあなたと会いたいです。",
+                hint: "「见面」はすでに目的語（面）を含んでいるので、後ろに「你」を置けません。「跟你见面（あなたと会う）」の形にします。"
+            },
+            {
+                question: [
+                    { text: "昨晚", pinyin: "Zuówǎn", mean: "昨夜" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "只", pinyin: "zhǐ", mean: "ただ〜だけ" },
+                    { text: "睡", pinyin: "shuì", mean: "寝る" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "___", type: "blank" },
+                    { text: "觉", pinyin: "jiào", mean: "眠り" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "三个小时 (sān ge xiǎoshí)", correct: true },
+                    { text: "三 (sān)", correct: false } // Too simple/wrong context, time duration needs measure word usually or context. 
+                ],
+                trans: "昨夜、私は3時間しか寝ませんでした。",
+                hint: "時間（時量）は、離合詞「睡觉」の間に挟みます。「睡＋時間＋觉」の形です。"
+            },
+            {
+                question: [
+                    { text: "他", pinyin: "Tā", mean: "彼" },
+                    { text: "结", pinyin: "jié", mean: "結ぶ(結婚)" },
+                    { text: "___", type: "blank" },
+                    { text: "婚", pinyin: "hūn", mean: "婚" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "吗", pinyin: "ma", mean: "〜ですか" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "过 (guo)", correct: true },
+                    { text: "着 (zhe)", correct: false }
+                ],
+                trans: "彼は結婚したことがありますか？（結婚経験はありますか？）",
+                hint: "経験の「过」は動詞の直後、つまり離合詞の間に挟みます。「结过婚」となります。"
+            },
+            {
+                question: [
+                    { text: "咱们", pinyin: "Zánmen", mean: "私たち" },
+                    { text: "找", pinyin: "zhǎo", mean: "探す" },
+                    { text: "个", pinyin: "ge", mean: "個" },
+                    { text: "地方", pinyin: "dìfang", mean: "場所" },
+                    { text: "___", type: "blank" },
+                    { text: "吧", pinyin: "ba", mean: "〜しよう" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "聊聊天 (liáoliáotiān)", correct: true },
+                    { text: "聊天聊天 (liáotiānliáotiān)", correct: false }
+                ],
+                trans: "どこか場所を探して、ちょっとおしゃべりしましょう。",
+                hint: "離合詞の重ね型は「AAB」です。「聊聊天」が正解です。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-24 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                // Special handling for long text
+                if (choice.length > 3) {
+                    slot.style.width = 'auto';
+                    slot.style.minWidth = '5rem';
+                }
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

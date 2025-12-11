@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 22: 可能補語</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">22. 可能補語</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「できる」と「できない」を<br class="md:hidden">間に挟む
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「聞き取れる」「食べきれない」。<br>
+                これらは「聞く・食べる」という動作の結果が「実現可能か？」を表しています。<br>
+                中国語では、動詞と補語の間に<span class="highlight-text">「得」か「不」を挟むだけ</span>で表現できます。
+            </p>
+        </section>
+
+        <!-- 1. The Logic: Sandwiching -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本の仕組み：サンドイッチ構造</h3>
+                    <p class="text-slate-500 text-sm">結果補語・方向補語の間にパーツを割り込ませます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <div class="flex flex-col md:flex-row justify-around items-center gap-8">
+                    
+                    <!-- Original -->
+                    <div class="text-center opacity-60">
+                        <p class="text-xs font-bold text-slate-400 mb-2">元の形 (結果補語)</p>
+                        <div class="bg-slate-100 p-4 rounded-xl border border-slate-200">
+                            <span class="chinese-serif text-2xl font-bold text-slate-600">听懂</span>
+                            <p class="text-xs text-slate-500 mt-1">tīngdǒng (理解した)</p>
+                        </div>
+                    </div>
+
+                    <div class="text-2xl text-slate-300"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Potential (Can) -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-green-600 mb-2">肯定：できる</p>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-200 shadow-sm relative">
+                            <div class="chinese-serif text-3xl font-bold text-slate-800">
+                                <ruby>听<rt>tīng</rt></ruby> <span class="text-green-600 font-bold mx-1">得</span> <ruby>懂<rt>dǒng</rt></ruby>
+                            </div>
+                            <p class="text-sm text-green-800 font-bold mt-2">聞いてわかる</p>
+                            <p class="text-[10px] text-green-600 mt-1">間に「得」を入れる</p>
+                        </div>
+                    </div>
+
+                    <!-- Potential (Cannot) -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-red-600 mb-2">否定：できない</p>
+                        <div class="bg-red-50 p-4 rounded-xl border border-red-200 shadow-sm relative">
+                            <div class="absolute -top-3 right-0 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">頻出！</div>
+                            <div class="chinese-serif text-3xl font-bold text-slate-800">
+                                <ruby>听<rt>tīng</rt></ruby> <span class="text-red-600 font-bold mx-1">不</span> <ruby>懂<rt>dǒng</rt></ruby>
+                            </div>
+                            <p class="text-sm text-red-800 font-bold mt-2">聞いてわからない</p>
+                            <p class="text-[10px] text-red-600 mt-1">間に「不」を入れる</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-slate-50 p-4 rounded-lg text-sm text-slate-600 border-l-4 border-amber-400">
+                    <strong><i class="fas fa-info-circle mr-1"></i> ヒント：</strong><br>
+                    日常会話では、肯定形（〜できる）よりも、<strong>否定形（〜できない）の方が圧倒的によく使われます。</strong><br>
+                    「食べきれない」「見つからない」「覚えられない」など、不可能な状況を説明するのに便利だからです。
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Essential Patterns List -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">まずはこれだけ！必須パターン5選</h3>
+                    <p class="text-slate-500 text-sm">組み合わせは無限ですが、日常で使う「型」は決まっています。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. Wan (Finish) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-blue-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">〜し終わる</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">V + (不) + 完</h4>
+                    <p class="text-sm text-slate-600 mb-3">最後まで全部できるか。</p>
+                    <div class="bg-slate-50 p-3 rounded text-sm space-y-2">
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">吃不完</span>
+                            <span class="text-slate-500">食べきれない</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-slate-700">做不完</span>
+                            <span class="text-slate-500">やり終わらない</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Dong/Jian (Perception) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">知覚・理解</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">V + (不) + 懂/见</h4>
+                    <p class="text-sm text-slate-600 mb-3">理解できるか、知覚できるか。</p>
+                    <div class="bg-slate-50 p-3 rounded text-sm space-y-2">
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">听不懂</span>
+                            <span class="text-slate-500">聞き取れない</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">看不见</span>
+                            <span class="text-slate-500">見えない</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Xia (Capacity) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-amber-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded">収容・キャパ</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">V + (不) + 下</h4>
+                    <p class="text-sm text-slate-600 mb-3">空間的・胃袋的に入るか。</p>
+                    <div class="bg-slate-50 p-3 rounded text-sm space-y-2">
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">吃不下</span>
+                            <span class="text-slate-500">もう入らない(満腹)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">坐不下</span>
+                            <span class="text-slate-500">座りきれない</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Dong (Movement) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-purple-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">動作の可否</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">V + (不) + 动</h4>
+                    <p class="text-sm text-slate-600 mb-3">重くて動かせない、疲れて動けない。</p>
+                    <div class="bg-slate-50 p-3 rounded text-sm space-y-2">
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">走不动</span>
+                            <span class="text-slate-500">歩けない(疲労)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">拿不动</span>
+                            <span class="text-slate-500">持てない(重い)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Liao (Possibility) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">可能性・完了</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">V + (不) + 了</h4>
+                    <p class="text-sm text-slate-600 mb-3">最も汎用的な「できる/できない」。<br><span class="text-[10px]">※発音は liǎo</span></p>
+                    <div class="bg-slate-50 p-3 rounded text-sm space-y-2">
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">去不了</span>
+                            <span class="text-slate-500">行けない(事情)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-red-600">受不了</span>
+                            <span class="text-slate-500">耐えられない</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Neng vs Potential -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「能」と「可能補語」の違い</h3>
+                    <p class="text-slate-500 text-sm">どちらも「できない」ですが、ニュアンスが違います。</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <table class="w-full text-left bg-white comp-table">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4 text-center bg-slate-50 p-4">タイプ</th>
+                            <th class="w-1/3 bg-slate-50 p-4">例文</th>
+                            <th class="w-1/3 bg-slate-50 p-4">ニュアンス</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-slate-100">
+                        <!-- Neng -->
+                        <tr>
+                            <td class="text-center font-bold text-indigo-600 p-4">
+                                能 (不能)<br>
+                                <span class="text-xs font-normal text-slate-400">助動詞</span>
+                            </td>
+                            <td class="p-4 chinese-serif text-slate-800 font-bold">
+                                我<span class="text-indigo-600">不能</span>喝。
+                            </td>
+                            <td class="p-4 text-slate-600">
+                                <strong>条件・禁止・能力不足</strong><br>
+                                お酒が弱い、車を運転するから、医者に止められているから、飲めない。
+                            </td>
+                        </tr>
+                        <!-- Potential -->
+                        <tr>
+                            <td class="text-center font-bold text-amber-600 p-4">
+                                V + 不 + 下<br>
+                                <span class="text-xs font-normal text-slate-400">可能補語</span>
+                            </td>
+                            <td class="p-4 chinese-serif text-slate-800 font-bold">
+                                我<span class="text-amber-600">喝不下</span>。
+                            </td>
+                            <td class="p-4 text-slate-600">
+                                <strong>収容不可能</strong><br>
+                                お腹がいっぱいで、物理的にもう胃に入らない。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-4 p-4 bg-slate-100 rounded-lg text-sm text-slate-600 flex gap-3">
+                <i class="fas fa-lightbulb text-amber-500 text-xl"></i>
+                <div>
+                    <span class="font-bold block text-slate-700">使い分けのコツ</span>
+                    「禁止されている」「能力がない」なら<strong>「不能」</strong>。<br>
+                    「結果にたどり着けない」「量的に無理」「感覚的に無理」なら<strong>「可能補語」</strong>。
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Fixed Phrases -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">慣用句になった可能補語</h3>
+                    <p class="text-slate-500 text-sm">文法を考えずに、フレーズとして覚えてしまいましょう。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="text-3xl text-red-500"><i class="fas fa-pray"></i></div>
+                    <div>
+                        <p class="chinese-serif text-xl font-bold text-slate-800">对不起</p>
+                        <p class="text-xs text-slate-500 font-mono">duìbuqǐ</p>
+                        <p class="text-sm text-slate-600 mt-1">ごめんなさい</p>
+                        <p class="text-[10px] text-slate-400">（あなたに顔向け「できない」→申し訳ない）</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="text-3xl text-amber-500"><i class="fas fa-money-bill-wave-alt"></i></div>
+                    <div>
+                        <p class="chinese-serif text-xl font-bold text-slate-800">买不起</p>
+                        <p class="text-xs text-slate-500 font-mono">mǎibuqǐ</p>
+                        <p class="text-sm text-slate-600 mt-1">（高すぎて）買えない</p>
+                        <p class="text-[10px] text-slate-400">（お金が足りなくて手が出ない）</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="text-3xl text-purple-500"><i class="fas fa-dizzy"></i></div>
+                    <div>
+                        <p class="chinese-serif text-xl font-bold text-slate-800">受不了</p>
+                        <p class="text-xs text-slate-500 font-mono">shòubuliǎo</p>
+                        <p class="text-sm text-slate-600 mt-1">我慢できない / 耐えられない</p>
+                        <p class="text-[10px] text-slate-400">（受け止めきれない）</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="text-3xl text-blue-500"><i class="fas fa-eye-slash"></i></div>
+                    <div>
+                        <p class="chinese-serif text-xl font-bold text-slate-800">看不起</p>
+                        <p class="text-xs text-slate-500 font-mono">kànbuqǐ</p>
+                        <p class="text-sm text-slate-600 mt-1">軽蔑する / 見下す</p>
+                        <p class="text-[10px] text-slate-400">（相手を仰ぎ見ることができない）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Mastery Quiz</h3>
+                <p class="text-slate-500">文脈に合わせて正しい表現を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 22 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「听不懂（聞き取れない）」と言えるようになれば、リスニングも怖くありません。<br>
+                次回は、中国語で最も重要かつ特殊な構文「把（ba）構文」に挑戦します。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-4.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l2-6.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 23: 「把」構文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "老师", pinyin: "Lǎoshī", mean: "先生" },
+                    { text: "说", pinyin: "shuō", mean: "話す" },
+                    { text: "得", pinyin: "de", mean: "〜のが" },
+                    { text: "太", pinyin: "tài", mean: "あまりに" },
+                    { text: "快", pinyin: "kuài", mean: "速い" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "听不懂 (tīngbudǒng)", correct: true },
+                    { text: "不能听 (bù néng tīng)", correct: false }
+                ],
+                trans: "先生の話すのが速すぎて、聞き取れません（理解できません）。",
+                hint: "「聞く能力はあるが、速すぎて理解という結果に到達しない」ので、可能補語の否定「听不懂」を使います。「不能听」は「聞くこと自体が禁止されている」などの意味になります。"
+            },
+            {
+                question: [
+                    { text: "太", pinyin: "Tài", mean: "あまりに" },
+                    { text: "多", pinyin: "duō", mean: "多い" },
+                    { text: "了", pinyin: "le", mean: "〜すぎる" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "吃不完 (chībuwán)", correct: true },
+                    { text: "不能吃 (bù néng chī)", correct: false }
+                ],
+                trans: "多すぎて、食べきれません。",
+                hint: "「完食できない（量が多すぎる）」という意味なので「吃不完」です。「不能吃」は「（毒がある・アレルギーなどで）食べてはいけない」という意味になります。"
+            },
+            {
+                question: [
+                    { text: "这个", pinyin: "Zhège", mean: "これ" },
+                    { text: "东西", pinyin: "dōngxi", mean: "もの" },
+                    { text: "太", pinyin: "tài", mean: "あまりに" },
+                    { text: "贵", pinyin: "guì", mean: "高い" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "买不起 (mǎibuqǐ)", correct: true },
+                    { text: "不买 (bù mǎi)", correct: false }
+                ],
+                trans: "これは高すぎて、私には買えません（手が出ません）。",
+                hint: "「お金が足りなくて買えない」という慣用的な可能補語「买不起」を使います。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "太", pinyin: "tài", mean: "あまりに" },
+                    { text: "累", pinyin: "lèi", mean: "疲れる" },
+                    { text: "了", pinyin: "le", mean: "〜すぎる" },
+                    { text: "，", type: "punct" },
+                    { text: "走", pinyin: "zǒu", mean: "歩く" },
+                    { text: "___", type: "blank" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "不动 (budòng)", correct: true },
+                    { text: "不完 (buwán)", correct: false }
+                ],
+                trans: "疲れすぎて、もう歩けません。",
+                hint: "「疲れて体が動かない」ときは「V + 不动」を使います。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-amber-500', 'text-amber-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

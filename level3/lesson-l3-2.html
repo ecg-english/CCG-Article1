@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 28: 存現文 (存在・出現)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">28. 存現文</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「場所」が主役の<br class="md:hidden">物語
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「机の上に本がある」「前から車が来た」。<br>
+                これらは全て「場所」から始まります。<br>
+                場所を主語にし、そこに<span class="highlight-text">「何があるか（存在）」</span>や<span class="highlight-text">「何が現れたか（出現）」</span>を描写する、中国語らしい視点の構文です。
+            </p>
+        </section>
+
+        <!-- 1. The Basic Structure -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本構造：場所＋動詞＋モノ/人</h3>
+                    <p class="text-slate-500 text-sm">日本語の「〜に〜がある/いる」とは語順が逆になります。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 text-center">
+                    
+                    <!-- Location -->
+                    <div class="bg-rose-50 p-4 rounded-xl w-32 border border-rose-200">
+                        <span class="block text-xs font-bold text-rose-400 mb-1">場所 (S)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">桌子上</span>
+                        <p class="text-xs text-slate-500 mt-1">机の上</p>
+                    </div>
+
+                    <!-- Verb -->
+                    <div class="text-rose-300 text-xl font-bold">+</div>
+                    <div class="bg-white p-4 rounded-xl w-32 border border-slate-200 shadow-sm relative">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">動詞 (V)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">放着</span>
+                        <p class="text-xs text-slate-500 mt-1">置いてある</p>
+                    </div>
+
+                    <!-- Object (Unspecified) -->
+                    <div class="text-rose-300 text-xl font-bold">+</div>
+                    <div class="bg-indigo-50 p-4 rounded-xl w-40 border border-indigo-200 shadow-md transform scale-110 z-10">
+                        <span class="block text-xs font-bold text-indigo-400 mb-1">モノ/人 (O)</span>
+                        <span class="chinese-serif text-2xl font-bold text-indigo-700">一本书</span>
+                        <p class="text-xs text-indigo-600 mt-1">（一冊の）本</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border-l-4 border-rose-500 shadow-sm">
+                    <h4 class="font-bold text-rose-800 mb-2">語順の鉄則</h4>
+                    <p class="text-sm text-slate-600 mb-2">
+                        <span class="font-bold text-lg mr-2">場所 → 状態/動作 → 存在するもの</span>
+                    </p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        「机の上に（場所）、置いてある（状態）、本が（モノ）」という語順です。<br>
+                        日本語の「本が 机の上に 置いてある」とは逆になるので注意しましょう。
+                    </p>
+                </div>
+                
+                <div class="mt-6 bg-slate-100 p-4 rounded-lg text-sm text-slate-600 flex items-start gap-3">
+                    <i class="fas fa-exclamation-circle text-rose-500 text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="text-slate-800">重要ルール：目的語は「不特定」</strong><br>
+                        存現文の目的語（後ろに来るモノ）は、「初めて話題に出るもの（不特定）」である必要があります。<br>
+                        <span class="text-xs text-slate-500">○ 桌子上放着<span class="font-bold">一本</span>书。（机の上に（ある一冊の）本がある）<br>
+                        × 桌子上放着<span class="font-bold">那本</span>书。（机の上に「その」本がある → 特定のものは「那本书在桌子上」と言う）</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Existence: Being There -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">存在文：そこに「ある/いる」</h3>
+                    <p class="text-slate-500 text-sm">静止した状態を表します。「着（zhe）」を伴うことが多いです。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Verb + Zhe -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-slate-800">V + 着 (〜してある/〜している)</h4>
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded font-bold">状態の持続</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「置いてある」「掛かっている」「座っている」など、動作の結果が残っている状態。
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 p-3 rounded text-sm">
+                            <p class="chinese-serif font-bold text-slate-800">
+                                <ruby>墙<rt>qiáng</rt></ruby><ruby>上<rt>shang</rt></ruby> <ruby>挂<rt>guà</rt></ruby><span class="text-amber-600">着</span> <ruby>一<rt>yì</rt></ruby><ruby>张<rt>zhāng</rt></ruby><ruby>画<rt>huà</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">壁に絵が（一枚）掛かっています。</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded text-sm">
+                            <p class="chinese-serif font-bold text-slate-800">
+                                <ruby>门<rt>mén</rt></ruby><ruby>口<rt>kǒu</rt></ruby> <ruby>停<rt>tíng</rt></ruby><span class="text-amber-600">着</span> <ruby>一<rt>yí</rt></ruby><ruby>辆<rt>liàng</rt></ruby><ruby>车<rt>chē</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">入り口に車が（一台）停まっています。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shi / You -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-slate-800">有 / 是 (ある/いる)</h4>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">単純な存在</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">
+                        Lesson 3で学んだ基本。「有」は何かが存在すること、「是」は何であるかを説明すること。
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 p-3 rounded text-sm">
+                            <p class="chinese-serif font-bold text-slate-800">
+                                <ruby>桌子<rt>zhuōzi</rt></ruby><ruby>上<rt>shang</rt></ruby> <span class="text-blue-600">有</span> <ruby>书<rt>shū</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">机の上に本があります。（存在）</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded text-sm">
+                            <p class="chinese-serif font-bold text-slate-800">
+                                <ruby>前<rt>qián</rt></ruby><ruby>边<rt>bian</rt></ruby> <span class="text-blue-600">是</span> <ruby>邮局<rt>yóujú</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">前（にあるの）は郵便局です。（説明）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Appearance/Disappearance: Coming & Going -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">出現・消失文：現れる/消える</h3>
+                    <p class="text-slate-500 text-sm">「誰かが来た」「財布がなくなった」などの変化を表します。「了」を伴うことが多いです。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Appearance -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-green-500 card-hover">
+                    <h4 class="font-bold text-green-700 mb-3 flex items-center">
+                        <i class="fas fa-plus-circle mr-2"></i> 出現 (Appearing)
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        新しい人や物がその場所に現れること。
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="chinese-serif text-lg font-bold text-slate-800">
+                            <ruby>前<rt>qián</rt></ruby><ruby>面<rt>mian</rt></ruby> <ruby>来<rt>lái</rt></ruby> <span class="text-green-600">了</span> <ruby>一<rt>yí</rt></ruby><ruby>个<rt>ge</rt></ruby><ruby>人<rt>rén</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">前から人が（一人）来ました。</p>
+                    </div>
+                </div>
+
+                <!-- Disappearance -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 card-hover">
+                    <h4 class="font-bold text-red-700 mb-3 flex items-center">
+                        <i class="fas fa-minus-circle mr-2"></i> 消失 (Disappearing)
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        あったものがなくなる、死ぬ、逃げるなど。
+                    </p>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <p class="chinese-serif text-lg font-bold text-slate-800">
+                            <ruby>我家<rt>wǒjiā</rt></ruby> <ruby>跑<rt>pǎo</rt></ruby> <span class="text-red-600">了</span> <ruby>一<rt>yì</rt></ruby><ruby>只<rt>zhī</rt></ruby><ruby>猫<rt>māo</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">家から猫が（一匹）逃げてしまいました。</p>
+                        <p class="text-[10px] text-slate-400 mt-1">※「家が走った」わけではありません！場所主語です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Negation (Important) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定形：没(有)＋V＋O</h3>
+                    <p class="text-slate-500 text-sm">存現文の否定には「没」を使います。そして「着」や「了」は消えます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <!-- Affirmative -->
+                    <div class="flex-1 text-center opacity-60">
+                        <p class="text-xs font-bold text-slate-400 mb-2">肯定</p>
+                        <div class="bg-slate-50 p-4 rounded-xl">
+                            <p class="chinese-serif font-bold text-slate-600">
+                                墙上挂<span class="text-amber-500">着</span>画。
+                            </p>
+                            <p class="text-xs text-slate-400 mt-1">壁に絵が掛かっている。</p>
+                        </div>
+                    </div>
+
+                    <div class="text-2xl text-slate-300"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Negative -->
+                    <div class="flex-1 text-center">
+                        <p class="text-xs font-bold text-red-500 mb-2">否定</p>
+                        <div class="bg-red-50 p-4 rounded-xl border border-red-200">
+                            <p class="chinese-serif font-bold text-slate-800">
+                                墙上 <span class="text-red-500 text-xl">没</span> 挂 画。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">壁に絵は掛かっていません。</p>
+                            <p class="text-[10px] text-red-400 mt-1">※「着」は消えます！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Scene Construction Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい語順や単語を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 28 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                存現文をマスターすれば、風景描写や出来事の報告がとてもスムーズになります。<br>
+                次回は、「会う（见面）」などの特殊な動詞「離合詞」のルールを深掘りします。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-1.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l3-3.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 29: 離合詞へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "桌子", pinyin: "Zhuōzi", mean: "机" },
+                    { text: "上", pinyin: "shang", mean: "上" },
+                    { text: "___", type: "blank" },
+                    { text: "着", pinyin: "zhe", mean: "〜している" },
+                    { text: "一", pinyin: "yì", mean: "1" },
+                    { text: "瓶", pinyin: "píng", mean: "本(瓶)" },
+                    { text: "啤酒", pinyin: "píjiǔ", mean: "ビール" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "放 (fàng)", correct: true },
+                    { text: "有 (yǒu)", correct: false }
+                ],
+                trans: "机の上にビールが一本置いてあります。",
+                hint: "「着」が後ろにあるので、具体的な動作を表す動詞（放＝置く）が入ります。「有」には「着」をつけません。"
+            },
+            {
+                question: [
+                    { text: "昨天", pinyin: "Zuótiān", mean: "昨日" },
+                    { text: "我家", pinyin: "wǒjiā", mean: "私の家" },
+                    { text: "___", type: "blank" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "一", pinyin: "yí", mean: "1" },
+                    { text: "个", pinyin: "ge", mean: "人" },
+                    { text: "客人", pinyin: "kèrén", mean: "客" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "来 (lái)", correct: true },
+                    { text: "去 (qù)", correct: false }
+                ],
+                trans: "昨日、家に客が一人来ました。",
+                hint: "「家（場所）」に「客（人）」が現れる（出現）文脈なので「来（来る）」を使います。「去」は「行く」ですが、この構文では「人が現れる」ニュアンスで「来」が自然です。"
+            },
+            {
+                question: [
+                    { text: "床上", pinyin: "Chuángshàng", mean: "ベッドの上" },
+                    { text: "___", type: "blank" },
+                    { text: "躺", pinyin: "tǎng", mean: "横たわる" },
+                    { text: "着", pinyin: "zhe", mean: "〜している" },
+                    { text: "人", pinyin: "rén", mean: "人" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "没 (méi)", correct: true },
+                    { text: "不 (bù)", correct: false }
+                ],
+                trans: "ベッドの上に人は寝ていません（横たわっていません）。",
+                hint: "存現文（状態の持続）の否定には「没」を使います。※否定の場合「着」は消えることが多いですが、強調して残す場合や口語では残ることもあります。教材解説では「消える」としましたが、文法的には「没+V+着」も可能です。ここでは「不」が不適切であることを学びましょう。"
+            },
+            {
+                question: [
+                    { text: "书架", pinyin: "Shūjià", mean: "本棚" },
+                    { text: "上", pinyin: "shang", mean: "上" },
+                    { text: "放", pinyin: "fàng", mean: "置く" },
+                    { text: "着", pinyin: "zhe", mean: "〜してある" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "很 多 书 (hěn duō shū)", correct: true },
+                    { text: "那 本 书 (nà běn shū)", correct: false }
+                ],
+                trans: "本棚にたくさんの本が置いてあります。",
+                hint: "存現文の目的語は「不特定」である必要があります。「那本书（その本）」のように特定されたものは主語（文頭）に来るべきです（那本书在书架上）。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(choice !== "(不要)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                // Special handling for long text
+                if (choice.length > 2) {
+                    slot.style.width = 'auto';
+                    slot.style.minWidth = '5rem';
+                }
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 35: 成語・慣用句の文法化</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">35. 成語・慣用句の文法化</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「熟語」ではなく<br class="md:hidden">「文法」として使う
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                成語（四字熟語）は、教養を見せるための飾りではありません。<br>
+                「ますます〜になる」「〜すればするほど〜だ」といった複雑なロジックを、<span class="highlight-text">たった数文字の型にはめて表現する</span>ための便利なツールなのです。<br>
+                このカリキュラムの最後を飾る、最も効率的で強力な武器を手に入れましょう。
+            </p>
+        </section>
+
+        <!-- 1. The Structure of "More and More" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">変化の構文：越……越……</h3>
+                    <p class="text-slate-500 text-sm">「Aすればするほど、Bになる」という比例関係を表します。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Pattern A: 越来越 (More and more) -->
+                    <div class="bg-rose-50 p-6 rounded-xl border border-rose-100 relative">
+                        <div class="absolute -top-3 left-4 bg-rose-500 text-white text-xs px-2 py-1 rounded font-bold">基本形</div>
+                        <h4 class="text-xl font-bold text-rose-800 mb-2 chinese-serif">
+                            <ruby>越<rt>yuè</rt></ruby> <ruby>来<rt>lái</rt></ruby> <ruby>越<rt>yuè</rt></ruby> + 形容詞/心理動詞
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-4">
+                            「ますます〜になる」。時間の経過とともに程度が進むこと。
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif font-bold text-slate-800">
+                                    <ruby>天气<rt>tiānqì</rt></ruby> <span class="text-rose-600">越来越</span> <ruby>冷<rt>lěng</rt></ruby> <ruby>了<rt>le</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">天気はますます寒くなってきた。</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif font-bold text-slate-800">
+                                    <ruby>我<rt>wǒ</rt></ruby> <span class="text-rose-600">越来越</span> <ruby>喜欢<rt>xǐhuan</rt></ruby> <ruby>中国<rt>Zhōngguó</rt></ruby> <ruby>了<rt>le</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">私はますます中国が好きになった。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pattern B: 越 A 越 B (The more A, the more B) -->
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 relative">
+                        <div class="absolute -top-3 left-4 bg-indigo-500 text-white text-xs px-2 py-1 rounded font-bold">応用形</div>
+                        <h4 class="text-xl font-bold text-indigo-800 mb-2 chinese-serif">
+                            <ruby>越<rt>yuè</rt></ruby> A <ruby>越<rt>yuè</rt></ruby> B
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-4">
+                            「AすればするほどBになる」。Aの動作がBの結果を引き起こす関係。
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif font-bold text-slate-800">
+                                    <ruby>雨<rt>yǔ</rt></ruby> <span class="text-indigo-600">越</span> <ruby>下<rt>xià</rt></ruby> <span class="text-indigo-600">越</span> <ruby>大<rt>dà</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">雨は降れば降るほど強くなる（雨足が強まる）。</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif font-bold text-slate-800">
+                                    <span class="text-indigo-600">越</span> <ruby>吃<rt>chī</rt></ruby> <span class="text-indigo-600">越</span> <ruby>想<rt>xiǎng</rt></ruby> <ruby>吃<rt>chī</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">食べれば食べるほど食べたくなる（やめられない）。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center text-xs text-slate-400">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    「越来越」は決まり文句ですが、文法的には「来る（時間が経つ）ほど〜になる」という「越A越B」の一種です。
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Logic Idioms: Yi... Jiu... / Fei... Bu Ke -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">論理をつなぐ慣用句</h3>
+                    <p class="text-slate-500 text-sm">接続詞の章で学んだ「条件」を、さらにリズミカルに表現します。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Once... Then... -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">
+                        <ruby>一<rt>yī</rt></ruby> …… <ruby>就<rt>jiù</rt></ruby> ……
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜するとすぐに〜だ</p>
+                    <p class="text-xs text-slate-500 mb-4">
+                        「一（ひとたび）〜すれば、即座に〜」というスピード感のある条件接続。
+                    </p>
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-amber-600">一</span> <ruby>回<rt>huí</rt></ruby> <ruby>家<rt>jiā</rt></ruby> <span class="text-amber-600">就</span> <ruby>睡<rt>shuì</rt></ruby> <ruby>觉<rt>jiào</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">私は家に帰るとすぐに寝ます。</p>
+                    </div>
+                </div>
+
+                <!-- Must do -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-red-500 card-hover">
+                    <h4 class="text-xl font-bold text-slate-800 mb-2 chinese-serif">
+                        <ruby>非<rt>fēi</rt></ruby> …… <ruby>不可<rt>bùkě</rt></ruby>
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜しないわけにはいかない</p>
+                    <p class="text-xs text-slate-500 mb-4">
+                        「非（〜でなければ）不可（いけない）」という二重否定による強い意志・必要性。
+                    </p>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>这<rt>zhè</rt></ruby> <ruby>个<rt>ge</rt></ruby> <ruby>问<rt>wèn</rt></ruby><ruby>题<rt>tí</rt></ruby> <span class="text-red-600">非</span> <ruby>解<rt>jiě</rt></ruby><ruby>决<rt>jué</rt></ruby> <span class="text-red-600">不可</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">この問題は解決しないわけにはいかない（絶対に解決しなければならない）。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Verb-like Idioms (Chengyu as Predicate) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">述語になる成語</h3>
+                    <p class="text-slate-500 text-sm">四字熟語がそのまま「動詞」や「形容詞」として文の主役になります。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-4">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-800 chinese-serif">乱七八糟 (luàn qī bā zāo)</h4>
+                        <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">形容詞的</span>
+                        <p class="text-sm text-slate-600 mt-1">
+                            めちゃくちゃだ、散らかっている。<br>
+                            例：<span class="chinese-serif">房间里乱七八糟的。</span> (部屋の中はめちゃくちゃだ)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-4">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fas fa-question"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-800 chinese-serif">莫名其妙 (mò míng qí miào)</h4>
+                        <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">形容詞・動詞的</span>
+                        <p class="text-sm text-slate-600 mt-1">
+                            わけがわからない、不可解だ。<br>
+                            例：<span class="chinese-serif">他真是莫名其妙。</span> (彼は本当にわけがわからない人だ)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-4">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-800 chinese-serif">讨价还价 (tǎo jià huán jià)</h4>
+                        <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">動詞的</span>
+                        <p class="text-sm text-slate-600 mt-1">
+                            値段交渉をする、駆け引きをする。<br>
+                            例：<span class="chinese-serif">别跟我讨价还价。</span> (私と駆け引きするな / つべこべ言うな)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Final Wrap-up -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">4文字の魔法：AABB型</h3>
+                    <p class="text-slate-500 text-sm">形容詞や動詞を重ねて4文字にすると、リズムと強調が生まれます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center card-hover">
+                    <p class="text-xs font-bold text-slate-400 mb-2">形容詞の重ね型 (AABB)</p>
+                    <p class="chinese-serif text-3xl font-bold text-rose-600 mb-2">
+                        马马虎虎
+                    </p>
+                    <p class="text-xs text-slate-400 mb-2">mǎma hūhū</p>
+                    <p class="text-sm text-slate-700">まあまあだ、いい加減だ。</p>
+                    <div class="mt-4 text-xs text-slate-500 bg-slate-50 p-2 rounded">
+                        元は「马虎 (いい加減)」<br>
+                        重ねることで口語的なリズムが出る。
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center card-hover">
+                    <p class="text-xs font-bold text-slate-400 mb-2">形容詞の重ね型 (AABB)</p>
+                    <p class="chinese-serif text-3xl font-bold text-rose-600 mb-2">
+                        高高兴兴
+                    </p>
+                    <p class="text-xs text-slate-400 mb-2">gāogāo xìngxìng</p>
+                    <p class="text-sm text-slate-700">嬉しそうに、喜んで。</p>
+                    <div class="mt-4 text-xs text-slate-500 bg-slate-50 p-2 rounded">
+                        元は「高兴 (嬉しい)」<br>
+                        「地」をつけて連用修飾語（〜そうに）としてよく使う。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Final Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい成語や構文を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 35 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">本当にお疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                これで全35レッスンのカリキュラムが完了しました。<br>
+                ここまで学習したあなたは、中国語の構造を深く理解し、ネイティブらしい表現の土台を手に入れています。<br>
+                自信を持って、実際の会話や読解に挑戦してください！
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-8.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="index.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    トップへ戻る <i class="fas fa-home ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "他", pinyin: "Tā", mean: "彼" },
+                    { text: "的", pinyin: "de", mean: "の" },
+                    { text: "中文", pinyin: "Zhōngwén", mean: "中国語" },
+                    { text: "说", pinyin: "shuō", mean: "話す" },
+                    { text: "得", pinyin: "de", mean: "〜のが" },
+                    { text: "___", type: "blank" },
+                    { text: "好", pinyin: "hǎo", mean: "上手い" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "越来越 (yuèláiyuè)", correct: true },
+                    { text: "越越 (yuèyuè)", correct: false }
+                ],
+                trans: "彼の中国語はますます上手になった。",
+                hint: "「時間の経過と共に程度が増す」ことを表すので「越来越」を使います。「得」の後ろ（補語の位置）に置くことができます。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "この" },
+                    { text: "个", pinyin: "ge", mean: "個" },
+                    { text: "汉字", pinyin: "Hànzì", mean: "漢字" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "写", pinyin: "xiě", mean: "書く" },
+                    { text: "就", pinyin: "jiù", mean: "すぐに" },
+                    { text: "错", pinyin: "cuò", mean: "間違える" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "一 (yī)", correct: true },
+                    { text: "越 (yuè)", correct: false }
+                ],
+                trans: "この漢字は、書くとすぐに（いつも）間違える。",
+                hint: "「一……就……（〜するとすぐに〜だ、〜すると必ず〜だ）」の構文です。「一写就错（書くと決まって間違える）」というパターンです。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "别", pinyin: "bié", mean: "〜するな" },
+                    { text: "在", pinyin: "zài", mean: "〜で" },
+                    { text: "这里", pinyin: "zhèlǐ", mean: "ここ" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "乱七八糟 (luànqībāzāo)", correct: false }, // usually adj
+                    { text: "讨价还价 (tǎojiàhuánjià)", correct: true } // verb phrase
+                ],
+                trans: "ここで値段交渉（駆け引き）をしないで。",
+                hint: "「别（〜するな）」の後ろには動詞性の言葉が来ます。「讨价还价」は動詞として使えます。「乱七八糟」は形容詞的（状態）なので「别」の後ろには不自然です。"
+            },
+            {
+                question: [
+                    { text: "大家", pinyin: "Dàjiā", mean: "みんな" },
+                    { text: "都", pinyin: "dōu", mean: "すべて" },
+                    { text: "___", type: "blank" },
+                    { text: "地", pinyin: "de", mean: "〜に" },
+                    { text: "回家", pinyin: "huíjiā", mean: "帰宅する" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "高高兴兴 (gāogāoxìngxìng)", correct: true },
+                    { text: "马马虎虎 (mǎmahūhū)", correct: false }
+                ],
+                trans: "みんな嬉しそうに家に帰った。",
+                hint: "「家に帰る」という動作を修飾する言葉。「嬉しそうに（高高兴兴地）」が文脈として自然です。「马马虎虎」は「いい加減に」や「まあまあだ」という意味です。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-24 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end leading-loose">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                // Special handling for long text
+                if (choice.length > 2) {
+                    slot.style.width = 'auto';
+                    slot.style.minWidth = '5rem';
+                }
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

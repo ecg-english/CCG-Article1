@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12: 完了・変化の「了」(Aspect)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">12. 完了・変化の「了」</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「了」＝過去形<br class="md:hidden">ではありません
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「昨日、行きました」も「明日、着いたら」も、どちらも「了」を使います。<br>
+                「了」の本質は「過去」ではなく、<span class="highlight-text">「完了」と「変化」</span>という2つのスイッチです。<br>
+                このスイッチがどこにあるかで意味が変わります。
+            </p>
+        </section>
+
+        <!-- 1. The Two "Le"s -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">2つの「了」：場所が命</h3>
+                    <p class="text-slate-500 text-sm">動詞のすぐ後ろか、文の最後か。それだけで役割が全く違います。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Le 1: Completion -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">動詞の後ろ</span>
+                        <h4 class="text-xl font-bold text-slate-800">完了の「了」</h4>
+                    </div>
+                    <div class="bg-blue-50/50 p-4 rounded-lg text-center mb-4">
+                        <span class="font-bold text-slate-700">動詞</span> + <span class="text-blue-600 font-bold text-xl">了</span> + <span class="text-slate-500">目的語</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-2">
+                        <i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>動作の完了（〜した）</strong>
+                    </p>
+                    <p class="text-xs text-slate-500">
+                        その動作が行われて完了したことを示します。<br>
+                        例：食べた、買った、見た。
+                    </p>
+                </div>
+
+                <!-- Le 2: Change -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold">文の最後</span>
+                        <h4 class="text-xl font-bold text-slate-800">変化の「了」</h4>
+                    </div>
+                    <div class="bg-amber-50/50 p-4 rounded-lg text-center mb-4">
+                        <span class="text-slate-500">文全体</span> + <span class="text-amber-600 font-bold text-xl">了</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-2">
+                        <i class="fas fa-exchange-alt text-amber-500 mr-2"></i><strong>状況の変化（〜になった）</strong>
+                    </p>
+                    <p class="text-xs text-slate-500">
+                        新しい状況が発生したことを示します。<br>
+                        例：寒くなった、春が来た、雨が止んだ。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Completion Le (Le 1) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">動詞＋了：動作の完了</h3>
+                    <p class="text-slate-500 text-sm">「食べた」「買った」など、動作が終わった事実を伝えます。</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    
+                    <!-- Example 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm w-full">
+                        <div class="mb-2">
+                            <span class="text-xs text-slate-400 font-bold">単純な完了</span>
+                        </div>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <ruby>去<rt>qù</rt></ruby> <span class="text-blue-600 font-bold">了</span> <ruby>医院<rt>yīyuàn</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600">私は病院に行きました。</p>
+                    </div>
+
+                    <!-- Example 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm w-full border-2 border-blue-100">
+                        <div class="mb-2">
+                            <span class="text-xs text-blue-500 font-bold"><i class="fas fa-info-circle mr-1"></i>重要ルール</span>
+                        </div>
+                        <p class="text-sm text-slate-700 mb-2">
+                            目的語がある場合、通常は数量詞などをつけて具体的に言います。
+                        </p>
+                        <p class="chinese-serif text-xl font-bold text-slate-800 mb-1">
+                            <ruby>我<rt>wǒ</rt></ruby> <ruby>买<rt>mǎi</rt></ruby> <span class="text-blue-600 font-bold">了</span> <span class="text-slate-500 border-b-2 border-slate-300">一本书</span>。
+                        </p>
+                        <p class="text-xs text-slate-500">私は本を（一冊）買いました。</p>
+                    </div>
+                </div>
+                
+                <!-- Future Completion -->
+                <div class="mt-6 text-sm bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                    <span class="font-bold text-purple-700 block mb-1">未来のことにも使える！</span>
+                    <p class="text-slate-600">
+                        「明日、着い<strong>たら</strong>電話するね」のように、未来のある時点での完了にも使います。<br>
+                        例：明天我到了给你打电话。(明日着いたら電話するよ)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Change Le (Le 2) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">文末の了：状況の変化</h3>
+                    <p class="text-slate-500 text-sm">以前とは違う状態になったこと（Becoming）を表します。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border-b-4 border-amber-400">
+                        <div class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>下雨<rt>xià yǔ</rt></ruby> <span class="text-amber-600 font-bold">了</span>
+                        </div>
+                        <p class="text-xs text-slate-500">雨が降ってきた。<br>(さっきまでは降っていなかった)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border-b-4 border-amber-400">
+                        <div class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>春天<rt>chūntiān</rt></ruby> <span class="text-amber-600 font-bold">了</span>
+                        </div>
+                        <p class="text-xs text-slate-500">春になった。<br>(もう冬ではない)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border-b-4 border-amber-400">
+                        <div class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>我不去<rt>wǒ bú qù</rt></ruby> <span class="text-amber-600 font-bold">了</span>
+                        </div>
+                        <p class="text-xs text-slate-500">行くのをやめた。<br>(行くつもりだったが状況が変わった)</p>
+                    </div>
+                </div>
+
+                <!-- Double Le -->
+                <div class="bg-slate-800 text-white p-6 rounded-2xl mt-4">
+                    <h4 class="font-bold text-amber-400 mb-2 flex items-center">
+                        <i class="fas fa-layer-group mr-2"></i> ダブル了 (Double Le)
+                    </h4>
+                    <p class="text-sm opacity-80 mb-4">
+                        動詞の後ろと文末、両方に「了」がつくことがあります。<br>
+                        「（ある量まで）完了して、さらにそれが現在も続いている（変化）」というニュアンスです。
+                    </p>
+                    <div class="bg-white/10 p-4 rounded-lg">
+                        <p class="chinese-serif text-xl font-bold">
+                            <ruby>我<rt>wǒ</rt></ruby> <ruby>学<rt>xué</rt></ruby> <span class="text-blue-400">了</span> <ruby>两<rt>liǎng</rt></ruby> <ruby>年<rt>nián</rt></ruby> <ruby>中文<rt>Zhōngwén</rt></ruby> <span class="text-amber-400">了</span>。
+                        </p>
+                        <p class="text-sm mt-2">
+                            私は中国語を2年間学びました（そして今も学んでいます）。
+                        </p>
+                        <div class="flex gap-4 mt-2 text-xs opacity-60">
+                            <span><span class="text-blue-400">了1</span>: 2年間という完了</span>
+                            <span><span class="text-amber-400">了2</span>: その状態への変化（継続）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Negation Trap -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定の罠：「了」は消える！</h3>
+                    <p class="text-slate-500 text-sm">過去の否定には「不」ではなく「没」を使います。</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-red-800 mb-2">鉄則ルール</h4>
+                        <ul class="text-sm text-red-700 space-y-2">
+                            <li><i class="fas fa-times mr-2"></i>否定文に「不」は使わない（過去/完了の場合）。</li>
+                            <li><i class="fas fa-times mr-2"></i><strong>否定文に「了」は残さない。</strong></li>
+                            <li><i class="fas fa-check mr-2"></i><strong>「没 (méi)」</strong> または <strong>「没有 (méiyǒu)」</strong> を使う。</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex-1 bg-white p-4 rounded-lg shadow-sm w-full text-center">
+                        <div class="text-xs text-slate-400 mb-2">肯定文：食べた</div>
+                        <div class="text-slate-400 line-through mb-1">
+                            <span class="chinese-serif">吃了</span>
+                        </div>
+                        <i class="fas fa-arrow-down text-slate-300 my-2"></i>
+                        <div class="text-xs text-red-500 font-bold mb-2">否定文：食べていない</div>
+                        <div class="chinese-serif text-xl font-bold text-slate-800">
+                            <span class="text-red-500">没</span> <ruby>吃<rt>chī</rt></ruby> <span class="text-slate-300 opacity-50 text-sm">(了)</span>
+                        </div>
+                        <p class="text-[10px] text-slate-400 mt-2">※「没吃了」とは言いません！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Check Your Understanding</h3>
+                <p class="text-slate-500">文脈に合わせて正しい形を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 12 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様です！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「完了」と「変化」。この2つを意識するだけで、中国語の時制感覚がぐっとクリアになります。<br>
+                次は、「今〜している」「〜している状態だ」という進行と持続の表現を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-3.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-5.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 13: 進行・持続へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "昨天", pinyin: "zuótiān", mean: "昨日" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "___", type: "blank" },
+                    { text: "衣服", pinyin: "yīfu", mean: "服" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "了 (le)", correct: true },
+                    { text: "(不要)", correct: false }
+                ],
+                trans: "私は昨日服を買いました。",
+                hint: "「買った」という動作の完了なので、動詞の後ろに「了」が必要です。"
+            },
+            {
+                question: [
+                    { text: "昨天", pinyin: "Zuótiān", mean: "昨日" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "学校", pinyin: "xuéxiào", mean: "学校" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "不 (bù)", correct: false },
+                    { text: "没 (méi)", correct: true }
+                ],
+                trans: "昨日、私は学校に行きませんでした。",
+                hint: "過去の動作の否定（〜しなかった）には「没」を使います。「不」は現在・未来・習慣の否定です。"
+            },
+            {
+                question: [
+                    { text: "太", pinyin: "Tài", mean: "あまりに" },
+                    { text: "贵", pinyin: "guì", mean: "高い" },
+                    { text: "了", pinyin: "le", mean: "〜になった" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "不", pinyin: "bù", mean: "〜ない" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "了 (le)", correct: true },
+                    { text: "(不要)", correct: false }
+                ],
+                trans: "高すぎるので、買うのをやめました。",
+                hint: "「買うつもりだったが、やめた」という状況の変化（Becoming not buying）なので、文末の「了」を使います。"
+            },
+            {
+                question: [
+                    { text: "下", pinyin: "Xià", mean: "降る" },
+                    { text: "雨", pinyin: "yǔ", mean: "雨" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "了 (le)", correct: true },
+                    { text: "(不要)", correct: false }
+                ],
+                trans: "雨が降ってきた。",
+                hint: "新しい状況の発生（変化）を伝えるので、文末に「了」をつけます。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected (Simple inclusion check)
+                if(choice !== "(不要)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                } else if (choice === "(不要)" && btn.innerText === "(不要)") {
+                     btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                if (choice === "(不要)") {
+                    slot.textContent = "×";
+                    slot.classList.add('text-slate-400');
+                } else {
+                    slot.textContent = choice;
+                    if (isCorrect) {
+                        slot.classList.add('border-blue-500', 'text-blue-600');
+                    } else {
+                        slot.classList.add('border-red-500', 'text-red-600');
+                    }
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 08: 数詞と量詞の基礎</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e; /* teal-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fde68a 60%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-teal-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 0</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">08. 数詞と量詞の基礎</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「1, 2, 3」から始める<br class="md:hidden">中国語の数え方
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                まずは基本の数字を言えるようになりましょう。<br>
+                日本語と似ているようで発音が違う数字や、中国独自の「指での数え方」があります。<br>
+                そして、「物を数える時」には少しルールが変わることに注意が必要です。
+            </p>
+        </section>
+
+        <!-- 0. The Basics: 1-10 -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">数字の基本 (1〜10)</h3>
+                    <p class="text-slate-500 text-sm">基本の10個の数字と、ネイティブの手信号を覚えましょう。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center mb-8">
+                <!-- 1 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">一</div>
+                    <div class="text-sm font-bold text-teal-600">yī</div>
+                    <div class="text-xs text-slate-400 mt-2">人差指を立てる</div>
+                </div>
+                <!-- 2 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">二</div>
+                    <div class="text-sm font-bold text-teal-600">èr</div>
+                    <div class="text-xs text-slate-400 mt-2">チョキ (Vサイン)</div>
+                </div>
+                <!-- 3 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">三</div>
+                    <div class="text-sm font-bold text-teal-600">sān</div>
+                    <div class="text-xs text-slate-400 mt-2">中指まで3本</div>
+                </div>
+                <!-- 4 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">四</div>
+                    <div class="text-sm font-bold text-teal-600">sì</div>
+                    <div class="text-xs text-slate-400 mt-2">親指以外4本</div>
+                </div>
+                <!-- 5 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">五</div>
+                    <div class="text-sm font-bold text-teal-600">wǔ</div>
+                    <div class="text-xs text-slate-400 mt-2">パー (5本)</div>
+                </div>
+                <!-- 6 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition bg-slate-50">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">六</div>
+                    <div class="text-sm font-bold text-teal-600">liù</div>
+                    <div class="text-xs text-slate-500 mt-2 font-bold bg-yellow-100 inline-block px-1 rounded">🤙 アロハ</div>
+                </div>
+                <!-- 7 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition bg-slate-50">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">七</div>
+                    <div class="text-sm font-bold text-teal-600">qī</div>
+                    <div class="text-xs text-slate-500 mt-2 font-bold bg-yellow-100 inline-block px-1 rounded">🤏 指3本つまむ</div>
+                </div>
+                <!-- 8 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition bg-slate-50">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">八</div>
+                    <div class="text-sm font-bold text-teal-600">bā</div>
+                    <div class="text-xs text-slate-500 mt-2 font-bold bg-yellow-100 inline-block px-1 rounded">👉 ピストル</div>
+                </div>
+                <!-- 9 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition bg-slate-50">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">九</div>
+                    <div class="text-sm font-bold text-teal-600">jiǔ</div>
+                    <div class="text-xs text-slate-500 mt-2 font-bold bg-yellow-100 inline-block px-1 rounded">☝️ 人差指を曲げる</div>
+                </div>
+                <!-- 10 -->
+                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition bg-slate-50">
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-1">十</div>
+                    <div class="text-sm font-bold text-teal-600">shí</div>
+                    <div class="text-xs text-slate-500 mt-2 font-bold bg-yellow-100 inline-block px-1 rounded">👊 グー / ✝️ クロス</div>
+                </div>
+            </div>
+
+            <!-- Pronunciation Tip -->
+            <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg flex items-start gap-4">
+                <div class="text-amber-400 text-xl mt-1"><i class="fas fa-exclamation-triangle"></i></div>
+                <div>
+                    <h4 class="font-bold text-amber-800 mb-1">発音の最重要ポイント：「四」と「十」</h4>
+                    <p class="text-sm text-amber-700 leading-relaxed">
+                        日本人が最も苦手とする区別です。
+                    </p>
+                    <ul class="mt-2 text-sm">
+                        <li class="flex items-center gap-2 mb-1">
+                            <span class="font-bold text-slate-800 w-6">四</span>
+                            <span class="font-mono text-teal-700 font-bold">sì</span>
+                            <span class="text-xs text-slate-600">舌を歯の裏につけて「スー」 (下がって止める)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="font-bold text-slate-800 w-6">十</span>
+                            <span class="font-mono text-teal-700 font-bold">shí</span>
+                            <span class="text-xs text-slate-600">舌を巻いて「シー」 (一気に上げる)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Two "Twos": Er vs Liang -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「2」の使い分け：二 (èr) と 两 (liǎng)</h3>
+                    <p class="text-slate-500 text-sm">「数字としての2」と「個数としての2」は別の単語を使います。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Er (Number/Order) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover group">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-4xl font-bold text-blue-600 chinese-serif"><ruby>二<rt>èr</rt></ruby></h4>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">番号・順序・数学</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">「番号」や「数学的な数字」として使う時</p>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 mt-2 mr-2 bg-blue-400 rounded-full"></span>
+                            <div><span class="font-bold">1〜10のカウント</span><br>一、二、三...</div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 mt-2 mr-2 bg-blue-400 rounded-full"></span>
+                            <div><span class="font-bold">順序（第〜）</span><br>二月(2月)、二楼(2階)、第二(2番目)</div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 mt-2 mr-2 bg-blue-400 rounded-full"></span>
+                            <div><span class="font-bold">数字の末尾（1の位・10の位）</span><br>十二(12)、二十二(22)、一百零二(102)</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Liang (Quantity) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover group">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-4xl font-bold text-amber-600 chinese-serif"><ruby>两<rt>liǎng</rt></ruby></h4>
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold">個数・量</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">「2つの〜」と数える時</p>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 mt-2 mr-2 bg-amber-400 rounded-full"></span>
+                            <div>
+                                <span class="font-bold text-red-500">量詞の前（最重要！）</span><br>
+                                <span class="text-amber-600 font-bold">两</span>个(2個)、<span class="text-amber-600 font-bold">两</span>本书(2冊)<br>
+                                <span class="text-xs text-slate-400">※「二个」と言うと不自然です。</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 mt-2 mr-2 bg-amber-400 rounded-full"></span>
+                            <div>
+                                <span class="font-bold">大きな桁の先頭</span><br>
+                                两百(200)、两千(2000)、两万(2万)<br>
+                                <span class="text-xs text-slate-400">※200は「二百」もOKですが、2000以上は「两」が基本。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Special Rules: 0, 1, and Big Numbers -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">数字の落とし穴：「0」と「1」</h3>
+                    <p class="text-slate-500 text-sm">ただ読むだけではない、特殊なルールがあります。</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Zero & One Grid -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Zero Rule -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-purple-100">
+                        <h4 class="font-bold text-slate-800 mb-4 flex items-center">
+                            <span class="bg-purple-100 text-purple-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">0</span>
+                            <span class="text-lg">桁の間の「0」は読む</span>
+                        </h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-slate-50 pb-2">
+                                <span class="font-mono text-slate-500">101</span>
+                                <span><ruby>一百<rt>yì bǎi</rt></ruby> <span class="text-purple-600 font-bold">零</span> <ruby>一<rt>yī</rt></ruby></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-mono text-slate-500">1001</span>
+                                <div>
+                                    <span class="chinese-serif"><ruby>一千<rt>yì qiān</rt></ruby> <span class="text-purple-600 font-bold">零</span> <ruby>一<rt>yī</rt></ruby></span>
+                                    <p class="text-[10px] text-slate-400 text-right mt-1">※0が連続しても「零」は1回だけ！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- One Rule -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-teal-100">
+                        <h4 class="font-bold text-slate-800 mb-4 flex items-center">
+                            <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span>
+                            <span class="text-lg">電話番号の「1」は「ヤオ」</span>
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-3">
+                            「1 (yī)」と「7 (qī)」の音が似ていて聞き間違いやすいため、電話番号、部屋番号、バスの系統番号などの羅列では読み方を変えます。
+                        </p>
+                        <div class="bg-teal-50 p-3 rounded text-center">
+                            <span class="block text-xs text-slate-500 mb-1">部屋番号 101</span>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">
+                                <span class="text-teal-600 font-bold">么</span> <ruby>零<rt>líng</rt></ruby> <span class="text-teal-600 font-bold">么</span>
+                            </span>
+                            <span class="block text-sm text-teal-700 font-bold mt-1">yāo líng yāo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Numbers -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-3"><i class="fas fa-globe-asia text-blue-500 mr-2"></i>大きな桁（万・億）</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        英語は3桁区切り（thousand, million）ですが、中国語は日本語と同じ<strong>4桁区切り（万、億）</strong>です。<br>
+                        日本人にとって非常に理解しやすいポイントです。
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-sm font-mono bg-white p-4 rounded-xl border border-slate-100 shadow-sm justify-center">
+                        <div class="text-center">
+                            <div class="text-slate-400 text-xs">1,0000</div>
+                            <div class="font-bold text-slate-700 chinese-serif"><ruby>一万<rt>yí wàn</rt></ruby></div>
+                        </div>
+                        <div class="text-slate-300">|</div>
+                        <div class="text-center">
+                            <div class="text-slate-400 text-xs">1,0000,0000</div>
+                            <div class="font-bold text-slate-700 chinese-serif"><ruby>一亿<rt>yí yì</rt></ruby></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Money: Survival Chinese -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">実戦！お金の数え方</h3>
+                    <p class="text-slate-500 text-sm">書き言葉と話し言葉が違うので注意。旅行の必須知識。</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm mb-6">
+                <table class="w-full text-left bg-white">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-widest w-1/4">単位</th>
+                            <th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-widest w-1/3">話し言葉 (口語)</th>
+                            <th class="p-4 text-xs font-bold text-slate-500 uppercase tracking-widest w-1/3">書き言葉 (値札)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <!-- Main Unit -->
+                        <tr class="bg-amber-50/30">
+                            <td class="p-4 font-bold text-slate-700">メイン通貨 (円/ドル)</td>
+                            <td class="p-4">
+                                <span class="text-xl font-bold text-amber-600 chinese-serif"><ruby>块<rt>kuài</rt></ruby></span>
+                                <div class="text-xs text-slate-500 mt-1">三块 (3元)</div>
+                            </td>
+                            <td class="p-4">
+                                <span class="text-xl font-bold text-slate-600 chinese-serif"><ruby>元<rt>yuán</rt></ruby></span>
+                            </td>
+                        </tr>
+                        <!-- 1/10 Unit -->
+                        <tr>
+                            <td class="p-4 font-bold text-slate-700">1/10 単位</td>
+                            <td class="p-4">
+                                <span class="text-xl font-bold text-amber-600 chinese-serif"><ruby>毛<rt>máo</rt></ruby></span>
+                                <div class="text-xs text-slate-500 mt-1">五毛 (0.5元)</div>
+                            </td>
+                            <td class="p-4">
+                                <span class="text-xl font-bold text-slate-600 chinese-serif"><ruby>角<rt>jiǎo</rt></ruby></span>
+                            </td>
+                        </tr>
+                        <!-- 1/100 Unit -->
+                        <tr>
+                            <td class="p-4 font-bold text-slate-700">1/100 単位</td>
+                            <td class="p-4">
+                                <span class="text-xl font-bold text-slate-600 chinese-serif"><ruby>分<rt>fēn</rt></ruby></span>
+                                <div class="text-xs text-slate-500 mt-1">※現代ではほぼ使いません</div>
+                            </td>
+                            <td class="p-4">
+                                <span class="text-xl font-bold text-slate-600 chinese-serif"><ruby>分<rt>fēn</rt></ruby></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Native Tip -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-amber-500">
+                <h4 class="font-bold text-slate-800 mb-2 flex items-center">
+                    <i class="fas fa-lightbulb text-amber-400 mr-2"></i> ネイティブの省略テクニック
+                </h4>
+                <p class="text-sm text-slate-600 mb-4">
+                    最後の単位はよく省略されます。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="bg-slate-50 p-3 rounded flex-1">
+                        <span class="block text-xs text-slate-400 mb-1">15.0 元</span>
+                        <span class="chinese-serif font-bold text-lg"><ruby>十五块<rt>shí wǔ kuài</rt></ruby></span>
+                        <span class="text-xs text-slate-400 ml-2">(钱 qián をつけることも)</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded flex-1">
+                        <span class="block text-xs text-slate-400 mb-1">12.5 元</span>
+                        <span class="chinese-serif font-bold text-lg"><ruby>十二块五<rt>shí èr kuài wǔ</rt></ruby></span>
+                        <span class="text-xs text-amber-600 font-bold ml-2">←「毛」を言わない！</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Measure Words Visual Dictionary -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">5</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">形状別・量詞図鑑</h3>
+                    <p class="text-slate-500 text-sm">日本語の感覚が活きる部分と、中国語独自の分け方を整理しました。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Flat Things -->
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-2">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-xl"><i class="fas fa-scroll"></i></div>
+                        <div>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">张 <span class="text-sm font-sans font-normal text-slate-400">zhāng</span></span>
+                            <span class="block text-xs text-slate-500">平らな表面を持つもの</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">纸 (紙)<span class="tooltip-content">zhǐ</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">照片 (写真)<span class="tooltip-content">zhàopiàn</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">票 (チケット)<span class="tooltip-content">piào</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">桌子 (テーブル)<span class="tooltip-content">zhuōzi</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">床 (ベッド)<span class="tooltip-content">chuáng</span></span>
+                    </div>
+                </div>
+
+                <!-- Long & Thin -->
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-2">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-xl"><i class="fas fa-wave-square"></i></div>
+                        <div>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">条 <span class="text-sm font-sans font-normal text-slate-400">tiáo</span></span>
+                            <span class="block text-xs text-slate-500">細長い・うねうねしたもの</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">路 (道)<span class="tooltip-content">lù</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">河 (川)<span class="tooltip-content">hé</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">鱼 (魚)<span class="tooltip-content">yú</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">裤子 (ズボン)<span class="tooltip-content">kùzi</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">裙子 (スカート)<span class="tooltip-content">qúnzi</span></span>
+                    </div>
+                </div>
+
+                <!-- Books & Bound -->
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-2">
+                        <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 text-xl"><i class="fas fa-book"></i></div>
+                        <div>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">本 <span class="text-sm font-sans font-normal text-slate-400">běn</span></span>
+                            <span class="block text-xs text-slate-500">製本されたもの</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">书 (本)<span class="tooltip-content">shū</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">词典 (辞書)<span class="tooltip-content">cídiǎn</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">笔记本 (ノート)<span class="tooltip-content">bǐjìběn</span></span>
+                    </div>
+                </div>
+
+                <!-- Handles & Handheld -->
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-2">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-xl"><i class="fas fa-umbrella"></i></div>
+                        <div>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">把 <span class="text-sm font-sans font-normal text-slate-400">bǎ</span></span>
+                            <span class="block text-xs text-slate-500">取っ手があるもの・握るもの</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">伞 (傘)<span class="tooltip-content">sǎn</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">椅子 (椅子)<span class="tooltip-content">yǐzi</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">刀 (ナイフ)<span class="tooltip-content">dāo</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">钥匙 (鍵)<span class="tooltip-content">yàoshi</span></span>
+                    </div>
+                </div>
+
+                <!-- Clothing (Tops) & Matters -->
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-2">
+                        <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 text-xl"><i class="fas fa-tshirt"></i></div>
+                        <div>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">件 <span class="text-sm font-sans font-normal text-slate-400">jiàn</span></span>
+                            <span class="block text-xs text-slate-500">上半身の服・事柄</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">衣服 (服)<span class="tooltip-content">yīfu</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">衬衫 (シャツ)<span class="tooltip-content">chènshān</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">事 (用事)<span class="tooltip-content">shì</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">礼物 (プレゼント)<span class="tooltip-content">lǐwù</span></span>
+                    </div>
+                </div>
+
+                <!-- Vehicles & Machines -->
+                <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center gap-3 mb-3 border-b border-slate-100 pb-2">
+                        <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 text-xl"><i class="fas fa-car"></i></div>
+                        <div>
+                            <span class="text-xl font-bold text-slate-800 chinese-serif">辆 <span class="text-sm font-sans font-normal text-slate-400">liàng</span></span>
+                            <span class="block text-xs text-slate-500">車両・車輪のあるもの</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">汽车 (車)<span class="tooltip-content">qìchē</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">自行车 (自転車)<span class="tooltip-content">zìxíngchē</span></span>
+                        <span class="tooltip-container bg-slate-50 px-2 py-1 rounded text-slate-600">公交车 (バス)<span class="tooltip-content">gōngjiāochē</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Advanced: Counting Actions & Indefinite -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">6</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">発展：動作を数える・ぼかして数える</h3>
+                    <p class="text-slate-500 text-sm">物だけでなく、回数も「量詞」で数えます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Action Measure Words -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-4 border-b pb-2">動量詞（動作の回数）</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-teal-600 chinese-serif">次 <span class="text-xs font-sans text-slate-400 ml-1">cì</span></span>
+                                <span class="block text-xs text-slate-500">最も一般的な「〜回」</span>
+                            </div>
+                            <div class="text-right text-slate-600 text-xs bg-slate-50 px-2 py-1 rounded">
+                                <ruby>去<rt>qù</rt></ruby><ruby>一<rt>yí</rt></ruby><span class="font-bold text-teal-600">次</span> (1回行く)
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-teal-600 chinese-serif">下 <span class="text-xs font-sans text-slate-400 ml-1">xià</span></span>
+                                <span class="block text-xs text-slate-500">短時間の動作「ちょっと〜する」</span>
+                            </div>
+                            <div class="text-right text-slate-600 text-xs bg-slate-50 px-2 py-1 rounded">
+                                <ruby>看<rt>kàn</rt></ruby><ruby>一<rt>yí</rt></ruby><span class="font-bold text-teal-600">下</span> (ちょっと見る)
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Indefinite Measure Words -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-slate-800 mb-4 border-b pb-2">不定量詞（ぼかした数）</h4>
+                    <p class="text-xs text-slate-500 mb-4">正確な数字がわからない、または言う必要がない時。</p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-indigo-600 chinese-serif">一些 <span class="text-xs font-sans text-slate-400 ml-1">yìxiē</span></span>
+                                <span class="block text-xs text-slate-500">いくつかの（数えられるもの）</span>
+                            </div>
+                            <div class="text-right text-slate-600 text-xs bg-slate-50 px-2 py-1 rounded">
+                                <ruby>一<rt>yì</rt></ruby><span class="font-bold text-indigo-600">些</span><ruby>书<rt>shū</rt></ruby> (何冊かの本)
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <div>
+                                <span class="text-lg font-bold text-indigo-600 chinese-serif">一点儿 <span class="text-xs font-sans text-slate-400 ml-1">yìdiǎnr</span></span>
+                                <span class="block text-xs text-slate-500">少しの（数えられないもの）</span>
+                            </div>
+                            <div class="text-right text-slate-600 text-xs bg-slate-50 px-2 py-1 rounded">
+                                <ruby>喝<rt>hē</rt></ruby><ruby>一<rt>yì</rt></ruby><span class="font-bold text-indigo-600">点儿</span><ruby>水<rt>shuǐ</rt></ruby> (水を少し飲む)
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Mastery Quiz</h3>
+                <p class="text-slate-500">正しい量詞や数字を選んでください。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center">
+            <div class="inline-block bg-teal-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-teal-700 font-bold">Level 0 Complete!</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">超入門、完全クリアおめでとうございます！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                これで中国語の「OS（基本システム）」はインストール完了です。<br>
+                お金の計算も、物の数え方も、もう怖くありません。<br>
+                次からは Level 1。いよいよ「時間」や「欲求」を表現し、世界を広げていきます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l0-7.html" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-8 rounded-xl transition-all">
+                    前のレッスン
+                </a>
+                <a href="../level1/index.html" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-sky-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Level 1 へ進む <i class="fas fa-rocket ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "___", type: "blank" },
+                    { text: "个", pinyin: "gè", mean: "個/人 (量詞)" },
+                    { text: "人", pinyin: "rén", mean: "人" }
+                ],
+                options: [
+                    { text: "二 (èr)", correct: false },
+                    { text: "两 (liǎng)", correct: true }
+                ],
+                trans: "二人",
+                hint: "量詞「个」の前なので、数字は「两」を使います。"
+            },
+            {
+                question: [
+                    { text: "105", pinyin: "", mean: "数字の105" },
+                    { text: "：", type: "punct" },
+                    { text: "一", pinyin: "yì", mean: "1" },
+                    { text: "百", pinyin: "bǎi", mean: "百" },
+                    { text: "___", type: "blank" },
+                    { text: "五", pinyin: "wǔ", mean: "5" }
+                ],
+                options: [
+                    { text: "(なし)", correct: false },
+                    { text: "零 (líng)", correct: true }
+                ],
+                trans: "一百零五 (105)",
+                hint: "桁の間に0がある場合、必ず「零」と発音します。"
+            },
+            {
+                question: [
+                    { text: "房间", pinyin: "Fángjiān", mean: "部屋" },
+                    { text: "号", pinyin: "hào", mean: "番号" },
+                    { text: "：", type: "punct" },
+                    { text: "101", pinyin: "", mean: "部屋番号の101" },
+                    { text: "→", type: "punct" },
+                    { text: "___", type: "blank" },
+                    { text: "零", pinyin: "líng", mean: "0" },
+                    { text: "一", pinyin: "yāo", mean: "1 (部屋番号読み)" }
+                ],
+                options: [
+                    { text: "一 (yī)", correct: false },
+                    { text: "么 (yāo)", correct: true }
+                ],
+                trans: "部屋番号101 → yāo líng yāo",
+                hint: "部屋番号や電話番号の「1」は「ヤオ(yāo)」と読みます。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "一", pinyin: "yì", mean: "1" },
+                    { text: "___", type: "blank" },
+                    { text: "裤子", pinyin: "kùzi", mean: "ズボン" }
+                ],
+                options: [
+                    { text: "个 (gè)", correct: false },
+                    { text: "条 (tiáo)", correct: true },
+                    { text: "件 (jiàn)", correct: false }
+                ],
+                trans: "ズボンを一本買います。",
+                hint: "ズボンは「細長い」ので「条」を使います。（件はトップス）"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "是", pinyin: "shì", mean: "〜です" },
+                    { text: "一", pinyin: "yì", mean: "1" },
+                    { text: "___", type: "blank" },
+                    { text: "筷子", pinyin: "kuàizi", mean: "箸" }
+                ],
+                options: [
+                    { text: "双 (shuāng)", correct: true },
+                    { text: "支 (zhī)", correct: false },
+                    { text: "把 (bǎ)", correct: false }
+                ],
+                trans: "これは一膳の箸です。",
+                hint: "箸は2本で1組（ペア）なので「双」を使います。"
+            },
+            {
+                question: [
+                    { text: "一共", pinyin: "Yígòng", mean: "合計" },
+                    { text: "12.5", pinyin: "", mean: "12.5" },
+                    { text: "元", pinyin: "yuán", mean: "元" },
+                    { text: "：", type: "punct" },
+                    { text: "十二", pinyin: "shí èr", mean: "12" },
+                    { text: "块", pinyin: "kuài", mean: "元(口語)" },
+                    { text: "___", type: "blank" }
+                ],
+                options: [
+                    { text: "五毛 (wǔ máo)", correct: false },
+                    { text: "五 (wǔ)", correct: true }
+                ],
+                trans: "十二块五 (12.5元)",
+                hint: "口語では、末尾の単位（毛）を省略するのが自然です。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-teal-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-teal-500 hover:text-teal-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-teal-400 hover:text-teal-600 font-bold text-slate-600 transition chinese-serif min-w-[80px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-slate-50 rounded p-4 text-sm border border-slate-200 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-teal-500', 'text-teal-600', 'bg-teal-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-teal-500', 'text-teal-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-teal-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

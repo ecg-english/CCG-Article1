@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 17: 連動文 (Verbs in Series)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">17. 連動文</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                動詞を並べるだけで<br class="md:hidden">物語になる
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                英語なら "I go <strong>to</strong> buy..." や "I sit <strong>and</strong> eat..." のように接続詞が必要ですが、中国語は不要です。<br>
+                <span class="highlight-text">「起きた順」「やった順」に動詞を並べるだけ。</span><br>
+                このシンプルさが、中国語のスピード感を生み出しています。
+            </p>
+        </section>
+
+        <!-- 1. The Core Rule: Chronological Order -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">鉄則：時間の流れ通りに並べる</h3>
+                    <p class="text-slate-500 text-sm">先に起こる動作が先、後に起こる動作が後。逆転は許されません。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8 relative">
+                    <!-- Step 1 -->
+                    <div class="text-center w-full md:w-1/3">
+                        <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
+                        <p class="text-sm text-slate-500 mb-1">まず</p>
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif"><ruby>去<rt>qù</rt></ruby> <ruby>超市<rt>chāoshì</rt></ruby></h4>
+                        <p class="text-xs text-slate-400">スーパーへ行く</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="text-slate-300 text-2xl hidden md:block">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="text-slate-300 text-2xl md:hidden my-2">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center w-full md:w-1/3">
+                        <div class="bg-amber-100 text-amber-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
+                        <p class="text-sm text-slate-500 mb-1">それから</p>
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif"><ruby>买<rt>mǎi</rt></ruby> <ruby>东西<rt>dōngxi</rt></ruby></h4>
+                        <p class="text-xs text-slate-400">買い物をする</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 text-center">
+                    <p class="text-xs font-bold text-slate-400 mb-2">完成した文</p>
+                    <p class="chinese-serif text-3xl font-bold text-slate-800 mb-2">
+                        <ruby>我<rt>wǒ</rt></ruby> <span class="text-blue-600">去超市</span> <span class="text-amber-600">买东西</span>。
+                    </p>
+                    <p class="text-sm text-slate-600">私はスーパーへ行って買い物をします。（スーパーへ買い物に行きます）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Three Types of Serial Verbs -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">連動文の3大パターン</h3>
+                    <p class="text-slate-500 text-sm">V1とV2の関係性によって、大きく3つの意味に分かれます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Type 1: Purpose -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded font-bold">目的</span>
+                        <i class="fas fa-bullseye text-blue-300 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">〜しに行く / 来る</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        移動動詞（去/来）+ 場所 + 目的の動作。<br>
+                        最も基本の形です。
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded-lg text-center">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>来<rt>lái</rt></ruby> <ruby>日本<rt>Rìběn</rt></ruby> <ruby>旅游<rt>lǚyóu</rt></ruby>
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">日本へ旅行に来る</p>
+                    </div>
+                </div>
+
+                <!-- Type 2: Method -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-amber-100 text-amber-700 text-xs px-2 py-1 rounded font-bold">手段・方法</span>
+                        <i class="fas fa-tools text-amber-300 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">〜して（手段）〜する</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        V1が手段、V2がメインの動作。<br>
+                        「どうやって？」の部分が先に来ます。
+                    </p>
+                    <div class="bg-amber-50 p-3 rounded-lg text-center">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>坐<rt>zuò</rt></ruby> <ruby>地铁<rt>dìtiě</rt></ruby> <ruby>去<rt>qù</rt></ruby>
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">地下鉄に乗って行く</p>
+                    </div>
+                </div>
+
+                <!-- Type 3: Manner/State -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-teal-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-teal-100 text-teal-700 text-xs px-2 py-1 rounded font-bold">様態・状態</span>
+                        <i class="fas fa-chair text-teal-300 text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">〜したまま〜する</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        V1に「着」をつけて状態をキープしながらV2を行う形。
+                    </p>
+                    <div class="bg-teal-50 p-3 rounded-lg text-center">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>躺<rt>tǎng</rt></ruby> <span class="text-teal-600">着</span> <ruby>看<rt>kàn</rt></ruby> <ruby>书<rt>shū</rt></ruby>
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">寝転がって本を読む</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Advanced: The "You" Series -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「有」を使った連動文</h3>
+                    <p class="text-slate-500 text-sm">「理由・原因があって、その結果〜する」というパターン。</p>
+                </div>
+            </div>
+
+            <div class="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="flex-1 w-full bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-indigo-800 mb-2 border-b border-indigo-100 pb-1">パターン：有 + O + V</h4>
+                        <p class="text-sm text-slate-600 mb-3">
+                            「あるモノ・コト(O)」が存在し、それに対して「処理(V)」をする形。
+                        </p>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="chinese-serif font-bold text-slate-800">
+                                    <ruby>我<rt>wǒ</rt></ruby> <span class="text-indigo-600">有</span> <ruby>话<rt>huà</rt></ruby> <ruby>跟<rt>gēn</rt></ruby> <ruby>你<rt>nǐ</rt></ruby> <ruby>说<rt>shuō</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">あなたに話したいこと（話）があります。</p>
+                            </div>
+                            <div>
+                                <p class="chinese-serif font-bold text-slate-800">
+                                    <ruby>我<rt>wǒ</rt></ruby> <ruby>没<rt>méi</rt></ruby> <ruby>时间<rt>shíjiān</rt></ruby> <ruby>吃<rt>chī</rt></ruby> <ruby>饭<rt>fàn</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">ご飯を食べる時間がありません。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/3 text-sm text-indigo-900 bg-indigo-100/50 p-4 rounded-lg">
+                        <i class="fas fa-info-circle mr-1 text-indigo-500"></i>
+                        <strong>ポイント</strong><br>
+                        日本語では「食べる時間」と修飾語になりますが、中国語では「時間がない（原因）→だから食べない（結果）」のように動詞を並べる感覚です。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Negation & Aspect: The Trap -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定と完了の「位置」の罠</h3>
+                    <p class="text-slate-500 text-sm">どこに「不」や「了」を置くか。ここがテストの頻出ポイントです。</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Negation Position -->
+                <div class="bg-white p-6 rounded-xl border-l-4 border-red-500 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-100 text-red-800 text-xs px-2 py-1 font-bold rounded-bl">鉄則</div>
+                    <h4 class="font-bold text-slate-800 mb-2">否定「不 / 没」は最初の動詞の前！</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        全体の行為を否定するため、先頭の動詞（V1）の前に置きます。<br>
+                        「行って買わない」ではなく「買いに行かない（行くこと自体を否定）」だからです。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-red-50 p-3 rounded border border-red-100">
+                            <span class="text-xs font-bold text-red-500 block mb-1">正解 (Correct)</span>
+                            <span class="chinese-serif font-bold text-slate-800">
+                                <span class="text-red-500">不</span> <ruby>去<rt>qù</rt></ruby> <ruby>看<rt>kàn</rt></ruby> <ruby>电影<rt>diànyǐng</rt></ruby>
+                            </span>
+                            <p class="text-xs text-slate-500 mt-1">映画を見に行かない</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-200 opacity-60">
+                            <span class="text-xs font-bold text-slate-400 block mb-1">間違い (Wrong)</span>
+                            <span class="chinese-serif font-bold text-slate-600">
+                                <ruby>去<rt>qù</rt></ruby> <span class="text-red-500 line-through">不</span> <ruby>看<rt>kàn</rt></ruby> ...
+                            </span>
+                            <p class="text-xs text-slate-500 mt-1">（行って見ない？）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aspect Position -->
+                <div class="bg-white p-6 rounded-xl border-l-4 border-amber-500 shadow-sm">
+                    <h4 class="font-bold text-slate-800 mb-2">完了「了」は通常、文末（またはV2の後）</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「V1してV2した」という一連の動作全体が完了したとみなすため、文の最後に「了」を置くのが基本です。
+                    </p>
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <p class="chinese-serif font-bold text-slate-800 text-lg">
+                            <ruby>我<rt>wǒ</rt></ruby> <ruby>去<rt>qù</rt></ruby> <ruby>上海<rt>Shànghǎi</rt></ruby> <ruby>玩<rt>wán</rt></ruby> <span class="text-amber-600">了</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">上海へ遊びに行きました。</p>
+                    </div>
+                    
+                    <div class="mt-4 text-xs text-slate-500 border-t border-slate-100 pt-2">
+                        <i class="fas fa-info-circle mr-1 text-amber-500"></i>
+                        <strong>例外（上級）：</strong>「食べた後に映画を見た」のように、V1の完了を強調してV2の前提とする場合は、V1の後ろに「了」がつくこともあります。（例：吃了饭去看电影）
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Sentence Building Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい語順を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Level 1 Complete!</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">初級文法、完走おめでとうございます！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                連動文まで使いこなせれば、日常会話の表現力はかなりのものです。<br>
+                次からは Level 2。いよいよ中国語の核心である「補語」の世界へ突入します。<br>
+                まずは「的・得・地」の使い分けからです。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-8.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="../level2/index.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Level 2 へ進む <i class="fas fa-rocket ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我们", pinyin: "Wǒmen", mean: "私たち" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "饭店", pinyin: "fàndiàn", mean: "レストラン" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "吃饭 (chīfàn)", correct: true },
+                    { text: "有饭 (yǒu fàn)", correct: false }
+                ],
+                trans: "私たちはレストランへご飯を食べに行きます。",
+                hint: "「場所へ行って（手段）〜する（目的）」という連動文の基本形です。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "坐", pinyin: "zuò", mean: "乗る" },
+                    { text: "飞机", pinyin: "fēijī", mean: "飛行機" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "不 (bù)", correct: true },
+                    { text: "没 (méi)", correct: false } // tricky but let's stick to negation placement
+                ],
+                trans: "私は飛行機で行きません。",
+                hint: "連動文の否定「不」は、最初の動詞（手段である「坐」）の前に置きます。"
+            },
+            {
+                question: [
+                    { text: "请", pinyin: "Qǐng", mean: "〜してください" },
+                    { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+                    { text: "___", type: "blank" },
+                    { text: "听", pinyin: "tīng", mean: "聞く" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "说", pinyin: "shuō", mean: "話す" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "坐着 (zuò zhe)", correct: true },
+                    { text: "坐 (zuò)", correct: false }
+                ],
+                trans: "みなさん、座って私の話を聞いてください。",
+                hint: "「座った状態で」という様態を表すため、第1動詞に「着」をつけます。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "问", pinyin: "wèn", mean: "聞く/質問する" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "有事 (yǒu shì)", correct: true },
+                    { text: "是事 (shì shì)", correct: false }
+                ],
+                trans: "あなたに聞きたいこと（用事）があります。",
+                hint: "「用事がある→だから聞く」という「有」を使った連動文です。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-blue-500', 'text-blue-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

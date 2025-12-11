@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 24: 受身文 (被 / 叫 / 让)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">24. 受身文 (被 / 叫 / 让)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「された！」という<br class="md:hidden">被害の気持ち
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「ケーキを食べられた」「財布を盗まれた」。<br>
+                中国語の受身文は、単なる事実の描写だけでなく、<span class="highlight-text">「被害を受けた」「迷惑だ」</span>というニュアンスを伴うことが非常に多いです。<br>
+                「把」構文の逆バージョンとして理解しましょう。
+            </p>
+        </section>
+
+        <!-- 1. Basic Structure: Bei -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本構造：「被 (bèi)」</h3>
+                    <p class="text-slate-500 text-sm">受け手が主語になり、加害者の前に「被」を置きます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <!-- Visual Explanation -->
+                <div class="flex flex-col md:flex-row items-center justify-around gap-8 mb-8">
+                    <!-- Subject (Receiver) -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-blue-500 mb-2">主語 (受け手)</p>
+                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 shadow-sm min-w-[100px]">
+                            <span class="chinese-serif text-2xl font-bold text-slate-800"><ruby>蛋糕<rt>dàngāo</rt></ruby></span>
+                            <p class="text-xs text-slate-500 mt-1">ケーキ</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center text-slate-300">
+                        <span class="text-3xl text-amber-500"><i class="fas fa-arrow-left"></i></span>
+                        <div class="mt-2 bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shadow-md">被</div>
+                    </div>
+
+                    <!-- Actor (Doer) -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-red-500 mb-2">加害者 (した人)</p>
+                        <div class="bg-red-50 p-4 rounded-xl border border-red-200 shadow-sm min-w-[100px]">
+                            <span class="chinese-serif text-2xl font-bold text-slate-800"><ruby>弟弟<rt>dìdi</rt></ruby></span>
+                            <p class="text-xs text-slate-500 mt-1">弟</p>
+                        </div>
+                    </div>
+
+                    <!-- Verb + Result -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-slate-500 mb-2">動詞 + 結果</p>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 shadow-sm min-w-[100px]">
+                            <span class="chinese-serif text-2xl font-bold text-slate-800"><ruby>吃<rt>chī</rt></ruby> <ruby>了<rt>le</rt></ruby></span>
+                            <p class="text-xs text-slate-500 mt-1">食べられた</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 p-6 rounded-xl border-l-4 border-amber-500">
+                    <p class="chinese-serif text-2xl font-bold text-slate-800 text-center mb-3">
+                        <ruby>蛋糕<rt>dàngāo</rt></ruby> <span class="text-amber-600 font-bold text-3xl mx-1">被</span> <ruby>弟弟<rt>dìdi</rt></ruby> <ruby>吃<rt>chī</rt></ruby> <span class="text-indigo-600 font-bold">了</span>。
+                    </p>
+                    <p class="text-sm text-slate-700 text-center">
+                        ケーキは弟に食べられました。<br>
+                        <span class="text-xs text-amber-800 mt-1">（くそっ！食べたかったのに！という被害感）</span>
+                    </p>
+                </div>
+
+                <!-- Rule Box -->
+                <div class="mt-6 flex items-start gap-4 p-4 border border-slate-200 rounded-lg">
+                    <div class="text-amber-500 text-xl"><i class="fas fa-exclamation-circle"></i></div>
+                    <div>
+                        <h5 class="font-bold text-slate-700 text-sm mb-1">重要ルール：動詞の後ろは空っぽ不可！</h5>
+                        <p class="text-sm text-slate-600">
+                            「把」構文と同じく、処置や影響を受けた結果どうなったかを示す必要があります。<br>
+                            必ず「了」「結果補語」「方向補語」などをつけます。<br>
+                            <span class="text-xs text-red-500">× 蛋糕被弟弟吃 (これでは文が終われない)</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Colloquial Forms: Jiao / Rang -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">話し言葉の受身：叫 (jiào) / 让 (ràng)</h3>
+                    <p class="text-slate-500 text-sm">会話では「被」よりもこちらがよく使われます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Jiao / Rang -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded font-bold">口語 (話し言葉)</span>
+                        <div class="text-2xl text-teal-500"><i class="fas fa-comment-dots"></i></div>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-4 chinese-serif">
+                        <ruby>叫<rt>jiào</rt></ruby> / <ruby>让<rt>ràng</rt></ruby>
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        意味は「被」と同じですが、日常会話で多用されます。<br>
+                        「叫」の方がより一般的、「让」もよく使われます。
+                    </p>
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <p class="chinese-serif text-lg font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-teal-600 font-bold">叫</span> <ruby>人<rt>rén</rt></ruby> <ruby>打<rt>dǎ</rt></ruby> <ruby>了<rt>le</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-500">私は（誰かに）殴られた。</p>
+                    </div>
+                </div>
+
+                <!-- Difference: Omission -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 card-hover">
+                    <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fas fa-user-secret mr-2 text-red-500"></i> 加害者の省略
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        誰にされたか言いたくない（または不明な）場合、「被」と「叫/让」でルールが違います。
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="border-b border-slate-100 pb-3">
+                            <span class="font-bold text-amber-600 block mb-1">被 (bèi)</span>
+                            <span class="text-sm text-slate-700">加害者を<strong>省略OK</strong>。</span><br>
+                            <span class="chinese-serif text-slate-800">钱包 <span class="text-amber-600 font-bold">被</span> 偷了。</span> (財布が盗まれた)
+                        </div>
+                        <div>
+                            <span class="font-bold text-teal-600 block mb-1">叫 (jiào) / 让 (ràng)</span>
+                            <span class="text-sm text-slate-700">加害者を<strong>省略NG</strong>。</span><br>
+                            <span class="text-xs text-slate-500">※誰かわからない時は「人(rén)」を置きます。</span><br>
+                            <span class="chinese-serif text-slate-800">钱包 <span class="text-teal-600 font-bold">叫</span> <span class="text-red-500 font-bold border-b-2 border-red-200">人</span> 偷了。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-4 bg-slate-100 rounded-lg text-xs text-slate-500 text-center">
+                ※「叫」と「让」は使役文（〜させる）でも使われます。文脈（被害を受けているか）で判断します。
+            </div>
+        </section>
+
+        <!-- 3. Nuance: Victimization -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「被害」のニュアンス</h3>
+                    <p class="text-slate-500 text-sm">日本語は「褒められる」も受身ですが、中国語の「被」は元々ネガティブです。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="text-2xl text-blue-500"><i class="fas fa-frown"></i></div>
+                        <h4 class="font-bold text-slate-800">ネガティブ（基本）</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        盗まれる、殴られる、壊される、食べられる、騙される、など。<br>
+                        「迷惑だ」「困った」という気持ちが含まれます。
+                    </p>
+                    <div class="bg-slate-50 p-2 rounded text-xs text-slate-500">
+                        <span class="chinese-serif font-bold">被骗了 (bèi piàn le)</span> - 騙された
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="text-2xl text-amber-500"><i class="fas fa-smile"></i></div>
+                        <h4 class="font-bold text-slate-800">ポジティブ（現代的用法）</h4>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        本来は使いませんでしたが、欧米語の影響で「愛される」「褒められる」などにも使われるようになりました。
+                    </p>
+                    <div class="bg-slate-50 p-2 rounded text-xs text-slate-500">
+                        <span class="chinese-serif font-bold">被表扬了 (bèi biǎoyáng le)</span> - 褒められた
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Negation & Constraints -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定・助動詞の位置</h3>
+                    <p class="text-slate-500 text-sm">「把」構文と同じく、すべて「被」の前に置きます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Incorrect -->
+                    <div class="flex-1 opacity-60">
+                        <p class="text-xs font-bold text-slate-400 mb-2 text-center">× 間違い</p>
+                        <div class="bg-slate-100 p-4 rounded-xl text-center">
+                            <p class="chinese-serif text-lg text-slate-500 line-through">蛋糕 被 弟弟 <span class="text-red-500 font-bold">没</span> 吃。</p>
+                            <p class="text-xs text-slate-400 mt-1">（日本語順：ケーキは弟に食べられてない）</p>
+                        </div>
+                    </div>
+
+                    <div class="text-2xl text-slate-300 self-center"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Correct -->
+                    <div class="flex-1">
+                        <p class="text-xs font-bold text-green-600 mb-2 text-center">○ 正解</p>
+                        <div class="bg-green-50 p-4 rounded-xl text-center border-2 border-green-200">
+                            <p class="chinese-serif text-lg font-bold text-slate-800">
+                                蛋糕 <span class="text-red-500 font-bold text-xl">没</span> <span class="text-amber-600 font-bold">被</span> 弟弟 吃。
+                            </p>
+                            <p class="text-xs text-slate-600 mt-1">ケーキは弟に食べられていない。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 border-t border-slate-100 pt-4">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-center gap-2">
+                            <span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-xs font-bold">否定</span>
+                            <span><strong>没 (méi)</strong> + 被 ... (〜されなかった)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-xs font-bold">助動詞</span>
+                            <span><strong>会 (huì) / 能 (néng)</strong> + 被 ... (〜されるだろう / され得る)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Structure Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい語順を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 24 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「把（〜をどうする）」と「被（〜される）」。この2つはコインの裏表です。<br>
+                次回は、「人に〜させる」「人に〜してもらう」という使役文を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-6.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l2-8.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 25: 使役文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "的", pinyin: "de", mean: "の" },
+                    { text: "自行车", pinyin: "zìxíngchē", mean: "自転車" },
+                    { text: "___", type: "blank" },
+                    { text: "偷", pinyin: "tōu", mean: "盗む" },
+                    { text: "走", pinyin: "zǒu", mean: "去る" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "被 (bèi)", correct: true },
+                    { text: "把 (bǎ)", correct: false }
+                ],
+                trans: "私の自転車が盗まれました。",
+                hint: "「盗まれる」という被害を表す受身文なので「被」を使います。「把」だと「自転車を盗む」になってしまいます。"
+            },
+            {
+                question: [
+                    { text: "那个", pinyin: "Nàge", mean: "あの" },
+                    { text: "人", pinyin: "rén", mean: "人" },
+                    { text: "___", type: "blank" },
+                    { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+                    { text: "选", pinyin: "xuǎn", mean: "選ぶ" },
+                    { text: "为", pinyin: "wéi", mean: "〜とする" },
+                    { text: "代表", pinyin: "dàibiǎo", mean: "代表" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "被 (bèi)", correct: true },
+                    { text: "让 (ràng)", correct: false } // 'rang' is ok colloquial but bei is safer for formal context like representative. Let's keep simple. Actually 'rang' works too but 'bei' is standard passive focus.
+                ],
+                trans: "あの人はみんなに代表に選ばれました。",
+                hint: "「選ばれる」という受身。「让」も使えますが、ここでは標準的な受身マーカー「被」を選びましょう。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "叫", pinyin: "jiào", mean: "〜される(口語)" },
+                    { text: "人", pinyin: "rén", mean: "人" },
+                    { text: "打", pinyin: "dǎ", mean: "殴る" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "没 (méi)", correct: true },
+                    { text: "不 (bù)", correct: false }
+                ],
+                trans: "私は殴られていません。",
+                hint: "過去の事実（被害）の否定なので「没」を使います。そして否定語は「叫（受身マーカー）」の前に置きます。"
+            },
+            {
+                question: [
+                    { text: "牛奶", pinyin: "Niúnǎi", mean: "牛乳" },
+                    { text: "让", pinyin: "ràng", mean: "〜される(口語)" },
+                    { text: "___", type: "blank" },
+                    { text: "喝", pinyin: "hē", mean: "飲む" },
+                    { text: "完", pinyin: "wán", mean: "終わる" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "猫 (māo)", correct: true },
+                    { text: "(省略)", correct: false }
+                ],
+                trans: "牛乳は猫に飲み干されました。",
+                hint: "「让」や「叫」を使う場合、加害者（動作主）を省略することはできません。誰にされたか不明なら「人」を入れます。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(choice !== "(省略)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                } else if (choice === "(省略)" && btn.innerText === "(省略)") {
+                     btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                if (choice === "(省略)") {
+                    slot.textContent = "×";
+                    slot.classList.add('text-slate-400');
+                } else {
+                    slot.textContent = choice;
+                    if (isCorrect) {
+                        slot.classList.add('border-amber-500', 'text-amber-600');
+                    } else {
+                        slot.classList.add('border-red-500', 'text-red-600');
+                    }
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Grammar Hub | 中国語文法・完全攻略</title>
+    <!-- Tailwind CSS (Utility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chinaRed: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48', // Brand Base
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        },
+                        chinaGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-50 min-h-screen pb-20">
+    <div>
+        <!-- ヒーローセクション -->
+        <header class="hero-animate bg-chinaRed-900 text-white pt-12 pb-20 px-4 text-center rounded-b-[3rem] shadow-xl mb-12 relative overflow-hidden">
+            <!-- 背景装飾：龍や雲のイメージアイコン -->
+            <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <i class="fa-solid fa-dragon hero-bg-icon text-9xl absolute top-[-20px] left-[-20px] opacity-10"></i>
+                <i class="fa-solid fa-cloud hero-bg-icon text-9xl absolute bottom-[-10px] right-[-10px] opacity-10" style="animation-delay: -3s;"></i>
+            </div>
+            
+            <div class="relative z-10">
+                <h1 class="hero-title text-3xl md:text-5xl font-bold mb-4 tracking-tight font-serif-sc">
+                    中国文法 完全攻略教材
+                </h1>
+                <p class="hero-subtitle text-red-100/80 max-w-xl mx-auto tracking-tight font-serif-sc">
+                    ゼロからネイティブ思考へ導く、最強の中国語文法ガイド。
+                </p>
+            </div>
+        </header>
+
+        <!-- レベル選択グリッド -->
+        <div class="px-4 max-w-5xl mx-auto -mt-16 grid gap-6 md:grid-cols-2 mb-12 relative z-10">
+            
+            <!-- Level 0: 超入門 -->
+            <a href="level0/" class="level-card card-animate bg-white rounded-2xl shadow-lg overflow-hidden border border-stone-100" data-delay="0" data-level="0">
+                <div class="h-2 bg-gradient-to-r from-teal-400 to-teal-600"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 relative">
+                        <div class="w-14 h-14 rounded-xl bg-teal-600 text-white flex items-center justify-center shadow-md shadow-teal-200 overflow-hidden">
+                            <img src="image/level0Icon.png" alt="Level 0 Icon" class="w-full h-full object-contain p-1">
+                        </div>
+                        <div class="progress-chart" data-level="0">
+                            <svg class="progress-ring" width="48" height="48">
+                                <defs>
+                                    <linearGradient id="gradient-0" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#2dd4bf;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0d9488;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-ring-background" cx="24" cy="24" r="20" fill="none" stroke="#e7e5e4" stroke-width="4"></circle>
+                                <circle class="progress-ring-circle" cx="24" cy="24" r="20" fill="none" stroke="url(#gradient-0)" stroke-width="4" stroke-linecap="round" transform="rotate(-90 24 24)"></circle>
+                            </svg>
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold text-stone-800 mb-1 tracking-tight font-serif-sc">Level 0: 超入門</h2>
+                    <p class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">THE CORE</p>
+                    <p class="text-sm text-stone-500 mb-6 min-h-[3em] leading-6">
+                        中国語の「OS」を入れる。<br>
+                        発音・四声・基本語順(SVO)・是/有/在の徹底理解。
+                    </p>
+                    <div class="flex items-center text-sm font-bold text-teal-600 group tracking-tight font-serif-sc">
+                        学習を始める <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Level 1: 初級 -->
+            <a href="level1/" class="level-card card-animate bg-white rounded-2xl shadow-lg overflow-hidden border border-stone-100" data-delay="100" data-level="1">
+                <div class="h-2 bg-gradient-to-r from-sky-400 to-sky-600"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 relative">
+                        <div class="w-14 h-14 rounded-xl bg-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-200 overflow-hidden">
+                            <img src="image/level1Icon.png" alt="Level 1 Icon" class="w-full h-full object-contain p-1">
+                        </div>
+                        <div class="progress-chart" data-level="1">
+                            <svg class="progress-ring" width="48" height="48">
+                                <defs>
+                                    <linearGradient id="gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-ring-background" cx="24" cy="24" r="20" fill="none" stroke="#e7e5e4" stroke-width="4"></circle>
+                                <circle class="progress-ring-circle" cx="24" cy="24" r="20" fill="none" stroke="url(#gradient-1)" stroke-width="4" stroke-linecap="round" transform="rotate(-90 24 24)"></circle>
+                            </svg>
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold text-stone-800 mb-1 tracking-tight font-serif-sc">Level 1: 初級</h2>
+                    <p class="text-xs font-bold text-sky-600 uppercase tracking-wider mb-3">EXPANDING THE WORLD</p>
+                    <p class="text-sm text-stone-500 mb-6 min-h-[3em] leading-6">
+                        時空と状態を描写する。<br>
+                        完了の「了」、進行形、能願動詞で日常会話を成立させる。
+                    </p>
+                    <div class="flex items-center text-sm font-bold text-sky-600 group tracking-tight font-serif-sc">
+                        学習を始める <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Level 2: 中級 -->
+            <a href="level2/" class="level-card card-animate bg-white rounded-2xl shadow-lg overflow-hidden border border-stone-100" data-delay="200" data-level="2">
+                <div class="h-2 bg-gradient-to-r from-amber-400 to-amber-600"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 relative">
+                        <div class="w-14 h-14 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-md shadow-amber-200 overflow-hidden">
+                            <img src="image/level2Icon.png" alt="Level 2 Icon" class="w-full h-full object-contain p-1">
+                        </div>
+                        <div class="progress-chart" data-level="2">
+                            <svg class="progress-ring" width="48" height="48">
+                                <defs>
+                                    <linearGradient id="gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-ring-background" cx="24" cy="24" r="20" fill="none" stroke="#e7e5e4" stroke-width="4"></circle>
+                                <circle class="progress-ring-circle" cx="24" cy="24" r="20" fill="none" stroke="url(#gradient-2)" stroke-width="4" stroke-linecap="round" transform="rotate(-90 24 24)"></circle>
+                            </svg>
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold text-stone-800 mb-1 tracking-tight font-serif-sc">Level 2: 中級</h2>
+                    <p class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-3">NUANCE & COMPLEMENTS</p>
+                    <p class="text-sm text-stone-500 mb-6 min-h-[3em] leading-6">
+                        ここが最大の山場。<br>
+                        各種「補語」、把構文、受身など、中国語特有の概念を完全攻略。
+                    </p>
+                    <div class="flex items-center text-sm font-bold text-amber-600 group tracking-tight font-serif-sc">
+                            学習を始める <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Level 3: 上級 -->
+            <a href="level3/" class="level-card card-animate bg-white rounded-2xl shadow-lg overflow-hidden border border-stone-100" data-delay="300" data-level="3">
+                <div class="h-2 bg-gradient-to-r from-chinaRed-400 to-chinaRed-600"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4 relative">
+                        <div class="w-14 h-14 rounded-xl bg-chinaRed-600 text-white flex items-center justify-center shadow-md shadow-red-200 overflow-hidden">
+                            <img src="image/level3Icon.png" alt="Level 3 Icon" class="w-full h-full object-contain p-1">
+                        </div>
+                        <div class="progress-chart" data-level="3">
+                            <svg class="progress-ring" width="48" height="48">
+                                <defs>
+                                    <linearGradient id="gradient-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#fb7185;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#e11d48;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-ring-background" cx="24" cy="24" r="20" fill="none" stroke="#e7e5e4" stroke-width="4"></circle>
+                                <circle class="progress-ring-circle" cx="24" cy="24" r="20" fill="none" stroke="url(#gradient-3)" stroke-width="4" stroke-linecap="round" transform="rotate(-90 24 24)"></circle>
+                            </svg>
+                            <span class="progress-text">0%</span>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold text-stone-800 mb-1 tracking-tight font-serif-sc">Level 3: 上級</h2>
+                    <p class="text-xs font-bold text-chinaRed-600 uppercase tracking-wider mb-3">LOGIC & NATIVE MIND</p>
+                    <p class="text-sm text-stone-500 mb-6 min-h-[3em] leading-6">
+                        論理とニュアンスの統合。<br>
+                        複文、語気助詞、特殊構文を使いこなし、ネイティブの感覚と同化する。
+                    </p>
+                    <div class="flex items-center text-sm font-bold text-chinaRed-600 group tracking-tight font-serif-sc">
+                        学習を始める <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <footer class="footer-animate text-center text-stone-400 text-sm pb-10">
+            &copy; 2025 Chinese Grammar Hub
+        </footer>
+    </div>
+
+    <!-- CCG chanフローティングボタン -->
+    <button id="ecgKunButton" class="ecg-kun-button fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-4 border-chinaRed-100 hover:border-chinaRed-400 group overflow-hidden">
+        <img id="ecgKunFloatingImg" src="image/CCG-chan.png" alt="CCG chan" class="w-12 h-12 object-contain">
+    </button>
+
+    <!-- CCG chanチャットモーダル -->
+    <div id="ecgChatModal" class="ecg-chat-modal fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
+        <div class="ecg-chat-overlay absolute inset-0 bg-stone-900/40 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        <div class="ecg-chat-container relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl h-[80vh] max-h-[800px] flex flex-col transform scale-95 opacity-0 transition-all duration-300 border border-stone-100">
+            <!-- チャットヘッダー -->
+            <div class="ecg-chat-header bg-gradient-to-r from-chinaRed-600 to-chinaRed-700 text-white p-4 rounded-t-2xl flex items-center justify-between shadow-md">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="image/CCG-chan.png" alt="CCG chan" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">CCG chan</h3>
+                        <p class="text-xs text-red-100">オンライン・24時間対応</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="ecgChatClose" class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- チャットメッセージエリア -->
+            <div id="ecgChatMessages" class="ecg-chat-messages flex-1 overflow-y-auto p-4 space-y-4 bg-stone-50">
+                <!-- メッセージはJavaScriptで動的に追加 -->
+            </div>
+
+            <!-- チャット入力エリア（選択肢ボタン用） -->
+            <div id="ecgChatOptions" class="ecg-chat-options p-4 border-t border-stone-200 space-y-2 bg-white rounded-b-2xl">
+                <!-- 選択肢ボタンはJavaScriptで動的に追加 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 中国語カリキュラム用の構成設定
+        // Lesson IDは l{level}-{number} 形式。総数は前の議論に基づき設定。
+        const levelConfig = {
+            0: { total: 8, lessons: ['l0-1', 'l0-2', 'l0-3', 'l0-4', 'l0-5', 'l0-6', 'l0-7', 'l0-8'], name: '超入門' },
+            1: { total: 9, lessons: ['l1-1', 'l1-2', 'l1-3', 'l1-4', 'l1-5', 'l1-6', 'l1-7', 'l1-8', 'l1-9'], name: '初級' },
+            2: { total: 9, lessons: ['l2-1', 'l2-2', 'l2-3', 'l2-4', 'l2-5', 'l2-6', 'l2-7', 'l2-8', 'l2-9'], name: '中級' },
+            3: { total: 9, lessons: ['l3-1', 'l3-2', 'l3-3', 'l3-4', 'l3-5', 'l3-6', 'l3-7', 'l3-8', 'l3-9'], name: '上級' }
+        };
+
+        // 達成率を計算して円グラフを更新
+        function updateProgressChart(level, delay = 0) {
+            const config = levelConfig[level];
+            if (!config) return;
+
+            let completedCount = 0;
+            config.lessons.forEach(lessonId => {
+                const key = `lesson_completed_${lessonId}`;
+                if (localStorage.getItem(key) === 'true') {
+                    completedCount++;
+                }
+            });
+
+            const percentage = Math.round((completedCount / config.total) * 100);
+            const chart = document.querySelector(`.progress-chart[data-level="${level}"]`);
+            if (!chart) return;
+
+            const circle = chart.querySelector('.progress-ring-circle');
+            const text = chart.querySelector('.progress-text');
+            
+            if (circle && text) {
+                const circumference = 2 * Math.PI * 20; // r=20
+                const offset = circumference - (percentage / 100) * circumference;
+                
+                // 初期状態を設定
+                circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                circle.style.strokeDashoffset = circumference; 
+                
+                setTimeout(() => {
+                    circle.style.strokeDashoffset = offset;
+                    animateCounter(text, 0, percentage, 800);
+                }, delay);
+            }
+        }
+
+        // カウントアップアニメーション
+        function animateCounter(element, start, end, duration) {
+            const startTime = performance.now();
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(start + (end - start) * easeOut);
+                
+                element.textContent = `${current}%`;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    element.textContent = `${end}%`;
+                }
+            };
+            requestAnimationFrame(animate);
+        }
+
+        // ページ読み込み後の初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            // カードアニメーション
+            const cards = document.querySelectorAll('.card-animate');
+            cards.forEach((card) => {
+                const delay = parseInt(card.getAttribute('data-delay')) || 0;
+                const level = parseInt(card.getAttribute('data-level')) || 0;
+                const cardDelay = 300 + delay * 0.5;
+                
+                setTimeout(() => {
+                    card.classList.add('visible');
+                    // チャートアニメーション
+                    updateProgressChart(level, cardDelay + 600);
+                }, cardDelay);
+            });
+
+            // フッター
+            const footer = document.querySelector('.footer-animate');
+            setTimeout(() => {
+                footer.classList.add('visible');
+            }, 600);
+
+            // チャット機能初期化
+            initPandaChat();
+        });
+
+        // CCG chanチャット機能
+        function initPandaChat() {
+            const chatButton = document.getElementById('ecgKunButton');
+            const chatModal = document.getElementById('ecgChatModal');
+            const chatClose = document.getElementById('ecgChatClose');
+            const chatMessages = document.getElementById('ecgChatMessages');
+            const chatOptions = document.getElementById('ecgChatOptions');
+
+            const qaData = [
+                {
+                    question: '学習進捗はどうですか？',
+                    type: 'progress',
+                    answer: null 
+                },
+                {
+                    question: '次は何をすればいい？',
+                    type: 'recommendation',
+                    answer: null
+                },
+                {
+                    question: '中国語の発音が難しい...',
+                    answer: '発音は中国語の命ですね！特に「四声（声調）」は何度も聞いて真似るのが一番です。Level 0のレッスンで音源を何度も再生し、自分の声を録音して比べてみましょう。最初はオーバーなくらい大げさに発音するのがコツですよ！'
+                },
+                {
+                    question: '「補語」って何？',
+                    answer: '補語は中国語の「スパイス」です。「食べた（吃）」だけでなく、「食べ終わった（吃完）」「お腹いっぱい食べた（吃饱）」のように、動作の結果や状態を詳しく説明する役割があります。Level 2でたっぷり練習するのでお楽しみに！'
+                },
+                {
+                    question: 'このサイトの使い方は？',
+                    answer: '4つのレベルを順番に進めるのが王道ですが、気になるトピックからつまみ食いしてもOKです。各レッスンには「確認テスト」がついているので、全問正解してクリアマークを集めていってくださいね！'
+                }
+            ];
+
+            let isInitialized = false;
+
+            function openChat() {
+                chatModal.classList.add('active');
+                if (!isInitialized) {
+                    showInitialMessage();
+                    isInitialized = true;
+                }
+            }
+
+            function closeChat() {
+                chatModal.classList.remove('active');
+            }
+
+            function showInitialMessage() {
+                chatMessages.innerHTML = '';
+                
+                const initialMessage = `
+                    <div class="ecg-message ecg-message-bot">
+                        <div class="ecg-message-avatar flex items-center justify-center bg-white w-10 h-10 rounded-full overflow-hidden">
+                            <img src="image/CCG-chan.png" alt="CCG chan" class="w-full h-full object-contain">
+                        </div>
+                        <div class="ecg-message-content shadow-sm">
+                            <p>你好 (Nǐ hǎo)！CCG chanです！</p>
+                            <p class="mt-2">「中国文法 完全攻略教材」へようこそ！欢迎 (Huānyíng)！</p>
+                            <p class="mt-2">ここは、中国語の文法を「暗記」ではなく「理屈」で理解するための場所です。</p>
+                            <p class="mt-2">困ったことや質問があれば、下のメニューから選んでくださいね。加油 (Jiāyóu)！</p>
+                        </div>
+                    </div>
+                `;
+                chatMessages.innerHTML = initialMessage;
+                showQAOptions();
+            }
+
+            function showQAOptions() {
+                chatOptions.innerHTML = '';
+                qaData.forEach((qa) => {
+                    const button = document.createElement('button');
+                    button.className = 'ecg-option-button hover:shadow-md';
+                    button.textContent = qa.question;
+                    button.addEventListener('click', () => {
+                        showAnswer(qa.question, qa.answer, qa.type);
+                        chatOptions.innerHTML = '';
+                    });
+                    chatOptions.appendChild(button);
+                });
+            }
+
+            function showAnswer(question, answer, type) {
+                // ユーザーメッセージ
+                const userMessage = document.createElement('div');
+                userMessage.className = 'ecg-message ecg-message-user';
+                userMessage.innerHTML = `
+                    <div class="ecg-message-content shadow-sm bg-chinaRed-600 text-white">
+                        <p>${question}</p>
+                    </div>
+                `;
+                chatMessages.appendChild(userMessage);
+                scrollToBottom();
+
+                // Bot回答
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'ecg-message ecg-message-bot';
+                    
+                    let answerText = '';
+                    
+                    if (type === 'progress') {
+                        // 進捗計算ロジック（簡易版）
+                        let total = 0, completed = 0;
+                        Object.values(levelConfig).forEach(l => {
+                            total += l.total;
+                            l.lessons.forEach(id => {
+                                if(localStorage.getItem(`lesson_completed_${id}`) === 'true') completed++;
+                            });
+                        });
+                        const pct = Math.round((completed/total)*100);
+                        
+                        answerText = `
+                            <p><strong>現在の進捗状況：</strong></p>
+                            <p class="mt-2">全レッスンの <strong>${pct}%</strong> (${completed}/${total}) をクリアしました！</p>
+                            <p class="mt-2 text-sm text-stone-500">継続は力なり。毎日少しずつ進めましょう！</p>
+                        `;
+                    } else if (type === 'recommendation') {
+                        // 各レベルの完了状況を確認
+                        let recommendedLevel = null;
+                        let recommendedName = '';
+                        let recommendedMessage = '';
+                        
+                        for (let level = 0; level <= 3; level++) {
+                            const config = levelConfig[level];
+                            if (!config) continue;
+                            
+                            let completedCount = 0;
+                            config.lessons.forEach(lessonId => {
+                                if (localStorage.getItem(`lesson_completed_${lessonId}`) === 'true') {
+                                    completedCount++;
+                                }
+                            });
+                            
+                            // 未完了のレベルを見つけたら推奨
+                            if (completedCount < config.total) {
+                                recommendedLevel = level;
+                                recommendedName = config.name;
+                                
+                                // 完了率に応じたメッセージ
+                                const completionRate = Math.round((completedCount / config.total) * 100);
+                                
+                                if (level === 0) {
+                                    recommendedMessage = '基礎の発音とSVO語順がすべての土台になります。';
+                                } else if (level === 1) {
+                                    recommendedMessage = '時制や状態表現をマスターして、日常会話を成立させましょう。';
+                                } else if (level === 2) {
+                                    recommendedMessage = '中国語特有の「補語」と「構文」を制し、複雑な描写を可能にしましょう。';
+                                } else if (level === 3) {
+                                    recommendedMessage = '接続詞、語気助詞、特殊構文を使いこなし、ネイティブの感覚と同化しましょう。';
+                                }
+                                
+                                if (completionRate > 0) {
+                                    recommendedMessage = `${completionRate}% 完了しています。残りを頑張りましょう！`;
+                                }
+                                break;
+                            }
+                        }
+                        
+                        // 全て完了している場合
+                        if (recommendedLevel === null) {
+                            answerText = `
+                                <p>素晴らしい！全てのレッスンをクリアしました！🎉</p>
+                                <p class="mt-2">復習を重ねて、中国語を自分のものにしていきましょう。</p>
+                            `;
+                        } else {
+                            answerText = `
+                                <p>まずは <strong>Level ${recommendedLevel}: ${recommendedName}</strong> の完了を目指しましょう！</p>
+                                <p class="mt-2">${recommendedMessage}</p>
+                            `;
+                        }
+                    } else {
+                        answerText = `<p>${answer}</p>`;
+                    }
+                    
+                    botMessage.innerHTML = `
+                        <div class="ecg-message-avatar flex items-center justify-center bg-white w-10 h-10 rounded-full overflow-hidden">
+                            <img src="image/CCG-chan.png" alt="CCG chan" class="w-full h-full object-contain">
+                        </div>
+                        <div class="ecg-message-content shadow-sm">
+                            ${answerText}
+                        </div>
+                    `;
+                    chatMessages.appendChild(botMessage);
+                    scrollToBottom();
+
+                    setTimeout(showQAOptions, 600);
+                }, 400);
+            }
+
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            chatButton.addEventListener('click', openChat);
+            chatClose.addEventListener('click', closeChat);
+            chatModal.querySelector('.ecg-chat-overlay').addEventListener('click', closeChat);
+        }
+    </script>
+</body>
+</html>

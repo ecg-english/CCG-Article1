@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 32: 語気助詞 (Sentence-Final Particles)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">32. 語気助詞 (Sentence-Final Particles)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                ロボットのような会話から<br class="md:hidden">卒業する
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「行きます」「美味しいです」だけでは味気ないですよね。<br>
+                「行こうよ」「美味しいなぁ」「美味しいってば！」。<br>
+                文末に一文字足すだけで、<span class="highlight-text">感情、態度、ニュアンス</span>を自在に操れるようになります。
+            </p>
+        </section>
+
+        <!-- 1. The Big 3: Ba, Ne, A -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本の3大助詞 (吧 / 呢 / 啊)</h3>
+                    <p class="text-slate-500 text-sm">まずはこの3つを完璧に使い分けましょう。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Ba -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-rose-500 card-hover group">
+                    <div class="text-center mb-4">
+                        <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">Ba</span>
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif mt-2 group-hover:text-rose-600 transition">
+                            <ruby>吧<rt>ba</rt></ruby>
+                        </h4>
+                        <p class="text-sm text-slate-500 mt-1">推測・提案・妥協</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-rose-50 p-2 rounded">
+                            <span class="font-bold text-rose-700 block">① 推測 (〜だろ？)</span>
+                            <span class="chinese-serif">是你<span class="text-rose-600">吧</span>？</span> (君だろ？)
+                        </div>
+                        <div class="bg-rose-50 p-2 rounded">
+                            <span class="font-bold text-rose-700 block">② 提案・命令 (〜しよう)</span>
+                            <span class="chinese-serif">走<span class="text-rose-600">吧</span>！</span> (行こう！)
+                        </div>
+                        <div class="bg-rose-50 p-2 rounded">
+                            <span class="font-bold text-rose-700 block">③ 妥協 (〜でいいか)</span>
+                            <span class="chinese-serif">好吧。</span> (まあいいよ)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ne -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-indigo-500 card-hover group">
+                    <div class="text-center mb-4">
+                        <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">Ne</span>
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif mt-2 group-hover:text-indigo-600 transition">
+                            <ruby>呢<rt>ne</rt></ruby>
+                        </h4>
+                        <p class="text-sm text-slate-500 mt-1">持続・強調・疑問</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-indigo-50 p-2 rounded">
+                            <span class="font-bold text-indigo-700 block">① 進行・持続 (〜だよ)</span>
+                            <span class="chinese-serif">他在睡觉<span class="text-indigo-600">呢</span>。</span> (寝てるよ)
+                        </div>
+                        <div class="bg-indigo-50 p-2 rounded">
+                            <span class="font-bold text-indigo-700 block">② 事実の誇張 (〜なんだってば)</span>
+                            <span class="chinese-serif">还早<span class="text-indigo-600">呢</span>！</span> (まだ早いって！)
+                        </div>
+                        <div class="bg-indigo-50 p-2 rounded">
+                            <span class="font-bold text-indigo-700 block">③ 問い返し (〜は？)</span>
+                            <span class="chinese-serif">你<span class="text-indigo-600">呢</span>？</span> (あなたは？)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover group">
+                    <div class="text-center mb-4">
+                        <span class="text-xs font-bold text-amber-500 uppercase tracking-widest">A</span>
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif mt-2 group-hover:text-amber-600 transition">
+                            <ruby>啊<rt>a</rt></ruby>
+                        </h4>
+                        <p class="text-sm text-slate-500 mt-1">感嘆・驚き・肯定</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-amber-50 p-2 rounded">
+                            <span class="font-bold text-amber-700 block">① 感嘆 (〜だなぁ！)</span>
+                            <span class="chinese-serif">好快<span class="text-amber-600">啊</span>！</span> (速いなぁ！)
+                        </div>
+                        <div class="bg-amber-50 p-2 rounded">
+                            <span class="font-bold text-amber-700 block">② 肯定・同意 (〜だね)</span>
+                            <span class="chinese-serif">是<span class="text-amber-600">啊</span>。</span> (そうだね)
+                        </div>
+                        <div class="bg-amber-50 p-2 rounded border border-amber-200">
+                            <span class="text-xs text-amber-800">※前の音で変化します<br>
+                            好(hao) + 啊 = 好哇(wa)<br>
+                            看(kan) + 啊 = 看哪(na)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Native Nuance: Ma vs Bei -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">ネイティブの「こなれ感」 (嘛 / 呗)</h3>
+                    <p class="text-slate-500 text-sm">これを使えると、一気にネイティブっぽくなります。ただし使いすぎに注意。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Ma (Obvious) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-rose-100 text-rose-800 text-xs px-3 py-1 font-bold rounded-bl">当然の理</div>
+                    <h4 class="text-2xl font-bold text-slate-800 chinese-serif mb-2"><ruby>嘛<rt>ma</rt></ruby></h4>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜じゃん / 〜だし / 〜もん</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 text-rose-500"><i class="fas fa-check"></i></div>
+                            <div>
+                                <p class="text-sm text-slate-700 font-bold">自明の理（当たり前）</p>
+                                <p class="chinese-serif text-lg text-slate-800">这就是生活<span class="text-rose-600 font-bold">嘛</span>。</p>
+                                <p class="text-xs text-slate-500">これが人生ってもんじゃん。（当然だ）</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 text-rose-500"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <p class="text-sm text-slate-700 font-bold">忠告・提言（〜したらいいじゃん）</p>
+                                <p class="chinese-serif text-lg text-slate-800">不想去就不去<span class="text-rose-600 font-bold">嘛</span>。</p>
+                                <p class="text-xs text-slate-500">行きたくないなら行かなきゃいいじゃん。（簡単でしょ）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bei (Reluctance/Obvious) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-400 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-200 text-slate-700 text-xs px-3 py-1 font-bold rounded-bl">仕方ない・軽い</div>
+                    <h4 class="text-2xl font-bold text-slate-800 chinese-serif mb-2"><ruby>呗<rt>bei</rt></ruby></h4>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜っしょ / 〜するしか / 〜すりゃいい</p>
+                    <p class="text-xs text-slate-500 mb-4">※「罢(ba) + 了(le)」が変化した音と言われ、少し投げやりで軽いニュアンス。</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 text-slate-500"><i class="fas fa-shrug"></i></div>
+                            <div>
+                                <p class="text-sm text-slate-700 font-bold">仕方ない・諦め</p>
+                                <p class="chinese-serif text-lg text-slate-800">不懂就学<span class="text-slate-600 font-bold">呗</span>。</p>
+                                <p class="text-xs text-slate-500">分かんないなら勉強するしかないっしょ。（他に手はない）</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 text-slate-500"><i class="fas fa-comment-alt"></i></div>
+                            <div>
+                                <p class="text-sm text-slate-700 font-bold">軽い同意・当然</p>
+                                <p class="chinese-serif text-lg text-slate-800">去就去<span class="text-slate-600 font-bold">呗</span>。</p>
+                                <p class="text-xs text-slate-500">行くなら行けばいいじゃん。（止めないよ / 軽い感じで）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-rose-50 p-4 rounded-xl text-center text-sm text-rose-800 font-bold">
+                <i class="fas fa-balance-scale mr-2"></i> 比較：「嘛」は「理由・説得」、「呗」は「事実の受容・軽さ」
+            </div>
+        </section>
+
+        <!-- 3. Advanced: Intonation Magic -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">イントネーションの魔法</h3>
+                    <p class="text-slate-500 text-sm">同じ助詞でも、上がり調子か下がり調子かで意味が変わります。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- A (Question vs Exclamation) -->
+                <div class="flex items-center bg-white p-4 rounded-xl border border-slate-200">
+                    <div class="w-24 text-center font-bold text-amber-500 text-2xl">啊</div>
+                    <div class="flex-1 border-l border-slate-100 pl-4 grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded block w-max mb-1">↗ 上がり調子 (á)</span>
+                            <p class="chinese-serif font-bold text-slate-800">你说什么啊？</p>
+                            <p class="text-xs text-slate-500">何て言ったの？（聞き返し・驚き）</p>
+                        </div>
+                        <div>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded block w-max mb-1">↘ 下がり調子 (à)</span>
+                            <p class="chinese-serif font-bold text-slate-800">是啊！</p>
+                            <p class="text-xs text-slate-500">そうなんだよ！（納得・感嘆）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ne (Question vs Statement) -->
+                <div class="flex items-center bg-white p-4 rounded-xl border border-slate-200">
+                    <div class="w-24 text-center font-bold text-indigo-500 text-2xl">呢</div>
+                    <div class="flex-1 border-l border-slate-100 pl-4 grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded block w-max mb-1">？ 疑問</span>
+                            <p class="chinese-serif font-bold text-slate-800">他在哪儿呢？</p>
+                            <p class="text-xs text-slate-500">彼はどこにいるの？（場所への関心）</p>
+                        </div>
+                        <div>
+                            <span class="text-xs bg-slate-100 px-2 py-1 rounded block w-max mb-1">！ 強調</span>
+                            <p class="chinese-serif font-bold text-slate-800">他还早呢！</p>
+                            <p class="text-xs text-slate-500">彼はまだ早いってば！（事実の主張）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Feeling Drill</h3>
+                <p class="text-slate-500">文脈（感情）に合わせて適切な語気助詞を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 32 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">素晴らしい！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                語尾のニュアンスが分かれば、中国ドラマや日常会話の「温度」が感じられるようになります。<br>
+                次回は、「彼に頼んで〜させる」といった、目的語が次の主語になる「兼語文」をさらに深く学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-5.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l3-7.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 33: 兼語文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我们", pinyin: "Wǒmen", mean: "私たち" },
+                    { text: "走", pinyin: "zǒu", mean: "行く" },
+                    { text: "___", type: "blank" },
+                    { text: "！", type: "punct" }
+                ],
+                options: [
+                    { text: "吧 (ba)", correct: true },
+                    { text: "呢 (ne)", correct: false }
+                ],
+                trans: "行きましょう！",
+                hint: "提案・勧誘（〜しよう）のニュアンスなので「吧」を使います。「呢」だと「行ってるよ（進行・持続）」や疑問になってしまいます。"
+            },
+            {
+                question: [
+                    { text: "别", pinyin: "Bié", mean: "〜するな" },
+                    { text: "担心", pinyin: "dānxīn", mean: "心配する" },
+                    { text: "，", type: "punct" },
+                    { text: "没", pinyin: "méi", mean: "ない" },
+                    { text: "问题", pinyin: "wèntí", mean: "問題" },
+                    { text: "的", pinyin: "de", mean: "的" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "嘛 (ma)", correct: true },
+                    { text: "吧 (ba)", correct: false }
+                ],
+                trans: "心配しないで、問題ないってば（当然だよ）。",
+                hint: "「当たり前のことだ（だから心配するな）」と相手を説得・安心させる文脈なので、当然の理を表す「嘛」が最適です。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "么", pinyin: "me", mean: "こんなに" },
+                    { text: "贵", pinyin: "guì", mean: "高い" },
+                    { text: "，", type: "punct" },
+                    { text: "谁", pinyin: "shéi", mean: "誰" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "得", pinyin: "de", mean: "得" },
+                    { text: "起", pinyin: "qǐ", mean: "〜できる" },
+                    { text: "___", type: "blank" },
+                    { text: "！", type: "punct" }
+                ],
+                options: [
+                    { text: "啊 (a)", correct: true },
+                    { text: "吧 (ba)", correct: false }
+                ],
+                trans: "こんなに高いの、誰が買えるって言うんだ！（誰も買えないよ！）",
+                hint: "強い感情（驚き・反語的な強調）を込めているので「啊」を使います。実際の発音は「ia」や「ya」に近くなります。"
+            },
+            {
+                question: [
+                    { text: "既然", pinyin: "Jìrán", mean: "〜した以上" },
+                    { text: "来", pinyin: "lái", mean: "来る" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "，", type: "punct" },
+                    { text: "就", pinyin: "jiù", mean: "それなら" },
+                    { text: "吃", pinyin: "chī", mean: "食べる" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "呗 (bei)", correct: true },
+                    { text: "呢 (ne)", correct: false }
+                ],
+                trans: "来ちゃったんだから、食べるしかないでしょ。",
+                hint: "「〜した以上は〜するしかない（仕方ない/当然）」という流れなので、軽い諦めや当然を表す「呗」がピッタリです。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end leading-loose">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 33: 兼語文</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">33. 兼語文</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                主役を交代する<br class="md:hidden">「バトンタッチ」構文
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「私が彼に頼み、彼が行く」。<br>
+                一つの文の中で、動作の主役が途中で切り替わるのが「兼語文」です。<br>
+                真ん中の人が<span class="highlight-text">「前の動詞の目的語」でありながら「後ろの動詞の主語」を兼ねる</span>、一人二役の構造をマスターしましょう。
+            </p>
+        </section>
+
+        <!-- 1. The Structure: The Pivot -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">兼語文のメカニズム</h3>
+                    <p class="text-slate-500 text-sm">誰が誰をどうして、その人がどうするのか。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-2 mb-8 text-center">
+                    
+                    <!-- Subject 1 -->
+                    <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg w-24">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">主語1</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">我</span>
+                    </div>
+
+                    <!-- Verb 1 -->
+                    <div class="text-rose-300 text-xl"><i class="fas fa-arrow-right"></i></div>
+                    <div class="p-3 bg-white border-2 border-rose-300 rounded-lg w-24 shadow-sm relative">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rose-500 text-white text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">V1 (働きかけ)</span>
+                        <span class="chinese-serif text-xl font-bold text-rose-700">请</span>
+                    </div>
+
+                    <!-- Pivot (Object/Subject) -->
+                    <div class="text-rose-300 text-xl"><i class="fas fa-arrow-right"></i></div>
+                    <div class="p-3 bg-indigo-50 border-2 border-indigo-400 rounded-lg w-32 shadow-md transform scale-110 z-10 relative">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">兼語 (O兼S)</span>
+                        <span class="chinese-serif text-2xl font-bold text-indigo-700">他</span>
+                        <p class="text-[10px] text-indigo-400 mt-1">彼</p>
+                    </div>
+
+                    <!-- Verb 2 -->
+                    <div class="text-rose-300 text-xl"><i class="fas fa-arrow-right"></i></div>
+                    <div class="p-3 bg-white border border-slate-200 rounded-lg w-24 shadow-sm">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">V2 (動作)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">吃饭</span>
+                    </div>
+                </div>
+
+                <div class="bg-rose-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h4 class="font-bold text-rose-800 mb-2">構造のポイント</h4>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start">
+                            <span class="text-rose-500 mr-2">●</span>
+                            <span><strong>「他」の役割：</strong> 「私」から見れば「招待される客（目的語）」ですが、「食事をする」動作の「主役（主語）」でもあります。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-rose-500 mr-2">●</span>
+                            <span><strong>V1の性質：</strong> 「頼む」「命じる」「派遣する」「褒める」など、後ろの人（兼語）に何らかの影響を与える動詞が来ます。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Types of Pivot Verbs -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">兼語文を作る動詞たち</h3>
+                    <p class="text-slate-500 text-sm">使役（させる）以外にも、色々な「働きかけ」があります。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 1. Request / Order (Review) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <h4 class="text-lg font-bold text-amber-800 mb-3 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i> 使役・命令・依頼 (復習)
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="chinese-serif font-bold text-slate-700">让 / 叫</span>
+                            <span class="text-xs text-slate-500">〜させる (Make/Let)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="chinese-serif font-bold text-slate-700">请</span>
+                            <span class="text-xs text-slate-500">〜していただく/招く (Invite/Ask)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-rose-600">派 <span class="text-xs font-sans text-slate-400 ml-1">pài</span></span>
+                            <span class="text-xs text-slate-500">派遣する (Dispatch)</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 bg-amber-50 p-2 rounded text-sm text-slate-600">
+                        <span class="chinese-serif font-bold">公司 <span class="text-amber-600">派</span> 我 去 上海。</span><br>
+                        会社は私を上海へ派遣する（行かせる）。
+                    </div>
+                </div>
+
+                <!-- 2. Request / Encourage -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3 flex items-center">
+                        <i class="fas fa-hands-helping mr-2"></i> 要求・催促・推奨
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="chinese-serif font-bold text-rose-600">求 <span class="text-xs font-sans text-slate-400 ml-1">qiú</span></span>
+                            <span class="text-xs text-slate-500">懇願する/頼む (Beg)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="chinese-serif font-bold text-rose-600">催 <span class="text-xs font-sans text-slate-400 ml-1">cuī</span></span>
+                            <span class="text-xs text-slate-500">催促する (Urge)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-rose-600">劝 <span class="text-xs font-sans text-slate-400 ml-1">quàn</span></span>
+                            <span class="text-xs text-slate-500">勧める/説得する (Persuade)</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 bg-blue-50 p-2 rounded text-sm text-slate-600">
+                        <span class="chinese-serif font-bold">我 <span class="text-blue-600">求</span> 你 帮帮 我。</span><br>
+                        私を手伝ってくれるようお願いします。
+                    </div>
+                </div>
+
+                <!-- 3. Praise / Blame -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-green-500 card-hover">
+                    <h4 class="text-lg font-bold text-green-800 mb-3 flex items-center">
+                        <i class="fas fa-thumbs-up mr-2"></i> 称賛・評価
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="chinese-serif font-bold text-rose-600">称赞 <span class="text-xs font-sans text-slate-400 ml-1">chēngzàn</span></span>
+                            <span class="text-xs text-slate-500">称賛する (Praise)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-rose-600">批评 <span class="text-xs font-sans text-slate-400 ml-1">pīpíng</span></span>
+                            <span class="text-xs text-slate-500">叱る/批判する (Criticize)</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 bg-green-50 p-2 rounded text-sm text-slate-600">
+                        <span class="chinese-serif font-bold">老师 <span class="text-green-600">批评</span> 他 迟到。</span><br>
+                        先生は彼が遅刻したことを叱った。
+                    </div>
+                </div>
+
+                <!-- 4. Emotion / Wish -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-pink-500 card-hover">
+                    <h4 class="text-lg font-bold text-pink-800 mb-3 flex items-center">
+                        <i class="fas fa-gift mr-2"></i> 祝願・感情
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <span class="chinese-serif font-bold text-rose-600">祝 <span class="text-xs font-sans text-slate-400 ml-1">zhù</span></span>
+                            <span class="text-xs text-slate-500">祈る (Wish)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="chinese-serif font-bold text-rose-600">感谢 <span class="text-xs font-sans text-slate-400 ml-1">gǎnxiè</span></span>
+                            <span class="text-xs text-slate-500">感謝する (Thank)</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 bg-pink-50 p-2 rounded text-sm text-slate-600">
+                        <span class="chinese-serif font-bold"><span class="text-pink-600">祝</span> 你 生日 快乐！</span><br>
+                        誕生日おめでとう！（あなたが誕生日愉快であることを祈る）
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Confusion Alert: Serial Verb vs Pivot -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">最重要：連動文と兼語文の違い</h3>
+                    <p class="text-slate-500 text-sm">形は似ていますが、中身は全く別物です。見分け方をマスターしましょう。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Serial Verb (Lendou) -->
+                    <div class="p-6 bg-slate-50 rounded-xl border border-slate-200 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-slate-200 text-slate-600 text-xs px-2 py-1 font-bold rounded-bl">連動文 (Lesson 17)</div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-center">主語は一人だけ！</h4>
+                        
+                        <div class="flex justify-center items-center gap-2 mb-4">
+                            <div class="text-center">
+                                <span class="chinese-serif text-xl font-bold text-blue-600">我</span>
+                                <p class="text-[10px] text-slate-400">私</p>
+                            </div>
+                            <div class="text-2xl text-slate-300">→</div>
+                            <div class="text-center">
+                                <span class="chinese-serif text-xl font-bold text-slate-700">去</span>
+                                <p class="text-[10px] text-slate-400">行く</p>
+                            </div>
+                            <div class="text-2xl text-slate-300">→</div>
+                            <div class="text-center">
+                                <span class="chinese-serif text-xl font-bold text-slate-700">买票</span>
+                                <p class="text-[10px] text-slate-400">券を買う</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-slate-600 text-center bg-white p-3 rounded shadow-sm">
+                            <span class="font-bold">私</span>が行って、<span class="font-bold">私</span>が買う。<br>
+                            動作主はずっと「私」です。
+                        </p>
+                    </div>
+
+                    <!-- Pivot (Jianyu) -->
+                    <div class="p-6 bg-rose-50 rounded-xl border-2 border-rose-200 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-rose-500 text-white text-xs px-2 py-1 font-bold rounded-bl">兼語文 (今回)</div>
+                        <h4 class="font-bold text-slate-800 mb-4 text-center">主語がバトンタッチ！</h4>
+                        
+                        <div class="flex justify-center items-center gap-2 mb-4">
+                            <div class="text-center">
+                                <span class="chinese-serif text-xl font-bold text-rose-600">我</span>
+                                <p class="text-[10px] text-slate-400">私</p>
+                            </div>
+                            <div class="text-center mx-1">
+                                <span class="chinese-serif text-xl font-bold text-slate-700">请</span>
+                                <p class="text-[10px] text-slate-400">頼む</p>
+                            </div>
+                            <div class="text-2xl text-slate-300">→</div>
+                            <div class="text-center">
+                                <span class="chinese-serif text-xl font-bold text-indigo-600 bg-white px-1 rounded border border-indigo-200">他</span>
+                                <p class="text-[10px] text-slate-400">彼</p>
+                            </div>
+                            <div class="text-2xl text-slate-300">→</div>
+                            <div class="text-center">
+                                <span class="chinese-serif text-xl font-bold text-slate-700">买票</span>
+                                <p class="text-[10px] text-slate-400">券を買う</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-slate-600 text-center bg-white p-3 rounded shadow-sm">
+                            <span class="font-bold">私</span>が頼んで、<span class="font-bold">彼</span>が買う。<br>
+                            買うのは「私」ではありません！
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Distinction Tip -->
+                <div class="mt-6 border-t border-slate-100 pt-4 text-sm text-slate-600">
+                    <strong>見分け方：</strong><br>
+                    真ん中の人（兼語）の後に「了（完了）」などを入れられるかどうか。<br>
+                    兼語文の場合、第1動詞（请/让など）の後ろにはアスペクト助詞（了/着/过）を<span class="text-red-500 font-bold">つけられません</span>。<br>
+                    <span class="text-xs text-slate-400">× 我请了他也去 (間違い) / ○ 我请他去了 (彼にお願いして行ってもらった)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Structure Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい単語を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 33 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「誰に何をしてもらう」という表現ができると、お願いや指示がスムーズになります。<br>
+                次回は、会話で頻繁に起こる「主語の省略」や、目的語を前に出す「倒置（トピック化）」など、より実践的な構文テクニックを学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-6.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l3-8.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 34: 省略と倒置へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "公司", pinyin: "Gōngsī", mean: "会社" },
+                    { text: "___", type: "blank" },
+                    { text: "他", pinyin: "tā", mean: "彼" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "美国", pinyin: "Měiguó", mean: "アメリカ" },
+                    { text: "工作", pinyin: "gōngzuò", mean: "働く" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "派 (pài)", correct: true },
+                    { text: "去 (qù)", correct: false }
+                ],
+                trans: "会社は彼をアメリカへ派遣して働かせる。",
+                hint: "「会社が彼を〜させる（派遣する）」という兼語文なので、使役的な意味を持つ「派」が適切です。「去」だと「会社が行く」ことになってしまいます。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+                    { text: "唱", pinyin: "chàng", mean: "歌う" },
+                    { text: "一", pinyin: "yí", mean: "1" },
+                    { text: "首", pinyin: "shǒu", mean: "曲(量詞)" },
+                    { text: "歌", pinyin: "gē", mean: "歌" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "给 (gěi)", correct: false },
+                    { text: "给 (gěi)", correct: true } // Trick question? No, wait. 
+                    // Let's use '请' vs '去'.
+                ],
+                // Correction in logic below
+                options_real: [
+                    { text: "给 (gěi)", correct: true }, // Actually 'gei' creates a beneficiary structure often, but here we want 'Jianyu'. 
+                    // 'Gei' can be 'for'. 'Wo gei dajia chang...' -> I sing for everyone. NOT Jianyu.
+                    // 'Wo qing dajia chang...' -> I ask everyone to sing. THIS is Jianyu.
+                    // Let's change options.
+                    { text: "请 (qǐng)", correct: true },
+                    { text: "给 (gěi)", correct: false }
+                ],
+                trans: "私はみんなに一曲歌ってもらう（歌うよう頼む）。",
+                hint: "「私が頼んで、みんなが歌う」という兼語文なので「请」を使います。「给」だと「私がみんなのために歌う（連用修飾）」となり、歌うのは私になります。"
+            },
+            {
+                question: [
+                    { text: "老师", pinyin: "Lǎoshī", mean: "先生" },
+                    { text: "鼓励", pinyin: "gǔlì", mean: "励ます" },
+                    { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+                    { text: "___", type: "blank" },
+                    { text: "学", pinyin: "xué", mean: "学ぶ" },
+                    { text: "好", pinyin: "hǎo", mean: "しっかり〜する" },
+                    { text: "外语", pinyin: "wàiyǔ", mean: "外国語" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "要 (yào)", correct: true },
+                    { text: "想 (xiǎng)", correct: false } 
+                    // Actually, 'encourage everyone TO learn'. usually no modal verb needed, or 'yao'.
+                    // 'Guli dajia xue hao...' is valid.
+                    // Let's make it simple.
+                ],
+                // Correction: Let's focus on identifying the Pivot Verb vs Serial.
+                // Q: 老师 ___ 大家多听录音。
+                // Opt: 叫 (jiao) / 去 (qu)
+                options_real: [
+                    { text: "叫 (jiào)", correct: true },
+                    { text: "去 (qù)", correct: false }
+                ],
+                trans: "先生はみんなに録音をたくさん聞くように言った。",
+                hint: "先生が指示して、みんなが聞く。「叫（言いつける）」を使います。「去」だと「先生がみんなの所へ行って...」となり文脈が不自然です。"
+            },
+            {
+                question: [
+                    { text: "祝", pinyin: "Zhù", mean: "祈る" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "快乐", pinyin: "kuàilè", mean: "ハッピー" },
+                    { text: "！", type: "punct" }
+                ],
+                options: [
+                    { text: "生日 (shēngrì)", correct: true },
+                    { text: "身体 (shēntǐ)", correct: false } // 'Shenti kuaile' is weird.
+                ],
+                trans: "誕生日おめでとう！（あなたの誕生日が楽しいものであるよう祈る）",
+                hint: "「祝（V1）＋你（兼語）＋生日快乐（V2/形容詞述語）」の兼語文です。"
+            }
+        ];
+        
+        // Fix quiz data assignment manually for the script logic
+        quizData[1].options = [{ text: "请 (qǐng)", correct: true }, { text: "给 (gěi)", correct: false }];
+        quizData[2].options = [{ text: "叫 (jiào)", correct: true }, { text: "去 (qù)", correct: false }];
+        quizData[2].question = [
+             { text: "老师", pinyin: "Lǎoshī", mean: "先生" },
+             { text: "___", type: "blank" },
+             { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+             { text: "多", pinyin: "duō", mean: "多く" },
+             { text: "听", pinyin: "tīng", mean: "聞く" },
+             { text: "录音", pinyin: "lùyīn", mean: "録音" },
+             { text: "。", type: "punct" }
+        ];
+
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

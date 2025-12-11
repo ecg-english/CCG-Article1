@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 03: 判断・存在・所有 (是 / 在 / 有)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e; /* teal-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fde68a 60%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        /* Verb Cards */
+        .verb-card {
+            border-left-width: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-teal-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 0</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">03. 判断・存在・所有 (是 / 在 / 有)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                中国語の<br class="md:hidden">「3大動詞」を制する
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                英語のbe動詞やhaveに相当する基本中の基本。<br>
+                しかし、日本語の「ある・いる」をどう使い分けるかで多くの人が躓きます。<br>
+                <span class="highlight-text">「イコール」「所在」「所有」</span>の3つの概念でクリアにしましょう。
+            </p>
+            
+            <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto text-center">
+                <div class="bg-blue-50 border-blue-200 border rounded-lg p-3">
+                    <div class="text-3xl font-bold text-blue-700 chinese-serif mb-1">是</div>
+                    <div class="text-xs text-slate-500 font-bold">判断 (=)</div>
+                </div>
+                <div class="bg-emerald-50 border-emerald-200 border rounded-lg p-3">
+                    <div class="text-3xl font-bold text-emerald-700 chinese-serif mb-1">在</div>
+                    <div class="text-xs text-slate-500 font-bold">所在 (にいる)</div>
+                </div>
+                <div class="bg-amber-50 border-amber-200 border rounded-lg p-3">
+                    <div class="text-3xl font-bold text-amber-700 chinese-serif mb-1">有</div>
+                    <div class="text-xs text-slate-500 font-bold">所有・存在 (がある)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. The Verb "Shi" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">是 (shì)：判断・イコール</h3>
+                    <p class="text-slate-500 text-sm">基本機能は「A = B」。しかし「＝」ではない時もある？</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 verb-card border-l-blue-500 mb-8">
+                <div class="flex flex-col md:flex-row items-center justify-around gap-6 mb-8">
+                    <!-- Structure -->
+                    <div class="flex items-center gap-3 text-xl font-bold text-slate-700 bg-slate-50 px-6 py-4 rounded-xl">
+                        <span>A</span>
+                        <span class="text-blue-600 chinese-serif text-3xl mx-2">是</span>
+                        <span>B</span>
+                    </div>
+                    
+                    <!-- Example -->
+                    <div class="text-center">
+                        <p class="text-sm text-slate-400 mb-1">私は日本人です</p>
+                        <p class="text-2xl font-bold text-slate-800 chinese-serif">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-blue-600">是</span> <ruby>日本人<rt>Rìběnrén</rt></ruby>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <span class="badge bg-red-100 text-red-600 text-xs px-2 py-1 rounded font-bold mb-2 inline-block">否定 (〜ではない)</span>
+                        <p class="text-lg font-bold text-slate-700 chinese-serif">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-red-500">不是</span> <ruby>中国人<rt>Zhōngguórén</rt></ruby>
+                        </p>
+                        <p class="text-xs text-slate-400 mt-1">bú shì (私は中国人ではありません)</p>
+                        <p class="text-[10px] text-red-400 mt-1">※「不」は4声の前なので2声に変調！</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <span class="badge bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded font-bold mb-2 inline-block">疑問 (〜ですか？)</span>
+                        <p class="text-lg font-bold text-slate-700 chinese-serif">
+                            <ruby>你<rt>nǐ</rt></ruby> <span class="text-blue-600">是</span> <ruby>学生<rt>xuésheng</rt></ruby> <span class="text-purple-600">吗</span>？
+                        </p>
+                        <p class="text-xs text-slate-400 mt-1">あなたは学生ですか？</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trap Alert: Adjectives -->
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg shadow-sm">
+                <div class="flex items-start gap-4">
+                    <div class="bg-amber-100 text-amber-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-amber-800 text-lg mb-2">絶対禁止！形容詞に「是」は使わない</h4>
+                        <p class="text-slate-700 text-sm mb-4">
+                            日本語で「私は忙しい**です**」と言うため、つい「我是忙」と言いたくなりますが、<br>
+                            中国語では<strong>形容詞がそのまま動詞の働きをする</strong>ため、「是」を入れると間違い（または特殊な強調）になります。<br>
+                            代わりに、調子を整える「<span class="font-bold text-amber-700">很 (hěn)</span>」を入れます。
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 text-sm">
+                            <div class="bg-white p-3 rounded border border-red-200 opacity-60">
+                                <span class="text-red-500 font-bold mr-2"><i class="fas fa-times"></i> × 我 是 忙</span>
+                                <span class="text-slate-500">I am busy. の直訳はNG</span>
+                            </div>
+                            <div class="bg-white p-3 rounded border border-green-200">
+                                <span class="text-teal-600 font-bold mr-2"><i class="fas fa-check"></i> ○ 我 <span class="text-amber-600">很</span> 忙</span>
+                                <span class="text-slate-500">Wǒ hěn máng. (私は忙しい)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Zai vs You -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">超重要：「在」と「有」の使い分け</h3>
+                    <p class="text-slate-500 text-sm">「〜にある/いる」は、話題の中心が「モノ」か「場所」かで変わる。</p>
+                </div>
+            </div>
+
+            <!-- Deep Dive: 方位詞 -->
+            <div class="mb-8 bg-slate-100 p-4 rounded-lg border border-slate-200 text-sm text-slate-700">
+                <p class="font-bold mb-2"><i class="fas fa-info-circle text-teal-600 mr-2"></i>重要ルール：場所言葉（方位詞）</p>
+                <p class="mb-2">
+                    日本語では「机にある」と言えますが、中国語では「机（物体）」自体は場所になりません。<br>
+                    必ず「机の**上**」「部屋の**中**」のように、<span class="font-bold text-teal-700">方位詞</span>をつけて場所化する必要があります。
+                </p>
+                <div class="flex gap-2 mt-2 font-mono text-xs">
+                    <span class="bg-white px-2 py-1 rounded border">上 (shang) = 上</span>
+                    <span class="bg-white px-2 py-1 rounded border">里 (li) = 中</span>
+                    <span class="bg-white px-2 py-1 rounded border">下 (xià) = 下</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- ZAI Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 verb-card border-l-emerald-500 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-bl-lg">所在 (Location)</div>
+                    
+                    <h4 class="text-xl font-bold text-emerald-800 mb-2 chinese-serif">在 (zài)</h4>
+                    <p class="text-sm text-slate-600 mb-6 font-bold h-10">
+                        「<span class="border-b-2 border-emerald-400">そのモノ</span>は、どこにありますか？」<br>
+                        <span class="text-xs font-normal text-slate-400">話題の中心：特定のモノ (The book)</span>
+                    </p>
+
+                    <div class="bg-emerald-50/50 rounded-lg p-4 text-center mb-4 group-hover:bg-emerald-50 transition-colors">
+                        <div class="flex justify-center items-center gap-2 mb-2 text-sm text-slate-500 font-mono">
+                            <span class="font-bold text-emerald-700">S (特定)</span> + 在 + <span class="text-slate-600">場所</span>
+                        </div>
+                        <p class="text-xl font-bold text-slate-800 chinese-serif mb-1">
+                            <ruby>书<rt>shū</rt></ruby> <span class="text-emerald-600">在</span> <ruby>桌子<rt>zhuōzi</rt></ruby><span class="text-emerald-700 font-bold">上</span>
+                        </p>
+                        <p class="text-xs text-slate-500">その本は 机の上に あります。</p>
+                    </div>
+
+                    <div class="text-xs text-slate-400 leading-relaxed">
+                        <i class="fas fa-check-circle text-emerald-500 mr-1"></i>
+                        「田中さんはどこ？」「あの本はどこ？」のように、<strong>何の話か分かっている</strong>時に使います。
+                    </div>
+                </div>
+
+                <!-- YOU Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-amber-100 verb-card border-l-amber-500 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-bl-lg">存在 (Existence)</div>
+                    
+                    <h4 class="text-xl font-bold text-amber-800 mb-2 chinese-serif">有 (yǒu)</h4>
+                    <p class="text-sm text-slate-600 mb-6 font-bold h-10">
+                        「<span class="border-b-2 border-amber-400">その場所</span>に、何がありますか？」<br>
+                        <span class="text-xs font-normal text-slate-400">話題の中心：場所 (There is...)</span>
+                    </p>
+
+                    <div class="bg-amber-50/50 rounded-lg p-4 text-center mb-4 group-hover:bg-amber-50 transition-colors">
+                        <div class="flex justify-center items-center gap-2 mb-2 text-sm text-slate-500 font-mono">
+                            <span class="font-bold text-amber-700">場所</span> + 有 + <span class="text-slate-600">O (不特定)</span>
+                        </div>
+                        <p class="text-xl font-bold text-slate-800 chinese-serif mb-1">
+                            <ruby>桌子<rt>zhuōzi</rt></ruby><span class="text-amber-700 font-bold">上</span> <span class="text-amber-600">有</span> <ruby>书<rt>shū</rt></ruby>
+                        </p>
+                        <p class="text-xs text-slate-500">机の上に (何らかの)本が あります。</p>
+                    </div>
+
+                    <div class="text-xs text-slate-400 leading-relaxed">
+                        <i class="fas fa-check-circle text-amber-500 mr-1"></i>
+                        「あそこにコンビニがある」「家に猫がいる」のように、<strong>風景を描写する</strong>時に使います。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Possession "You" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">所有の「有」</h3>
+                    <p class="text-slate-500 text-sm">英語の have と同じ。「持っている」という意味。</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-amber-100 verb-card border-l-amber-500">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-amber-50 rounded-lg text-center">
+                        <div class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-amber-600">有</span> <ruby>弟弟<rt>dìdi</rt></ruby>
+                        </div>
+                        <div class="text-sm text-slate-500">私は弟がいます。<br><span class="text-xs text-amber-700">(親族がいる場合も「有」を使います)</span></div>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg text-center">
+                        <div class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>他<rt>tā</rt></ruby> <span class="text-amber-600">有</span> <ruby>时间<rt>shíjiān</rt></ruby>
+                        </div>
+                        <div class="text-sm text-slate-500">彼は時間があります。<br><span class="text-xs text-amber-700">(時間や用事など、抽象的なものもOK)</span></div>
+                    </div>
+                </div>
+
+                <!-- Negation of You -->
+                <div class="mt-6 p-4 border border-red-100 bg-red-50 rounded-lg flex items-start gap-3">
+                    <div class="bg-red-200 text-red-700 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold">!</div>
+                    <div>
+                        <h5 class="text-red-800 font-bold text-sm mb-1">【超重要】有の否定は「没」だけ！</h5>
+                        <p class="text-sm text-red-700 mb-2">
+                            「有」だけは特殊で、否定に「不(bù)」を使えません。必ず<strong>「没(méi)」</strong>を使います。
+                        </p>
+                        <div class="flex gap-4 text-sm font-bold items-center">
+                            <span class="text-slate-400 line-through">× 不有 (bù yǒu)</span>
+                            <i class="fas fa-arrow-right text-slate-300"></i>
+                            <span class="text-red-600">○ <ruby>没有<rt>méiyǒu</rt></ruby></span>
+                        </div>
+                        <p class="text-xs text-red-600 mt-2">例：我没有钱 (私はお金を持っていません/ありません)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Fill in the Blanks</h3>
+                <p class="text-slate-500">適切な動詞を選びましょう。<br>単語の意味は「？」マークで確認できます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center">
+            <div class="inline-block bg-teal-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-teal-700 font-bold">Lesson 03 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">素晴らしい！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                この3つの動詞を使いこなせれば、中国語の会話の幅が一気に広がります。<br>
+                次は、「私」「あなた」「彼」などの代名詞と「〜の(的)」を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l0-2.html" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-8 rounded-xl transition-all">
+                    前のレッスン
+                </a>
+                <a href="lesson-l0-4.html" class="bg-teal-700 hover:bg-teal-800 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-teal-700/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 04: 人称代名詞へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Quiz
+        const quizData = [
+            {
+                segments: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "学生", pinyin: "xuésheng", mean: "学生" }
+                ],
+                ans: "是",
+                trans: "私は学生です。",
+                hint: "A = B (イコール関係) なので「是」を使います。"
+            },
+            {
+                segments: [
+                    { text: "妈妈", pinyin: "Māma", mean: "お母さん" },
+                    { text: "___", type: "blank" },
+                    { text: "厨房", pinyin: "chúfáng", mean: "キッチン" },
+                    { text: "里", pinyin: "li", mean: "〜の中" }
+                ],
+                ans: "在",
+                trans: "母はキッチンにいます。",
+                hint: "「人(特定)」が「場所」にいる、という所在を表すので「在」です。"
+            },
+            {
+                segments: [
+                    { text: "桌子", pinyin: "Zhuōzi", mean: "机" },
+                    { text: "上", pinyin: "shang", mean: "〜の上" },
+                    { text: "___", type: "blank" },
+                    { text: "电脑", pinyin: "diànnǎo", mean: "パソコン" }
+                ],
+                ans: "有",
+                trans: "机の上にパソコンがあります。",
+                hint: "「場所」に「モノ(不特定)」がある、という存在を表すので「有」です。"
+            },
+            {
+                segments: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "没", pinyin: "méi", mean: "ない (否定)" },
+                    { text: "___", type: "blank" },
+                    { text: "钱", pinyin: "qián", mean: "お金" }
+                ],
+                ans: "有",
+                trans: "私はお金を持っていません。",
+                hint: "否定の「没」と一緒に使って「持っていない」を表せるのは「有」だけです。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML with Ruby and Tooltips
+            let questionHtml = '';
+            item.segments.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-12 border-b-2 border-slate-300 text-center text-teal-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl" id="slot-${idx}"></span>`;
+                } else {
+                    // Tooltip Logic
+                    questionHtml += `
+                        <div class="relative inline-block group mx-0.5 text-center cursor-help">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-pointer border-b border-dotted border-slate-300 hover:border-teal-500 hover:text-teal-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <!-- Tooltip -->
+                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block z-10 w-max max-w-[150px]">
+                                <div class="bg-slate-800 text-white text-xs rounded py-1 px-2 shadow-lg">
+                                    ${seg.mean}
+                                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            card.innerHTML = `
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+                    <div class="w-full text-center">
+                        <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                        <div class="flex justify-center items-end flex-wrap gap-1">
+                            ${questionHtml}
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2"><i class="fas fa-hand-pointer mr-1"></i>文字にカーソルを合わせると意味が出ます</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-3 mb-4" id="btn-group-${idx}">
+                    <button onclick="checkDrill(${idx}, '是', '${item.ans}')" class="choice-btn px-6 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif">是</button>
+                    <button onclick="checkDrill(${idx}, '在', '${item.ans}')" class="choice-btn px-6 py-2 rounded-lg border-2 border-slate-200 hover:border-emerald-400 hover:text-emerald-600 font-bold text-slate-600 transition chinese-serif">在</button>
+                    <button onclick="checkDrill(${idx}, '有', '${item.ans}')" class="choice-btn px-6 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif">有</button>
+                </div>
+
+                <div id="feedback-${idx}" class="hidden text-center bg-slate-50 rounded p-4 text-sm border border-slate-200">
+                    <p class="font-bold text-slate-700 mb-2 text-base">${item.trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        <i class="fas fa-lightbulb text-amber-400 mr-1"></i> ${item.hint}
+                    </div>
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, correct) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if(btn.innerText !== choice && btn.innerText !== correct) {
+                    btn.classList.add('opacity-30');
+                }
+            });
+
+            slot.textContent = choice;
+            slot.classList.remove('border-slate-300');
+
+            if (choice === correct) {
+                slot.classList.add('border-teal-500', 'text-teal-600');
+                feedback.classList.remove('hidden');
+                feedback.innerHTML = `
+                    <div class="text-teal-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                slot.classList.add('border-red-500', 'text-red-600');
+                feedback.classList.remove('hidden');
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="mb-2">正解は <span class="font-bold text-slate-800 mx-1 text-lg chinese-serif">${correct}</span> です。</p>
+                    <p class="font-bold text-slate-700 mb-2 text-sm">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11: 形容詞述語文と「很」</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%); /* blue-300 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">11. 形容詞述語文と「很」</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                なぜ「是」を使っては<br class="md:hidden">いけないのか？
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「私は忙しい」＝ "I am busy." <br>
+                この感覚で「我是忙」と言うと、中国人は違和感を覚えます。<br>
+                中国語の形容詞はパワーが強く、<span class="highlight-text">「是」の力を借りずに文の主役になれる</span>のです。
+            </p>
+        </section>
+
+        <!-- 1. Structure: No "Shi" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本構造：「是」は不要</h3>
+                    <p class="text-slate-500 text-sm">形容詞自体が動詞のような働き（述語になる力）を持っています。</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Wrong Pattern -->
+                    <div class="relative p-6 rounded-xl border-2 border-dashed border-red-200 bg-red-50 text-center opacity-70">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-2 py-1 rounded font-bold">
+                            <i class="fas fa-times-circle mr-1"></i>間違い
+                        </div>
+                        <p class="text-sm text-slate-500 mb-2">英語の "be" や日本語の「〜です」の直訳</p>
+                        <div class="text-2xl font-bold text-slate-800 mb-2 chinese-serif">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-red-500">是</span> <ruby>忙<rt>máng</rt></ruby>
+                        </div>
+                        <p class="text-xs text-red-500 font-bold">不自然！</p>
+                        <p class="text-[10px] text-slate-400 mt-2">※特殊な強調（私が忙しい本人だ！）という意味になってしまいます。</p>
+                    </div>
+
+                    <!-- Correct Pattern -->
+                    <div class="relative p-6 rounded-xl border-2 border-blue-200 bg-blue-50 text-center shadow-md">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs px-2 py-1 rounded font-bold">
+                            <i class="fas fa-check-circle mr-1"></i>正解
+                        </div>
+                        <p class="text-sm text-slate-500 mb-2">形容詞がそのまま述語になる</p>
+                        <div class="text-2xl font-bold text-slate-800 mb-2 chinese-serif">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-blue-600 font-bold">很</span> <ruby>忙<rt>máng</rt></ruby>
+                        </div>
+                        <p class="text-xs text-blue-600 font-bold">自然な表現</p>
+                        <p class="text-[10px] text-slate-400 mt-2">※「是」の代わりに「很」が入るのが一般的です。</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Role of "Hen" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「很 (hěn)」の本当の意味</h3>
+                    <p class="text-slate-500 text-sm">教科書では「とても」と訳されますが、実はもっと重要な役割があります。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Role 1: Rhythm -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-amber-500 card-hover">
+                    <h4 class="font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fas fa-music text-amber-500 mr-2"></i> リズム調整の接着剤
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                        中国語はリズムを重視します。主語が1文字（我）で形容詞も1文字（忙）だと、"Wǒ máng" となり、座りが悪く不安定に感じます。<br>
+                        そこで、意味の薄い「很」を入れて "Wǒ hěn máng" とバランスを取ります。
+                    </p>
+                    <div class="bg-amber-50 p-3 rounded text-xs text-amber-900">
+                        <span class="font-bold">重要：</span>
+                        肯定文では習慣的に「很」をつけますが、この時の「很」に「とても」という強い意味はありません。単に「〜です」程度です。
+                    </div>
+                </div>
+
+                <!-- Role 2: Avoid Comparison -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-purple-500 card-hover">
+                    <h4 class="font-bold text-slate-800 mb-3 flex items-center">
+                        <i class="fas fa-balance-scale text-purple-500 mr-2"></i> 比較の回避
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                        もし「很」をつけずに「我忙 (Wǒ máng)」と言うと、対比のニュアンスが生まれます。<br>
+                        「（彼は暇だけど）<strong>私は</strong>忙しい」のように聞こえてしまうのです。
+                    </p>
+                    <div class="bg-purple-50 p-3 rounded text-xs text-purple-900">
+                        <span class="font-bold">要するに：</span>
+                        普通の事実（私は忙しいです）を述べる時は、比較の意味を消すために「很」が必須なのです。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Negative and Question -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定文と疑問文：「很」はどこへ？</h3>
+                    <p class="text-slate-500 text-sm">否定や疑問にすると、「很」は基本的に消えます。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Negative -->
+                <div class="bg-white p-5 rounded-xl border border-red-100 shadow-sm flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-500 text-xl flex-shrink-0">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="flex-1 w-full">
+                        <h4 class="font-bold text-slate-800 mb-1">否定文：不 (bù) + 形容詞</h4>
+                        <p class="text-xs text-slate-500 mb-3">「不」自体がリズムを整えるため、「很」は不要になります。</p>
+                        <div class="bg-red-50 p-3 rounded flex justify-between items-center w-full">
+                            <span class="chinese-serif font-bold text-slate-800"><ruby>我<rt>wǒ</rt></ruby> <span class="text-red-500">不</span> <ruby>忙<rt>máng</rt></ruby>。</span>
+                            <span class="text-xs text-slate-500">私は忙しくありません。</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question -->
+                <div class="bg-white p-5 rounded-xl border border-teal-100 shadow-sm flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-500 text-xl flex-shrink-0">
+                        <i class="fas fa-question"></i>
+                    </div>
+                    <div class="flex-1 w-full">
+                        <h4 class="font-bold text-slate-800 mb-1">疑問文：形容詞 + 吗 (ma)？</h4>
+                        <p class="text-xs text-slate-500 mb-3">「吗」がつくことで文が安定するため、「很」は通常外します。</p>
+                        <div class="bg-teal-50 p-3 rounded flex justify-between items-center w-full">
+                            <span class="chinese-serif font-bold text-slate-800"><ruby>你<rt>nǐ</rt></ruby> <ruby>忙<rt>máng</rt></ruby> <span class="text-teal-600">吗</span>？</span>
+                            <span class="text-xs text-slate-500">あなたは忙しいですか？</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exception Tip -->
+                <div class="mt-4 text-xs text-slate-400 text-right">
+                    <i class="fas fa-info-circle mr-1"></i> 疑問文で「你<strong>很</strong>忙吗？」と言うと、「（見たところ）すごく忙しそうだね？」という確認のニュアンスになります。
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Common Adjectives List -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">よく使う形容詞</h3>
+                    <p class="text-slate-500 text-sm">セットで覚えておきたい基本の形容詞ペア。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">大 <span class="text-xs font-normal text-slate-400">dà</span></div>
+                    <div class="text-xs text-slate-500">大きい</div>
+                    <div class="my-2 border-t border-slate-100"></div>
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">小 <span class="text-xs font-normal text-slate-400">xiǎo</span></div>
+                    <div class="text-xs text-slate-500">小さい</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">多 <span class="text-xs font-normal text-slate-400">duō</span></div>
+                    <div class="text-xs text-slate-500">多い</div>
+                    <div class="my-2 border-t border-slate-100"></div>
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">少 <span class="text-xs font-normal text-slate-400">shǎo</span></div>
+                    <div class="text-xs text-slate-500">少ない</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">好 <span class="text-xs font-normal text-slate-400">hǎo</span></div>
+                    <div class="text-xs text-slate-500">良い</div>
+                    <div class="my-2 border-t border-slate-100"></div>
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">坏 <span class="text-xs font-normal text-slate-400">huài</span></div>
+                    <div class="text-xs text-slate-500">悪い</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-100 text-center card-hover">
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">贵 <span class="text-xs font-normal text-slate-400">guì</span></div>
+                    <div class="text-xs text-slate-500">高い(値段)</div>
+                    <div class="my-2 border-t border-slate-100"></div>
+                    <div class="text-2xl font-bold text-slate-800 chinese-serif mb-1">便宜 <span class="text-xs font-normal text-slate-400">piányi</span></div>
+                    <div class="text-xs text-slate-500">安い</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Check Your Understanding</h3>
+                <p class="text-slate-500">「很」が必要か不要か、正しい文を作りましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 11 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">素晴らしい！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「很」はリズムのためにある。これを知っているだけで、あなたの中国語は一気にネイティブっぽくなります。<br>
+                次は、中国語の時制表現の要、完了・変化の「了」に挑みます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-2.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-4.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 12: 完了・変化の「了」へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "今天", pinyin: "Jīntiān", mean: "今日" },
+                    { text: "___", type: "blank" },
+                    { text: "冷", pinyin: "lěng", mean: "寒い" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "很 (hěn)", correct: true },
+                    { text: "是 (shì)", correct: false }
+                ],
+                trans: "今日は寒いです。",
+                hint: "形容詞述語文の肯定形では、リズムを整えるために「很」が必要です。「是」は使いません。"
+            },
+            {
+                question: [
+                    { text: "这个", pinyin: "Zhège", mean: "これ" },
+                    { text: "不", pinyin: "bù", mean: "〜ない(否定)" },
+                    { text: "___", type: "blank" },
+                    { text: "好", pinyin: "hǎo", mean: "良い" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "很 (hěn)", correct: false },
+                    { text: "(不要)", correct: true }
+                ],
+                trans: "これは良くないです。",
+                hint: "否定文「不〜」では、リズムが整うため通常「很」は不要です。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "累", pinyin: "lèi", mean: "疲れる" },
+                    { text: "___", type: "blank" },
+                    { text: "吗", pinyin: "ma", mean: "〜ですか" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "很 (hěn)", correct: false },
+                    { text: "(不要)", correct: true }
+                ],
+                trans: "あなたは疲れましたか？",
+                hint: "単純な疑問文では「很」を入れません。「你很累吗？」と聞くと「すごく疲れてるようだね？」というニュアンスになります。"
+            },
+            {
+                question: [
+                    { text: "她", pinyin: "Tā", mean: "彼女" },
+                    { text: "___", type: "blank" },
+                    { text: "漂亮", pinyin: "piàoliang", mean: "きれい" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "是 (shì)", correct: false },
+                    { text: "很 (hěn)", correct: true }
+                ],
+                trans: "彼女はきれいです。",
+                hint: "「彼女＝きれい」と言いたい場合でも、「是」ではなく「很」を使います。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected (Simple inclusion check)
+                if(choice !== "(不要)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                } else if (choice === "(不要)" && btn.innerText === "(不要)") {
+                     btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                if (choice === "(不要)") {
+                    slot.textContent = "×";
+                    slot.classList.add('text-slate-400');
+                } else {
+                    slot.textContent = choice;
+                    if (isCorrect) {
+                        slot.classList.add('border-blue-500', 'text-blue-600');
+                    } else {
+                        slot.classList.add('border-red-500', 'text-red-600');
+                    }
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

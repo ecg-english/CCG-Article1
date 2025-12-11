@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 26: 比較文 (比 / 没有 / 一样)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chinaRed: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">26. 比較文 (比 / 没有 / 一样)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「AよりBだ」<br class="md:hidden">語順の鉄則
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「私は彼より背が高い」「今日は昨日ほど暑くない」。<br>
+                中国語の比較文は、英語の比較級（er/more）とは語順が全く異なります。<br>
+                <span class="highlight-text">「比（〜より）」を使った基本形</span>と、<span class="highlight-text">「没有（〜ほどない）」を使った否定形</span>を完璧にマスターしましょう。
+            </p>
+        </section>
+
+        <!-- 1. The Basic Comparison: "Bi" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本形：A 比 B + 形容詞</h3>
+                    <p class="text-slate-500 text-sm">「AはBより〜だ」。最も標準的な比較文です。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 text-center">
+                    <!-- A -->
+                    <div class="bg-slate-50 p-4 rounded-xl w-full md:w-32 border border-slate-200">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">A (主語)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">我</span>
+                        <p class="text-xs text-slate-500 mt-1">私</p>
+                    </div>
+
+                    <!-- Bi -->
+                    <div class="bg-amber-50 p-4 rounded-xl w-24 border-2 border-amber-400 shadow-md relative z-10">
+                        <span class="block text-xs font-bold text-amber-600 mb-1">〜より</span>
+                        <span class="chinese-serif text-2xl font-bold text-amber-700">比</span>
+                    </div>
+
+                    <!-- B -->
+                    <div class="bg-slate-50 p-4 rounded-xl w-full md:w-32 border border-slate-200">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">B (比較対象)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">他</span>
+                        <p class="text-xs text-slate-500 mt-1">彼</p>
+                    </div>
+
+                    <!-- Adjective -->
+                    <div class="bg-white p-4 rounded-xl w-full md:w-32 border-2 border-slate-200 shadow-sm">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">結果 (形容詞)</span>
+                        <span class="chinese-serif text-xl font-bold text-blue-600">大</span>
+                        <p class="text-xs text-slate-500 mt-1">年上だ</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg text-sm text-slate-700 leading-relaxed border-l-4 border-amber-400">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-exclamation-triangle text-amber-500 text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-amber-800 block mb-1">絶対ルール：「很」は使わない！</strong>
+                            <p>
+                                比較文では、形容詞の前に「很」などの程度副詞を置いてはいけません。<br>
+                                <span class="text-red-500 font-bold">× 我比他很大</span><br>
+                                <span class="text-green-600 font-bold">○ 我比他大</span> (私は彼より年上です)<br>
+                                「比較」すること自体が程度の違いを表しているため、「很」は不要（蛇足）になります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-xs text-slate-500 text-center">
+                    ※「更（さらに）」や「最（もっとも）」は使えます。<br>例：我比他<span class="font-bold text-slate-700">更</span>大 (私は彼より<span class="font-bold">さらに</span>年上だ)
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Negation: Bu bi vs Meiyou -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定形の落とし穴：「不比」と「没有」</h3>
+                    <p class="text-slate-500 text-sm">「AはBより〜ない」と言いたい時、どちらを使うべきか。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Meiyou (Not as ... as) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-green-500 card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-bl font-bold">標準的な否定</div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">A <span class="text-green-600">没有</span> B + 形容詞</h4>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">AはBほど〜ではない</p>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        「Bの方が〜だ」という意味です。単なる事実の否定として最もよく使われます。
+                    </p>
+                    <div class="bg-green-50 p-3 rounded text-sm">
+                        <p class="chinese-serif text-lg font-bold text-slate-800 mb-1">
+                            <ruby>今天<rt>jīntiān</rt></ruby> <span class="text-green-600">没有</span> <ruby>昨天<rt>zuótiān</rt></ruby> <ruby>热<rt>rè</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-600">今日は昨日ほど暑くない。（昨日の方が暑い）</p>
+                    </div>
+                </div>
+
+                <!-- Bu bi (Not necessarily more than) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-500 card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-100 text-red-800 text-xs px-2 py-1 rounded-bl font-bold">反論・訂正</div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">A <span class="text-red-500">不比</span> B + 形容詞</h4>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">AはBより〜なわけではない</p>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        「Aの方が〜だ」という意見に対して、「いやいや、そんなことないよ（同じくらいか、Bの方が上かもよ）」と反論するニュアンスです。
+                    </p>
+                    <div class="bg-red-50 p-3 rounded text-sm">
+                        <p class="chinese-serif text-lg font-bold text-slate-800 mb-1">
+                            <ruby>今天<rt>jīntiān</rt></ruby> <span class="text-red-500">不比</span> <ruby>昨天<rt>zuótiān</rt></ruby> <ruby>热<rt>rè</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-600">今日は昨日より暑いなんてことはない。（同じくらい涼しいよ、などの反論）</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <span class="font-bold text-amber-600">結論：</span>
+                「今日は昨日より暑くない（昨日の方が暑かった）」と普通に言いたい時は、<br>
+                <span class="text-lg font-bold mx-2">没有 (méiyǒu)</span> を使いましょう！
+            </div>
+        </section>
+
+        <!-- 3. Equality: Yiyang -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">同じ：A 跟 B 一样</h3>
+                    <p class="text-slate-500 text-sm">「AとBは同じだ」という表現。形容詞を続けることもできます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                    <div class="p-3 bg-slate-50 rounded-lg w-full md:w-auto">
+                        <span class="chinese-serif font-bold text-xl">A</span>
+                    </div>
+                    <div class="text-slate-400 font-bold">+</div>
+                    <div class="p-3 bg-blue-50 rounded-lg w-full md:w-auto border border-blue-200">
+                        <span class="chinese-serif font-bold text-xl text-blue-600">跟 / 和</span>
+                        <span class="text-xs block text-blue-400"> (〜と)</span>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg w-full md:w-auto">
+                        <span class="chinese-serif font-bold text-xl">B</span>
+                    </div>
+                    <div class="text-slate-400 font-bold">+</div>
+                    <div class="p-3 bg-amber-50 rounded-lg w-full md:w-auto border-2 border-amber-400 shadow-sm">
+                        <span class="chinese-serif font-bold text-2xl text-amber-600">一样</span>
+                        <span class="text-xs block text-amber-700"> (同じ)</span>
+                    </div>
+                    <div class="text-slate-400 font-bold">+</div>
+                    <div class="p-3 bg-slate-50 rounded-lg w-full md:w-auto border border-dashed border-slate-300">
+                        <span class="text-xs text-slate-400">(形容詞)</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 space-y-4">
+                    <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
+                        <span class="bg-slate-200 text-slate-600 text-xs px-2 py-1 rounded font-bold">基本</span>
+                        <div>
+                            <p class="chinese-serif font-bold text-lg text-slate-800">
+                                <ruby>这<rt>zhè</rt></ruby> <ruby>个<rt>ge</rt></ruby> <span class="text-blue-500">跟</span> <ruby>那<rt>nà</rt></ruby> <ruby>个<rt>ge</rt></ruby> <span class="text-amber-500 font-bold">一样</span>。
+                            </p>
+                            <p class="text-xs text-slate-500">これとあれは同じです。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
+                        <span class="bg-slate-200 text-slate-600 text-xs px-2 py-1 rounded font-bold">応用</span>
+                        <div>
+                            <p class="chinese-serif font-bold text-lg text-slate-800">
+                                <ruby>他<rt>tā</rt></ruby> <span class="text-blue-500">跟</span> <ruby>我<rt>wǒ</rt></ruby> <span class="text-amber-500 font-bold">一样</span> <ruby>高<rt>gāo</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500">彼は私と同じくらい背が高い。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Expressing the Difference (Quantity) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">差の表現：どれくらい違う？</h3>
+                    <p class="text-slate-500 text-sm">「少し大きい」「ずっと大きい」。差を表す言葉は形容詞の「後ろ」に置きます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Small Difference -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-indigo-400 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="font-bold text-indigo-800 text-lg">少しの差</h4>
+                        <span class="text-2xl text-indigo-200"><i class="fas fa-compress-alt"></i></span>
+                    </div>
+                    <div class="text-center mb-4">
+                        <span class="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-lg chinese-serif font-bold text-indigo-700">一点儿</span>
+                        <span class="text-xs text-slate-400 mx-2">/</span>
+                        <span class="bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-lg chinese-serif font-bold text-indigo-700">一些</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-sm">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>哥<rt>gē</rt></ruby><ruby>哥<rt>ge</rt></ruby> <ruby>比<rt>bǐ</rt></ruby> <ruby>我<rt>wǒ</rt></ruby> <ruby>大<rt>dà</rt></ruby> <span class="text-indigo-600 font-bold">一点儿</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">兄は私より少し年上です。</p>
+                    </div>
+                </div>
+
+                <!-- Big Difference -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-400 card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="font-bold text-red-800 text-lg">大きな差</h4>
+                        <span class="text-2xl text-red-200"><i class="fas fa-expand-alt"></i></span>
+                    </div>
+                    <div class="text-center mb-4">
+                        <span class="bg-red-50 border border-red-200 px-3 py-2 rounded-lg chinese-serif font-bold text-red-700">多了</span>
+                        <span class="text-xs text-slate-400 mx-2">/</span>
+                        <span class="bg-red-50 border border-red-200 px-3 py-2 rounded-lg chinese-serif font-bold text-red-700">得多</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-sm">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>飞<rt>fēi</rt></ruby><ruby>机<rt>jī</rt></ruby> <ruby>比<rt>bǐ</rt></ruby> <ruby>汽<rt>qì</rt></ruby><ruby>车<rt>chē</rt></ruby> <ruby>快<rt>kuài</rt></ruby> <span class="text-red-600 font-bold">得多</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">飛行機は車よりずっと速い。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specific Amount -->
+            <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center gap-4">
+                <div class="bg-slate-200 text-slate-700 px-3 py-1 rounded text-xs font-bold whitespace-nowrap">具体的な数量</div>
+                <div>
+                    <p class="chinese-serif font-bold text-slate-800 text-lg">
+                        <ruby>他<rt>tā</rt></ruby> <ruby>比<rt>bǐ</rt></ruby> <ruby>我<rt>wǒ</rt></ruby> <ruby>大<rt>dà</rt></ruby> <span class="text-amber-600 border-b-2 border-amber-300">三岁</span>。
+                    </p>
+                    <p class="text-xs text-slate-500">彼は私より3歳年上です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Mastery Quiz</h3>
+                <p class="text-slate-500">文脈に合わせて正しい比較表現を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 26 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">中級もこれで完走！おめでとうございます！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                比較文をマスターすれば、物の良し悪しや違いを詳しく説明できるようになります。<br>
+                これでLevel 2（中級）のカリキュラムはすべて完了です！<br>
+                次からはLevel 3（上級）。ネイティブらしい「構文」や「接続詞」の世界へ進みます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-8.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="../level3/index.html" class="bg-chinaRed-600 hover:bg-chinaRed-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-chinaRed-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Level 3 へ進む <i class="fas fa-rocket ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "今天", pinyin: "Jīntiān", mean: "今日" },
+                    { text: "比", pinyin: "bǐ", mean: "〜より" },
+                    { text: "昨天", pinyin: "zuótiān", mean: "昨日" },
+                    { text: "___", type: "blank" },
+                    { text: "热", pinyin: "rè", mean: "暑い" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "很 (hěn)", correct: false },
+                    { text: "(不要)", correct: true }
+                ],
+                trans: "今日は昨日より暑いです。",
+                hint: "比較文では「很」を使ってはいけません。「比」があるだけですでに比較の程度が含まれているからです。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "件", pinyin: "jiàn", mean: "〜着" },
+                    { text: "衣服", pinyin: "yīfu", mean: "服" },
+                    { text: "___", type: "blank" },
+                    { text: "那", pinyin: "nà", mean: "あれ" },
+                    { text: "件", pinyin: "jiàn", mean: "〜着" },
+                    { text: "贵", pinyin: "guì", mean: "高い" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "没有 (méiyǒu)", correct: true },
+                    { text: "不比 (bù bǐ)", correct: false }
+                ],
+                trans: "この服はあの服ほど高くありません。（あっちの方が高い）",
+                hint: "「AはBほど〜ない」という劣等比較（事実の否定）は「没有」を使います。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "跟", pinyin: "gēn", mean: "〜と" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "的", pinyin: "de", mean: "の" },
+                    { text: "想法", pinyin: "xiǎngfǎ", mean: "考え" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "一样 (yíyàng)", correct: true },
+                    { text: "比 (bǐ)", correct: false }
+                ],
+                trans: "私の考えはあなたと同じです。",
+                hint: "「A 跟 B ...」の後ろに来て「同じだ」を表すのは「一样」です。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "个", pinyin: "ge", mean: "個" },
+                    { text: "比", pinyin: "bǐ", mean: "〜より" },
+                    { text: "那", pinyin: "nà", mean: "あれ" },
+                    { text: "个", pinyin: "ge", mean: "個" },
+                    { text: "好", pinyin: "hǎo", mean: "良い" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "得多 (de duō)", correct: true },
+                    { text: "一点儿 (yìdiǎnr)", correct: false } // technically both fit grammatically but let's assume context implies big difference or just a drill
+                ],
+                trans: "これはあれよりずっと良い。",
+                hint: "「ずっと良い（大きな差）」を表すには「得多」や「多了」を使います。「一点儿」は「少し」です。（ここでは「得多」を正解とします）"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(choice !== "(不要)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                } else if (choice === "(不要)" && btn.innerText === "(不要)") {
+                     btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                if (choice === "(不要)") {
+                    slot.textContent = "×";
+                    slot.classList.add('text-slate-400');
+                } else {
+                    slot.textContent = choice;
+                    if (isCorrect) {
+                        slot.classList.add('border-amber-500', 'text-amber-600');
+                    } else {
+                        slot.classList.add('border-red-500', 'text-red-600');
+                    }
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

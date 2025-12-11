@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 01: 発音・声調（四声）の変調ルール</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e; /* teal-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* 5段階ピッチ図のグリッド背景 */
+        .pitch-grid {
+            background-image: repeating-linear-gradient(
+                0deg,
+                #e2e8f0 0px,
+                #e2e8f0 1px,
+                transparent 1px,
+                transparent 25%
+            );
+            background-size: 100% 100%;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* アニメーション用 */
+        @keyframes drawPath {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+        .animate-draw {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawPath 2s ease-out forwards;
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fde68a 60%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        /* カスタムスクロールバー（横スクロール用） */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-teal-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 0</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">01. 発音・声調の変調ルール</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                ネイティブの<br class="md:hidden">「リズム」をインストールする
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                教科書通りの「四声」を一生懸命守ろうとしていませんか？<br>
+                実は、ネイティブは会話の中で音を絶えず変化させています。<br>
+                この<span class="highlight-text">「変調 (Tone Sandhi)」</span>こそが、流暢な中国語への最短ルートです。
+            </p>
+            <div class="flex justify-center gap-4 text-sm text-slate-500">
+                <div class="flex items-center gap-2"><i class="fas fa-check text-teal-600"></i> 半3声の完全理解</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check text-teal-600"></i> 「不・一」の例外処理</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check text-teal-600"></i> 3連続3声のグルーピング</div>
+            </div>
+        </section>
+
+        <!-- 1. The Tone Pitch Theory -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">音域理論 (5-Scale Pitch)</h3>
+                    <p class="text-slate-500 text-sm">感覚ではなく「数値」で高さを理解する</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="mb-6 text-slate-600">
+                            言語学では、人の声の高さ（音域）を1（低）〜5（高）の5段階で表します。<br>
+                            この数値を知ると、特に<span class="text-blue-600 font-bold">第3声の本質</span>が見えてきます。
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm">1声</span>
+                                <span class="font-mono font-bold text-lg">5 - 5</span>
+                                <span class="text-sm text-slate-500">最初から最後までMAXの高さをキープ。</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded bg-green-100 text-green-600 flex items-center justify-center font-bold text-sm">2声</span>
+                                <span class="font-mono font-bold text-lg">3 - 5</span>
+                                <span class="text-sm text-slate-500">中音域から一気にトップへ駆け上がる。</span>
+                            </li>
+                            <li class="flex items-center gap-3 bg-blue-50 p-2 rounded-lg -mx-2 border border-blue-100">
+                                <span class="w-8 h-8 rounded bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">3声</span>
+                                <span class="font-mono font-bold text-lg">2 - 1 - 4</span>
+                                <span class="text-sm text-blue-800 font-bold">重要：最も低い音域(1)を使う唯一の音。</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">4声</span>
+                                <span class="font-mono font-bold text-lg">5 - 1</span>
+                                <span class="text-sm text-slate-500">天井から床まで一気に叩き落とす。</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Visualizer -->
+                    <div class="relative h-64 bg-slate-50 rounded-xl border border-slate-200 pitch-grid p-4">
+                        <!-- Labels -->
+                        <div class="absolute left-2 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-400 font-mono py-2">
+                            <span>5 (High)</span>
+                            <span>4</span>
+                            <span>3 (Mid)</span>
+                            <span>2</span>
+                            <span>1 (Low)</span>
+                        </div>
+                        
+                        <!-- SVG Paths -->
+                        <svg class="w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
+                            <!-- Tone 1: Red -->
+                            <path d="M50,20 L100,20" stroke="#ef4444" stroke-width="6" fill="none" stroke-linecap="round" class="opacity-80"/>
+                            <text x="75" y="15" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">1声 (55)</text>
+
+                            <!-- Tone 2: Green -->
+                            <path d="M140,100 L190,20" stroke="#22c55e" stroke-width="6" fill="none" stroke-linecap="round" class="opacity-80"/>
+                            <text x="165" y="15" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">2声 (35)</text>
+
+                            <!-- Tone 3: Blue -->
+                            <!-- Note: 3rd tone dips low then rises -->
+                            <path d="M230,120 Q255,190 280,60" stroke="#3b82f6" stroke-width="6" fill="none" stroke-linecap="round" class="opacity-80"/>
+                            <text x="255" y="195" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">3声 (214)</text>
+
+                            <!-- Tone 4: Purple -->
+                            <path d="M320,20 L370,180" stroke="#a855f7" stroke-width="6" fill="none" stroke-linecap="round" class="opacity-80"/>
+                            <text x="345" y="15" text-anchor="middle" fill="#a855f7" font-size="14" font-weight="bold">4声 (51)</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Deep Dive into 3rd Tone -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">第3声の真実（半3声）</h3>
+                    <p class="text-slate-500 text-sm">教科書の「上がって下がる」は忘れてください</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Concept Card -->
+                <div class="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
+                    <h4 class="text-lg font-bold text-indigo-900 mb-4"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>ネイティブの感覚</h4>
+                    <p class="text-indigo-800 mb-6 leading-relaxed">
+                        第3声が単独で読まれる（最後に上がる）のは、文末に来た時や強調する時だけです。<br>
+                        文章中に出てくる9割以上の第3声は、<span class="font-bold bg-white px-1 rounded">「低く抑えるだけ」</span>の音になります。これを<span class="font-bold text-lg underline decoration-indigo-300">半3声 (Half 3rd Tone)</span>と呼びます。
+                    </p>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-slate-500">通常の表記 (Full)</span>
+                            <span class="text-sm text-indigo-600 font-bold">半3声 (Half)</span>
+                        </div>
+                        <div class="relative h-20 bg-slate-100 rounded mb-4 overflow-hidden">
+                            <svg class="w-full h-full" viewBox="0 0 200 80">
+                                <!-- Full 3rd tone ghost -->
+                                <path d="M20,40 Q50,70 80,30" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+                                <!-- Half 3rd tone real -->
+                                <path d="M20,40 Q40,65 60,65" stroke="#4f46e5" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                <text x="100" y="45" fill="#64748b" font-size="12">後半の「上がり」をカット！</text>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-slate-700">喜欢 (xǐhuan) <span class="text-slate-400 text-sm mx-2">→</span> <span class="chinese-serif text-xl">xǐ</span>(低) + huan</p>
+                            <p class="text-xs text-slate-500 mt-1">「シィ（⤵︎）」と下げて、そのまま次の音へ。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Tone Rules Detailed -->
+                <div class="space-y-4">
+                    <!-- Rule 1 -->
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-teal-500 shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="font-bold text-slate-800">パターンA：3声 + 3声</h5>
+                            <span class="text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded-full">変化：2声 + 3声</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">最も有名なルール。前の3声が2声（上昇）に変わります。</p>
+                        <div class="flex gap-4 items-center bg-slate-50 p-3 rounded">
+                            <div class="text-center">
+                                <div class="chinese-serif font-bold text-lg">你好</div>
+                                <div class="text-xs text-slate-400">nǐ hǎo</div>
+                            </div>
+                            <i class="fas fa-arrow-right text-slate-300"></i>
+                            <div class="text-center">
+                                <div class="chinese-serif font-bold text-lg text-teal-700">ní hǎo</div>
+                                <div class="text-xs text-teal-600">ニー(↗) ハオ(⤵︎)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 2 -->
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-blue-500 shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="font-bold text-slate-800">パターンB：3声 + その他</h5>
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">変化：半3声 + その他</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">後ろが1・2・4声・軽声の場合、前の3声は「低く抑える」だけ。</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-slate-50 p-2 rounded text-center">
+                                <div class="chinese-serif font-bold">北京</div>
+                                <div class="text-xs text-slate-500">Běijīng → <span class="text-blue-600 font-bold">Bei(低)</span> jīng</div>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded text-center">
+                                <div class="chinese-serif font-bold">感谢</div>
+                                <div class="text-xs text-slate-500">gǎnxiè → <span class="text-blue-600 font-bold">gan(低)</span> xiè</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 3: Complex Grouping -->
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-amber-500 shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="font-bold text-slate-800">難問：3声が3つ続く時</h5>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">構造による</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">言葉の「切れ目（意味のまとまり）」で判断します。</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="w-4 h-4 rounded-full bg-slate-200 text-[10px] flex items-center justify-center">1</span>
+                                <span><span class="chinese-serif font-bold">我很好</span> (私は元気)</span>
+                                <span class="text-slate-400">→</span>
+                                <span class="font-mono text-amber-700 font-bold">wǒ / hěn hǎo</span>
+                                <span class="text-xs text-slate-400"> (我 + 很好) → wó hén hǎo (全部2声化する傾向)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-4 h-4 rounded-full bg-slate-200 text-[10px] flex items-center justify-center">2</span>
+                                <span><span class="chinese-serif font-bold">买水果</span> (果物を買う)</span>
+                                <span class="text-slate-400">→</span>
+                                <span class="font-mono text-amber-700 font-bold">mǎi / shuǐguǒ</span>
+                                <span class="text-xs text-slate-400"> (买 + 水果) → mǎi shuí guǒ (半3 + 2 + 3)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Bu and Yi Master Class -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「不・一」の変調：完全攻略</h3>
+                    <p class="text-slate-500 text-sm">基本ルールに加えて、動詞に挟まれる「軽声化」もマスター</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm mb-8">
+                <table class="w-full text-left bg-white">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium text-sm">
+                        <tr>
+                            <th class="p-4 w-20">漢字</th>
+                            <th class="p-4 w-32">基本音</th>
+                            <th class="p-4">条件</th>
+                            <th class="p-4">変化後の音</th>
+                            <th class="p-4">例文</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <!-- Yi -->
+                        <tr class="bg-blue-50/30">
+                            <td rowspan="4" class="p-4 font-bold text-xl chinese-serif text-blue-700 border-r border-slate-100 bg-white">一<br><span class="text-xs font-sans font-normal text-slate-400">yī</span></td>
+                            <td class="p-4 text-slate-500">1声</td>
+                            <td class="p-4"><span class="font-bold">単独・序数・日付</span></td>
+                            <td class="p-4"><span class="badge bg-slate-200 text-slate-600 px-2 py-1 rounded text-xs">変化なし (1声)</span></td>
+                            <td class="p-4 font-mono text-slate-600">第一 (dì yī), 一九九〇 (yī jiǔ...)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-slate-400 border-l border-slate-50"></td>
+                            <td class="p-4">後ろが <span class="font-bold text-slate-800">4声</span></td>
+                            <td class="p-4"><span class="badge bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">2声 (yí)</span></td>
+                            <td class="p-4 font-mono">一定 (yí dìng), 一块 (yí kuài)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-slate-400 border-l border-slate-50"></td>
+                            <td class="p-4">後ろが <span class="font-bold text-slate-800">1・2・3声</span></td>
+                            <td class="p-4"><span class="badge bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-bold">4声 (yì)</span></td>
+                            <td class="p-4 font-mono">一般 (yì bān), 一起 (yì qǐ)</td>
+                        </tr>
+                        <tr class="bg-amber-50/50">
+                            <td class="p-4 text-slate-400 border-l border-slate-50"></td>
+                            <td class="p-4"><span class="text-amber-700 font-bold">動詞の間 (重ね型)</span></td>
+                            <td class="p-4"><span class="badge bg-slate-100 text-slate-500 px-2 py-1 rounded text-xs font-bold">軽声 (yi)</span></td>
+                            <td class="p-4 font-mono">看一看 (kàn yi kàn), 等一等</td>
+                        </tr>
+
+                        <!-- Bu -->
+                        <tr class="bg-red-50/30 border-t-2 border-slate-100">
+                            <td rowspan="3" class="p-4 font-bold text-xl chinese-serif text-red-700 border-r border-slate-100 bg-white">不<br><span class="text-xs font-sans font-normal text-slate-400">bù</span></td>
+                            <td class="p-4 text-slate-500">4声</td>
+                            <td class="p-4">後ろが <span class="font-bold text-slate-800">4声以外</span></td>
+                            <td class="p-4"><span class="badge bg-slate-200 text-slate-600 px-2 py-1 rounded text-xs">変化なし (4声)</span></td>
+                            <td class="p-4 font-mono text-slate-600">不吃 (bù chī), 不忙 (bù máng)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-slate-400 border-l border-slate-50"></td>
+                            <td class="p-4">後ろが <span class="font-bold text-slate-800">4声</span></td>
+                            <td class="p-4"><span class="badge bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold">2声 (bú)</span></td>
+                            <td class="p-4 font-mono">不是 (bú shì), 不去 (bú qù)</td>
+                        </tr>
+                        <tr class="bg-amber-50/50">
+                            <td class="p-4 text-slate-400 border-l border-slate-50"></td>
+                            <td class="p-4"><span class="text-amber-700 font-bold">補語・疑問の間</span></td>
+                            <td class="p-4"><span class="badge bg-slate-100 text-slate-500 px-2 py-1 rounded text-xs font-bold">軽声 (bu)</span></td>
+                            <td class="p-4 font-mono">好不好 (hǎo bu hǎo), 起不来</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Context Tip -->
+            <div class="bg-slate-100 p-4 rounded-lg flex gap-4 text-sm text-slate-600">
+                <i class="fas fa-info-circle text-slate-400 mt-1"></i>
+                <p>
+                    <strong>コラム：七 (qī) と 八 (bā) の変調</strong><br>
+                    古い教科書や辞書では「七」と「八」も「一」と同じように変調すると書かれていることがありますが、現代標準語では<span class="font-bold text-slate-800">変調せず、常に第1声のままでOK</span>です。むしろ変調させると古風に聞こえます。
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Practical Drill</h3>
+                <p class="text-slate-500">理論を感覚に変えるトレーニング</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="drill-container">
+                <!-- Cards will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center">
+            <div class="inline-block bg-teal-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-teal-700 font-bold">Lesson 01 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                これで中国語のリズムの基礎（OS）が入りました。<br>
+                次は、中国語の語順の核となる「SVOと場所」について学びます。
+            </p>
+            
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+
+            <a href="lesson-l0-2.html" class="bg-teal-700 hover:bg-teal-800 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-teal-700/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                Lesson 02: 基本語順 (SVO) と場所へ進む <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </footer>
+
+    </main>
+
+    <script>
+        const drillData = [
+            { 
+                text: "你好", 
+                pinyin_raw: "nǐ hǎo", 
+                pinyin_real: "ní hǎo",
+                rule: "3声 + 3声 → 2声 + 3声",
+                tags: ["3声変調"],
+                color: "teal"
+            },
+            { 
+                text: "不去", 
+                pinyin_raw: "bù qù", 
+                pinyin_real: "bú qù",
+                rule: "不(4) + 4声 → 2声 + 4声",
+                tags: ["不の変調"],
+                color: "red"
+            },
+            { 
+                text: "很高兴", 
+                pinyin_raw: "hěn gāo xìng", 
+                pinyin_real: "hen(半) gāo xìng",
+                rule: "3声 + 1声 → 半3声 + 1声",
+                tags: ["半3声"],
+                color: "indigo"
+            },
+            { 
+                text: "一般", 
+                pinyin_raw: "yī bān", 
+                pinyin_real: "yì bān",
+                rule: "一(1) + 1声 → 4声 + 1声",
+                tags: ["一の変調"],
+                color: "blue"
+            },
+            { 
+                text: "想买", 
+                pinyin_raw: "xiǎng mǎi", 
+                pinyin_real: "xiáng mǎi",
+                rule: "3声 + 3声 → 2声 + 3声",
+                tags: ["3声変調"],
+                color: "teal"
+            },
+            { 
+                text: "看一看", 
+                pinyin_raw: "kàn yī kàn", 
+                pinyin_real: "kàn yi kàn",
+                rule: "動詞の挟み込み → 軽声",
+                tags: ["一の変調", "軽声"],
+                color: "amber"
+            },
+            { 
+                text: "第一", 
+                pinyin_raw: "dì yī", 
+                pinyin_real: "dì yī",
+                rule: "序数 → 変化なし",
+                tags: ["一の変調", "例外"],
+                color: "slate"
+            },
+            { 
+                text: "水果", 
+                pinyin_raw: "shuǐ guǒ", 
+                pinyin_real: "shuí guǒ",
+                rule: "3声 + 3声 → 2声 + 3声",
+                tags: ["3声変調"],
+                color: "teal"
+            },
+            { 
+                text: "好不好", 
+                pinyin_raw: "hǎo bù hǎo", 
+                pinyin_real: "hǎo bu hǎo",
+                rule: "疑問文の挟み込み → 軽声",
+                tags: ["不の変調", "軽声"],
+                color: "amber"
+            }
+        ];
+
+        const container = document.getElementById('drill-container');
+
+        drillData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = `bg-white rounded-xl shadow-sm border border-slate-100 p-6 card-hover relative group cursor-pointer overflow-hidden`;
+            
+            // Generate tags HTML
+            const tagsHtml = item.tags.map(tag => 
+                `<span class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded bg-slate-100 text-slate-500">${tag}</span>`
+            ).join('');
+
+            // Color theme classes
+            let themeClass = '';
+            if(item.color === 'teal') themeClass = 'text-teal-600 bg-teal-50';
+            if(item.color === 'red') themeClass = 'text-red-600 bg-red-50';
+            if(item.color === 'blue') themeClass = 'text-blue-600 bg-blue-50';
+            if(item.color === 'indigo') themeClass = 'text-indigo-600 bg-indigo-50';
+            if(item.color === 'amber') themeClass = 'text-amber-600 bg-amber-50';
+            if(item.color === 'slate') themeClass = 'text-slate-600 bg-slate-100';
+
+            card.innerHTML = `
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex gap-2">${tagsHtml}</div>
+                    <i class="fas fa-volume-up text-slate-300 group-hover:text-teal-500 transition-colors"></i>
+                </div>
+                
+                <div class="text-center mb-6">
+                    <h4 class="text-4xl font-bold text-slate-800 chinese-serif mb-2">${item.text}</h4>
+                    <p class="text-lg text-slate-400 font-mono group-hover:opacity-0 transition-opacity">${item.pinyin_raw}</p>
+                </div>
+
+                <!-- Answer Overlay -->
+                <div class="absolute inset-0 ${themeClass} opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-4 backdrop-blur-sm z-10">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2">Real Pronunciation</p>
+                    <p class="text-2xl font-bold font-mono mb-2">${item.pinyin_real}</p>
+                    <p class="text-xs text-center border-t border-current pt-2 mt-2 w-full max-w-[80%] opacity-90">${item.rule}</p>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

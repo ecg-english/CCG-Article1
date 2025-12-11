@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15: 能願動詞 PART 1 (想 / 要 / 会)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+        
+        /* 比較テーブルのスタイル */
+        .comp-table th {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 12px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .comp-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .comp-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">15. 能願動詞 PART 1 (想 / 要 / 会)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「〜したい」「〜できる」を<br class="md:hidden">正確に使い分ける
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                動詞の前に置いて、話し手の意図や能力を付け加えるのが「能願動詞（助動詞）」です。<br>
+                今回は、最も基本的かつ間違いやすい<span class="highlight-text">「想（希望）」「要（意志）」「会（習得）」</span>の3つを徹底攻略します。<br>
+                特に「〜したくない」と言う時のルールは、多くの学習者が陥る罠です。
+            </p>
+        </section>
+
+        <!-- 1. Desire: Xiang (Hope) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">想 (xiǎng)：頭の中での希望</h3>
+                    <p class="text-slate-500 text-sm">「〜したいなぁ」という願望。まだ行動に移すとは限らない段階。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-pink-400 card-hover group">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h4 class="text-4xl font-bold text-slate-800 chinese-serif mb-1"><ruby>想<rt>xiǎng</rt></ruby></h4>
+                        <span class="text-xs bg-pink-100 text-pink-700 px-2 py-1 rounded font-bold">希望・願望・思考</span>
+                    </div>
+                    <div class="text-right text-sm text-slate-500 bg-slate-50 p-2 rounded">
+                        動詞 + <strong>想</strong> + 動詞<br>
+                        <span class="text-xs">※心で思っている状態</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Meaning 1: Want to -->
+                    <div>
+                        <h5 class="font-bold text-pink-600 mb-2 border-b border-pink-100 pb-1">① 〜したい (願望)</h5>
+                        <p class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-pink-500">想</span> <ruby>去<rt>qù</rt></ruby> <ruby>中国<rt>Zhōngguó</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600 mb-4">
+                            私は中国に行きたいです。<br>
+                            <span class="text-xs text-slate-400">（行けたらいいな、という気持ち）</span>
+                        </p>
+                    </div>
+
+                    <!-- Meaning 2: Think / Miss -->
+                    <div>
+                        <h5 class="font-bold text-purple-600 mb-2 border-b border-purple-100 pb-1">② 〜と思う / 〜を想う (中級)</h5>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <ruby>我<rt>wǒ</rt></ruby> <span class="text-purple-500">想</span> <ruby>他<rt>tā</rt></ruby> <ruby>不<rt>bú</rt></ruby> <ruby>会<rt>huì</rt></ruby> <ruby>来<rt>lái</rt></ruby>。
+                                </p>
+                                <p class="text-sm text-slate-600">彼は来ないと思います。<span class="text-xs text-slate-400">(推測)</span></p>
+                            </div>
+                            <div>
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <ruby>我<rt>wǒ</rt></ruby> <span class="text-purple-500">想</span> <ruby>你<rt>nǐ</rt></ruby>。
+                                </p>
+                                <p class="text-sm text-slate-600">あなたが恋しい(会いたい)。<span class="text-xs text-slate-400">(慕う)</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Negation -->
+                <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-4">
+                    <span class="bg-slate-200 text-slate-600 text-xs px-2 py-1 rounded font-bold">否定形</span>
+                    <div>
+                        <span class="chinese-serif font-bold text-lg text-slate-800"><ruby>不<rt>bù</rt></ruby> <ruby>想<rt>xiǎng</rt></ruby></span>
+                        <span class="text-sm text-slate-600 ml-2">〜したくない</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Will/Plan: Yao (Will) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">要 (yào)：強い意志と予定</h3>
+                    <p class="text-slate-500 text-sm">「想」よりも積極的。「するつもりだ」「するぞ」という強い意志。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-red-500 card-hover">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h4 class="text-4xl font-bold text-slate-800 chinese-serif mb-1"><ruby>要<rt>yào</rt></ruby></h4>
+                        <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded font-bold">意志・予定・必要</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Meaning 1: Will -->
+                    <div>
+                        <h5 class="font-bold text-red-600 mb-2 border-b border-red-100 pb-1">① 〜するつもり (意志)</h5>
+                        <p class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-red-500">要</span> <ruby>去<rt>qù</rt></ruby> <ruby>中国<rt>Zhōngguó</rt></ruby> <ruby>工作<rt>gōngzuò</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600">
+                            私は中国へ行って働きます。<br>
+                            <span class="text-xs text-slate-400">（決定事項・強い意思）</span>
+                        </p>
+                    </div>
+
+                    <!-- Meaning 2: Need to -->
+                    <div>
+                        <h5 class="font-bold text-orange-600 mb-2 border-b border-orange-100 pb-1">② 〜する必要がある (中級)</h5>
+                        <p class="chinese-serif text-xl font-bold text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-orange-500">要</span> <ruby>吃<rt>chī</rt></ruby> <ruby>药<rt>yào</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600">
+                            薬を飲まなくてはいけません。<br>
+                            <span class="text-xs text-slate-400">（必要性）</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Negation TRAP -->
+                <div class="mt-8 bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl">
+                    <h5 class="text-red-800 font-bold text-lg mb-2 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i> 否定形の「罠」
+                    </h5>
+                    <p class="text-sm text-slate-700 mb-4">
+                        「要」の否定形は、意味によって言葉が変わります。<br>
+                        <strong>「不要 (bú yào)」と言うと、「〜するな（禁止）」になってしまいます！</strong>
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 text-sm bg-white p-4 rounded-lg shadow-sm">
+                        <div class="border-r border-slate-100 pr-4">
+                            <p class="text-xs text-slate-400 mb-1">意志の否定 (したくない)</p>
+                            <span class="text-xl font-bold text-pink-600 chinese-serif">不想</span>
+                            <p class="text-xs text-slate-500 mt-1">我<strong>不想</strong>去。<br>(行きたくない)</p>
+                        </div>
+                        <div class="pl-4">
+                            <p class="text-xs text-slate-400 mb-1">必要の否定 (しなくていい)</p>
+                            <span class="text-xl font-bold text-slate-600 chinese-serif">不用</span>
+                            <p class="text-xs text-slate-500 mt-1">你<strong>不用</strong>去。<br>(行かなくていいよ)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skill & Future: Hui -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">会 (huì)：習得と未来</h3>
+                    <p class="text-slate-500 text-sm">「できる」にも種類があります。「会」は「練習してできる」こと。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-teal-500 card-hover">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h4 class="text-4xl font-bold text-slate-800 chinese-serif mb-1"><ruby>会<rt>huì</rt></ruby></h4>
+                        <span class="text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded font-bold">習得能力・可能性</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Meaning 1: Learned Skill -->
+                    <div>
+                        <h5 class="font-bold text-teal-700 mb-2 border-b border-teal-100 pb-1 flex items-center">
+                            <i class="fas fa-graduation-cap mr-2"></i> ① 習得して「できる」
+                        </h5>
+                        <p class="text-sm text-slate-600 mb-3">
+                            勉強や練習を通して身につけたスキル。<br>
+                            （話せる、泳げる、運転できる、料理できる等）
+                        </p>
+                        <div class="bg-teal-50 p-3 rounded-lg">
+                            <p class="chinese-serif text-lg font-bold text-slate-800">
+                                <ruby>我<rt>wǒ</rt></ruby> <span class="text-teal-600">会</span> <ruby>说<rt>shuō</rt></ruby> <ruby>汉语<rt>Hànyǔ</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">私は中国語が話せます。</p>
+                        </div>
+                    </div>
+
+                    <!-- Meaning 2: Future Prediction -->
+                    <div>
+                        <h5 class="font-bold text-blue-700 mb-2 border-b border-blue-100 pb-1 flex items-center">
+                            <i class="fas fa-meteor mr-2"></i> ② 〜するはずだ (未来)
+                        </h5>
+                        <p class="text-sm text-slate-600 mb-3">
+                            可能性が高いことや、未来の予測。<br>
+                            （雨が降るだろう、彼は来るはずだ等）
+                        </p>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="chinese-serif text-lg font-bold text-slate-800">
+                                <ruby>明天<rt>míngtiān</rt></ruby> <span class="text-blue-600">会</span> <ruby>下雨<rt>xià yǔ</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">明日は雨が降るでしょう。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Negation -->
+                <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-4">
+                    <span class="bg-slate-200 text-slate-600 text-xs px-2 py-1 rounded font-bold">否定形</span>
+                    <div>
+                        <span class="chinese-serif font-bold text-lg text-slate-800"><ruby>不<rt>bú</rt></ruby> <ruby>会<rt>huì</rt></ruby></span>
+                        <span class="text-sm text-slate-600 ml-2">できない(未習得) / 〜しないだろう(予測否定)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Summary Table -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">総まとめ：否定形の不規則変化</h3>
+                    <p class="text-slate-500 text-sm">ここだけ覚えればOK。否定の形が変化する点に注目。</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                <table class="w-full text-left bg-white comp-table">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">肯定 (Yes)</th>
+                            <th class="w-1/4">意味</th>
+                            <th class="w-1/4">否定 (No)</th>
+                            <th class="w-1/4">意味</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="chinese-serif font-bold text-lg text-pink-600">想 (xiǎng)</td>
+                            <td class="text-sm text-slate-600">〜したい<br><span class="text-xs text-slate-400">(希望)</span></td>
+                            <td class="chinese-serif font-bold text-lg text-pink-600">不想</td>
+                            <td class="text-sm text-slate-600">したくない</td>
+                        </tr>
+                        <tr class="bg-red-50/10">
+                            <td class="chinese-serif font-bold text-lg text-red-600">要 (yào)</td>
+                            <td class="text-sm text-slate-600">〜するつもり<br><span class="text-xs text-slate-400">(意志)</span></td>
+                            <td class="chinese-serif font-bold text-lg text-pink-600 relative">
+                                不想
+                                <span class="absolute -top-1 -right-2 bg-red-100 text-red-600 text-[9px] px-1 rounded">CHECK</span>
+                            </td>
+                            <td class="text-sm text-slate-600">したくない<br><span class="text-xs text-red-500">※「不要」は禁止！</span></td>
+                        </tr>
+                        <tr>
+                            <td class="chinese-serif font-bold text-lg text-teal-600">会 (huì)</td>
+                            <td class="text-sm text-slate-600">できる<br><span class="text-xs text-slate-400">(習得・未来)</span></td>
+                            <td class="chinese-serif font-bold text-lg text-teal-600">不会</td>
+                            <td class="text-sm text-slate-600">できない / しない</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Check Your Understanding</h3>
+                <p class="text-slate-500">文脈に合わせて正しい言葉を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 15 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様です！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「したい」「できる」が言えると、自分の意思をはっきり伝えられるようになります。<br>
+                次回は、「能・可以」を使った「許可・可能」の表現に進みます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-6.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-8.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 16: 能願動詞 PART 2 へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "吃", pinyin: "chī", mean: "食べる" },
+                    { text: "北京烤鸭", pinyin: "Běijīng kǎoyā", mean: "北京ダック" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "想 (xiǎng)", correct: true },
+                    { text: "会 (huì)", correct: false }
+                ],
+                trans: "私は北京ダックが食べたいです。",
+                hint: "「〜したい」という願望を表すので「想」を使います。「会」だと「食べることができる（スキル/予測）」となり文脈に合いません。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "说", pinyin: "shuō", mean: "話す" },
+                    { text: "日语", pinyin: "Rìyǔ", mean: "日本語" },
+                    { text: "吗", pinyin: "ma", mean: "〜ですか" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "要 (yào)", correct: false },
+                    { text: "会 (huì)", correct: true }
+                ],
+                trans: "あなたは日本語が話せますか？",
+                hint: "日本語を話す能力（習得したスキル）があるか聞いているので「会」を使います。"
+            },
+            {
+                question: [
+                    { text: "明天", pinyin: "Míngtiān", mean: "明日" },
+                    { text: "___", type: "blank" },
+                    { text: "下", pinyin: "xià", mean: "降る" },
+                    { text: "雪", pinyin: "xuě", mean: "雪" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "要 (yào)", correct: false },
+                    { text: "会 (huì)", correct: true }
+                ],
+                trans: "明日は雪が降るでしょう。",
+                hint: "未来の天気の予測（〜だろう）なので「会」を使います。「要」を使うと「雪が降るつもりだ（意思）」のようになり不自然です。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "明天", pinyin: "míngtiān", mean: "明日" },
+                    { text: "___", type: "blank" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "学校", pinyin: "xuéxiào", mean: "学校" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "不想 (bù xiǎng)", correct: true },
+                    { text: "不要 (bú yào)", correct: false }
+                ],
+                trans: "私は明日、学校に行きたくありません。",
+                hint: "「行きたくない（意思の否定）」には「不想」を使います。「不要」は「行くな（禁止）」か「必要ない」という意味になります。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-blue-500', 'text-blue-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

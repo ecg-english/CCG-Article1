@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 18: 構造助詞の使い分け (的 / 得 / 地)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">18. 構造助詞の使い分け (的 / 得 / 地)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                発音はすべて「de」<br class="md:hidden">でも役割は全く違う
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                中級への最初の関門へようこそ。<br>
+                中国語には「的」「得」「地」という3つの「de」があります。<br>
+                どれを使うかで、<span class="highlight-text">「何の話をしているか（名詞・動作・様子）」</span>が決まります。<br>
+                この使い分けができれば、文法学習の8割は完了したも同然です。
+            </p>
+        </section>
+
+        <!-- 1. The Three "De"s Overview -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">3つの「de」の役割マップ</h3>
+                    <p class="text-slate-500 text-sm">後ろに来る言葉（ターゲット）を見るのがコツです。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 的 (de) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-red-500 card-hover group">
+                    <div class="text-center mb-4">
+                        <span class="text-5xl font-bold text-slate-800 chinese-serif group-hover:text-red-600 transition">的</span>
+                        <p class="text-sm font-bold text-red-500 mt-2">名詞を飾る</p>
+                    </div>
+                    <div class="bg-red-50 p-3 rounded-lg text-center text-sm font-mono text-slate-700">
+                        修飾語 + <span class="text-red-600 font-bold">的</span> + <span class="bg-white px-1 rounded border border-red-200">名詞</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        所有・属性・状態など。<br>日本語の「の」「〜い」「〜な」
+                    </p>
+                </div>
+
+                <!-- 地 (de) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover group">
+                    <div class="text-center mb-4">
+                        <span class="text-5xl font-bold text-slate-800 chinese-serif group-hover:text-blue-600 transition">地</span>
+                        <p class="text-sm font-bold text-blue-500 mt-2">動詞を飾る</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-lg text-center text-sm font-mono text-slate-700">
+                        副詞的修飾 + <span class="text-blue-600 font-bold">地</span> + <span class="bg-white px-1 rounded border border-blue-200">動詞</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        動作の様子・状態。<br>日本語の「〜く」「〜に」
+                    </p>
+                </div>
+
+                <!-- 得 (de) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover group">
+                    <div class="text-center mb-4">
+                        <span class="text-5xl font-bold text-slate-800 chinese-serif group-hover:text-amber-600 transition">得</span>
+                        <p class="text-sm font-bold text-amber-600 mt-2">補語を導く</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-lg text-center text-sm font-mono text-slate-700">
+                        <span class="bg-white px-1 rounded border border-amber-200">動詞</span> + <span class="text-amber-600 font-bold">得</span> + 補語
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center">
+                        動作の結果・程度・可能。<br>日本語の「〜するのが…だ」
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Detail: 的 (de) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">的 (de)：名詞のボディガード</h3>
+                    <p class="text-slate-500 text-sm">最も基本的で、最も使われる「de」。ターゲットは名詞です。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-red-100">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-red-700 mb-4 flex items-center">
+                            <i class="fas fa-tag mr-2"></i> 名詞を詳しく説明する
+                        </h4>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">① 所有 (〜の)</span>
+                                <span class="chinese-serif text-lg"><ruby>我<rt>wǒ</rt></ruby> <span class="text-red-500">的</span> <ruby>书<rt>shū</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(私の本)</span>
+                            </li>
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">② 属性・描写 (〜い/〜な)</span>
+                                <span class="chinese-serif text-lg"><ruby>红<rt>hóng</rt></ruby> <span class="text-red-500">的</span> <ruby>车<rt>chē</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(赤い車)</span>
+                            </li>
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">③ 連体修飾 (〜する…)</span>
+                                <span class="chinese-serif text-lg"><ruby>吃<rt>chī</rt></ruby> <span class="text-red-500">的</span> <ruby>东西<rt>dōngxi</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(食べるもの)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 bg-red-50 p-6 rounded-xl text-center">
+                        <p class="text-sm text-red-800 font-bold mb-4">覚え方イメージ</p>
+                        <div class="inline-flex items-center gap-2">
+                            <div class="px-3 py-2 bg-white rounded border border-red-200">説明言葉</div>
+                            <i class="fas fa-arrow-right text-red-300"></i>
+                            <div class="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xl">的</div>
+                            <i class="fas fa-arrow-right text-red-300"></i>
+                            <div class="px-3 py-2 bg-slate-800 text-white rounded font-bold shadow-lg">名詞</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Detail: 地 (de) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">地 (de)：動詞の演出家</h3>
+                    <p class="text-slate-500 text-sm">動作が「どのように」行われるか（様態）を動詞の前で説明します。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-100">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-blue-700 mb-4 flex items-center">
+                            <i class="fas fa-running mr-2"></i> 動作の様子を描写する
+                        </h4>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">① 様子 (〜く/〜に)</span>
+                                <span class="chinese-serif text-lg"><ruby>快<rt>kuài</rt></ruby> <span class="text-blue-500">地</span> <ruby>跑<rt>pǎo</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(速く走る)</span>
+                            </li>
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">② 感情・態度 (〜に)</span>
+                                <span class="chinese-serif text-lg"><ruby>高兴<rt>gāoxìng</rt></ruby> <span class="text-blue-500">地</span> <ruby>说<rt>shuō</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(嬉しそうに話す)</span>
+                            </li>
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">③ 状態の継続 (〜しながら)</span>
+                                <span class="chinese-serif text-lg"><ruby>静静<rt>jìngjìng</rt></ruby> <span class="text-blue-500">地</span> <ruby>听<rt>tīng</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(静かに聞く)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 bg-blue-50 p-6 rounded-xl text-center">
+                        <p class="text-sm text-blue-800 font-bold mb-4">覚え方イメージ</p>
+                        <div class="inline-flex items-center gap-2">
+                            <div class="px-3 py-2 bg-white rounded border border-blue-200">どんな風に</div>
+                            <i class="fas fa-arrow-right text-blue-300"></i>
+                            <div class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xl">地</div>
+                            <i class="fas fa-arrow-right text-blue-300"></i>
+                            <div class="px-3 py-2 bg-slate-800 text-white rounded font-bold shadow-lg">動詞</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Detail: 得 (de) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">得 (de)：補語への架け橋</h3>
+                    <p class="text-slate-500 text-sm">動詞の後ろに置いて、その動作の「結果」や「程度」を詳しく説明します。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-100">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-amber-700 mb-4 flex items-center">
+                            <i class="fas fa-star-half-alt mr-2"></i> 評価・程度を導く
+                        </h4>
+                        <ul class="space-y-4 text-sm text-slate-700">
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">① 様態補語 (〜するのが…)</span>
+                                <span class="chinese-serif text-lg"><ruby>跑<rt>pǎo</rt></ruby> <span class="text-amber-500 font-bold">得</span> <ruby>很<rt>hěn</rt></ruby> <ruby>快<rt>kuài</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(走るのが速い)</span>
+                            </li>
+                            <li>
+                                <span class="font-bold block text-slate-800 mb-1">② 程度補語 (〜なほど…)</span>
+                                <span class="chinese-serif text-lg"><ruby>吃<rt>chī</rt></ruby> <span class="text-amber-500 font-bold">得</span> <ruby>太<rt>tài</rt></ruby> <ruby>饱<rt>bǎo</rt></ruby> <ruby>了<rt>le</rt></ruby></span>
+                                <span class="text-slate-500 ml-2">(食べ過ぎてお腹いっぱい)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 bg-amber-50 p-6 rounded-xl text-center">
+                        <p class="text-sm text-amber-800 font-bold mb-4">覚え方イメージ</p>
+                        <div class="inline-flex items-center gap-2">
+                            <div class="px-3 py-2 bg-slate-800 text-white rounded font-bold shadow-lg">動詞</div>
+                            <i class="fas fa-arrow-right text-amber-300"></i>
+                            <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xl">得</div>
+                            <i class="fas fa-arrow-right text-amber-300"></i>
+                            <div class="px-3 py-2 bg-white rounded border border-amber-200">詳しい評価</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Advanced Comparison: Di vs De -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">5</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">間違いやすいポイント：「地」と「得」</h3>
+                    <p class="text-slate-500 text-sm">「速く走る」と「走るのが速い」。意味は似ていますが文法が違います。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Case A: Di -->
+                <div class="border border-blue-200 rounded-xl p-6 bg-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-100 text-blue-800 text-xs px-2 py-1 font-bold rounded-bl">動詞の前</div>
+                    <h4 class="font-bold text-slate-800 mb-2">快地跑 (kuài de pǎo)</h4>
+                    <p class="text-sm text-slate-600 mb-3">
+                        <span class="font-bold text-blue-600">描写</span>。「速く走る」という動作の様子を描写しています。意識的に「速く走ろう」としているニュアンス。
+                    </p>
+                </div>
+
+                <!-- Case B: De -->
+                <div class="border border-amber-200 rounded-xl p-6 bg-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-100 text-amber-800 text-xs px-2 py-1 font-bold rounded-bl">動詞の後</div>
+                    <h4 class="font-bold text-slate-800 mb-2">跑得快 (pǎo de kuài)</h4>
+                    <p class="text-sm text-slate-600 mb-3">
+                        <span class="font-bold text-amber-600">評価</span>。「走るのが速い」。実際に走った結果を見て「速いね！」と評価している、または能力としての足の速さを表します。
+                    </p>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-slate-100 rounded-lg text-xs text-slate-500 text-center">
+                ※日常会話では、能力や評価を表す<strong>「得」の方が圧倒的によく使われます。</strong>
+            </div>
+        </section>
+
+        <!-- 6. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Mastery Quiz</h3>
+                <p class="text-slate-500">文脈に合わせて正しい「de」を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 18 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">中級の第一歩を踏み出しました！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                3つの「de」を使い分けることで、表現の解像度が格段に上がります。<br>
+                次回は、「得」を使った表現の核心である「様態補語」についてさらに詳しく学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-2.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 19: 様態補語へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "是", pinyin: "shì", mean: "〜です" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "手机", pinyin: "shǒujī", mean: "スマホ" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: true },
+                    { text: "地 (de)", correct: false },
+                    { text: "得 (de)", correct: false }
+                ],
+                trans: "これは私のスマホです。",
+                hint: "「私」が「スマホ（名詞）」を修飾しているので、名詞を飾る「的」を使います。"
+            },
+            {
+                question: [
+                    { text: "他", pinyin: "Tā", mean: "彼" },
+                    { text: "说", pinyin: "shuō", mean: "話す" },
+                    { text: "___", type: "blank" },
+                    { text: "很", pinyin: "hěn", mean: "とても" },
+                    { text: "快", pinyin: "kuài", mean: "速い" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: false },
+                    { text: "地 (de)", correct: false },
+                    { text: "得 (de)", correct: true }
+                ],
+                trans: "彼は話すのがとても速い。",
+                hint: "「話す（動詞）」の後ろに来て、そのスピード（程度）を評価しているので「得」を使います。"
+            },
+            {
+                question: [
+                    { text: "请", pinyin: "Qǐng", mean: "〜してください" },
+                    { text: "慢慢", pinyin: "mànmàn", mean: "ゆっくり" },
+                    { text: "___", type: "blank" },
+                    { text: "走", pinyin: "zǒu", mean: "歩く" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: false },
+                    { text: "地 (de)", correct: true },
+                    { text: "得 (de)", correct: false }
+                ],
+                trans: "ゆっくり歩いてください。",
+                hint: "「ゆっくり（副詞）」が「歩く（動詞）」の前で動作の様子を説明しているので「地」を使います。"
+            },
+            {
+                question: [
+                    { text: "昨天", pinyin: "Zuótiān", mean: "昨日" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "___", type: "blank" },
+                    { text: "面包", pinyin: "miànbāo", mean: "パン" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: true },
+                    { text: "地 (de)", correct: false },
+                    { text: "得 (de)", correct: false }
+                ],
+                trans: "昨日買ったパン。",
+                hint: "「昨日買った（修飾語）」が「パン（名詞）」を詳しく説明しているので「的」を使います。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-amber-500', 'text-amber-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

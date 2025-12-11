@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 27: 「是……的」構文</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">27. 「是……的」構文</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                過去の事実の<br class="md:hidden">「中身」を強調する
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「北京へ行きました（完了）」と言うだけなら「了」で十分です。<br>
+                しかし、「<strong>昨日</strong>行った」「<strong>飛行機で</strong>行った」のように、<span class="highlight-text">すでに起きたことの詳細（いつ・どこで・誰が・どうやって）</span>に焦点を当てたい時、中国語ではこの構文が必須になります。
+            </p>
+        </section>
+
+        <!-- 1. The Concept: Spotlight -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本構造：スポットライトを当てる</h3>
+                    <p class="text-slate-500 text-sm">文のサンドイッチ構造で、強調したい部分を挟みます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-rose-50 border-2 border-rose-200 rounded-xl px-6 py-4 shadow-sm">
+                        <span class="text-slate-400 font-bold text-sm block mb-1">基本公式</span>
+                        <span class="text-xl font-bold text-slate-800 chinese-serif">
+                            主語 + <span class="text-rose-600 font-bold text-2xl mx-1">是</span> + <span class="bg-rose-100 px-2 py-1 rounded border border-rose-300 text-rose-800">強調したい内容</span> + 動詞 + <span class="text-rose-600 font-bold text-2xl mx-1">的</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Normal Le -->
+                    <div class="opacity-60 text-center p-4 border border-slate-200 rounded-xl">
+                        <p class="text-xs font-bold text-slate-400 mb-2">普通の完了文 (了)</p>
+                        <p class="chinese-serif text-xl font-bold text-slate-600 mb-1">
+                            我 去 北京 <span class="text-slate-400">了</span>。
+                        </p>
+                        <p class="text-sm text-slate-500">私は北京へ行きました。</p>
+                        <p class="text-[10px] text-slate-400 mt-1">（行ったという事実の報告）</p>
+                    </div>
+
+                    <div class="text-2xl text-slate-300 text-center"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Shi...De -->
+                    <div class="text-center p-4 border-2 border-rose-400 rounded-xl bg-rose-50 shadow-md">
+                        <p class="text-xs font-bold text-rose-600 mb-2">是……的構文 (手段を強調)</p>
+                        <p class="chinese-serif text-xl font-bold text-slate-800 mb-1">
+                            我 <span class="text-rose-600 font-bold">是</span> <span class="bg-white px-1 rounded border border-rose-200">坐飞机</span> 去 <span class="text-rose-600 font-bold">的</span>。
+                        </p>
+                        <p class="text-sm text-slate-700 font-bold">私は飛行機で行ったのです。</p>
+                        <p class="text-[10px] text-rose-700 mt-1">（行ったのは既知の事実。どうやって行ったかを強調）</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-white p-4 rounded-lg border-l-4 border-rose-500 text-sm text-slate-600">
+                    <strong><i class="fas fa-search mr-1"></i> 前提条件：</strong><br>
+                    この構文は、話し手と聞き手の間で<strong>「その動作がすでに起きたこと」が共通認識（既知）</strong>である場合に使われます。<br>
+                    「行ったことは知ってるけど、いつ行ったの？」「誰と行ったの？」という会話の流れで使われるのが自然です。
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. What can be emphasized? -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">強調できる4つの要素</h3>
+                    <p class="text-slate-500 text-sm">いつ、どこで、誰と、どうやって。5W1Hの過去形版です。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Time -->
+                <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-blue-500 card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-800">1. 時間 (When)</h4>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">いつ</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-sm">
+                        <p class="chinese-serif text-lg text-slate-800 font-bold">
+                            我们 <span class="text-rose-500">是</span> <span class="border-b-2 border-blue-400">昨天</span> 来 <span class="text-rose-500">的</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">私たちは昨日来たのです。</p>
+                    </div>
+                </div>
+
+                <!-- Place -->
+                <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-green-500 card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-800">2. 場所 (Where)</h4>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">どこで</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-sm">
+                        <p class="chinese-serif text-lg text-slate-800 font-bold">
+                            他 <span class="text-rose-500">是</span> <span class="border-b-2 border-green-400">在东京</span> 出生 <span class="text-rose-500">的</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">彼は東京で生まれたのです。</p>
+                    </div>
+                </div>
+
+                <!-- Manner -->
+                <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-800">3. 手段・方法 (How)</h4>
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded">どうやって</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-sm">
+                        <p class="chinese-serif text-lg text-slate-800 font-bold">
+                            这 <span class="text-rose-500">是</span> <span class="border-b-2 border-amber-400">用手机</span> 拍 <span class="text-rose-500">的</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">これはスマホで撮ったのです。</p>
+                    </div>
+                </div>
+
+                <!-- Agent -->
+                <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-purple-500 card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-800">4. 主体 (Who)</h4>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">誰が</span>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded text-sm">
+                        <p class="chinese-serif text-lg text-slate-800 font-bold">
+                            这 <span class="text-rose-500">是</span> <span class="border-b-2 border-purple-400">谁</span> 买 <span class="text-rose-500">的</span>？
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">これは誰が買ったのですか？</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Negation & Omission -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定形と省略ルール</h3>
+                    <p class="text-slate-500 text-sm">肯定文では「是」を省略できますが、否定文ではできません。</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Omission (Affirmative) -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-slate-700 mb-3 border-b pb-2">肯定文：是の省略OK</h4>
+                        <p class="text-sm text-slate-600 mb-4">
+                            肯定文では、リズムを整えるために「是」を省略することがよくあります。
+                        </p>
+                        <div class="text-center">
+                            <p class="chinese-serif text-xl font-bold text-slate-800">
+                                我 <span class="text-slate-300 line-through decoration-rose-500 decoration-2">(是)</span> 昨天来 <span class="text-rose-600 font-bold">的</span>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-2">→ 我昨天来的。</p>
+                        </div>
+                    </div>
+
+                    <!-- Negation (Full form required) -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-red-100">
+                        <h4 class="font-bold text-red-700 mb-3 border-b border-red-100 pb-2">否定文：是の省略NG</h4>
+                        <p class="text-sm text-slate-600 mb-4">
+                            「〜したのではない（訂正）」という意味になります。<br>
+                            <strong>「不」は「是」の前に置き、この時の「是」は省略できません。</strong>
+                        </p>
+                        <div class="text-center">
+                            <p class="chinese-serif text-xl font-bold text-slate-800">
+                                我 <span class="text-red-500 font-bold">不 是</span> 昨天来 <span class="text-rose-600 font-bold">的</span>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-2">私は昨日来たのではありません。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips Box -->
+                <div class="mt-6 bg-white p-4 rounded-xl flex items-start gap-4 shadow-sm">
+                    <div class="text-amber-500 text-xl mt-1"><i class="fas fa-lightbulb"></i></div>
+                    <div>
+                        <h5 class="font-bold text-slate-700 text-sm mb-1">文末の「的」は省略できる？</h5>
+                        <p class="text-sm text-slate-600">
+                            基本的には<strong>省略できません</strong>。<br>
+                            「的」がないと、単なる「主語＋是＋名詞」の文になったり、文が成立しなくなったりします。<br>
+                            この構文の魂は「是」よりも「的」にあると言っても過言ではありません。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Position of Object -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">目的語の位置 (上級編)</h3>
+                    <p class="text-slate-500 text-sm">目的語がある場合、「的」を置く場所にバリエーションがあります。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-slate-600">
+                <p class="text-sm text-slate-600 mb-6 text-center">
+                    例：「彼は北京で中国語を勉強した」
+                </p>
+                
+                <div class="space-y-4 max-w-lg mx-auto">
+                    <!-- Pattern A -->
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold bg-slate-200 text-slate-600 px-2 py-1 rounded">パターンA (一般的)</span>
+                        <p class="chinese-serif text-lg font-bold text-slate-800 mt-2">
+                            他是在北京学 <span class="text-rose-600 font-bold">的</span> 汉语。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">動詞の後、目的語の前。</p>
+                    </div>
+
+                    <!-- Pattern B -->
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold bg-slate-200 text-slate-600 px-2 py-1 rounded">パターンB (文末)</span>
+                        <p class="chinese-serif text-lg font-bold text-slate-800 mt-2">
+                            他是在北京学汉语 <span class="text-rose-600 font-bold">的</span>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">文の最後。</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-4 text-center">
+                    ※どちらも正しいですが、目的語が長い場合などはパターンAの方が据わりが良いことがあります。<br>
+                    初心者はまず「文末に的」のパターンBをマスターしましょう。
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Drill: Reconstruct the Past</h3>
+                <p class="text-slate-500">文脈に合わせて正しい形を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 27 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">素晴らしい！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「是……的」を使えば、過去の出来事をより詳しく、ドラマチックに語ることができます。<br>
+                次回は、「机の上に本が置いてある」「客が来た」などの存在や出現を表す「存現文」を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-2.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 28: 存現文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "昨天", pinyin: "zuótiān", mean: "昨日" },
+                    { text: "来", pinyin: "lái", mean: "来る" },
+                    { text: "的", pinyin: "de", mean: "強調" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "是 (shì)", correct: true },
+                    { text: "了 (le)", correct: false }
+                ],
+                trans: "私は昨日来たのです。",
+                hint: "「昨日（時間）」を強調する文なので「是……的」構文です。「是」は省略可能ですが、選択肢にある場合は「是」が正解です。「了」は完了を表しますが、ここでは文末に「的」があるので構文の一部として「是」を選びます。"
+            },
+            {
+                question: [
+                    { text: "我们", pinyin: "Wǒmen", mean: "私たち" },
+                    { text: "不是", pinyin: "búshì", mean: "〜ではない" },
+                    { text: "坐", pinyin: "zuò", mean: "乗る" },
+                    { text: "火车", pinyin: "huǒchē", mean: "列車" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: true },
+                    { text: "了 (le)", correct: false }
+                ],
+                trans: "私たちは列車で行ったのではありません。",
+                hint: "「不是……的」で「〜したのではない（手段の否定・訂正）」を表します。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "是", pinyin: "shì", mean: "強調" },
+                    { text: "跟", pinyin: "gēn", mean: "〜と" },
+                    { text: "谁", pinyin: "shéi", mean: "誰" },
+                    { text: "一起", pinyin: "yìqǐ", mean: "一緒に" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "___", type: "blank" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: true },
+                    { text: "吗 (ma)", correct: false }
+                ],
+                trans: "あなたは誰と一緒に行ったのですか？",
+                hint: "「誰と（同伴者）」を尋ねる疑問文です。疑問詞（谁）があっても、過去の行為の詳細を聞く場合は「是……的」構文を使います。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "个", pinyin: "ge", mean: "個" },
+                    { text: "是", pinyin: "shì", mean: "強調" },
+                    { text: "在", pinyin: "zài", mean: "〜で" },
+                    { text: "哪儿", pinyin: "nǎr", mean: "どこ" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "___", type: "blank" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "的 (de)", correct: true },
+                    { text: "了 (le)", correct: false }
+                ],
+                trans: "これはどこで買ったのですか？",
+                hint: "「どこで（場所）」を強調して尋ねているので「是……的」を使います。すでに買ったものについて聞いているため「了」ではありません。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

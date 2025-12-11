@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 25: 使役文 (让 / 叫 / 请)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">25. 使役文 (让 / 叫 / 请)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「誰かに〜させる」<br class="md:hidden">3つのニュアンス
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「部屋を掃除させる（命令）」と「先生に来ていただく（依頼）」。<br>
+                どちらも人に何かをしてもらう文ですが、相手への敬意や強制力が違います。<br>
+                中国語では<span class="highlight-text">「让」「叫」「请」</span>を使い分けて、この距離感を表現します。
+            </p>
+        </section>
+
+        <!-- 1. The Core Structure -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本構造：兼語文の仕組み</h3>
+                    <p class="text-slate-500 text-sm">ある人が「目的語」になり、同時に次の動作の「主語」になる構造です。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 text-center">
+                    
+                    <!-- Subject -->
+                    <div class="bg-slate-50 p-4 rounded-xl w-32 border border-slate-200">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">主語 (S)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">我</span>
+                        <p class="text-xs text-slate-500 mt-1">私</p>
+                    </div>
+
+                    <!-- Causative Verb -->
+                    <div class="text-amber-500 text-xl font-bold">+</div>
+                    <div class="bg-amber-50 p-4 rounded-xl w-32 border border-amber-200 shadow-sm relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">使役動詞</div>
+                        <span class="chinese-serif text-2xl font-bold text-amber-600">让</span>
+                        <p class="text-xs text-amber-700 mt-1">〜させる</p>
+                    </div>
+
+                    <!-- Pivot (Target Person) -->
+                    <div class="text-amber-500 text-xl font-bold">+</div>
+                    <div class="bg-indigo-50 p-4 rounded-xl w-32 border border-indigo-200 shadow-md transform scale-110 z-10">
+                        <span class="block text-xs font-bold text-indigo-400 mb-1">人 (兼語)</span>
+                        <span class="chinese-serif text-2xl font-bold text-indigo-700">他</span>
+                        <p class="text-xs text-indigo-600 mt-1">彼</p>
+                    </div>
+
+                    <!-- Action -->
+                    <div class="text-amber-500 text-xl font-bold">+</div>
+                    <div class="bg-white p-4 rounded-xl w-32 border border-slate-200 shadow-sm">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">動作 (V2)</span>
+                        <span class="chinese-serif text-xl font-bold text-slate-800">去</span>
+                        <p class="text-xs text-slate-500 mt-1">行く</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg text-sm text-slate-700 leading-relaxed border-l-4 border-indigo-400">
+                    <strong><i class="fas fa-link mr-1"></i> ポイント：兼語（けんご）とは？</strong><br>
+                    真ん中の「彼（他）」に注目してください。<br>
+                    彼は「私」から見れば「命令される対象（目的語）」ですが、「行く」という動作をする「主語」でもあります。<br>
+                    この<span class="font-bold text-indigo-600">一人二役</span>を演じる単語を「兼語」と呼びます。
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Big 3 Causative Verbs -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">使い分け：3大・使役動詞</h3>
+                    <p class="text-slate-500 text-sm">相手との関係や、強制力の強さで言葉を選びます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Rang (Let/Make) -->
+                <div class="bg-white p-6 rounded-xl border-t-4 border-green-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif">让 <span class="text-sm font-sans font-normal text-slate-400">ràng</span></h4>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-bold">標準</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜させる / 〜させてあげる</p>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        最も一般的で幅広い。「強制的にさせる」意味も、「（本人がやりたいので）許可してやらせる」意味もあります。
+                    </p>
+                    <div class="bg-green-50 p-3 rounded text-sm">
+                        <span class="chinese-serif font-bold text-slate-800">妈妈让孩子吃菜。</span>
+                        <p class="text-xs text-slate-500 mt-1">母は子供に野菜を食べさせる。</p>
+                    </div>
+                </div>
+
+                <!-- Jiao (Tell/Order) -->
+                <div class="bg-white p-6 rounded-xl border-t-4 border-blue-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif">叫 <span class="text-sm font-sans font-normal text-slate-400">jiào</span></h4>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">口語・指示</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜するように言う / 命じる</p>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        話し言葉でよく使われます。「〜しろと言いつける」という指示・命令のニュアンスが強めです。
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded text-sm">
+                        <span class="chinese-serif font-bold text-slate-800">老板叫我去开会。</span>
+                        <p class="text-xs text-slate-500 mt-1">上司は私に会議に出るよう言った。</p>
+                    </div>
+                </div>
+
+                <!-- Qing (Invite/Ask) -->
+                <div class="bg-white p-6 rounded-xl border-t-4 border-purple-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-4">
+                        <h4 class="text-3xl font-bold text-slate-800 chinese-serif">请 <span class="text-sm font-sans font-normal text-slate-400">qǐng</span></h4>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded font-bold">丁寧・依頼</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">〜していただく / お願いする</p>
+                    <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+                        目上の人やお客様に対して、何かをお願いしたり、招いたりする場合に使います。
+                    </p>
+                    <div class="bg-purple-50 p-3 rounded text-sm">
+                        <span class="chinese-serif font-bold text-slate-800">我请他吃饭。</span>
+                        <p class="text-xs text-slate-500 mt-1">私は彼にご飯をご馳走する。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Tip: Shi -->
+            <div class="mt-6 bg-slate-100 p-4 rounded-lg flex items-center gap-4 text-sm text-slate-600">
+                <span class="bg-slate-300 text-slate-700 px-2 py-1 rounded text-xs font-bold">発展</span>
+                <div>
+                    <strong>使 (shǐ)：</strong> 書き言葉でよく使われる使役。「（感情的・状態的に）〜させる」という意味が多いです。<br>
+                    例：<span class="chinese-serif">这个消息使我很兴奋。</span> (このニュースは私を興奮させた)
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Negation Rule -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定形の位置</h3>
+                    <p class="text-slate-500 text-sm">「不 / 没」はどこに置く？ 兼語文のルールです。</p>
+                </div>
+            </div>
+
+            <div class="bg-red-50 p-8 rounded-2xl border border-red-100">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-1">
+                        <h4 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+                            <i class="fas fa-ban mr-2"></i> 否定は「使役動詞」の前！
+                        </h4>
+                        <p class="text-sm text-red-900 mb-4 leading-relaxed">
+                            「（人に）〜させない」という意味なので、否定語は文の先頭に近い「让 / 叫」の前に置きます。<br>
+                            後ろの動作の前に置くと意味が変わってしまいます。
+                        </p>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-red-100 text-center">
+                            <p class="text-xs text-slate-400 mb-1">父は私にゲームをさせない（許可しない）</p>
+                            <p class="chinese-serif text-xl font-bold text-slate-800">
+                                <ruby>爸爸<rt>bàba</rt></ruby> <span class="text-red-500 text-2xl mx-1">不</span> <ruby>让<rt>ràng</rt></ruby> <ruby>我<rt>wǒ</rt></ruby> <ruby>玩<rt>wán</rt></ruby> <ruby>游戏<rt>yóuxì</rt></ruby>。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contrast -->
+                    <div class="flex-1 border-l border-red-200 pl-8 md:block hidden">
+                        <p class="text-sm font-bold text-slate-600 mb-2">もし後ろに置くと...？</p>
+                        <div class="bg-white/60 p-4 rounded-lg text-slate-500 text-sm">
+                            <p class="mb-1"><span class="chinese-serif">爸爸让我<strong class="text-red-400">不</strong>玩游戏</span></p>
+                            <p class="text-xs">「父は私に『ゲームをするな』とさせた（命じた）」</p>
+                            <p class="text-xs mt-1">→ 意味が変わりますが、文法的にはあり得ます。<br>しかし「〜させない」という禁止・不許可の場合は前です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Structure Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい使役動詞を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 25 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「让」は「〜させる（強制）」と「〜させてあげる（許可）」の両方の意味を持つ便利な言葉です。<br>
+                次回は、「AよりBだ」「AはBほどではない」といった比較文を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-7.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l2-9.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 26: 比較文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我想", pinyin: "Wǒ xiǎng", mean: "私は〜したい" },
+                    { text: "___", type: "blank" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "来", pinyin: "lái", mean: "来る" },
+                    { text: "我家", pinyin: "wǒjiā", mean: "私の家" },
+                    { text: "玩", pinyin: "wán", mean: "遊ぶ" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "请 (qǐng)", correct: true },
+                    { text: "叫 (jiào)", correct: false }
+                ],
+                trans: "私はあなたを家に招待したい（遊びに来てほしい）。",
+                hint: "友人を家に招く、招待するという文脈なので、丁寧な「请」が最も適切です。「叫」だと命令っぽくなります。"
+            },
+            {
+                question: [
+                    { text: "妈妈", pinyin: "Māma", mean: "母" },
+                    { text: "___", type: "blank" },
+                    { text: "让", pinyin: "ràng", mean: "〜させる" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "买", pinyin: "mǎi", mean: "買う" },
+                    { text: "游戏", pinyin: "yóuxì", mean: "ゲーム" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "不 (bù)", correct: true },
+                    { text: "没 (méi)", correct: false } // 'bu' is standard for permission/habitual refusal. 'mei' is specific past event. Usually general rule is 'bu rang'.
+                ],
+                trans: "母は私にゲームを買わせてくれません（許可しません）。",
+                hint: "「（普段から）許可してくれない」という現在の状態や習慣の否定には「不」を使います。"
+            },
+            {
+                question: [
+                    { text: "老板", pinyin: "Lǎobǎn", mean: "上司/社長" },
+                    { text: "___", type: "blank" },
+                    { text: "大家", pinyin: "dàjiā", mean: "みんな" },
+                    { text: "马上", pinyin: "mǎshàng", mean: "すぐに" },
+                    { text: "集合", pinyin: "jíhé", mean: "集まる" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "叫 (jiào)", correct: true },
+                    { text: "请 (qǐng)", correct: false }
+                ],
+                trans: "社長はみんなにすぐ集まるように言った（命じた）。",
+                hint: "上司から部下への指示・命令のニュアンスなので、口語では「叫」がよく使われます。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "この" },
+                    { text: "件", pinyin: "jiàn", mean: "〜件" },
+                    { text: "事", pinyin: "shì", mean: "事" },
+                    { text: "真", pinyin: "zhēn", mean: "本当に" },
+                    { text: "___", type: "blank" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "生气", pinyin: "shēngqì", mean: "怒る" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "让 (ràng)", correct: true },
+                    { text: "请 (qǐng)", correct: false }
+                ],
+                trans: "この事は本当に私を怒らせる（腹が立つ）。",
+                hint: "「ある事柄が原因で、人をある感情にさせる」という場合は「让」（または書き言葉で「使」）を使います。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-amber-500', 'text-amber-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

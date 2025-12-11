@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13: 進行「在/正在」と 持続「着」</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">13. 進行「在/正在」と 持続「着」</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                日本語の「〜している」は<br class="md:hidden">2種類ある
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「ご飯を食べている（動作）」と「ドアが開いている（状態）」。<br>
+                日本語では同じ「〜している」ですが、中国語では明確に区別します。<br>
+                <span class="highlight-text">動作のライブ実況</span>なのか、<span class="highlight-text">状態のフリーズ（保存）</span>なのかを見極めましょう。
+            </p>
+        </section>
+
+        <!-- 1. The Concept: Process vs State -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">進行と持続の違い</h3>
+                    <p class="text-slate-500 text-sm">動き続けているのか、止まってその状態なのか。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Progressive -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">進行 (Progressive)</span>
+                        <div class="text-3xl text-blue-500"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">今、動作の真っ最中</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        ビデオの「再生ボタン」が押されている状態。<br>
+                        動作が継続して行われています。
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="font-bold text-slate-800 mb-1">例：走っている、食べている</p>
+                        <p class="text-xs text-slate-500">（時間が経てば動作は進んでいく）</p>
+                    </div>
+                </div>
+
+                <!-- Continuous -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold">持続 (Continuous State)</span>
+                        <div class="text-3xl text-amber-500"><i class="fas fa-pause-circle"></i></div>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-2">その状態で止まっている</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        ビデオの「一時停止ボタン」が押されている状態。<br>
+                        動作の結果が残り続けています。
+                    </p>
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <p class="font-bold text-slate-800 mb-1">例：開いている、座っている</p>
+                        <p class="text-xs text-slate-500">（時間が経っても状態は変わらない）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Progressive Form: Zai / Zhengzai -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">進行態：在 / 正在 ... 呢</h3>
+                    <p class="text-slate-500 text-sm">「今〜しているところだよ」というライブ感を表現します。</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-white border-2 border-blue-200 rounded-xl px-6 py-4 shadow-sm">
+                        <span class="text-slate-400 font-bold text-sm block mb-1">基本公式</span>
+                        <span class="text-xl font-bold text-slate-800 chinese-serif">
+                            <span class="text-blue-600">(正)在</span> + 動詞 + <span class="text-slate-400 text-sm">(目的語)</span> + <span class="text-blue-600">呢</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Standard Pattern -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-blue-400">
+                        <h4 class="font-bold text-slate-800 mb-2">標準パターン</h4>
+                        <p class="chinese-serif text-xl text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-blue-600 font-bold">在</span> <ruby>看<rt>kàn</rt></ruby> <ruby>电视<rt>diànshì</rt></ruby> <span class="text-blue-600 font-bold">呢</span>。
+                        </p>
+                        <p class="text-sm text-slate-600">私はテレビを見ているところです。</p>
+                        <p class="text-xs text-slate-400 mt-2">※「呢」は口語でよく使われる、語気を和らげる＆進行を強調する語気助詞です。</p>
+                    </div>
+
+                    <!-- Emphasis Pattern -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-indigo-400">
+                        <h4 class="font-bold text-slate-800 mb-2">強調パターン (ちょうど〜している)</h4>
+                        <p class="chinese-serif text-xl text-slate-800 mb-2">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-indigo-600 font-bold">正在</span> <ruby>吃饭<rt>chīfàn</rt></ruby>。
+                        </p>
+                        <p class="text-sm text-slate-600">私は（今まさに）ご飯を食べています。</p>
+                        <p class="text-xs text-slate-400 mt-2">※「正 (zhèng)」がつくと「ちょうどその時」というニュアンスが強まります。</p>
+                    </div>
+                </div>
+
+                <!-- Negation Tip -->
+                <div class="mt-6 flex items-start gap-3 text-sm bg-blue-100/50 p-4 rounded-lg text-blue-900">
+                    <i class="fas fa-info-circle mt-1 text-blue-600"></i>
+                    <div>
+                        <strong>否定形：没(有)在</strong><br>
+                        「〜していません」と言う時は、<strong>「没(有)在 + 動詞」</strong>を使います。<br>
+                        例：我没在睡觉。(私は寝ていません)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Continuous Aspect: Zhe -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">持続態：動詞＋着 (zhe)</h3>
+                    <p class="text-slate-500 text-sm">動作の結果が残っている状態。「〜してある」「〜している」</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-amber-50 border-2 border-amber-200 rounded-xl px-6 py-4 shadow-sm">
+                        <span class="text-slate-400 font-bold text-sm block mb-1">基本公式</span>
+                        <span class="text-xl font-bold text-slate-800 chinese-serif">
+                            動詞 + <span class="text-amber-600 font-bold">着</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Case 1: Result State -->
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-3 border-b pb-2">1. 状態の持続</h4>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-3 rounded">
+                                <p class="text-xs text-slate-400 mb-1">ドアが開く(動作) → 開いたまま(状態)</p>
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <ruby>门<rt>mén</rt></ruby> <ruby>开<rt>kāi</rt></ruby> <span class="text-amber-600">着</span>。
+                                </p>
+                                <p class="text-sm text-slate-600">ドアが開いています。</p>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded">
+                                <p class="text-xs text-slate-400 mb-1">着る(動作) → 着ている(状態)</p>
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <ruby>他<rt>tā</rt></ruby> <ruby>穿<rt>chuān</rt></ruby> <span class="text-amber-600">着</span> <ruby>西装<rt>xīzhuāng</rt></ruby>。
+                                </p>
+                                <p class="text-sm text-slate-600">彼はスーツを着ています。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 2: While doing -->
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-3 border-b pb-2">2. 〜しながら (連動文)</h4>
+                        <p class="text-xs text-slate-500 mb-3">
+                            第1動詞の状態を保ったまま、第2動詞を行うパターンです。
+                        </p>
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                            <div class="flex items-center gap-2 mb-2 justify-center">
+                                <span class="text-slate-700 font-bold text-sm">V1 <span class="text-amber-600">着</span></span>
+                                <i class="fas fa-arrow-right text-slate-300 text-xs"></i>
+                                <span class="text-slate-700 font-bold text-sm">V2</span>
+                            </div>
+                            <p class="chinese-serif text-xl font-bold text-slate-800 text-center mb-2">
+                                <ruby>看<rt>kàn</rt></ruby> <span class="text-amber-600">着</span> <ruby>电视<rt>diànshì</rt></ruby> <ruby>吃<rt>chī</rt></ruby> <ruby>饭<rt>fàn</rt></ruby>
+                            </p>
+                            <p class="text-sm text-slate-600 text-center">テレビを<span class="underline decoration-amber-400 decoration-2">見ながら</span>ご飯を食べる。</p>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">
+                            ※「座って話す (坐着说)」「横になって読む (躺着看)」などもこの形です。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Negation Tip -->
+                <div class="mt-6 flex items-start gap-3 text-sm bg-red-50 p-4 rounded-lg text-red-900 border border-red-100">
+                    <i class="fas fa-exclamation-triangle mt-1 text-red-500"></i>
+                    <div>
+                        <strong>否定形：没 + V + 着</strong><br>
+                        「開いていない」「着ていない」などの否定は、「没」を使い、<span class="font-bold underline">「着」は残します。</span><br>
+                        例：门没开着。(ドアは開いていません)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Comparison Check -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「着る」で比べる進行と持続</h3>
+                    <p class="text-slate-500 text-sm">同じ動詞「穿 (chuān)」でも意味が全く異なります。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 flex flex-col items-center text-center">
+                    <div class="mb-2 text-blue-600 text-4xl"><i class="fas fa-tshirt"></i> <i class="fas fa-running text-sm"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">我在穿衣服。</h4>
+                    <p class="text-sm text-slate-600">私は服を着ているところです。</p>
+                    <p class="text-xs text-blue-500 mt-2 font-bold">着替え中 (Action)</p>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-200 flex flex-col items-center text-center">
+                    <div class="mb-2 text-amber-600 text-4xl"><i class="fas fa-user-tie"></i></div>
+                    <h4 class="font-bold text-slate-800 mb-2">我穿着衣服。</h4>
+                    <p class="text-sm text-slate-600">私は服を着ています。</p>
+                    <p class="text-xs text-amber-600 mt-2 font-bold">着用中 (State)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Check Your Understanding</h3>
+                <p class="text-slate-500">文脈に合わせて「在」か「着」を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 13 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">素晴らしい！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                今やっているのか、その状態なのか。この区別がつくと、中国語の描写力が格段に上がります。<br>
+                次は、「〜したことがある」という経験の表現「过」を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-4.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-6.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 14: 経験「过」へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "他", pinyin: "Tā", mean: "彼" },
+                    { text: "___", type: "blank" },
+                    { text: "听", pinyin: "tīng", mean: "聞く" },
+                    { text: "音乐", pinyin: "yīnyuè", mean: "音楽" },
+                    { text: "呢", pinyin: "ne", mean: "〜だよ(進行)" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "在 (zài)", correct: true },
+                    { text: "着 (zhe)", correct: false }
+                ],
+                trans: "彼は音楽を聴いています。",
+                hint: "文末に「呢」があり、動作の進行（聞いている最中）を表しているので「在」を使います。"
+            },
+            {
+                question: [
+                    { text: "门", pinyin: "Mén", mean: "ドア" },
+                    { text: "开", pinyin: "kāi", mean: "開く" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "在 (zài)", correct: false },
+                    { text: "着 (zhe)", correct: true }
+                ],
+                trans: "ドアが開いています。",
+                hint: "ドアが開いた状態で止まっている（持続）ので、動詞の後ろに「着」をつけます。"
+            },
+            {
+                question: [
+                    { text: "大家", pinyin: "Dàjiā", mean: "みんな" },
+                    { text: "都", pinyin: "dōu", mean: "すべて" },
+                    { text: "站", pinyin: "zhàn", mean: "立つ" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "在 (zài)", correct: false },
+                    { text: "着 (zhe)", correct: true }
+                ],
+                trans: "みんな立っています。",
+                hint: "「立つ」という動作の結果（立った姿勢）が続いているので「着」を使います。"
+            },
+            {
+                question: [
+                    { text: "别", pinyin: "Bié", mean: "〜するな" },
+                    { text: "躺", pinyin: "tǎng", mean: "横になる" },
+                    { text: "___", type: "blank" },
+                    { text: "看", pinyin: "kàn", mean: "見る" },
+                    { text: "书", pinyin: "shū", mean: "本" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "在 (zài)", correct: false },
+                    { text: "着 (zhe)", correct: true }
+                ],
+                trans: "寝転がって本を読まないで。",
+                hint: "「寝転がったまま（状態で）読む」という連動文なので、第1動詞に「着」をつけて状態を表します。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-blue-500', 'text-blue-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

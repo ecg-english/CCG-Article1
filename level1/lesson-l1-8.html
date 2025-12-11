@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16: 能願動詞 PART 2 (能 / 可以 / 应该)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+        
+        /* 比較テーブルのスタイル */
+        .comp-table th {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 12px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .comp-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .comp-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">16. 能願動詞 PART 2</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「できる」にも<br class="md:hidden">種類がある
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「泳げる」と言っても、泳ぎ方を知っている（スキル）のか、今日泳げる体調なのか（条件）、ここで泳いでいいのか（許可）は別問題です。<br>
+                中国語はこれを<span class="highlight-text">「会」「能」「可以」</span>で明確に使い分けます。<br>
+                このレッスンで、曖昧な「できる」を完全に整理しましょう。
+            </p>
+        </section>
+
+        <!-- 1. Condition & Ability: Neng -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">能 (néng)：条件・能力</h3>
+                    <p class="text-slate-500 text-sm">「会」よりも客観的で、具体的なレベルや条件を表します。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-indigo-500 card-hover">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h4 class="text-4xl font-bold text-slate-800 chinese-serif mb-1"><ruby>能<rt>néng</rt></ruby></h4>
+                        <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold">条件・高能力・量</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Meaning 1: Condition -->
+                    <div>
+                        <h5 class="font-bold text-indigo-700 mb-3 border-b border-indigo-100 pb-1 flex items-center">
+                            <i class="fas fa-calendar-check mr-2"></i> ① 状況的にできる (条件)
+                        </h5>
+                        <p class="text-sm text-slate-600 mb-3">
+                            能力があっても、条件（時間、体力、道具、環境）が揃わないと「能」は使えません。<br>
+                            「会（習得）」していても「不能（できない）」状況は多々あります。
+                        </p>
+                        <div class="bg-indigo-50 p-4 rounded-lg space-y-2">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400">例文：体調・都合</span>
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <ruby>我<rt>wǒ</rt></ruby> <ruby>病<rt>bìng</rt></ruby> <ruby>了<rt>le</rt></ruby>，<ruby>今天<rt>jīntiān</rt></ruby> <span class="text-indigo-600">不 能</span> <ruby>去<rt>qù</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">病気になったので、今日は行けません。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meaning 2: Capability/Amount -->
+                    <div>
+                        <h5 class="font-bold text-indigo-700 mb-3 border-b border-indigo-100 pb-1 flex items-center">
+                            <i class="fas fa-tachometer-alt mr-2"></i> ② 具体的な能力・量 (レベル)
+                        </h5>
+                        <p class="text-sm text-slate-600 mb-3">
+                            単に「泳げる(会)」だけでなく、「1km泳げる」のように<strong>具体的な量や高い能力</strong>を示す場合は「能」を使います。
+                        </p>
+                        <div class="bg-indigo-50 p-4 rounded-lg space-y-2">
+                            <div>
+                                <span class="text-xs font-bold text-slate-400">例文：量の提示</span>
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <ruby>他<rt>tā</rt></ruby> <span class="text-indigo-600">能</span> <ruby>喝<rt>hē</rt></ruby> <ruby>十<rt>shí</rt></ruby> <ruby>杯<rt>bēi</rt></ruby> <ruby>啤酒<rt>píjiǔ</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">彼はビールを10杯飲めます。（「会」では量は表せない）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Dive: Impossible Situation -->
+                <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <h5 class="font-bold text-slate-700 text-sm mb-2"><i class="fas fa-search mr-1"></i> 深掘り：理屈上の「ありえない」</h5>
+                    <p class="text-sm text-slate-600">
+                        「人は飛べない」「太陽は西から昇らない」のような、<strong>物理的・道理的な不可能</strong>も「不能」で表します。
+                    </p>
+                    <div class="mt-2 text-sm chinese-serif">
+                        <ruby>人<rt>rén</rt></ruby> <span class="text-red-500">不 能</span> <ruby>飞<rt>fēi</rt></ruby>。(人は空を飛べない)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Permission: Keyi -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">可以 (kěyǐ)：許可と提案</h3>
+                    <p class="text-slate-500 text-sm">「〜してもいいですよ」という許可や、「〜する手もあるよ」という提案。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-green-500 card-hover">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h4 class="text-4xl font-bold text-slate-800 chinese-serif mb-1"><ruby>可以<rt>kěyǐ</rt></ruby></h4>
+                        <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-bold">許可・提案・可能</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Meaning 1: Permission -->
+                    <div>
+                        <h5 class="font-bold text-green-700 mb-3 border-b border-green-100 pb-1 flex items-center">
+                            <i class="fas fa-ticket-alt mr-2"></i> ① 許可 (〜してもいい)
+                        </h5>
+                        <p class="text-sm text-slate-600 mb-3">
+                            最も一般的な許可の表現です。「能」も許可に使えますが、「可以」の方が「権限やルール上のOK」というニュアンスが強いです。
+                        </p>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <p class="chinese-serif text-lg font-bold text-slate-800">
+                                <ruby>这<rt>zhè</rt></ruby><ruby>里<rt>li</rt></ruby> <span class="text-green-600">可以</span> <ruby>拍照<rt>pāizhào</rt></ruby> <ruby>吗<rt>ma</rt></ruby>？
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">ここは写真を撮ってもいいですか？</p>
+                        </div>
+                    </div>
+
+                    <!-- Meaning 2: Suggestion -->
+                    <div>
+                        <h5 class="font-bold text-green-700 mb-3 border-b border-green-100 pb-1 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i> ② 提案 (〜できるよ)
+                        </h5>
+                        <p class="text-sm text-slate-600 mb-3">
+                            「能」のような高い能力ではなく、「選択肢として可能」「やろうと思えばできる」という軽い提案です。
+                        </p>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <p class="chinese-serif text-lg font-bold text-slate-800">
+                                <ruby>我们<rt>wǒmen</rt></ruby> <span class="text-green-600">可以</span> <ruby>坐<rt>zuò</rt></ruby> <ruby>地铁<rt>dìtiě</rt></ruby> <ruby>去<rt>qù</rt></ruby>。
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">地下鉄で行けますよ（地下鉄で行くのも手です）。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contrast: Neng vs Keyi -->
+                <div class="mt-6 border-t border-slate-100 pt-4 text-sm text-slate-600">
+                    <p class="font-bold text-slate-800 mb-1">許可を求める時の「能」と「可以」の違い</p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>能 ... 吗？</strong>：自分の能力や事情を含めて「可能か？」と聞くニュアンス（客観的）。</li>
+                        <li><strong>可以 ... 吗？</strong>：相手の許可やルール上の可否を「いいですか？」と聞くニュアンス（主観的・丁寧）。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Hierarchy of "NO" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「禁止」のグラデーション</h3>
+                    <p class="text-slate-500 text-sm">「ダメ！」にも強弱があります。間違えると失礼になることも。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Level 1: Cannot -->
+                <div class="flex items-center bg-white p-4 rounded-xl border border-slate-200">
+                    <div class="w-24 font-bold text-slate-500 text-center">弱 <br><span class="text-xs font-normal">客観的</span></div>
+                    <div class="flex-1 border-l pl-4">
+                        <div class="flex items-baseline gap-2">
+                            <span class="chinese-serif text-xl font-bold text-indigo-600">不能</span>
+                            <span class="text-sm font-bold text-slate-700">〜できない / 〜してはいけない</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">事情があってできない、または一般的なルールとしてダメ。感情的な「禁止」ではない。</p>
+                        <p class="text-xs text-slate-400 mt-1">例：这里不能停车。(ここは駐車できません＝物理的・規則的に不可)</p>
+                    </div>
+                </div>
+
+                <!-- Level 2: May Not -->
+                <div class="flex items-center bg-white p-4 rounded-xl border-l-4 border-red-400 shadow-sm">
+                    <div class="w-24 font-bold text-red-400 text-center">中 <br><span class="text-xs font-normal">許可しない</span></div>
+                    <div class="flex-1 border-l pl-4">
+                        <div class="flex items-baseline gap-2">
+                            <span class="chinese-serif text-xl font-bold text-red-600">不可以</span>
+                            <span class="text-sm font-bold text-slate-700">〜してはいけません</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">明確な「不許可」。先生が生徒に、親が子供に言うような「ダメです」のニュアンス。</p>
+                        <p class="text-xs text-slate-400 mt-1">例：你不可以去！(行っちゃダメです！)</p>
+                    </div>
+                </div>
+
+                <!-- Level 3: Prohibit -->
+                <div class="flex items-center bg-slate-800 text-white p-4 rounded-xl shadow-md">
+                    <div class="w-24 font-bold text-red-500 text-center">強 <br><span class="text-xs font-normal text-slate-400">禁止</span></div>
+                    <div class="flex-1 border-l border-slate-600 pl-4">
+                        <div class="flex items-baseline gap-2">
+                            <span class="chinese-serif text-xl font-bold text-red-400">禁止 / 别</span>
+                            <span class="text-sm font-bold">禁止する / 〜するな</span>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-1">「禁止」は標識などで使う硬い表現。「别(bié)」は会話での強い命令禁止。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Obligation: Yinggai -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">应该 (yīnggāi) と 得 (děi)</h3>
+                    <p class="text-slate-500 text-sm">「〜すべき」と「〜しなきゃ」。義務感の強さが違います。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Should -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover">
+                    <h4 class="text-xl font-bold text-slate-800 mb-4 chinese-serif"><ruby>应该<rt>yīnggāi</rt></ruby></h4>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">道理・義務</span>
+                            <p class="text-sm text-slate-600 mt-1">「常識的に考えて〜すべき」「〜したほうがいい」というアドバイス。</p>
+                            <p class="chinese-serif font-bold text-slate-700 mt-1">你应该早点睡觉。</p>
+                            <p class="text-xs text-slate-400">早く寝るべきだよ。</p>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">推測</span>
+                            <p class="text-sm text-slate-600 mt-1">「当然〜のはずだ」という確信のある推測。</p>
+                            <p class="chinese-serif font-bold text-slate-700 mt-1">他应该知道。</p>
+                            <p class="text-xs text-slate-400">彼は知っているはずだ。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Must (Colloquial) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-slate-700 card-hover">
+                    <h4 class="text-xl font-bold text-slate-800 mb-4 chinese-serif">
+                        <ruby>得<rt>děi</rt></ruby>
+                        <span class="text-xs font-sans font-normal text-slate-400 ml-2">※発音注意！deではなくděi</span>
+                    </h4>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs font-bold bg-slate-200 text-slate-700 px-2 py-1 rounded">必要・強制 (口語)</span>
+                            <p class="text-sm text-slate-600 mt-1">「〜しなきゃいけない」「〜しないとマズい」という切迫感。</p>
+                            <p class="chinese-serif font-bold text-slate-700 mt-1">我得走了。</p>
+                            <p class="text-xs text-slate-400">もう行かなきゃ。</p>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded text-xs text-slate-500">
+                            <strong>否定形注意：</strong><br>
+                            「得」の否定（しなくていい）は「不带」ではなく<span class="font-bold text-red-500">「不用 (búyòng)」</span>を使います。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Reflex Training</h3>
+                <p class="text-slate-500">文脈に合わせて最適な助動詞を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 16 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様です！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「できる」と「すべき」の使い分けができれば、大人の会話が可能になります。<br>
+                次回は、中国語のリズムの要、動詞を連続させる「連動文」を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-7.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-9.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 17: 連動文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "喝", pinyin: "hē", mean: "飲む" },
+                    { text: "酒", pinyin: "jiǔ", mean: "お酒" },
+                    { text: "，", type: "punct" },
+                    { text: "所以", pinyin: "suǒyǐ", mean: "だから" },
+                    { text: "不", pinyin: "bù", mean: "〜ない" },
+                    { text: "___", type: "blank" },
+                    { text: "开", pinyin: "kāi", mean: "運転する" },
+                    { text: "车", pinyin: "chē", mean: "車" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "会 (huì)", correct: false },
+                    { text: "能 (néng)", correct: true }
+                ],
+                trans: "お酒を飲んだので、運転できません。",
+                hint: "運転技術（会）はあるが、飲酒という「条件」により運転できないので「能」を使います。"
+            },
+            {
+                question: [
+                    { text: "这里", pinyin: "Zhèlǐ", mean: "ここ" },
+                    { text: "___", type: "blank" },
+                    { text: "吸", pinyin: "xī", mean: "吸う" },
+                    { text: "烟", pinyin: "yān", mean: "タバコ" },
+                    { text: "吗", pinyin: "ma", mean: "〜ですか" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "可以 (kěyǐ)", correct: true },
+                    { text: "会 (huì)", correct: false }
+                ],
+                trans: "ここでタバコを吸ってもいいですか？",
+                hint: "「吸ってもよいか」という許可を求めているので「可以」を使います。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "感冒", pinyin: "gǎnmào", mean: "風邪をひく" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "，", type: "punct" },
+                    { text: "___", type: "blank" },
+                    { text: "多", pinyin: "duō", mean: "多く" },
+                    { text: "休息", pinyin: "xiūxi", mean: "休む" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "可以 (kěyǐ)", correct: false },
+                    { text: "应该 (yīnggāi)", correct: true }
+                ],
+                trans: "風邪をひいたんだから、もっと休むべきだよ。",
+                hint: "相手へのアドバイス（〜したほうがいい・義務）なので「应该」が適切です。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "一", pinyin: "yì", mean: "1" },
+                    { text: "分钟", pinyin: "fēnzhōng", mean: "分" },
+                    { text: "___", type: "blank" },
+                    { text: "游", pinyin: "yóu", mean: "泳ぐ" },
+                    { text: "五十", pinyin: "wǔshí", mean: "50" },
+                    { text: "米", pinyin: "mǐ", mean: "メートル" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "能 (néng)", correct: true },
+                    { text: "会 (huì)", correct: false }
+                ],
+                trans: "私は1分間で50メートル泳げます。",
+                hint: "具体的な量（50メートル）を示して能力の高さを表す場合は「能」を使います。"
+            },
+            {
+                question: [
+                    { text: "不好意思", pinyin: "Bù hǎoyìsi", mean: "すみません" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "走", pinyin: "zǒu", mean: "行く" },
+                    { text: "了", pinyin: "le", mean: "変化" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "应该 (yīnggāi)", correct: false },
+                    { text: "得 (děi)", correct: true }
+                ],
+                trans: "すみません、もう行かなくちゃ。",
+                hint: "「行かなければならない（状況的な強制）」という口語表現なので「得」がピッタリです。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-blue-500', 'text-blue-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 07: 疑問詞疑問文 (5W1H)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e; /* teal-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* アコーディオン例文のスタイル */
+        .example-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .group:hover .example-list {
+            max-height: 500px; /* 十分な高さ */
+            transition: max-height 0.5s ease-in;
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fde68a 60%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-teal-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 0</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">07. 疑問詞疑問文 (5W1H)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「答え」の場所に<br class="md:hidden">「疑問詞」を置くだけ
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                英語の "What is this?" のように語順を入れ替える必要はありません。<br>
+                「これは<strong>ペン</strong>です」→「これは<strong>何</strong>ですか？」<br>
+                中国語は、聞きたい単語をそのまま疑問詞に<span class="highlight-text">「置き換える」</span>だけでOKです。<br>
+                <span class="text-sm text-slate-500 mt-2 block">※カードにマウスを乗せると（スマホならタップすると）追加の例文が表示されます。</span>
+            </p>
+        </section>
+
+        <!-- 1. What & Who -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">何 (What) ・ 誰 (Who)</h3>
+                    <p class="text-slate-500 text-sm">基本の「置き換え」パターン。目的語の位置に入ることが多いです。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- WHAT -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-blue-500 card-hover group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">What</span>
+                            <h4 class="text-3xl font-bold text-slate-800 chinese-serif mt-1">
+                                <ruby>什么<rt>shénme</rt></ruby>
+                            </h4>
+                        </div>
+                        <div class="bg-blue-50 text-blue-600 px-3 py-1 rounded text-xs font-bold">何</div>
+                    </div>
+                    
+                    <div class="bg-slate-50 p-4 rounded-lg mb-4">
+                        <p class="chinese-serif text-slate-800 font-bold text-lg text-center">
+                            <ruby>这<rt>zhè</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-blue-600 border-b-2 border-blue-400">什么</span>？
+                        </p>
+                        <p class="text-xs text-slate-500 text-center mt-1">これは何ですか？</p>
+                    </div>
+
+                    <!-- Additional Examples (Hidden by default) -->
+                    <div class="example-list border-t border-slate-100 pt-4">
+                        <p class="text-xs font-bold text-slate-400 mb-2">応用パターン</p>
+                        <div class="space-y-3">
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>吃<rt>chī</rt></ruby> <span class="text-blue-600">什么</span>？</p>
+                                <p class="text-xs text-slate-500">あなたは何を食べますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>买<rt>mǎi</rt></ruby> <span class="text-blue-600">什么</span>？</p>
+                                <p class="text-xs text-slate-500">あなたは何を買いますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>做<rt>zuò</rt></ruby> <span class="text-blue-600">什么</span>？</p>
+                                <p class="text-xs text-slate-500">あなたは何をしていますか？</p>
+                            </div>
+                            <div class="text-sm bg-blue-50/50 p-2 rounded">
+                                <span class="text-[10px] text-blue-400 font-bold block mb-1">Point: 「什么 + 名詞」で「何の〜」</span>
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>看<rt>kàn</rt></ruby> <span class="text-blue-600">什么</span> <ruby>书<rt>shū</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたは何の本を読んでいますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>喝<rt>hē</rt></ruby> <span class="text-blue-600">什么</span> <ruby>茶<rt>chá</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたは何のお茶を飲みますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>学<rt>xué</rt></ruby> <span class="text-blue-600">什么</span> <ruby>语言<rt>yǔyán</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたは何の言語を勉強していますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>喜欢<rt>xǐhuan</rt></ruby> <span class="text-blue-600">什么</span> <ruby>颜色<rt>yánsè</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたは何色が好きですか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>的<rt>de</rt></ruby> <ruby>名字<rt>míngzi</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-blue-600">什么</span>？</p>
+                                <p class="text-xs text-slate-500">あなたの名前は何ですか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i> もっと見る</div>
+                </div>
+
+                <!-- WHO -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-teal-500 card-hover group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-bold text-teal-500 uppercase tracking-widest">Who</span>
+                            <h4 class="text-3xl font-bold text-slate-800 chinese-serif mt-1">
+                                <ruby>谁<rt>shéi</rt></ruby>
+                            </h4>
+                        </div>
+                        <div class="bg-teal-50 text-teal-600 px-3 py-1 rounded text-xs font-bold">誰</div>
+                    </div>
+                    
+                    <div class="bg-slate-50 p-4 rounded-lg mb-4">
+                        <p class="chinese-serif text-slate-800 font-bold text-lg text-center">
+                            <ruby>他<rt>tā</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-teal-600 border-b-2 border-teal-400">谁</span>？
+                        </p>
+                        <p class="text-xs text-slate-500 text-center mt-1">彼は誰ですか？</p>
+                    </div>
+
+                    <div class="example-list border-t border-slate-100 pt-4">
+                        <p class="text-xs font-bold text-slate-400 mb-2">応用パターン</p>
+                        <div class="space-y-3">
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-teal-600">谁</span> <ruby>去<rt>qù</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">誰が行きますか？（主語になるパターン）</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-teal-600">谁</span> <ruby>来<rt>lái</rt></ruby> <ruby>了<rt>le</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">誰が来ましたか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-teal-600">谁</span> <ruby>说<rt>shuō</rt></ruby> <ruby>的<rt>de</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">誰が言ったの？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>找<rt>zhǎo</rt></ruby> <span class="text-teal-600">谁</span>？</p>
+                                <p class="text-xs text-slate-500">あなたは誰を探していますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>等<rt>děng</rt></ruby> <span class="text-teal-600">谁</span>？</p>
+                                <p class="text-xs text-slate-500">あなたは誰を待っていますか？</p>
+                            </div>
+                            <div class="text-sm bg-teal-50/50 p-2 rounded">
+                                <span class="text-[10px] text-teal-400 font-bold block mb-1">Point: 「谁 + 的」で「誰の〜」</span>
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>那是<rt>nà shì</rt></ruby> <span class="text-teal-600">谁</span> <ruby>的<rt>de</rt></ruby> <ruby>书<rt>shū</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あれは誰の本ですか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>这<rt>zhè</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-teal-600">谁</span> <ruby>的<rt>de</rt></ruby> <ruby>包<rt>bāo</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">これは誰のかばんですか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-teal-600">谁</span> <ruby>的<rt>de</rt></ruby> <ruby>朋友<rt>péngyǒu</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたは誰の友達ですか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i> もっと見る</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Where & When (Position Matters) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">どこ (Where) ・ いつ (When)</h3>
+                    <p class="text-slate-500 text-sm">文の中での「置く場所」に注意が必要なグループです。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- WHERE -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-amber-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-amber-100 text-amber-800 text-[10px] px-2 py-1 font-bold rounded-bl">動詞の後が多い</div>
+                    <div class="flex items-baseline gap-3 mb-4">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">
+                            <ruby>哪里<rt>nǎli</rt></ruby>
+                        </h4>
+                        <span class="text-xs text-slate-500">/ <ruby>哪儿<rt>nǎr</rt></ruby></span>
+                    </div>
+                    
+                    <div class="bg-amber-50 p-4 rounded-xl mb-4 text-center">
+                        <p class="chinese-serif font-bold text-slate-800 text-lg">
+                            <ruby>你<rt>nǐ</rt></ruby> <ruby>去<rt>qù</rt></ruby> <span class="text-amber-600 border-b-2 border-amber-400">哪里</span>？
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">どこへ行きますか？</p>
+                    </div>
+
+                    <div class="example-list border-t border-slate-100 pt-4">
+                        <div class="space-y-3">
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>住<rt>zhù</rt></ruby> <span class="text-amber-600">哪里</span>？</p>
+                                <p class="text-xs text-slate-500">あなたはどこに住んでいますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>在<rt>zài</rt></ruby> <span class="text-amber-600">哪里</span> <ruby>工作<rt>gōngzuò</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはどこで働いていますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>从<rt>cóng</rt></ruby> <span class="text-amber-600">哪里</span> <ruby>来<rt>lái</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはどこから来ましたか？</p>
+                            </div>
+                            <div class="text-sm bg-amber-50/50 p-2 rounded border border-amber-100">
+                                <span class="text-[10px] text-amber-600 font-bold block mb-1">例外：所在（〜にある）の時</span>
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>洗手间<rt>xǐshǒujiān</rt></ruby> <ruby>在<rt>zài</rt></ruby> <span class="text-amber-600">哪里</span>？</p>
+                                <p class="text-xs text-slate-500">トイレはどこにありますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>银行<rt>yínháng</rt></ruby> <ruby>在<rt>zài</rt></ruby> <span class="text-amber-600">哪里</span>？</p>
+                                <p class="text-xs text-slate-500">銀行はどこにありますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-amber-600">哪里</span> <ruby>人<rt>rén</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはどこの国（地域）の人ですか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>在<rt>zài</rt></ruby> <span class="text-amber-600">哪里</span> <ruby>学习<rt>xuéxí</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはどこで勉強していますか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i> もっと見る</div>
+                </div>
+
+                <!-- WHEN -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-purple-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-purple-100 text-purple-800 text-[10px] px-2 py-1 font-bold rounded-bl">必ず動詞の前！</div>
+                    <div class="flex items-baseline gap-3 mb-4">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">
+                            <ruby>什么时候<rt>shénme shíhou</rt></ruby>
+                        </h4>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-xl mb-4 text-center">
+                        <p class="chinese-serif font-bold text-slate-800 text-lg">
+                            <ruby>你<rt>nǐ</rt></ruby> <span class="text-purple-600 border-b-2 border-purple-300">什么时候</span> <ruby>来<rt>lái</rt></ruby>？
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">あなたはいつ来ますか？</p>
+                    </div>
+
+                    <div class="example-list border-t border-slate-100 pt-4">
+                         <div class="space-y-3">
+                            <div class="text-sm bg-purple-50/50 p-2 rounded border border-purple-100">
+                                <span class="text-[10px] text-purple-600 font-bold block mb-1">重要：文頭でもOK</span>
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-purple-600">什么时候</span> <ruby>去<rt>qù</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">いつ行きますか？（主語省略）</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <span class="text-purple-600">什么时候</span> <ruby>回家<rt>huíjiā</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはいつ帰りますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <span class="text-purple-600">什么时候</span> <ruby>开始<rt>kāishǐ</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはいつ始めますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <span class="text-purple-600">什么时候</span> <ruby>睡觉<rt>shuìjiào</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはいつ寝ますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <span class="text-purple-600">什么时候</span> <ruby>吃饭<rt>chīfàn</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはいつご飯を食べますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>生日<rt>shēngrì</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-purple-600">什么时候</span>？</p>
+                                <p class="text-xs text-slate-500">誕生日はいつですか？（これは「A=B」の文なので後ろに来る）</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>会议<rt>huìyì</rt></ruby> <ruby>是<rt>shì</rt></ruby> <span class="text-purple-600">什么时候</span>？</p>
+                                <p class="text-xs text-slate-500">会議はいつですか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i> もっと見る</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Why & How -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">なぜ (Why) ・ どう (How)</h3>
+                    <p class="text-slate-500 text-sm">理由を聞くか、手段を聞くか、感想を聞くか。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- WHY -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-indigo-500 card-hover group">
+                    <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">Why</span>
+                    <h4 class="text-2xl font-bold text-slate-800 chinese-serif mt-2 mb-4">
+                        <ruby>为什么<rt>wèishénme</rt></ruby>
+                    </h4>
+                    <div class="bg-indigo-50 p-3 rounded mb-4 text-center">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>你<rt>nǐ</rt></ruby> <span class="text-indigo-600">为什么</span> <ruby>哭<rt>kū</rt></ruby>？
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">なぜ泣いているの？</p>
+                    </div>
+                    <div class="example-list border-t border-slate-100 pt-4">
+                        <div class="space-y-3">
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-indigo-600">为什么</span> <ruby>不<rt>bù</rt></ruby> <ruby>去<rt>qù</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうして行かないの？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-indigo-600">为什么</span> <ruby>不<rt>bù</rt></ruby> <ruby>来<rt>lái</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうして来ないの？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-indigo-600">为什么</span> <ruby>这么<rt>zhème</rt></ruby> <ruby>晚<rt>wǎn</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうしてこんなに遅いの？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-indigo-600">为什么</span> <ruby>这么<rt>zhème</rt></ruby> <ruby>贵<rt>guì</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうしてこんなに高いの？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <span class="text-indigo-600">为什么</span> <ruby>学习<rt>xuéxí</rt></ruby> <ruby>中文<rt>zhōngwén</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">あなたはなぜ中国語を勉強しますか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i></div>
+                </div>
+
+                <!-- HOW (Method) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-emerald-500 card-hover group">
+                    <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest">How (Method)</span>
+                    <h4 class="text-2xl font-bold text-slate-800 chinese-serif mt-2 mb-4">
+                        <ruby>怎么<rt>zěnme</rt></ruby> <span class="text-sm font-sans font-normal text-slate-400">+ 動詞</span>
+                    </h4>
+                    <div class="bg-emerald-50 p-3 rounded mb-4 text-center">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <span class="text-emerald-600">怎么</span> <ruby>走<rt>zǒu</rt></ruby>？
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">どうやって行きますか？（道順）</p>
+                    </div>
+                    <div class="example-list border-t border-slate-100 pt-4">
+                        <div class="space-y-3">
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-emerald-600">怎么</span> <ruby>做<rt>zuò</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうやって作りますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-emerald-600">怎么</span> <ruby>用<rt>yòng</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうやって使いますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-emerald-600">怎么</span> <ruby>说<rt>shuō</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうやって言いますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-emerald-600">怎么</span> <ruby>卖<rt>mài</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうやって売りますか？（＝いくらですか？）</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><span class="text-emerald-600">怎么</span> <ruby>去<rt>qù</rt></ruby> <ruby>车站<rt>chēzhàn</rt></ruby>？</p>
+                                <p class="text-xs text-slate-500">どうやって駅に行きますか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i></div>
+                </div>
+
+                <!-- HOW (Condition) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-pink-500 card-hover group">
+                    <span class="text-xs font-bold text-pink-500 uppercase tracking-widest">How (State)</span>
+                    <h4 class="text-2xl font-bold text-slate-800 chinese-serif mt-2 mb-4">
+                        <ruby>怎么样<rt>zěnmeyàng</rt></ruby>
+                    </h4>
+                    <div class="bg-pink-50 p-3 rounded mb-4 text-center">
+                        <p class="chinese-serif font-bold text-slate-800">
+                            <ruby>天气<rt>tiānqì</rt></ruby> <span class="text-pink-600">怎么样</span>？
+                        </p>
+                        <p class="text-xs text-slate-500 mt-1">天気はどうですか？</p>
+                    </div>
+                    <div class="example-list border-t border-slate-100 pt-4">
+                        <div class="space-y-3">
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>这个<rt>zhège</rt></ruby> <span class="text-pink-600">怎么样</span>？</p>
+                                <p class="text-xs text-slate-500">これはどうですか？（提案）</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>那个<rt>nàge</rt></ruby> <span class="text-pink-600">怎么样</span>？</p>
+                                <p class="text-xs text-slate-500">あれはどうですか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>你<rt>nǐ</rt></ruby> <ruby>觉得<rt>juéde</rt></ruby> <span class="text-pink-600">怎么样</span>？</p>
+                                <p class="text-xs text-slate-500">あなたはどう思いますか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>电影<rt>diànyǐng</rt></ruby> <span class="text-pink-600">怎么样</span>？</p>
+                                <p class="text-xs text-slate-500">映画はどうでしたか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>新<rt>xīn</rt></ruby> <ruby>老师<rt>lǎoshī</rt></ruby> <span class="text-pink-600">怎么样</span>？</p>
+                                <p class="text-xs text-slate-500">新しい先生はどうですか？</p>
+                            </div>
+                            <div class="text-sm">
+                                <p class="chinese-serif font-bold text-slate-700"><ruby>工作<rt>gōngzuò</rt></ruby> <span class="text-pink-600">怎么样</span>？</p>
+                                <p class="text-xs text-slate-500">仕事はどうですか？</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 text-slate-300 text-xs group-hover:hidden"><i class="fas fa-chevron-down"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">5W1H Drill</h3>
+                <p class="text-slate-500">聞きたい内容に合わせて、適切な疑問詞を選んでください。<br>単語をタップすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center">
+            <div class="inline-block bg-teal-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-teal-700 font-bold">Lesson 07 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様です！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                これで「何？誰？いつ？どこ？」と自由に情報を聞き出せます。<br>
+                次回は、中国語の数詞と、物を数えるための「量詞」の世界へ踏み込みます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l0-6.html" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-8 rounded-xl transition-all">
+                    前のレッスン
+                </a>
+                <a href="lesson-l0-8.html" class="bg-teal-700 hover:bg-teal-800 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-teal-700/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 08: 数詞と量詞へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Quiz with Vocabulary
+        const quizData = [
+            {
+                dialogue: [
+                    { 
+                        speaker: "A", 
+                        segments: [
+                            { text: "那", pinyin: "Nà", mean: "あれ" },
+                            { text: "是", pinyin: "shì", mean: "〜です" },
+                            { text: "___", type: "blank" },
+                            { text: "？", type: "punct" }
+                        ]
+                    },
+                    { 
+                        speaker: "B", 
+                        segments: [
+                            { text: "那", pinyin: "Nà", mean: "あれ" },
+                            { text: "是", pinyin: "shì", mean: "〜です" },
+                            { text: "手机", pinyin: "shǒujī", mean: "スマホ" },
+                            { text: "。", type: "punct" }
+                        ]
+                    }
+                ],
+                options: [
+                    { text: "什么 (shénme)", correct: true },
+                    { text: "谁 (shéi)", correct: false },
+                    { text: "哪里 (nǎli)", correct: false }
+                ],
+                trans: "あれは何ですか？ / あれはスマホです。",
+                hint: "「スマホ（モノ）」を聞いているので What (什么) を使います。"
+            },
+            {
+                dialogue: [
+                    { 
+                        speaker: "A", 
+                        segments: [
+                            { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                            { text: "去", pinyin: "qù", mean: "行く" },
+                            { text: "___", type: "blank" },
+                            { text: "？", type: "punct" }
+                        ]
+                    },
+                    { 
+                        speaker: "B", 
+                        segments: [
+                            { text: "我", pinyin: "Wǒ", mean: "私" },
+                            { text: "去", pinyin: "qù", mean: "行く" },
+                            { text: "厕所", pinyin: "cèsuǒ", mean: "トイレ" },
+                            { text: "。", type: "punct" }
+                        ]
+                    }
+                ],
+                options: [
+                    { text: "什么 (shénme)", correct: false },
+                    { text: "哪里 (nǎli)", correct: true },
+                    { text: "怎么 (zěnme)", correct: false }
+                ],
+                trans: "どこへ行きますか？ / トイレに行きます。",
+                hint: "行き先（場所）を聞いているので Where (哪里/哪儿) を使います。"
+            },
+            {
+                dialogue: [
+                    { 
+                        speaker: "A", 
+                        segments: [
+                            { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                            { text: "___", type: "blank" },
+                            { text: "来", pinyin: "lái", mean: "来る" },
+                            { text: "我家", pinyin: "wǒjiā", mean: "私の家" },
+                            { text: "？", type: "punct" }
+                        ]
+                    },
+                    { 
+                        speaker: "B", 
+                        segments: [
+                            { text: "明天", pinyin: "Míngtiān", mean: "明日" },
+                            { text: "去", pinyin: "qù", mean: "行く" },
+                            { text: "。", type: "punct" }
+                        ]
+                    }
+                ],
+                options: [
+                    { text: "为什么 (wèishénme)", correct: false },
+                    { text: "什么时候 (shénme shíhou)", correct: true },
+                    { text: "怎么样 (zěnmeyàng)", correct: false }
+                ],
+                trans: "いつ私の家に来ますか？ / 明日行きます。",
+                hint: "時間（明日）を聞いているので When (什么时候) を使います。動詞の前におきます。"
+            },
+            {
+                dialogue: [
+                    { 
+                        speaker: "A", 
+                        segments: [
+                            { text: "中国菜", pinyin: "Zhōngguócài", mean: "中華料理" },
+                            { text: "___", type: "blank" },
+                            { text: "？", type: "punct" }
+                        ]
+                    },
+                    { 
+                        speaker: "B", 
+                        segments: [
+                            { text: "很", pinyin: "Hěn", mean: "とても" },
+                            { text: "好", pinyin: "hǎo", mean: "良い" },
+                            { text: "吃", pinyin: "chī", mean: "食べる" },
+                            { text: "！", type: "punct" }
+                        ]
+                    }
+                ],
+                options: [
+                    { text: "怎么 (zěnme)", correct: false },
+                    { text: "什么 (shénme)", correct: false },
+                    { text: "怎么样 (zěnmeyàng)", correct: true }
+                ],
+                trans: "中華料理はどうですか？ / とても美味しいです！",
+                hint: "味や感想（美味しい）を聞いているので How is it (怎么样) を使います。"
+            },
+            {
+                dialogue: [
+                    { 
+                        speaker: "A", 
+                        segments: [
+                            { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                            { text: "喜欢", pinyin: "xǐhuan", mean: "好き" },
+                            { text: "___", type: "blank" },
+                            { text: "书", pinyin: "shū", mean: "本" },
+                            { text: "？", type: "punct" }
+                        ]
+                    },
+                    { 
+                        speaker: "B", 
+                        segments: [
+                            { text: "我", pinyin: "Wǒ", mean: "私" },
+                            { text: "喜欢", pinyin: "xǐhuan", mean: "好き" },
+                            { text: "历史书", pinyin: "lìshǐshū", mean: "歴史の本" },
+                            { text: "。", type: "punct" }
+                        ]
+                    }
+                ],
+                options: [
+                    { text: "什么 (shénme)", correct: true },
+                    { text: "谁 (shéi)", correct: false },
+                    { text: "怎么样 (zěnmeyàng)", correct: false }
+                ],
+                trans: "あなたは何の本が好きですか？",
+                hint: "「何の本」と名詞を修飾するパターンです。What book = 什么书。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Dialogue HTML
+            let dialogueHtml = '';
+            item.dialogue.forEach(line => {
+                let segmentsHtml = '';
+                line.segments.forEach(seg => {
+                    if (seg.type === 'blank') {
+                        segmentsHtml += `<span class="inline-block w-24 border-b-2 border-slate-300 text-center text-teal-600 px-1 mx-1 min-h-[1.5rem] font-bold" id="slot-${idx}"></span>`;
+                    } else if (seg.type === 'punct') {
+                        segmentsHtml += `<span class="text-slate-800 font-bold ml-1">${seg.text}</span>`;
+                    } else {
+                        // Interactive segment
+                        segmentsHtml += `
+                            <div class="relative inline-block group mx-0.5 text-center cursor-help align-bottom">
+                                <ruby class="text-xl font-bold text-slate-800 chinese-serif cursor-pointer border-b border-dotted border-slate-300 hover:border-teal-500 hover:text-teal-700 transition-colors">
+                                    ${seg.text}<rt>${seg.pinyin}</rt>
+                                </ruby>
+                                <!-- Tooltip -->
+                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block group-active:block z-10 w-max max-w-[150px]">
+                                    <div class="bg-slate-800 text-white text-xs rounded py-1 px-2 shadow-lg">
+                                        ${seg.mean}
+                                        <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+
+                dialogueHtml += `
+                    <div class="mb-4 flex items-end flex-wrap">
+                        <span class="font-bold text-slate-400 text-xs mr-2 mb-1">${line.speaker}:</span>
+                        <div class="flex flex-wrap items-end">${segmentsHtml}</div>
+                    </div>
+                `;
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-teal-400 hover:text-teal-600 font-bold text-slate-600 transition chinese-serif w-full sm:w-auto text-sm">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 mb-4">
+                        ${dialogueHtml}
+                        <p class="text-xs text-slate-400 mt-2 text-right"><i class="fas fa-hand-pointer mr-1"></i>単語をタップで意味を表示</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-slate-50 rounded p-4 text-sm border border-slate-200 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-teal-500', 'text-teal-600', 'bg-teal-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-teal-500', 'text-teal-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-teal-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

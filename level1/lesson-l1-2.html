@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10: 動詞の重ね型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* blue-600 */
+            --primary-dark: #1d4ed8; /* blue-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #93c5fd 60%, #93c5fd 100%); /* blue-300 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-blue-600 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 1</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">10. 動詞の重ね型 (Reduplication)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「ちょっと」の<br class="md:hidden">魔法をかける
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「見る」と「ちょっと見る」では、受ける印象が全然違います。<br>
+                動詞を2回繰り返すだけで、<span class="highlight-text">「気楽さ」「試行」「丁寧さ」</span>を一瞬で表現できる、会話の必須テクニックです。
+            </p>
+        </section>
+
+        <!-- 1. Basic Patterns -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本の型：AA と ABAB</h3>
+                    <p class="text-slate-500 text-sm">動詞の長さ（1文字か2文字か）によって重ね方が決まっています。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Monosyllabic (1 char) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500 card-hover group">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">1文字の動詞</span>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">基本形</span>
+                            <span class="font-bold text-slate-700">A A</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="chinese-serif text-3xl font-bold text-slate-800 mb-2">
+                            <ruby>看<rt>kàn</rt></ruby> <ruby>看<rt>kan</rt></ruby>
+                        </div>
+                        <p class="text-xs text-slate-500">ちょっと見る / 見てみる</p>
+                    </div>
+
+                    <div class="bg-blue-50/50 p-4 rounded-lg text-sm space-y-2">
+                        <p class="font-bold text-blue-700 text-xs mb-1"><i class="fas fa-music mr-1"></i> 発音のポイント</p>
+                        <p class="text-slate-600">
+                            2つ目の動詞は必ず<strong>「軽声」</strong>になります。<br>
+                            kàn kàn ではなく <span class="font-bold">kàn kan</span> です。
+                        </p>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-400">バリエーション</span>
+                            <span class="font-bold text-slate-700">A <span class="text-slate-400">一</span> A</span>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="chinese-serif font-bold text-slate-800">看一看 <span class="text-xs font-sans font-normal text-slate-400">(kàn yi kàn)</span></span>
+                            <p class="text-xs text-slate-400 mt-1">意味は同じですが、少しリズムが変わります。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disyllabic (2 chars) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-amber-500 card-hover group">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold">2文字の動詞</span>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">基本形</span>
+                            <span class="font-bold text-slate-700">AB AB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="chinese-serif text-3xl font-bold text-slate-800 mb-2">
+                            <ruby>休息<rt>xiūxi</rt></ruby> <ruby>休息<rt>xiūxi</rt></ruby>
+                        </div>
+                        <p class="text-xs text-slate-500">ちょっと休憩する / 一休みする</p>
+                    </div>
+
+                    <div class="bg-amber-50/50 p-4 rounded-lg text-sm space-y-2">
+                        <p class="font-bold text-amber-700 text-xs mb-1"><i class="fas fa-exclamation-circle mr-1"></i> 注意点</p>
+                        <p class="text-slate-600">
+                            間に「一」を入れることはできません。<br>
+                            <span class="line-through text-red-400">× 休息一休息</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Nuance (Meaning) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">3つの「魔法の効果」</h3>
+                    <p class="text-slate-500 text-sm">なぜ重ねるのか？文脈によって3つの意味を持ちます。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 1. Briefness -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-hourglass-start"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">1. 時間の短さ</h4>
+                    <p class="text-sm text-slate-600 mb-3">
+                        「ちょっと〜する」「少し〜する」という、動作の時間が短いことを表します。
+                    </p>
+                    <div class="bg-white p-3 rounded text-center">
+                        <p class="chinese-serif text-slate-800 font-bold"><ruby>等<rt>děng</rt></ruby> <ruby>等<rt>deng</rt></ruby></p>
+                        <p class="text-xs text-slate-500">ちょっと待って</p>
+                    </div>
+                </div>
+
+                <!-- 2. Attempt -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">2. 試行（トライ）</h4>
+                    <p class="text-sm text-slate-600 mb-3">
+                        「〜してみる」という、試しにやってみるニュアンスです。
+                    </p>
+                    <div class="bg-white p-3 rounded text-center">
+                        <p class="chinese-serif text-slate-800 font-bold"><ruby>尝<rt>cháng</rt></ruby> <ruby>尝<rt>chang</rt></ruby></p>
+                        <p class="text-xs text-slate-500">味見してみる / 食べてみる</p>
+                    </div>
+                </div>
+
+                <!-- 3. Politeness -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">3. 気楽さ・丁寧さ</h4>
+                    <p class="text-sm text-slate-600 mb-3">
+                        命令口調を和らげ、提案のような柔らかい響きにします。
+                    </p>
+                    <div class="bg-white p-3 rounded text-center">
+                        <p class="chinese-serif text-slate-800 font-bold"><ruby>介绍<rt>jièshào</rt></ruby> <ruby>介绍<rt>jièshào</rt></ruby></p>
+                        <p class="text-xs text-slate-500">ご紹介しますね</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Deep Dive: Liheci and Past Tense -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">上級への入り口：離合詞と完了形</h3>
+                    <p class="text-slate-500 text-sm">ただ重ねれば良いわけではありません。ここで差がつきます。</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Liheci Rule -->
+                <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 flex flex-col md:flex-row gap-6 items-start">
+                    <div class="flex-1">
+                        <span class="bg-indigo-600 text-white text-xs px-2 py-1 rounded font-bold mb-2 inline-block">特殊パターン</span>
+                        <h4 class="text-xl font-bold text-indigo-900 mb-3">離合詞の重ね型 (AAB)</h4>
+                        <p class="text-sm text-slate-700 mb-4 leading-relaxed">
+                            「散歩 (sànbù)」や「水泳 (yóuyǒng)」のように、<span class="font-bold">「動詞(A)＋目的語(B)」</span>で構成されている単語（離合詞）は、動詞部分だけを重ねます。
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-white p-3 rounded border border-indigo-200">
+                                <span class="chinese-serif font-bold text-slate-800">散步 (sàn bù)</span>
+                            </div>
+                            <i class="fas fa-arrow-right text-indigo-300"></i>
+                            <div class="bg-white p-3 rounded border-2 border-indigo-400 shadow-sm">
+                                <span class="chinese-serif font-bold text-indigo-700">散散步 (sàn san bù)</span>
+                                <span class="text-xs text-slate-500 block text-center mt-1">A A B</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-red-500 mt-2">× 散步散步 (ABAB) ではありません！</p>
+                    </div>
+                    
+                    <div class="flex-1 bg-white p-5 rounded-xl border border-indigo-100">
+                        <p class="text-xs font-bold text-slate-400 mb-2">よく使う離合詞リスト</p>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between border-b border-slate-50 pb-1">
+                                <span><ruby>睡觉<rt>shuìjiào</rt></ruby> (寝る)</span>
+                                <span class="chinese-serif font-bold text-indigo-600">睡睡觉</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-50 pb-1">
+                                <span><ruby>聊天<rt>liáotiān</rt></ruby> (おしゃべり)</span>
+                                <span class="chinese-serif font-bold text-indigo-600">聊聊天</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-50 pb-1">
+                                <span><ruby>游泳<rt>yóuyǒng</rt></ruby> (泳ぐ)</span>
+                                <span class="chinese-serif font-bold text-indigo-600">游游泳</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span><ruby>见面<rt>jiànmiàn</rt></ruby> (会う)</span>
+                                <span class="chinese-serif font-bold text-indigo-600">见见面</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Past Tense -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="text-lg font-bold text-slate-800 mb-3">完了・過去の重ね型：A了A</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「〜してみた」「ちょっと〜した」と過去のことを言う場合、間に完了の「了 (le)」を挟みます。
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-slate-50 px-4 py-2 rounded-lg border border-slate-100">
+                            <span class="text-xs text-slate-400 block mb-1">見てみた</span>
+                            <span class="chinese-serif font-bold text-slate-800">看 <span class="text-amber-500">了</span> 看</span>
+                        </div>
+                        <div class="bg-slate-50 px-4 py-2 rounded-lg border border-slate-100">
+                            <span class="text-xs text-slate-400 block mb-1">言ってみた</span>
+                            <span class="chinese-serif font-bold text-slate-800">说 <span class="text-amber-500">了</span> 说</span>
+                        </div>
+                        <div class="bg-slate-50 px-4 py-2 rounded-lg border border-slate-100">
+                            <span class="text-xs text-slate-400 block mb-1">考えてみた (2文字)</span>
+                            <span class="chinese-serif font-bold text-slate-800">考虑 <span class="text-amber-500">了</span> 考虑</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Reduplication Drill</h3>
+                <p class="text-slate-500">文脈に合わせて、正しい重ね型を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-blue-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-blue-700 font-bold">Lesson 10 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">中国語のリズムを手に入れました！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「kànkan」「sàn san bù」。この軽やかなリズムこそが中国語らしさです。<br>
+                次は、形容詞を使った表現と、なぜ「是」がいらないのかという重要な文法ルールに迫ります。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l1-1.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l1-3.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-blue-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 11: 形容詞述語文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "これ" },
+                    { text: "件", pinyin: "jiàn", mean: "〜着(服の量詞)" },
+                    { text: "衣服", pinyin: "yīfu", mean: "服" },
+                    { text: "，", type: "punct" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "试试 (shìshi)", correct: true },
+                    { text: "试 (shì)", correct: false }
+                ],
+                trans: "この服、ちょっと試着してみて。",
+                hint: "「試着する」「〜してみる」という試行のニュアンスなので、動詞を重ねます。"
+            },
+            {
+                question: [
+                    { text: "我们", pinyin: "Wǒmen", mean: "私たち" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "公园", pinyin: "gōngyuán", mean: "公園" },
+                    { text: "___", type: "blank" },
+                    { text: "吧", pinyin: "ba", mean: "〜しましょう" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "散散步 (sàn san bù)", correct: true },
+                    { text: "散步散步 (sànbù sànbù)", correct: false }
+                ],
+                trans: "公園へ行ってちょっと散歩しましょう。",
+                hint: "「散步」は離合詞（動詞＋目的語）なので、前の動詞部分だけを重ねて「AAB」の形にします。"
+            },
+            {
+                question: [
+                    { text: "昨天", pinyin: "Zuótiān", mean: "昨日" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "只", pinyin: "zhǐ", mean: "ただ〜だけ" },
+                    { text: "是", pinyin: "shì", mean: "〜だ" },
+                    { text: "随便", pinyin: "suíbiàn", mean: "適当に" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "看看 (kànkan)", correct: false },
+                    { text: "看了看 (kàn le kàn)", correct: true }
+                ],
+                trans: "昨日はただ適当にちょっと見ただけです。",
+                hint: "過去（昨日）のことについて「ちょっと〜した」と言う場合は、間に「了」を挟みます。"
+            },
+            {
+                question: [
+                    { text: "请", pinyin: "Qǐng", mean: "〜してください" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "休息一休息 (xiūxi yi xiūxi)", correct: false },
+                    { text: "休息休息 (xiūxi xiūxi)", correct: true }
+                ],
+                trans: "少し休憩してください。",
+                hint: "2文字の動詞（AB）を重ねる場合、間に「一」を入れることはできません。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-24 border-b-2 border-slate-300 text-center text-blue-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-blue-500 hover:text-blue-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 font-bold text-slate-600 transition chinese-serif min-w-[120px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-blue-50 rounded p-4 text-sm border border-blue-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                if(btn.innerText.includes(choice.split(' ')[0])) { // Simple check
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                // Remove pinyin for slot display to keep it clean
+                slot.textContent = choice.replace(/\s*\(.*?\)/, '');
+                if (isCorrect) {
+                    slot.classList.add('border-blue-500', 'text-blue-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-blue-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

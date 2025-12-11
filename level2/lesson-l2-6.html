@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 23: 「把」構文 (Ba-construction)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">23. 「把」構文 (Ba-construction)</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「掴んで」→「どうする」<br class="md:hidden">処置の構文
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「ドアを開けて」「本を机に置いて」。<br>
+                このように「あるモノを、どうにかして、どういう状態にする」という操作・処置を表す時、中国語では<span class="highlight-text">最強の構文「把」</span>を使います。<br>
+                これをマスターすれば、あなたの中国語は一気にネイティブに近づきます。
+            </p>
+        </section>
+
+        <!-- 1. What is "Ba"? -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「把」のイメージと基本構造</h3>
+                    <p class="text-slate-500 text-sm">目的語を前に引っ張り出し、「これからこれを料理するぞ」と宣言する感覚。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <div class="flex flex-col md:flex-row items-center justify-around gap-8 mb-8">
+                    
+                    <!-- Normal SVO -->
+                    <div class="text-center opacity-60">
+                        <p class="text-xs font-bold text-slate-400 mb-2">普通の文 (SVO)</p>
+                        <div class="bg-slate-100 p-4 rounded-xl border border-slate-200">
+                            <span class="chinese-serif text-xl font-bold text-slate-600">我 吃 了 苹果。</span>
+                            <p class="text-xs text-slate-500 mt-1">私はリンゴを食べた。</p>
+                            <p class="text-[10px] text-slate-400">（ただの事実報告）</p>
+                        </div>
+                    </div>
+
+                    <div class="text-3xl text-amber-500"><i class="fas fa-hand-holding-medical"></i></div>
+
+                    <!-- Ba Construction -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-amber-600 mb-2">「把」構文 (SOVに近い)</p>
+                        <div class="bg-amber-50 p-4 rounded-xl border-2 border-amber-300 shadow-lg relative">
+                            <div class="chinese-serif text-2xl font-bold text-slate-800">
+                                <ruby>我<rt>wǒ</rt></ruby> <span class="text-amber-600 text-3xl mx-1">把</span> <ruby>苹果<rt>píngguǒ</rt></ruby> <ruby>吃<rt>chī</rt></ruby> <span class="text-indigo-600 font-bold">了</span>。
+                            </div>
+                            <p class="text-sm text-slate-700 font-bold mt-2">私はリンゴを食べてしまった。</p>
+                            <p class="text-xs text-amber-700 mt-1">（リンゴを「処理」して、なくしてしまった）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-sm">
+                    <h4 class="font-bold text-indigo-900 mb-2">構造の鉄則</h4>
+                    <div class="flex flex-wrap items-center gap-2 text-lg font-bold text-slate-700 mb-4">
+                        <span class="bg-slate-100 px-3 py-1 rounded">主語</span>
+                        <i class="fas fa-plus text-xs text-slate-300"></i>
+                        <span class="bg-amber-500 text-white px-3 py-1 rounded">把</span>
+                        <i class="fas fa-plus text-xs text-slate-300"></i>
+                        <span class="bg-white border-2 border-amber-500 px-3 py-1 rounded text-amber-700">目的語(O)</span>
+                        <i class="fas fa-plus text-xs text-slate-300"></i>
+                        <span class="bg-white border border-slate-300 px-3 py-1 rounded">動詞(V)</span>
+                        <i class="fas fa-plus text-xs text-slate-300"></i>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded border-2 border-indigo-200">結果(C)</span>
+                    </div>
+                    <p class="text-sm text-slate-600">
+                        「把」を使って目的語を動詞の前に持ってきます。<br>
+                        そして一番大事なのは、<strong>「動詞の後ろに必ず『結果』を表す成分が必要」</strong>ということです。<br>
+                        <span class="text-xs text-red-500">× 我把苹果吃 (動詞で終わってはいけない！)</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. When to use "Ba"? -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">いつ「把」を使うのか？</h3>
+                    <p class="text-slate-500 text-sm">主に「位置の変化」や「状態の変化」をはっきりさせたい時です。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case 1: Change of Location -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">1. 場所の移動 (AをBに置く)</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「本を机の上に置く」「服をカバンに入れる」など、モノを移動させる時。
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-xl">
+                        <p class="chinese-serif text-lg font-bold text-slate-800">
+                            <span class="text-slate-400 text-sm font-normal mr-2">請</span>
+                            <span class="text-amber-600">把</span> <ruby>书<rt>shū</rt></ruby> <ruby>放<rt>fàng</rt></ruby> <ruby>在<rt>zài</rt></ruby> <ruby>桌子<rt>zhuōzi</rt></ruby> <ruby>上<rt>shang</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">本を机の上に置いてください。</p>
+                    </div>
+                </div>
+
+                <!-- Case 2: Change of State -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 card-hover">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl mb-4">
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">2. 状態の変化・完了</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「ドアを開ける」「宿題を終える」「部屋をきれいにする」など。
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-xl">
+                        <p class="chinese-serif text-lg font-bold text-slate-800">
+                            <ruby>我<rt>wǒ</rt></ruby> <span class="text-amber-600">把</span> <ruby>作业<rt>zuòyè</rt></ruby> <ruby>做<rt>zuò</rt></ruby> <ruby>完<rt>wán</rt></ruby> <ruby>了<rt>le</rt></ruby>。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">私は宿題をやり終えました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The 3 Constraints -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">絶対に守るべき3つのルール</h3>
+                    <p class="text-slate-500 text-sm">これを知らないと、「把」構文は使えません。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Constraint 1 -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm flex items-start gap-4">
+                    <div class="text-red-500 font-bold text-xl mt-1">1</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">目的語は「特定のもの」であること</h4>
+                        <p class="text-sm text-slate-600 mb-2">
+                            「ある本を一冊」ではなく、「その本」「私の本」のように、話し手と聞き手がどれか分かっているものでないといけません。
+                        </p>
+                        <div class="flex gap-4 text-xs">
+                            <span class="text-slate-400 line-through">把一本书... (ある本を...)</span>
+                            <span class="text-teal-600 font-bold">○ 把那本书... (あの本を...)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constraint 2 -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-purple-500 shadow-sm flex items-start gap-4">
+                    <div class="text-purple-500 font-bold text-xl mt-1">2</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">動詞の後ろは「空っぽ」不可！</h4>
+                        <p class="text-sm text-slate-600 mb-2">
+                            「処置」をするので、どうなったか（結果）を言う義務があります。「了」「着」「補語（結果・方向・様態）」などが必須です。
+                        </p>
+                        <div class="flex gap-4 text-xs">
+                            <span class="text-slate-400 line-through">把门开 (ドアを開け...)</span>
+                            <span class="text-teal-600 font-bold">○ 把门开开 (ドアを開ける)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constraint 3 -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-indigo-500 shadow-sm flex items-start gap-4">
+                    <div class="text-indigo-500 font-bold text-xl mt-1">3</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">否定・助動詞は「把」の前！</h4>
+                        <p class="text-sm text-slate-600 mb-2">
+                            「不」「没」「能」「想」などは全て「把」の前に置きます。把と目的語の間に割り込んではいけません。
+                        </p>
+                        <div class="flex gap-4 text-xs">
+                            <span class="text-slate-400 line-through">把没作业做完</span>
+                            <span class="text-teal-600 font-bold">○ 没把作业做完 (宿題を終えていない)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Structure Drill</h3>
+                <p class="text-slate-500">文脈に合わせて正しい語順を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 23 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「把」構文は中国語の心臓部です。これが使えれば、複雑な操作も思いのままに表現できます。<br>
+                次回は、「把」の逆、被害を受ける「受身文（被）」について学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-5.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l2-7.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 24: 受身文へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "请", pinyin: "Qǐng", mean: "〜してください" },
+                    { text: "___", type: "blank" },
+                    { text: "门", pinyin: "mén", mean: "ドア" },
+                    { text: "开", pinyin: "kāi", mean: "開ける" },
+                    { text: "一下", pinyin: "yíxià", mean: "ちょっと〜する" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "把 (bǎ)", correct: true },
+                    { text: "被 (bèi)", correct: false }
+                ],
+                trans: "ドアを開けてください。",
+                hint: "「ドアを（掴んで）開ける」という処置の文なので、目的語の前に「把」を置きます。"
+            },
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "把", pinyin: "bǎ", mean: "処置" },
+                    { text: "作业", pinyin: "zuòyè", mean: "宿題" },
+                    { text: "做", pinyin: "zuò", mean: "やる" },
+                    { text: "完", pinyin: "wán", mean: "終える" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "没 (méi)", correct: true },
+                    { text: "不 (bù)", correct: false }
+                ],
+                trans: "私は宿題を終えていません。",
+                hint: "「処置が完了していない」という否定なので、「没」を使い、必ず「把」の前に置きます。"
+            },
+            {
+                question: [
+                    { text: "请", pinyin: "Qǐng", mean: "〜してください" },
+                    { text: "把", pinyin: "bǎ", mean: "処置" },
+                    { text: "这", pinyin: "zhè", mean: "この" },
+                    { text: "本", pinyin: "běn", mean: "冊" },
+                    { text: "书", pinyin: "shū", mean: "本" },
+                    { text: "___", type: "blank" },
+                    { text: "给", pinyin: "gěi", mean: "〜に" },
+                    { text: "他", pinyin: "tā", mean: "彼" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "送 (sòng)", correct: true },
+                    { text: "送给 (sònggěi)", correct: false } // 'gei' is already there as complement preposition or just result
+                ],
+                trans: "この本を彼に届けてください。",
+                hint: "「送（届ける）」という動詞の後ろに、結果・方向を表す「给他（彼に）」が続きます。"
+            },
+            {
+                question: [
+                    { text: "别", pinyin: "Bié", mean: "〜するな" },
+                    { text: "把", pinyin: "bǎ", mean: "処置" },
+                    { text: "手机", pinyin: "shǒujī", mean: "スマホ" },
+                    { text: "___", type: "blank" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "忘 (wàng)", correct: false },
+                    { text: "忘了 (wàng le)", correct: true }
+                ],
+                trans: "スマホを忘れないで。",
+                hint: "把構文では動詞（忘）だけで終われません。「了（完了/実現）」や補語をつけて文を完結させる必要があります。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-amber-500', 'text-amber-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

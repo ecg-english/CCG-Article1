@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 04: 人称代名詞と「的」</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e; /* teal-700 */
+            --accent: #f59e0b; /* amber-500 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fde68a 60%, #fde68a 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-teal-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 0</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">04. 人称代名詞と「的」</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「私」と「私の」は<br class="md:hidden">同じ単語？
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                英語で苦労した "I, my, me, mine" の変化表は忘れてください。<br>
+                中国語の代名詞は形を変えません。<br>
+                しかし、ネイティブらしい会話には<span class="highlight-text">「関係の近さ」による省略</span>や<span class="highlight-text">「仲間意識」を表す特別な代名詞</span>が存在します。
+            </p>
+        </section>
+
+        <!-- 1. Personal Pronouns -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本の人称代名詞</h3>
+                    <p class="text-slate-500 text-sm">基本は「単数」＋「们 (men)」で複数形になります。</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Singular -->
+                    <div>
+                        <h4 class="text-center font-bold text-slate-400 text-sm mb-4 uppercase tracking-widest">単数 (Singular)</h4>
+                        <div class="space-y-4">
+                            <!-- 1st Person -->
+                            <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mr-4">1</div>
+                                <div>
+                                    <div class="text-2xl font-bold text-slate-800 chinese-serif">
+                                        <ruby>我<rt>wǒ</rt></ruby>
+                                    </div>
+                                    <div class="text-xs text-slate-500">私・僕・俺</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 2nd Person -->
+                            <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center font-bold mr-4">2</div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <div class="text-2xl font-bold text-slate-800 chinese-serif">
+                                                <ruby>你<rt>nǐ</rt></ruby>
+                                            </div>
+                                            <div class="text-xs text-slate-500">あなた・君</div>
+                                        </div>
+                                        <div class="bg-amber-50 px-3 py-1 rounded text-right">
+                                            <div class="text-lg font-bold text-amber-800 chinese-serif">
+                                                <ruby>您<rt>nín</rt></ruby>
+                                            </div>
+                                            <div class="text-[10px] text-amber-600">敬語 (目上の人へ)</div>
+                                        </div>
+                                    </div>
+                                    <!-- Tip for Nin -->
+                                    <div class="mt-2 text-[10px] text-amber-700 bg-amber-50/50 p-1 rounded">
+                                        <i class="fas fa-exclamation-circle mr-1"></i>注意：「您们」という複数形は一般的ではありません。「各位(gèwèi)」などを使います。
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3rd Person -->
+                            <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold mr-4">3</div>
+                                <div class="flex-1">
+                                    <div class="flex gap-4">
+                                        <div>
+                                            <div class="text-2xl font-bold text-slate-800 chinese-serif">
+                                                <ruby>他<rt>tā</rt></ruby>
+                                            </div>
+                                            <div class="text-xs text-slate-500">彼 (男性/総称)</div>
+                                        </div>
+                                        <div class="w-px bg-slate-200"></div>
+                                        <div>
+                                            <div class="text-2xl font-bold text-slate-800 chinese-serif">
+                                                <ruby>她<rt>tā</rt></ruby>
+                                            </div>
+                                            <div class="text-xs text-slate-500">彼女 (女性)</div>
+                                        </div>
+                                        <div class="w-px bg-slate-200"></div>
+                                        <div>
+                                            <div class="text-2xl font-bold text-slate-800 chinese-serif">
+                                                <ruby>它<rt>tā</rt></ruby>
+                                            </div>
+                                            <div class="text-xs text-slate-500">それ (動物/物)</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 text-[10px] text-purple-500 bg-purple-50 inline-block px-2 rounded">※発音はすべて "tā" で同じ！</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plural -->
+                    <div class="relative">
+                        <h4 class="text-center font-bold text-slate-400 text-sm mb-4 uppercase tracking-widest">複数 (Plural)</h4>
+                        <div class="absolute inset-0 bg-slate-50/50 rounded-2xl border-2 border-dashed border-slate-200 pointer-events-none -z-10"></div>
+                        
+                        <div class="h-full flex flex-col justify-center items-center p-6 text-center">
+                            <div class="mb-6">
+                                <span class="text-4xl font-bold text-red-500 chinese-serif">+ <ruby>们<rt>men</rt></ruby></span>
+                                <p class="text-sm text-slate-600 mt-2 font-bold">これをつけるだけ！</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-3 w-full max-w-xs">
+                                <div class="bg-white p-3 rounded shadow-sm border border-slate-100">
+                                    <span class="chinese-serif font-bold text-lg text-slate-800">我们</span>
+                                    <span class="text-xs text-slate-400 block">wǒmen (私たち)</span>
+                                </div>
+                                <div class="bg-white p-3 rounded shadow-sm border border-slate-100">
+                                    <span class="chinese-serif font-bold text-lg text-slate-800">你们</span>
+                                    <span class="text-xs text-slate-400 block">nǐmen (あなたたち)</span>
+                                </div>
+                                <div class="bg-white p-3 rounded shadow-sm border border-slate-100">
+                                    <span class="chinese-serif font-bold text-lg text-slate-800">他们</span>
+                                    <span class="text-xs text-slate-400 block">tāmen (彼ら)</span>
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded shadow-sm border border-blue-100 mt-2">
+                                    <span class="chinese-serif font-bold text-lg text-blue-800">大家</span>
+                                    <span class="text-xs text-blue-600 block">dàjiā (みんな)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Native Nuance: Women vs Zanmen -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">深掘り：ネイティブの「私たち」</h3>
+                    <p class="text-slate-500 text-sm">教科書の「我们」だけじゃない？相手を巻き込む魔法の言葉。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="font-bold text-slate-700 mb-4 border-b pb-2">普通の「私たち」</h4>
+                    <div class="text-3xl font-bold text-slate-800 chinese-serif mb-2">
+                        <ruby>我们<rt>wǒmen</rt></ruby>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">
+                        最も一般的。話し手と、その側の人間。「相手（聞き手）」を含む場合もあれば、含まない場合もあります。
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs text-slate-500">
+                        例：「（あなたは残って。）<strong>私たち</strong>は先に行くね。」<br>
+                        → 相手を含まない排他的な使い方が可能。
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-teal-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-teal-100 text-teal-800 text-[10px] font-bold px-2 py-1 rounded-bl">親近感UP!</div>
+                    <h4 class="font-bold text-teal-700 mb-4 border-b border-teal-100 pb-2">相手を巻き込む「私たち」</h4>
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-3xl font-bold text-slate-800 chinese-serif"><ruby>咱们<rt>zánmen</rt></ruby></span>
+                        <span class="text-xs text-slate-400">(または 咱 zán)</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4">
+                        主に北方方言ですが、会話で頻出します。<strong>必ず相手（聞き手）を含みます。</strong>
+                        「俺たち（一緒にな！）」という仲間意識や親しみを強調します。
+                    </p>
+                    <div class="bg-teal-50 p-3 rounded text-xs text-teal-700">
+                        例：「<strong>咱们</strong>去吃饭吧！」<br>
+                        （俺たち一緒に飯行こうぜ！ ※断りづらい一体感）
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Particle "De" and Rhythm -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-slate-800 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">所有の「的」と省略のリズム</h3>
+                    <p class="text-slate-500 text-sm">「的」をいつ使うか、いつ消すか。そこに中国語のリズムがあります。</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl mb-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Basic Rule -->
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-cube text-slate-400 mr-2"></i> 基本ルール
+                        </h4>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center mb-4">
+                            <p class="text-xl font-bold text-slate-800 chinese-serif">
+                                <ruby>我<rt>wǒ</rt></ruby> <span class="text-teal-600">的</span> <ruby>书<rt>shū</rt></ruby>
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">所有者 + 的 + 所有物</p>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            日本語の「の」と同じ。基本的に「モノ」が来る時は省略しません。
+                        </p>
+                    </div>
+
+                    <!-- Omission Rule -->
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-heart text-red-400 mr-2"></i> 省略ルール (親密さ)
+                        </h4>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center mb-4">
+                            <p class="text-xl font-bold text-slate-800 chinese-serif">
+                                <ruby>我<rt>wǒ</rt></ruby> <span class="text-slate-300 line-through text-sm mx-1">的</span> <ruby>妈妈<rt>māma</rt></ruby>
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">家族・所属団体・国など</p>
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            自分と切り離せない関係（家族、学校、会社、国）の場合、「的」を省略したほうが自然で、距離が近く聞こえます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Technique: Rhythm -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-purple-500">
+                <div class="flex items-start gap-4">
+                    <div class="bg-purple-100 text-purple-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                        Pro
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-purple-900 text-lg mb-2">上級テクニック：「的」の連続回避</h4>
+                        <p class="text-slate-700 text-sm mb-4">
+                            日本語で「私の お父さんの 会社の 車」のように「の」が連続しても平気ですが、中国語はリズムを重視するため、<strong>「的」の連続を嫌います。</strong><br>
+                            前の「的」を省略してリズムを整えます。
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm opacity-60">
+                                <span class="bg-red-50 text-red-500 px-2 py-1 rounded text-xs font-bold">△ 重い</span>
+                                <span class="chinese-serif">
+                                    <ruby>我<rt>wǒ</rt></ruby> <span class="text-red-500 font-bold">的</span> <ruby>爸爸<rt>bàba</rt></ruby> <span class="text-red-500 font-bold">的</span> <ruby>公司<rt>gōngsī</rt></ruby>
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-3 text-lg font-bold">
+                                <span class="bg-teal-50 text-teal-600 px-2 py-1 rounded text-xs font-bold">◎ 自然</span>
+                                <span class="chinese-serif">
+                                    <ruby>我<rt>wǒ</rt></ruby> <span class="text-slate-300 line-through text-sm mx-1">的</span> <ruby>爸爸<rt>bàba</rt></ruby> <span class="text-teal-600">的</span> <ruby>公司<rt>gōngsī</rt></ruby>
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-500 ml-16">
+                                「我爸爸（私の父）」を一塊の名詞として扱い、最後の「的」だけ残します。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Check Your Understanding</h3>
+                <p class="text-slate-500">「的」が必要か、省略できる（自然な）方を選びましょう。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-12 pb-20 text-center">
+            <div class="inline-block bg-teal-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-teal-700 font-bold">Lesson 04 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お見事です！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
+                「咱们（俺たち）」や「的の省略」を使いこなせれば、もう教科書通りの堅苦しい中国語からは卒業です。<br>
+                次は、「これ・あれ・どれ」などの指示代名詞を学び、世界を指差せるようになりましょう。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l0-3.html" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3 px-8 rounded-xl transition-all">
+                    前のレッスン
+                </a>
+                <a href="lesson-l0-5.html" class="bg-teal-700 hover:bg-teal-800 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-teal-700/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 05: 指示代名詞へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Quiz
+        const quizData = [
+            {
+                segments: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "电脑", pinyin: "diànnǎo", mean: "パソコン" }
+                ],
+                options: [
+                    { text: "的", correct: true },
+                    { text: "(省略)", correct: false }
+                ],
+                trans: "私のパソコン",
+                hint: "パソコンは「モノ（所有物）」なので、所有の「的」は省略できません。"
+            },
+            {
+                segments: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "妈妈", pinyin: "māma", mean: "お母さん" }
+                ],
+                options: [
+                    { text: "的", correct: false },
+                    { text: "(省略)", correct: true }
+                ],
+                trans: "あなたのお母さん",
+                hint: "「お母さん」は親族（切っても切れない関係）なので、通常は省略形が自然です。"
+            },
+            {
+                segments: [
+                    { text: "我们", pinyin: "Wǒmen", mean: "私たち" },
+                    { text: "___", type: "blank" },
+                    { text: "公司", pinyin: "gōngsī", mean: "会社" }
+                ],
+                options: [
+                    { text: "的", correct: false },
+                    { text: "(省略)", correct: true }
+                ],
+                trans: "私たちの会社（弊社）",
+                hint: "所属している組織や団体の場合も、関係が近いため「的」を省略するのが一般的です。"
+            },
+            {
+                segments: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "朋友", pinyin: "péngyou", mean: "友達" },
+                    { text: "的", pinyin: "de", mean: "の" },
+                    { text: "家", pinyin: "jiā", mean: "家" }
+                ],
+                options: [
+                    { text: "的", correct: false },
+                    { text: "(省略)", correct: true }
+                ],
+                trans: "私の友達の家",
+                hint: "「的」が連続してしまうため、最初の「的」を省略してリズムを良くします（連続回避）。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML with Ruby and Tooltips
+            let questionHtml = '';
+            item.segments.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-16 border-b-2 border-slate-300 text-center text-teal-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else {
+                    questionHtml += `
+                        <div class="relative inline-block group mx-0.5 text-center cursor-help align-bottom">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-pointer border-b border-dotted border-slate-300 hover:border-teal-500 hover:text-teal-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block z-10 w-max max-w-[150px]">
+                                <div class="bg-slate-800 text-white text-xs rounded py-1 px-2 shadow-lg">
+                                    ${seg.mean}
+                                    <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text}', ${opt.correct})" 
+                        class="choice-btn px-6 py-2 rounded-lg border-2 border-slate-200 hover:border-teal-400 hover:text-teal-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+                    <div class="w-full text-center">
+                        <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                        <div class="flex justify-center items-end flex-wrap gap-1 leading-loose">
+                            ${questionHtml}
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2"><i class="fas fa-hand-pointer mr-1"></i>文字にカーソルを合わせると意味が出ます</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-3 mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden text-center bg-slate-50 rounded p-4 text-sm border border-slate-200">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if(btn.innerText.trim() !== choice && !isCorrect) { // If wrong, dim other buttons
+                     // Optional: Visual logic
+                }
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            });
+
+            // Update slot text
+            slot.textContent = choice;
+            slot.classList.remove('border-slate-300');
+
+            if (isCorrect) {
+                slot.classList.add('border-teal-500', 'text-teal-600');
+                feedback.classList.remove('hidden');
+                feedback.innerHTML = `
+                    <div class="text-teal-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                slot.classList.add('border-red-500', 'text-red-600');
+                feedback.classList.remove('hidden');
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="mb-2 text-slate-600">より自然なのはもう一方です。</p>
+                    <p class="font-bold text-slate-700 mb-2 text-sm">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

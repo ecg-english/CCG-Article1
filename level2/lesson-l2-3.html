@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 20: 結果補語 (動作の結末)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 2 Theme Colors: Amber/Orange */
+            --primary: #d97706; /* amber-600 */
+            --primary-light: #fcd34d; /* amber-300 */
+            --primary-bg: #fffbeb; /* amber-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 2 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fcd34d 60%, #fcd34d 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 2 Style) -->
+    <header class="bg-white border-b border-amber-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-amber-500 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 2</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">20. 結果補語</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「やった」だけでは<br class="md:hidden">終わらない
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「探したけど見つからなかった」「聞いたけどわからなかった」。<br>
+                中国語では、動作（Action）とその結果（Result）をセットにして一つの動詞のように扱います。<br>
+                <span class="highlight-text">「やりっぱなし」にせず、結末まで言い切る</span>のが中国語の流儀です。
+            </p>
+        </section>
+
+        <!-- 1. The Concept: Action + Result -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">基本構造：動詞＋結果補語</h3>
+                    <p class="text-slate-500 text-sm">動詞の直後に、結果を表す語（動詞や形容詞）をピタリとくっつけます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber-200">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+                    <!-- Action -->
+                    <div class="text-center">
+                        <div class="bg-blue-50 text-blue-800 font-bold px-4 py-2 rounded-lg border border-blue-200 mb-2">
+                            動作 (Action)
+                        </div>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800"><ruby>看<rt>kàn</rt></ruby></p>
+                        <p class="text-xs text-slate-500">見る/読む</p>
+                    </div>
+
+                    <div class="text-slate-300 text-2xl"><i class="fas fa-plus"></i></div>
+
+                    <!-- Result -->
+                    <div class="text-center">
+                        <div class="bg-amber-50 text-amber-800 font-bold px-4 py-2 rounded-lg border border-amber-200 mb-2">
+                            結果 (Result)
+                        </div>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800"><ruby>完<rt>wán</rt></ruby></p>
+                        <p class="text-xs text-slate-500">完了する</p>
+                    </div>
+
+                    <div class="text-slate-300 text-2xl"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Combined -->
+                    <div class="text-center relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-0.5 rounded-full">合体！</div>
+                        <div class="bg-slate-50 px-6 py-4 rounded-xl border-2 border-slate-200 shadow-sm">
+                            <p class="chinese-serif text-3xl font-bold text-slate-800 mb-1">
+                                <ruby>看完<rt>kànwán</rt></ruby>
+                            </p>
+                            <p class="text-sm text-slate-600 font-bold">読み終わる / 見終わる</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-lg text-sm text-slate-700 leading-relaxed border-l-4 border-amber-400">
+                    <strong><i class="fas fa-info-circle mr-1"></i> ポイント：</strong><br>
+                    日本語なら「読み終わる」と複合動詞になりますが、中国語でも感覚は同じです。<br>
+                    ただし、中国語は<strong>「動詞」と「補語」の結合が非常に強く、間に何も挟めません</strong>（「了」や目的語は、補語の後ろに来ます）。
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Must-Know Result Complements List -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">必須の結果補語図鑑</h3>
+                    <p class="text-slate-500 text-sm">これさえ覚えれば、あらゆる「結果」を表現できます。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wan (Finish) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">完 <span class="text-sm font-sans font-normal text-slate-400">wán</span></h4>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">完了</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">動作がすべて終わる。</p>
+                    <div class="bg-slate-50 p-2 rounded text-sm">
+                        <span class="chinese-serif font-bold">吃完</span> (食べ終わる)<br>
+                        <span class="chinese-serif font-bold">做完</span> (やり終える)
+                    </div>
+                </div>
+
+                <!-- Dao (Reach/Access) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-blue-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">到 <span class="text-sm font-sans font-normal text-slate-400">dào</span></h4>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">到達・目的達成</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">目的のものに届く、手に入れる。</p>
+                    <div class="bg-slate-50 p-2 rounded text-sm">
+                        <span class="chinese-serif font-bold">找到</span> (探して見つかる)<br>
+                        <span class="chinese-serif font-bold">买到</span> (買えた/入手した)
+                    </div>
+                </div>
+
+                <!-- Jian (Perceive) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-purple-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">见 <span class="text-sm font-sans font-normal text-slate-400">jiàn</span></h4>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">知覚</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">視覚や聴覚で対象を捉える。</p>
+                    <div class="bg-slate-50 p-2 rounded text-sm">
+                        <span class="chinese-serif font-bold">看见</span> (見える/目に入る)<br>
+                        <span class="chinese-serif font-bold">听见</span> (聞こえる/耳に入る)
+                    </div>
+                </div>
+
+                <!-- Hao (Ready/Done well) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-amber-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">好 <span class="text-sm font-sans font-normal text-slate-400">hǎo</span></h4>
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded">完成・準備OK</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">立派に仕上がる、準備が整う。</p>
+                    <div class="bg-slate-50 p-2 rounded text-sm">
+                        <span class="chinese-serif font-bold">做好</span> (ちゃんと作る/完成)<br>
+                        <span class="chinese-serif font-bold">准备好</span> (準備完了)
+                    </div>
+                </div>
+
+                <!-- Cuo (Wrong) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-red-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">错 <span class="text-sm font-sans font-normal text-slate-400">cuò</span></h4>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">間違い</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">動作の結果、間違える。</p>
+                    <div class="bg-slate-50 p-2 rounded text-sm">
+                        <span class="chinese-serif font-bold">听错</span> (聞き間違い)<br>
+                        <span class="chinese-serif font-bold">写错</span> (書き損じ)
+                    </div>
+                </div>
+
+                <!-- Dong (Understand) -->
+                <div class="bg-white p-5 rounded-xl border-l-4 border-indigo-500 shadow-sm card-hover">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-2xl font-bold text-slate-800 chinese-serif">懂 <span class="text-sm font-sans font-normal text-slate-400">dǒng</span></h4>
+                        <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">理解</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">内容がわかる、理解する。</p>
+                    <div class="bg-slate-50 p-2 rounded text-sm">
+                        <span class="chinese-serif font-bold">听懂</span> (聞いてわかる)<br>
+                        <span class="chinese-serif font-bold">看懂</span> (読んでわかる)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Action vs Result: "Look" vs "See" -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「看」と「看见」の違い</h3>
+                    <p class="text-slate-500 text-sm">日本語では曖昧な「見る」「聞く」を、中国語は厳密に区別します。</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Action Only -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                        <h4 class="text-lg font-bold text-slate-700 mb-3">動作 (Action)</h4>
+                        <div class="text-4xl text-slate-300 mb-2"><i class="fas fa-eye"></i></div>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800 mb-2">看 (kàn)</p>
+                        <p class="text-sm text-slate-600">
+                            見る、視線を向ける。<br>
+                            <span class="text-xs text-red-500">※視界に入ったとは限らない！</span>
+                        </p>
+                        <div class="mt-3 bg-slate-100 p-2 rounded text-xs text-slate-500">
+                            我看了，但是没看见。<br>(見ようとしたけど、見えなかった)
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center border-2 border-amber-200">
+                        <h4 class="text-lg font-bold text-slate-700 mb-3">結果 (Result)</h4>
+                        <div class="text-4xl text-amber-500 mb-2"><i class="fas fa-check-circle"></i></div>
+                        <p class="chinese-serif text-2xl font-bold text-slate-800 mb-2">看见 (kànjiàn)</p>
+                        <p class="text-sm text-slate-600">
+                            見えた、目に入った。<br>
+                            <span class="text-xs text-amber-600 font-bold">※知覚できた結果を表す</span>
+                        </p>
+                        <div class="mt-3 bg-amber-50 p-2 rounded text-xs text-amber-800">
+                            我看见他了。<br>(彼を見かけました / 彼が目に入りました)
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center text-sm text-slate-600">
+                    <p>「听 (聞く)」と「听见 (聞こえる)」、「找 (探す)」と「找到 (見つかる)」も同じ関係です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Negation & Question (Critical) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">否定文の鉄則：「不」は使わない！</h3>
+                    <p class="text-slate-500 text-sm">結果が出ていない＝完了していない、ということなので「没」を使います。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Negation Rule -->
+                <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-red-800 text-lg"><i class="fas fa-times mr-2"></i> 否定の作り方</h4>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center mb-4">
+                        <span class="chinese-serif text-xl font-bold text-slate-800">
+                            <span class="text-red-500">没(有)</span> + 動詞 + 結果補語
+                        </span>
+                    </div>
+                    <p class="text-sm text-red-900 mb-2">
+                        「〜しなかった」「〜できていない」という意味になります。<br>
+                        <strong>結果補語は「実現・完了」のニュアンスを持つため、否定には必ず「没」を使います。</strong>
+                    </p>
+                    <div class="mt-3 text-sm border-t border-red-200 pt-2 text-slate-600">
+                        <span class="font-bold text-slate-700">例：</span>
+                        <span class="chinese-serif">我<span class="text-red-500 font-bold">没</span>听懂。</span> (聞き取れなかった / 理解できなかった)
+                    </div>
+                </div>
+
+                <!-- Question Rule -->
+                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-blue-800 text-lg"><i class="fas fa-question mr-2"></i> 疑問の作り方</h4>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded-xl shadow-sm text-center">
+                            <span class="text-xs text-slate-400 block mb-1">パターンA</span>
+                            <span class="chinese-serif font-bold text-slate-800">〜了吗？</span>
+                            <p class="text-xs text-slate-500 mt-1">你做完<span class="text-blue-500 font-bold">了吗</span>？ (やり終えましたか？)</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl shadow-sm text-center">
+                            <span class="text-xs text-slate-400 block mb-1">パターンB (反復疑問)</span>
+                            <span class="chinese-serif font-bold text-slate-800">〜了没有？</span>
+                            <p class="text-xs text-slate-500 mt-1">你做完<span class="text-blue-500 font-bold">了没有</span>？ (やり終えた？まだ？)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Mastery Quiz</h3>
+                <p class="text-slate-500">文脈に合わせて正しい表現を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-amber-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-amber-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-amber-700 font-bold">Lesson 20 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">動作の「結果」まで言えるようになりました！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                「找（探す）」と「找到（見つかる）」の違い、もう迷いませんね。<br>
+                次回は、動作の方向を表す「方向補語（上がってくる、入っていく）」を学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l2-2.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l2-4.html" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 21: 方向補語へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "我", pinyin: "Wǒ", mean: "私" },
+                    { text: "___", type: "blank" },
+                    { text: "作业", pinyin: "zuòyè", mean: "宿題" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "做完 (zuòwán)", correct: true },
+                    { text: "做 (zuò)", correct: false }
+                ],
+                trans: "私は宿題をやり終えました。",
+                hint: "文末に「了」があり、宿題が完了したことを伝えているので、結果補語「完（終える）」がついた「做完」が適切です。"
+            },
+            {
+                question: [
+                    { text: "昨天", pinyin: "Zuótiān", mean: "昨日" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "书店", pinyin: "shūdiàn", mean: "本屋" },
+                    { text: "，", type: "punct" },
+                    { text: "但是", pinyin: "dànshì", mean: "でも" },
+                    { text: "没", pinyin: "méi", mean: "〜なかった" },
+                    { text: "___", type: "blank" },
+                    { text: "那", pinyin: "nà", mean: "あの" },
+                    { text: "本", pinyin: "běn", mean: "冊" },
+                    { text: "书", pinyin: "shū", mean: "本" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "买到 (mǎidào)", correct: true },
+                    { text: "买 (mǎi)", correct: false }
+                ],
+                trans: "昨日、本屋へ行ったが、あの本は買えなかった（手に入らなかった）。",
+                hint: "「本屋へ行く」という動作はしたが、「手に入れる」という結果が得られなかったので、到達を表す「到」がついた「买到」を「没」で否定します。"
+            },
+            {
+                question: [
+                    { text: "老师", pinyin: "Lǎoshī", mean: "先生" },
+                    { text: "的", pinyin: "de", mean: "の" },
+                    { text: "话", pinyin: "huà", mean: "話" },
+                    { text: "，", type: "punct" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "听", pinyin: "tīng", mean: "聞く" },
+                    { text: "___", type: "blank" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "吗", pinyin: "ma", mean: "〜ですか" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "懂 (dǒng)", correct: true },
+                    { text: "见 (jiàn)", correct: false }
+                ],
+                trans: "先生の話、見て（聞いて）分かりましたか？",
+                hint: "話の内容を「理解できたか」と聞いているので、理解を表す「懂」を使います。「见」は「聞こえた（音として）」という意味です。"
+            },
+            {
+                question: [
+                    { text: "不好意思", pinyin: "Bù hǎoyìsi", mean: "すみません" },
+                    { text: "，", type: "punct" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "打", pinyin: "dǎ", mean: "電話する" },
+                    { text: "___", type: "blank" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "错 (cuò)", correct: true },
+                    { text: "坏 (huài)", correct: false }
+                ],
+                trans: "すみません、電話をかけ間違えました。",
+                hint: "「動作の結果、間違えた」という意味なので「错（間違い）」を使います。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-amber-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-amber-500 hover:text-amber-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-amber-400 hover:text-amber-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-amber-50 rounded p-4 text-sm border border-amber-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-amber-500', 'text-amber-600', 'bg-amber-50');
+                    } else {
+                        btn.classList.add('border-red-500', 'text-red-600', 'bg-red-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-amber-500', 'text-amber-600');
+                } else {
+                    slot.classList.add('border-red-500', 'text-red-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-amber-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-red-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

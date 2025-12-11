@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 34: 省略と倒置</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">34. 省略と倒置</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                教科書通りに<br class="md:hidden">話さない理由
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「私はご飯を食べます」を、いつも "我吃饭" と言うわけではありません。<br>
+                「ご飯なら、食べたよ」と言う時は、語順が変わります。<br>
+                <span class="highlight-text">「言わなくてもわかることは省く」「話題にしたいことを前に出す」</span>。<br>
+                これが会話のリアルなルールです。
+            </p>
+        </section>
+
+        <!-- 1. Omission: Dropping the Subject -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">主語の省略</h3>
+                    <p class="text-slate-500 text-sm">文脈で誰のことか明らかなら、主語はどんどん消えます。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Case 1: First Person -->
+                    <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-slate-700 mb-3 flex items-center">
+                            <i class="fas fa-user mr-2 text-blue-500"></i> 自分の動作 (I)
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-4">
+                            挨拶や決まり文句、自分の意思を伝える時、「我 (wǒ)」はよく省略されます。
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <span class="text-slate-300 line-through mr-1 decoration-2">我</span> <ruby>走<rt>zǒu</rt></ruby> <ruby>了<rt>le</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">（私は）もう行くね。</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <span class="text-slate-300 line-through mr-1 decoration-2">我</span> <ruby>不<rt>bù</rt></ruby> <ruby>知<rt>zhī</rt></ruby><ruby>道<rt>dào</rt></ruby>。
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">（私は）知らない。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case 2: Second Person -->
+                    <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-amber-500">
+                        <h4 class="font-bold text-slate-700 mb-3 flex items-center">
+                            <i class="fas fa-user-friends mr-2 text-amber-500"></i> 相手への質問 (You)
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-4">
+                            目の前にいる相手に話しかける時、「你 (nǐ)」は省略可能です。
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <span class="text-slate-300 line-through mr-1 decoration-2">你</span> <ruby>去<rt>qù</rt></ruby> <ruby>哪儿<rt>nǎr</rt></ruby>？
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">（君は）どこ行くの？</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <p class="chinese-serif text-lg font-bold text-slate-800">
+                                    <span class="text-slate-300 line-through mr-1 decoration-2">你</span> <ruby>吃<rt>chī</rt></ruby> <ruby>饭<rt>fàn</rt></ruby> <ruby>了<rt>le</rt></ruby> <ruby>吗<rt>ma</rt></ruby>？
+                                </p>
+                                <p class="text-xs text-slate-500 mt-1">（あなたは）ご飯食べた？</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center text-sm text-slate-500">
+                    <span class="bg-rose-100 text-rose-800 px-2 py-1 rounded text-xs font-bold mr-2">ポイント</span>
+                    文脈がはっきりしている場合、天気や時間などの主語も省略されます。<br>
+                    例：(今天) 很冷。 (今日は寒い) / (现在) 几点了？ (今何時？)
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Inversion: Topicalization -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">倒置：目的語の前置 (トピック化)</h3>
+                    <p class="text-slate-500 text-sm">SVOの語順が「OSV」に変わる魔法。「〜について言うとね」という強調です。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row items-center justify-around gap-8 mb-8">
+                    
+                    <!-- Standard SVO -->
+                    <div class="text-center opacity-50">
+                        <p class="text-xs font-bold text-slate-400 mb-2">基本語順 (SVO)</p>
+                        <div class="bg-slate-100 p-4 rounded-xl border border-slate-200">
+                            <span class="chinese-serif text-xl text-slate-600">我 看了 那本书。</span>
+                            <p class="text-xs text-slate-500 mt-1">私はその本を読みました。</p>
+                            <p class="text-[10px] text-slate-400">（事実の報告）</p>
+                        </div>
+                    </div>
+
+                    <div class="text-3xl text-rose-400"><i class="fas fa-exchange-alt"></i></div>
+
+                    <!-- Inverted OSV -->
+                    <div class="text-center">
+                        <p class="text-xs font-bold text-rose-600 mb-2">トピック化 (OSV)</p>
+                        <div class="bg-rose-50 p-4 rounded-xl border-2 border-rose-300 shadow-md transform scale-105">
+                            <p class="chinese-serif text-xl font-bold text-slate-800">
+                                <span class="text-rose-600 border-b-2 border-rose-300">那本书</span> 我 看了。
+                            </p>
+                            <p class="text-sm text-slate-700 mt-2">その本なら、私は読みました。</p>
+                            <p class="text-xs text-rose-800 mt-1">（話題の中心を「本」にする）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-slate-700 mb-2 text-sm"><i class="fas fa-check mr-2 text-green-500"></i> トピック化の条件</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            前に出せる目的語は、聞き手も知っている<strong>「特定のもの（その〜、この〜）」</strong>か、<strong>「総称（〜というもの）」</strong>に限られます。<br>
+                            <span class="text-xs text-slate-400">※「ある一冊の本(不特定)を読んだ」を「一本书我看了」とは言いません。</span>
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-slate-700 mb-2 text-sm"><i class="fas fa-list-ul mr-2 text-indigo-500"></i> よくあるパターン</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li><strong>否定文：</strong><span class="chinese-serif">肉我不吃。</span> (肉は食べない)</li>
+                            <li><strong>列挙：</strong><span class="chinese-serif">英语我会，日语我也通过了。</span> (英語はできるし、日本語も受かった)</li>
+                            <li><strong>整理：</strong><span class="chinese-serif">钱我没带。</span> (お金は持ってきてない)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Comparison: "Ba" vs Topic-Fronting -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">「把」構文との違い</h3>
+                    <p class="text-slate-500 text-sm">どちらも目的語が前に出ますが、ニュアンスと機能が違います。</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <table class="w-full text-left bg-white">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="p-4 w-1/5 text-xs font-bold text-slate-500 uppercase">構文</th>
+                            <th class="p-4 w-1/3 text-xs font-bold text-slate-500 uppercase">例文</th>
+                            <th class="p-4 w-1/3 text-xs font-bold text-slate-500 uppercase">ニュアンス・機能</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <!-- Topic-Fronting -->
+                        <tr class="hover:bg-rose-50/20">
+                            <td class="p-4 font-bold text-rose-600">倒置 (OSV)</td>
+                            <td class="p-4">
+                                <span class="chinese-serif font-bold text-slate-800">作业我做完了。</span>
+                                <div class="text-xs text-slate-500 mt-1">宿題なら、終わったよ。</div>
+                            </td>
+                            <td class="p-4 text-slate-600">
+                                <strong>話題提示・報告</strong><br>
+                                「宿題」を話題として取り上げ、その状態を述べる。<br>
+                                単なる事実の報告に近い。
+                            </td>
+                        </tr>
+                        <!-- Ba-Construction -->
+                        <tr class="hover:bg-amber-50/20">
+                            <td class="p-4 font-bold text-amber-600">把構文 (S把OV)</td>
+                            <td class="p-4">
+                                <span class="chinese-serif font-bold text-slate-800">我把作业做完了。</span>
+                                <div class="text-xs text-slate-500 mt-1">宿題を片付けてしまった。</div>
+                            </td>
+                            <td class="p-4 text-slate-600">
+                                <strong>処置・影響</strong><br>
+                                「宿題」に対して働きかけ、完了させたことを強調。<br>
+                                「やってやったぞ」「片付けた」という能動的な処置感。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-400 mt-3 text-right px-2">※倒置文は動詞の後ろがシンプルでもOKですが、把構文は複雑な補語が必要になることが多いです。</p>
+        </section>
+
+        <!-- 4. Advanced: Double Nominative? -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">主述述語文 (象は鼻が長い)</h3>
+                    <p class="text-slate-500 text-sm">これも一種のトピック化。「大きな主語」の中に「小さな主語」がある形です。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="text-center mb-6">
+                    <p class="text-sm text-slate-600 mb-2 font-bold">日本語と同じ構造！</p>
+                    <p class="chinese-serif text-2xl font-bold text-slate-800">
+                        <span class="text-rose-600 border-b-2 border-rose-200">大象</span> <span class="text-indigo-600">鼻子</span> <span class="text-slate-600">很长</span>。
+                    </p>
+                    <div class="flex justify-center gap-4 text-xs text-slate-400 mt-2">
+                        <span>大トピック(S1)</span>
+                        <span>小主語(S2)</span>
+                        <span>述語</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-4 rounded-lg text-sm">
+                        <p class="chinese-serif font-bold text-slate-800">他 身体 很好。</p>
+                        <p class="text-xs text-slate-500 mt-1">彼は 体が 良い（健康だ）。</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg text-sm">
+                        <p class="chinese-serif font-bold text-slate-800">中国 人口 很多。</p>
+                        <p class="text-xs text-slate-500 mt-1">中国は 人口が 多い。</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mt-4 text-center">
+                    文法的には「主語＋（主語＋述語）そのものが述語」という二重構造になっています。<br>
+                    「〜は、〜が、〜だ」という日本語の感覚がそのまま使えます。
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Practice Drill</h3>
+                <p class="text-slate-500">文脈に合わせて自然な語順や省略を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 34 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">パーフェクト！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                省略と倒置を使いこなせると、会話のテンポが格段に良くなります。<br>
+                次回はLevel 3の最終回。「越...越...」などの成語や慣用句がどのように文法として機能するかを学びます。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-7.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l3-9.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 35: 成語・慣用句へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "___", type: "blank" }, // Empty slot for potential OSV or SVO
+                    { text: "信", pinyin: "Xìn", mean: "手紙" },
+                    { text: "___", type: "blank" },
+                    { text: "我", pinyin: "wǒ", mean: "私" },
+                    { text: "已经", pinyin: "yǐjīng", mean: "すでに" },
+                    { text: "写", pinyin: "xiě", mean: "書く" },
+                    { text: "好", pinyin: "hǎo", mean: "完了" },
+                    { text: "了", pinyin: "le", mean: "完了" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "那封 (nà fēng)", correct: true },
+                    { text: "一封 (yì fēng)", correct: false }
+                ],
+                trans: "その手紙なら、私はもう書き終えました。",
+                hint: "「手紙」を文頭に出してトピック化しています（OSV）。トピックになれるのは「特定のもの（その手紙）」です。「一封（ある一通の）」という不特定のものは文頭には来にくいです。"
+            },
+            {
+                question: [
+                    { text: "A:", type: "punct" },
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "哪儿", pinyin: "nǎr", mean: "どこ" },
+                    { text: "？", type: "punct" },
+                    { text: "B:", type: "punct" },
+                    { text: "___", type: "blank" },
+                    { text: "去", pinyin: "qù", mean: "行く" },
+                    { text: "超市", pinyin: "chāoshì", mean: "スーパー" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "(省略)", correct: true },
+                    { text: "我 (wǒ)", correct: false }
+                ],
+                trans: "A: どこ行くの？ B: スーパーに行く。",
+                hint: "聞かれた本人が答える場合、主語の「我」は省略するのが自然な会話です。あえて「我」をつけると少し堅苦しくなります。"
+            },
+            {
+                question: [
+                    { text: "这", pinyin: "Zhè", mean: "この" },
+                    { text: "个", pinyin: "ge", mean: "個" },
+                    { text: "菜", pinyin: "cài", mean: "料理" },
+                    { text: "，", type: "punct" },
+                    { text: "___", type: "blank" },
+                    { text: "不", pinyin: "bù", mean: "〜ない" },
+                    { text: "吃", pinyin: "chī", mean: "食べる" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "我 (wǒ)", correct: true },
+                    { text: "把 (bǎ)", correct: false }
+                ],
+                trans: "この料理は、私は食べません。",
+                hint: "「この料理（目的語）」を文頭に出した倒置文です。目的語＋主語＋動詞の順になります。「把」は後ろに目的語を伴うので、ここには入りません（把这个菜...ならOK）。"
+            },
+            {
+                question: [
+                    { text: "工作", pinyin: "Gōngzuò", mean: "仕事" },
+                    { text: "___", type: "blank" },
+                    { text: "太", pinyin: "tài", mean: "あまりに" },
+                    { text: "忙", pinyin: "máng", mean: "忙しい" },
+                    { text: "了", pinyin: "le", mean: "〜すぎる" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "我 (wǒ)", correct: false }, // "Job I too busy" ?? No. "I work too busy" -> 我工作太忙了 is S(Topic) S P? No. "My job is too busy" -> 我的工作太忙了. Or "I am busy with work" -> 我工作太忙了 is ok. But here context: Topic is Work.
+                    // Wait, "工作太忙了" (The job is too busy) is fine.
+                    // Let's try Double Subject: "He is busy with work" -> 他工作太忙了.
+                    // Let's use: 他 (He)
+                    { text: "他 (tā)", correct: true }
+                ],
+                // Correction for the drill item content to be clearer
+                // Target: "He is busy with work" -> "He Work Busy"
+                // Actually "他工作很忙" (He work very busy) -> S(He) + S(Work) + P(Busy)
+                trans: "彼は仕事が忙しすぎます。",
+                hint: "「彼は（大主語）、仕事が（小主語）、忙しい（述語）」という主述述語文の形です。"
+            }
+        ];
+        
+        // Manual fix for drill item 1 rendering logic if needed, but standard logic should work.
+        // Item 4 Fix
+        quizData[3].question = [
+             { text: "___", type: "blank" },
+             { text: "工作", pinyin: "gōngzuò", mean: "仕事" },
+             { text: "太", pinyin: "tài", mean: "あまりに" },
+             { text: "忙", pinyin: "máng", mean: "忙しい" },
+             { text: "了", pinyin: "le", mean: "〜すぎる" },
+             { text: "。", type: "punct" }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end leading-loose">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(choice !== "(省略)" && btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                } else if (choice === "(省略)" && btn.innerText.includes("省略")) {
+                     btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                if (choice === "(省略)") {
+                    slot.textContent = "×"; // or empty
+                    slot.classList.add('text-slate-400');
+                } else {
+                    slot.textContent = choice;
+                    if (isCorrect) {
+                        slot.classList.add('border-rose-500', 'text-rose-600');
+                    } else {
+                        slot.classList.add('border-slate-500', 'text-slate-600');
+                    }
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>

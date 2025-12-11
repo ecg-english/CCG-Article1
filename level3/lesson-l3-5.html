@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 31: 反語と強調</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Level 3 Theme Colors: Rose/Red */
+            --primary: #be123c; /* rose-700 */
+            --primary-light: #fb7185; /* rose-400 */
+            --primary-bg: #fff1f2; /* rose-50 */
+            --text-base: #334155;
+            --bg-base: #f8fafc;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-base);
+            line-height: 1.8;
+        }
+
+        .chinese-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        /* ルビのスタイル調整 */
+        ruby {
+            ruby-position: over;
+        }
+        rt {
+            font-family: sans-serif;
+            font-size: 0.6em;
+            color: #64748b; /* slate-500 */
+            font-weight: normal;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 強調マーカー (Level 3 Color) */
+        .highlight-text {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, #fecdd3 60%, #fecdd3 100%); /* rose-200 */
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            font-weight: bold;
+            color: #be123c;
+        }
+        
+        /* ツールチップ */
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 1px dotted #94a3b8;
+        }
+        .tooltip-content {
+            visibility: hidden;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip-container:hover .tooltip-content,
+        .tooltip-container:active .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Level 3 Style) -->
+    <header class="bg-white border-b border-rose-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-slate-500 hover:text-slate-800 text-sm font-bold flex items-center transition-colors">
+                    <i class="fa-solid fa-chevron-left mr-1"></i> 一覧に戻る
+                </a>
+                <span class="bg-rose-700 text-white px-2 py-1 text-xs font-bold rounded">LEVEL 3</span>
+                <h1 class="text-lg md:text-xl font-bold text-slate-800">31. 反語と強調</h1>
+            </div>
+            <div class="text-xs text-slate-500 hidden sm:block">
+                中国文法 完全攻略教材
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Intro Hero -->
+        <section class="mb-20 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
+                「質問」ではない<br class="md:hidden">「主張」の疑問文
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                「まさか知らないの？（知ってるでしょ！）」「一体どこに行ったんだ！（見つからないぞ）」<br>
+                形は疑問文ですが、答えを求めているわけではありません。<br>
+                <span class="highlight-text">強い感情や不満、驚きをぶつける</span>ための「反語」と「強調」を学びます。
+            </p>
+        </section>
+
+        <!-- 1. Rhetorical Question: Nandao -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">反語：难道 (nándào)</h3>
+                    <p class="text-slate-500 text-sm">「まさか〜だと言うのか（いや、そうではない）」という強い否定。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-6">
+                    <div class="md:w-1/3 text-center">
+                        <div class="text-6xl text-rose-200 mb-2"><i class="fas fa-question-circle"></i></div>
+                        <h4 class="text-3xl font-bold text-rose-700 chinese-serif mb-2">难道</h4>
+                        <p class="text-sm font-bold text-slate-600">まさか〜だと言うのか？</p>
+                    </div>
+
+                    <div class="flex-1 bg-rose-50 p-6 rounded-xl border border-rose-100 relative">
+                        <div class="absolute -top-3 left-4 bg-rose-500 text-white text-xs px-2 py-1 rounded font-bold">基本パターン</div>
+                        
+                        <div class="mb-6 border-b border-rose-200 pb-4">
+                            <p class="text-xs text-slate-400 font-bold mb-1">肯定文で反語 → 否定の意味</p>
+                            <p class="chinese-serif text-xl font-bold text-slate-800 mb-1">
+                                <span class="text-rose-600">难道</span> 你 不 知道 吗？
+                            </p>
+                            <p class="text-sm text-slate-600">まさか知らないと言うのか？（知ってるはずだろ！）</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-400 font-bold mb-1">否定文で反語 → 肯定の意味</p>
+                            <p class="chinese-serif text-xl font-bold text-slate-800 mb-1">
+                                <span class="text-rose-600">难道</span> 是 我 的 错 吗？
+                            </p>
+                            <p class="text-sm text-slate-600">まさか私の間違いだと言うのか？（私は悪くない！）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-l-4 border-amber-500 p-4 rounded-r-lg shadow-sm">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-exclamation-triangle text-amber-500 text-xl mt-1"></i>
+                        <div>
+                            <strong class="text-amber-800 text-sm block mb-1">使用上の注意：攻撃力高め</strong>
+                            <p class="text-xs text-slate-600">
+                                「难道」は相手を問い詰めるニュアンスが強いため、喧嘩や議論、あるいは独り言（自問自答）でよく使われます。<br>
+                                目上の人に使うと非常に失礼になる可能性があるので注意が必要です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Emphasis in Question: Daodi -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">追求：到底 (dàodǐ)</h3>
+                    <p class="text-slate-500 text-sm">「一体全体〜なんだ？」と核心を突く質問。</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-rose-200">
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-6">
+                    <div class="md:w-1/3 text-center">
+                        <div class="text-6xl text-indigo-200 mb-2"><i class="fas fa-search"></i></div>
+                        <h4 class="text-3xl font-bold text-indigo-700 chinese-serif mb-2">到底</h4>
+                        <p class="text-sm font-bold text-slate-600">一体全体 / 結局</p>
+                    </div>
+
+                    <div class="flex-1 bg-indigo-50 p-6 rounded-xl border border-indigo-100 relative">
+                        <div class="absolute -top-3 left-4 bg-indigo-500 text-white text-xs px-2 py-1 rounded font-bold">疑問詞とセット</div>
+                        
+                        <div class="mb-6 border-b border-indigo-200 pb-4">
+                            <p class="text-xs text-slate-400 font-bold mb-1">イライラ・追求</p>
+                            <p class="chinese-serif text-xl font-bold text-slate-800 mb-1">
+                                你 <span class="text-indigo-600">到底</span> 想 说 什么？
+                            </p>
+                            <p class="text-sm text-slate-600">一体何が言いたいんだ？（はっきり言え！）</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-400 font-bold mb-1">詰問・選択</p>
+                            <p class="chinese-serif text-xl font-bold text-slate-800 mb-1">
+                                你 <span class="text-indigo-600">到底</span> 去 不 去？
+                            </p>
+                            <p class="text-sm text-slate-600">結局行くの行かないの？（どっちなんだ！）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 text-sm bg-slate-50 p-4 rounded-lg">
+                    <span class="bg-slate-200 text-slate-600 px-2 py-1 rounded text-xs font-bold">ポイント</span>
+                    <p class="text-slate-600">
+                        「到底」は疑問文の中で使われると「一体」という意味になりますが、平叙文（普通の文）で使われると「さすがに」「ついに」といった意味（結果の強調）になります。<br>
+                        <span class="text-xs text-slate-400">例：到底是大城市。（さすがは大都会だ）</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Double Negation -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">二重否定：不...不...</h3>
+                    <p class="text-slate-500 text-sm">「〜しないわけではない」＝「必ず〜する」「当然〜だ」。</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Cannot Not -->
+                <div class="bg-white p-6 rounded-xl border-t-4 border-green-500 shadow-sm card-hover">
+                    <h4 class="font-bold text-slate-800 mb-3 text-lg">不能不 (bù néng bù)</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「〜せざるを得ない」「〜しないわけにはいかない」。<br>
+                        義務感や不可避な状況を強調します。
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="chinese-serif text-lg font-bold text-slate-800">
+                            这是规定，<span class="text-green-600">不能不</span> 遵守。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">これは規定なので、守らないわけにはいかない（守らなければならない）。</p>
+                    </div>
+                </div>
+
+                <!-- Will Not Not -->
+                <div class="bg-white p-6 rounded-xl border-t-4 border-blue-500 shadow-sm card-hover">
+                    <h4 class="font-bold text-slate-800 mb-3 text-lg">不会不 (bú huì bù)</h4>
+                    <p class="text-sm text-slate-600 mb-4">
+                        「〜しないはずがない」「きっと〜する」。<br>
+                        強い推測や確信を表します。
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="chinese-serif text-lg font-bold text-slate-800">
+                            他 答应 了，<span class="text-blue-600">不会不</span> 来。
+                        </p>
+                        <p class="text-xs text-slate-500 mt-2">彼は約束したんだから、来ないはずがない（きっと来る）。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Comparison: Rhetoric Level -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-rose-700 text-white flex items-center justify-center text-xl font-bold shadow-lg">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800">感情強度の比較</h3>
+                    <p class="text-slate-500 text-sm">どの言葉がどれくらい強いのか、グラデーションで理解しましょう。</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Level 1 -->
+                <div class="flex items-center bg-white p-4 rounded-xl border border-slate-200">
+                    <div class="w-16 text-center text-xs font-bold text-slate-400">弱</div>
+                    <div class="flex-1 pl-4 border-l">
+                        <p class="chinese-serif font-bold text-lg text-slate-700">普通疑問文 (吗)</p>
+                        <p class="text-xs text-slate-500">你是日本人吗？（ただの質問）</p>
+                    </div>
+                </div>
+                <!-- Level 2 -->
+                <div class="flex items-center bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-16 text-center text-xs font-bold text-amber-500">中</div>
+                    <div class="flex-1 pl-4 border-l">
+                        <p class="chinese-serif font-bold text-lg text-amber-600">怎么 (zěnme)</p>
+                        <p class="text-xs text-slate-500">你怎么不吃？（なんで食べないの？ ※少し意外・不満）</p>
+                    </div>
+                </div>
+                <!-- Level 3 -->
+                <div class="flex items-center bg-white p-4 rounded-xl border-l-4 border-rose-500 shadow-md">
+                    <div class="w-16 text-center text-xs font-bold text-rose-600">強</div>
+                    <div class="flex-1 pl-4">
+                        <p class="chinese-serif font-bold text-lg text-rose-700">到底 / 难道</p>
+                        <p class="text-xs text-slate-500">你到底吃不吃？（食うのか食わないのか！）<br>难道你不饿吗？（まさか腹減ってないのか！？）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Drill -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-2">Drill: Emotional Response</h3>
+                <p class="text-slate-500">文脈（感情）に合わせて正しい表現を選びましょう。<br>単語をタップ・ホバーすると意味が表示されます。</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto space-y-4" id="drill-container">
+                <!-- Drill items will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-rose-200 pt-12 pb-20 text-center mt-20">
+            <div class="inline-block bg-rose-50 rounded-full px-6 py-3 mb-6">
+                <span class="text-rose-700 font-bold">Lesson 31 Complete</span>
+            </div>
+            <h4 class="text-2xl font-bold text-slate-800 mb-4">お疲れ様でした！</h4>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
+                反語や強調は、ドラマや映画、そしてリアルな喧嘩でよく耳にします。<br>
+                次回は、ネイティブ会話の「味付け」である「語気助詞（吧・呢・嘛・呗・啊）」を徹底解説します。
+            </p>
+                        
+            <!-- 理解度評価 -->
+            <div class="mb-8">
+                <p class="text-sm text-slate-600 mb-3 font-bold">このレッスンの理解度を評価してください</p>
+                <div id="star-rating-container" class="flex justify-center items-center gap-2 mb-2">
+                    <!-- 星はJavaScriptで動的に生成されます -->
+                </div>
+                <p class="text-xs text-slate-400">3つすべての星をタップすると完了マークが表示されます</p>
+            </div>
+<div class="flex justify-center gap-4">
+                <a href="lesson-l3-4.html" class="bg-white/50 hover:bg-slate-100 text-slate-500 font-bold py-3 px-8 rounded-xl transition-all border border-slate-200">
+                    前のレッスン
+                </a>
+                <a href="lesson-l3-6.html" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-rose-600/20 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Lesson 32: 語気助詞へ進む <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Data Structure for Rich Drill
+        const quizData = [
+            {
+                question: [
+                    { text: "___", type: "blank" },
+                    { text: "这", pinyin: "zhè", mean: "これ" },
+                    { text: "是", pinyin: "shì", mean: "〜です" },
+                    { text: "真", pinyin: "zhēn", mean: "本当" },
+                    { text: "的", pinyin: "de", mean: "的" },
+                    { text: "吗", pinyin: "ma", mean: "〜か" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "难道 (nándào)", correct: true },
+                    { text: "到底 (dàodǐ)", correct: false }
+                ],
+                trans: "まさかこれが本当だと言うのか？（信じられない！）",
+                hint: "「まさか〜なのか（いや違う）」という反語的な驚きや疑いを表すので「难道」が適切です。"
+            },
+            {
+                question: [
+                    { text: "你", pinyin: "Nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "知", pinyin: "zhī", mean: "知る" },
+                    { text: "不", pinyin: "bu", mean: "〜ない" },
+                    { text: "知道", pinyin: "zhīdào", mean: "知る" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "到底 (dàodǐ)", correct: true },
+                    { text: "难道 (nándào)", correct: false }
+                ],
+                trans: "一体知ってるのか知らないのか（どっちなんだ）！",
+                hint: "「A不A（知ってるか知らないか）」という選択疑問文と共に使い、相手を問い詰める場合は「到底（一体全体）」を使います。"
+            },
+            {
+                question: [
+                    { text: "这么", pinyin: "Zhème", mean: "こんなに" },
+                    { text: "简单", pinyin: "jiǎndān", mean: "簡単" },
+                    { text: "的", pinyin: "de", mean: "的" },
+                    { text: "问题", pinyin: "wèntí", mean: "問題" },
+                    { text: "，", type: "punct" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "___", type: "blank" },
+                    { text: "不", pinyin: "bú", mean: "〜ない" },
+                    { text: "会", pinyin: "huì", mean: "できる" },
+                    { text: "。", type: "punct" }
+                ],
+                options: [
+                    { text: "不会 (bú huì)", correct: true },
+                    { text: "不能 (bù néng)", correct: false }
+                ],
+                trans: "こんな簡単な問題、あなたができないはずがない。",
+                hint: "「不会不...」で「〜しないはずがない（強い推測・確信）」を表します。ここでは「できない（不會）はずがない（不）」となります。"
+            },
+            {
+                question: [
+                    { text: "___", type: "blank" },
+                    { text: "你", pinyin: "nǐ", mean: "あなた" },
+                    { text: "没", pinyin: "méi", mean: "〜ない" },
+                    { text: "听", pinyin: "tīng", mean: "聞く" },
+                    { text: "见", pinyin: "jiàn", mean: "聞こえる" },
+                    { text: "吗", pinyin: "ma", mean: "〜か" },
+                    { text: "？", type: "punct" }
+                ],
+                options: [
+                    { text: "难道 (nándào)", correct: true },
+                    { text: "到底 (dàodǐ)", correct: false }
+                ],
+                trans: "まさか聞こえなかったと言うのか？（聞こえてただろ！）",
+                hint: "「聞こえなかったのか？（いや聞こえたはずだ）」という反語なので「难道」を使います。"
+            }
+        ];
+
+        const drillContainer = document.getElementById('drill-container');
+
+        quizData.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = "bg-white p-6 rounded-xl shadow-sm border border-slate-200 transition-all";
+            
+            // Build Question HTML
+            let questionHtml = '';
+            item.question.forEach(seg => {
+                if (seg.type === 'blank') {
+                    questionHtml += `<span class="inline-block w-20 border-b-2 border-slate-300 text-center text-rose-600 px-1 mx-1 min-h-[1.5rem] font-bold text-xl align-bottom" id="slot-${idx}"></span>`;
+                } else if (seg.type === 'punct') {
+                    questionHtml += `<span class="text-slate-800 font-bold ml-1 align-bottom">${seg.text}</span>`;
+                } else {
+                    questionHtml += `
+                        <div class="tooltip-container group mx-0.5 align-bottom inline-block">
+                            <ruby class="text-2xl font-bold text-slate-800 chinese-serif cursor-help border-b border-dotted border-slate-300 hover:border-rose-500 hover:text-rose-700 transition-colors">
+                                ${seg.text}<rt>${seg.pinyin}</rt>
+                            </ruby>
+                            <div class="tooltip-content">
+                                ${seg.mean}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Build Options Buttons
+            let buttonsHtml = '';
+            item.options.forEach(opt => {
+                buttonsHtml += `
+                    <button onclick="checkDrill(${idx}, '${opt.text.split(' ')[0]}', ${opt.correct})" 
+                        class="choice-btn px-4 py-2 rounded-lg border-2 border-slate-200 hover:border-rose-400 hover:text-rose-600 font-bold text-slate-600 transition chinese-serif min-w-[100px]">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+
+            card.innerHTML = `
+                <div class="mb-6">
+                    <div class="mb-2"><span class="bg-slate-100 px-2 py-1 rounded text-xs text-slate-500 font-bold">Q${idx + 1}</span></div>
+                    <div class="text-center mb-4 flex flex-wrap justify-center items-end leading-loose">
+                        ${questionHtml}
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-4" id="btn-group-${idx}">
+                    ${buttonsHtml}
+                </div>
+
+                <div id="feedback-${idx}" class="hidden bg-rose-50 rounded p-4 text-sm border border-rose-100 text-center">
+                    <!-- Feedback content will be injected -->
+                </div>
+            `;
+            drillContainer.appendChild(card);
+        });
+
+        window.checkDrill = function(idx, choice, isCorrect) {
+            const slot = document.getElementById(`slot-${idx}`);
+            const btnGroup = document.getElementById(`btn-group-${idx}`);
+            const feedback = document.getElementById(`feedback-${idx}`);
+            const buttons = btnGroup.querySelectorAll('button');
+
+            // Disable buttons
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                // Highlight selected
+                if(btn.innerText.includes(choice)) {
+                    btn.classList.remove('border-slate-200', 'text-slate-600');
+                    if(isCorrect) {
+                        btn.classList.add('border-rose-500', 'text-rose-600', 'bg-rose-50');
+                    } else {
+                        btn.classList.add('border-slate-500', 'text-slate-600', 'bg-slate-50');
+                    }
+                }
+            });
+
+            // Update slot
+            if (slot) {
+                slot.textContent = choice;
+                if (isCorrect) {
+                    slot.classList.add('border-rose-500', 'text-rose-600');
+                } else {
+                    slot.classList.add('border-slate-500', 'text-slate-600');
+                }
+            }
+
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.innerHTML = `
+                    <div class="text-rose-600 font-bold text-lg mb-2"><i class="fas fa-check-circle"></i> 正解！</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            } else {
+                feedback.innerHTML = `
+                    <div class="text-slate-500 font-bold text-lg mb-2"><i class="fas fa-times-circle"></i> 残念...</div>
+                    <p class="font-bold text-slate-700 mb-2">${quizData[idx].trans}</p>
+                    <div class="text-xs text-slate-500 bg-white p-2 rounded border border-slate-100 inline-block text-left">
+                        ${quizData[idx].hint}
+                    </div>
+                `;
+            }
+        };
+    </script>
+    <script src="../rating.js"></script>
+</body>
+</html>
